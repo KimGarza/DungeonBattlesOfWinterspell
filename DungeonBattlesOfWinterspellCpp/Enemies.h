@@ -1,4 +1,3 @@
-#pragma once
 #include "IEnemy.h"
 
 class Firespitter : public IEnemy {
