@@ -14,6 +14,5 @@ public:
 	virtual int GetIntelligence() = 0;
 	virtual int GetDexterity() = 0;
 	virtual int GetStrength() = 0;
-	virtual std::vector<IWeapon> GetWeaponOptions() = 0;
-
+	virtual std::vector<IWeapon*> GetWeaponOptions() = 0;
 };
