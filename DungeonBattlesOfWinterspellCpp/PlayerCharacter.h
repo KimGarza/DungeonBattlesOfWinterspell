@@ -1,39 +1,48 @@
-#ifndef IPLAYERCHARACTER_H
-#define IPLAYERCHARACTER_H
-
+#pragma once
 #include <vector>
 #include <string>
 #include "IWeapon.h"
 #include "InvItem.h"
 
 class PlayerCharacter {
+// 1. rivate values make one for every property you want to describe/define your class
+private:
+	std::string name;
+	int health;
+	int intelligence;
+	int dexterity;
+	int strength;
+	IWeapon* weapon;
+	int xp;
+	int level;
+	bool hasSwiftness;
+	bool isDead;
+
+// 2. Preparing all values that will come through constructor ( we want xp, level, swift and dead to not be passed in we already know what these will be to start)
 public:
-	PlayerCharacter();
+	PlayerCharacter( 
+		std::string name,
+		int health,
+		int intelligence,
+		int dexterity,
+		int strength,
+		IWeapon* weapon
+		// 3. The reason these are not set here is bc they will be set with default values in source and managed within functions after
+		/*int xp = 0, int level = 1, bool hasSwiftness = false, bool isDead = false*/
+	);
 
 	std::string GetName() { return name; }
-	int GetXP() { return xp; }
-	int GetLevel() { return level; }
 	int GetHealth() { return health; }
 	int GetIntelligence() { return intelligence; }
 	int GetDexterity() { return dexterity; }
 	int GetStrength() { return strength; }
-	IWeapon GetWeapon() { return weapon; }
+	IWeapon* GetWeapon() { return weapon; }
+	int GetXP() { return xp; }
+	int GetLevel() { return level; }
 	bool GetHasSwiftness() { return hasSwiftness; }
 	bool GetIsDead() { return isDead; }
 
-	void CheckIfDead() {};
+	void TakeDamage(int damageTaken);
+	void CheckIfDead();
 
-private:
-	std::string name;
-	int health;
-	int xp;
-	int level;
-	int intelligence;
-	int dexterity;
-	int strength;
-	IWeapon weapon;
-	bool hasSwiftness;
-	bool isDead;
-	std::vector<InvItem*> inventory;
 };
-#endif // IPLAYERCHARACTER_H

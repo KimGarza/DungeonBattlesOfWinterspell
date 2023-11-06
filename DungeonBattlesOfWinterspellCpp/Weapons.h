@@ -3,20 +3,20 @@
 // Elven weapons ---------------------------------
 class ElvenLongsword : public IWeapon {
 public:
-	ElvenLongsword();
+	ElvenLongsword() {};
 
-	std::string GetName() override { return name; }
-	bool GetIsRanged() override { return isRanged; }
-	std::string GetPrimarySkillName() override { return pSkillName; }
-	std::string GetPrimarySkillDescription() override { return pSkillDescription; }
-	std::vector<int> GetPrimarySkillDamageRange() override { return pSkillDamageRange; }
+	std::string GetName() { return name; }
+	bool GetIsRanged() { return isRanged; }
+	std::string GetPrimarySkillName() { return pSkillName; }
+	std::string GetPrimarySkillDescription() { return pSkillDescription; }
+	std::vector<int> GetPrimarySkillDamageRange() { return pSkillDamageRange; }
 
-	std::string GetSecondarySkillName() override { return sSkillName; }
-	std::string GetSecondarySkillDescription() override { return sSkillDescription; }
-	std::vector<int> GetSecondarySkillDamageRange() override { return sSkillDamageRange; }
+	std::string GetSecondarySkillName() { return sSkillName; }
+	std::string GetSecondarySkillDescription() { return sSkillDescription; }
+	std::vector<int> GetSecondarySkillDamageRange() { return sSkillDamageRange; }
 
-	virtual void UseSkillPrimary() override {};
-	virtual void UseSkillSecondary() override {};
+	void UseSkillPrimary() {};
+	void UseSkillSecondary() {};
 
 
 private:
@@ -36,18 +36,18 @@ class IvoryLongBowAndQuiver : public IWeapon {
 public:
 	IvoryLongBowAndQuiver();
 
-	std::string GetName() override { return name; }
-	bool GetIsRanged() override { return isRanged; }
-	std::string GetPrimarySkillName() override { return pSkillName; }
-	std::string GetPrimarySkillDescription() override { return pSkillDescription; }
-	std::vector<int> GetPrimarySkillDamageRange() override { return pSkillDamageRange; }
+	std::string GetName() { return name; }
+	bool GetIsRanged() { return isRanged; }
+	std::string GetPrimarySkillName() { return pSkillName; }
+	std::string GetPrimarySkillDescription() { return pSkillDescription; }
+	std::vector<int> GetPrimarySkillDamageRange() { return pSkillDamageRange; }
 
-	std::string GetSecondarySkillName() override { return sSkillName; }
-	std::string GetSecondarySkillDescription() override { return sSkillDescription; }
-	std::vector<int> GetSecondarySkillDamageRange() override { return sSkillDamageRange; }
+	std::string GetSecondarySkillName() { return sSkillName; }
+	std::string GetSecondarySkillDescription() { return sSkillDescription; }
+	std::vector<int> GetSecondarySkillDamageRange() { return sSkillDamageRange; }
 
-	virtual void UseSkillPrimary() override {};
-	virtual void UseSkillSecondary() override {};
+	void UseSkillPrimary() {};
+	void UseSkillSecondary() {};
 
 
 private:
@@ -67,18 +67,18 @@ class ShortErnestBowAndQuiver : public IWeapon {
 public:
 	ShortErnestBowAndQuiver();
 
-	std::string GetName() override { return name; }
-	bool GetIsRanged() override { return isRanged; }
-	std::string GetPrimarySkillName() override { return pSkillName; }
-	std::string GetPrimarySkillDescription() override { return pSkillDescription; }
-	std::vector<int> GetPrimarySkillDamageRange() override { return pSkillDamageRange; }
+	std::string GetName() { return name; }
+	bool GetIsRanged() { return isRanged; }
+	std::string GetPrimarySkillName() { return pSkillName; }
+	std::string GetPrimarySkillDescription() { return pSkillDescription; }
+	std::vector<int> GetPrimarySkillDamageRange() { return pSkillDamageRange; }
 
-	std::string GetSecondarySkillName() override { return sSkillName; }
-	std::string GetSecondarySkillDescription() override { return sSkillDescription; }
-	std::vector<int> GetSecondarySkillDamageRange() override { return sSkillDamageRange; }
+	std::string GetSecondarySkillName() { return sSkillName; }
+	std::string GetSecondarySkillDescription() { return sSkillDescription; }
+	std::vector<int> GetSecondarySkillDamageRange() { return sSkillDamageRange; }
 
-	virtual void UseSkillPrimary() override {};
-	virtual void UseSkillSecondary() override {};
+	void UseSkillPrimary() {};
+	void UseSkillSecondary() {};
 
 
 private:
@@ -99,18 +99,18 @@ class DoubleBladedAxe : public IWeapon {
 public:
 	DoubleBladedAxe();
 
-	std::string GetName() override { return name; }
-	bool GetIsRanged() override { return isRanged; }
-	std::string GetPrimarySkillName() override { return pSkillName; }
-	std::string GetPrimarySkillDescription() override { return pSkillDescription; }
-	std::vector<int> GetPrimarySkillDamageRange() override { return pSkillDamageRange; }
+	std::string GetName() { return name; }
+	bool GetIsRanged() { return isRanged; }
+	std::string GetPrimarySkillName() { return pSkillName; }
+	std::string GetPrimarySkillDescription() { return pSkillDescription; }
+	std::vector<int> GetPrimarySkillDamageRange() { return pSkillDamageRange; }
 
-	std::string GetSecondarySkillName() override { return sSkillName; }
-	std::string GetSecondarySkillDescription() override { return sSkillDescription; }
-	std::vector<int> GetSecondarySkillDamageRange() override { return sSkillDamageRange; }
+	std::string GetSecondarySkillName() { return sSkillName; }
+	std::string GetSecondarySkillDescription() { return sSkillDescription; }
+	std::vector<int> GetSecondarySkillDamageRange() { return sSkillDamageRange; }
 
-	virtual void UseSkillPrimary() override {};
-	virtual void UseSkillSecondary() override {};
+	void UseSkillPrimary() {};
+	void UseSkillSecondary() {};
 
 
 private:
@@ -130,18 +130,18 @@ class OrnateShortSword : public IWeapon {
 public:
 	OrnateShortSword();
 
-	std::string GetName() override { return name; }
-	bool GetIsRanged() override { return isRanged; }
-	std::string GetPrimarySkillName() override { return pSkillName; }
-	std::string GetPrimarySkillDescription() override { return pSkillDescription; }
-	std::vector<int> GetPrimarySkillDamageRange() override { return pSkillDamageRange; }
+	std::string GetName() { return name; }
+	bool GetIsRanged() { return isRanged; }
+	std::string GetPrimarySkillName() { return pSkillName; }
+	std::string GetPrimarySkillDescription() { return pSkillDescription; }
+	std::vector<int> GetPrimarySkillDamageRange() { return pSkillDamageRange; }
 
-	std::string GetSecondarySkillName() override { return sSkillName; }
-	std::string GetSecondarySkillDescription() override { return sSkillDescription; }
-	std::vector<int> GetSecondarySkillDamageRange() override { return sSkillDamageRange; }
+	std::string GetSecondarySkillName() { return sSkillName; }
+	std::string GetSecondarySkillDescription() { return sSkillDescription; }
+	std::vector<int> GetSecondarySkillDamageRange() { return sSkillDamageRange; }
 
-	virtual void UseSkillPrimary() override {};
-	virtual void UseSkillSecondary() override {};
+	void UseSkillPrimary() {};
+	void UseSkillSecondary() {};
 
 
 private:
@@ -161,18 +161,18 @@ class SteelSplitHammer : public IWeapon {
 public:
 	SteelSplitHammer();
 
-	std::string GetName() override { return name; }
-	bool GetIsRanged() override { return isRanged; }
-	std::string GetPrimarySkillName() override { return pSkillName; }
-	std::string GetPrimarySkillDescription() override { return pSkillDescription; }
-	std::vector<int> GetPrimarySkillDamageRange() override { return pSkillDamageRange; }
+	std::string GetName() { return name; }
+	bool GetIsRanged() { return isRanged; }
+	std::string GetPrimarySkillName() { return pSkillName; }
+	std::string GetPrimarySkillDescription() { return pSkillDescription; }
+	std::vector<int> GetPrimarySkillDamageRange() { return pSkillDamageRange; }
 
-	std::string GetSecondarySkillName() override { return sSkillName; }
-	std::string GetSecondarySkillDescription() override { return sSkillDescription; }
-	std::vector<int> GetSecondarySkillDamageRange() override { return sSkillDamageRange; }
+	std::string GetSecondarySkillName() { return sSkillName; }
+	std::string GetSecondarySkillDescription() { return sSkillDescription; }
+	std::vector<int> GetSecondarySkillDamageRange() { return sSkillDamageRange; }
 
-	virtual void UseSkillPrimary() override {};
-	virtual void UseSkillSecondary() override {};
+	void UseSkillPrimary() {};
+	void UseSkillSecondary() {};
 
 
 private:
@@ -189,23 +189,23 @@ private:
 
 
 
-// Enchatress weapons ---------------------------------
+// Enchantress weapons ---------------------------------
 class DualEtherealDaggers : public IWeapon {
 public:
 	DualEtherealDaggers();
 
-	std::string GetName() override { return name; }
-	bool GetIsRanged() override { return isRanged; }
-	std::string GetPrimarySkillName() override { return pSkillName; }
-	std::string GetPrimarySkillDescription() override { return pSkillDescription; }
-	std::vector<int> GetPrimarySkillDamageRange() override { return pSkillDamageRange; }
+	std::string GetName() { return name; }
+	bool GetIsRanged() { return isRanged; }
+	std::string GetPrimarySkillName() { return pSkillName; }
+	std::string GetPrimarySkillDescription() { return pSkillDescription; }
+	std::vector<int> GetPrimarySkillDamageRange() { return pSkillDamageRange; }
 
-	std::string GetSecondarySkillName() override { return sSkillName; }
-	std::string GetSecondarySkillDescription() override { return sSkillDescription; }
-	std::vector<int> GetSecondarySkillDamageRange() override { return sSkillDamageRange; }
+	std::string GetSecondarySkillName() { return sSkillName; }
+	std::string GetSecondarySkillDescription() { return sSkillDescription; }
+	std::vector<int> GetSecondarySkillDamageRange() { return sSkillDamageRange; }
 
-	virtual void UseSkillPrimary() override {};
-	virtual void UseSkillSecondary() override {};
+	void UseSkillPrimary() {};
+	void UseSkillSecondary() {};
 
 
 private:
@@ -220,23 +220,22 @@ private:
 	std::vector<int> sSkillDamageRange;
 };
 
-// ----------------------------------------------------------
 class GnarledBranchStaff : public IWeapon {
 public:
 	GnarledBranchStaff();
 
-	std::string GetName() override { return name; }
-	bool GetIsRanged() override { return isRanged; }
-	std::string GetPrimarySkillName() override { return pSkillName; }
-	std::string GetPrimarySkillDescription() override { return pSkillDescription; }
-	std::vector<int> GetPrimarySkillDamageRange() override { return pSkillDamageRange; }
+	std::string GetName() { return name; }
+	bool GetIsRanged() { return isRanged; }
+	std::string GetPrimarySkillName() { return pSkillName; }
+	std::string GetPrimarySkillDescription() { return pSkillDescription; }
+	std::vector<int> GetPrimarySkillDamageRange() { return pSkillDamageRange; }
 
-	std::string GetSecondarySkillName() override { return sSkillName; }
-	std::string GetSecondarySkillDescription() override { return sSkillDescription; }
-	std::vector<int> GetSecondarySkillDamageRange() override { return sSkillDamageRange; }
+	std::string GetSecondarySkillName() { return sSkillName; }
+	std::string GetSecondarySkillDescription() { return sSkillDescription; }
+	std::vector<int> GetSecondarySkillDamageRange() { return sSkillDamageRange; }
 
-	virtual void UseSkillPrimary() override {};
-	virtual void UseSkillSecondary() override {};
+	void UseSkillPrimary() {};
+	void UseSkillSecondary() {};
 
 
 private:
@@ -251,23 +250,22 @@ private:
 	std::vector<int> sSkillDamageRange;
 };
 
-// ----------------------------------------------------------
 class OakCarvedWand : public IWeapon {
 public:
 	OakCarvedWand();
 
-	std::string GetName() override { return name; }
-	bool GetIsRanged() override { return isRanged; }
-	std::string GetPrimarySkillName() override { return pSkillName; }
-	std::string GetPrimarySkillDescription() override { return pSkillDescription; }
-	std::vector<int> GetPrimarySkillDamageRange() override { return pSkillDamageRange; }
+	std::string GetName() { return name; }
+	bool GetIsRanged() { return isRanged; }
+	std::string GetPrimarySkillName() { return pSkillName; }
+	std::string GetPrimarySkillDescription() { return pSkillDescription; }
+	std::vector<int> GetPrimarySkillDamageRange() { return pSkillDamageRange; }
 
-	std::string GetSecondarySkillName() override { return sSkillName; }
-	std::string GetSecondarySkillDescription() override { return sSkillDescription; }
-	std::vector<int> GetSecondarySkillDamageRange() override { return sSkillDamageRange; }
+	std::string GetSecondarySkillName() { return sSkillName; }
+	std::string GetSecondarySkillDescription() { return sSkillDescription; }
+	std::vector<int> GetSecondarySkillDamageRange() { return sSkillDamageRange; }
 
-	virtual void UseSkillPrimary() override {};
-	virtual void UseSkillSecondary() override {};
+	void UseSkillPrimary() {};
+	void UseSkillSecondary() {};
 
 
 private:

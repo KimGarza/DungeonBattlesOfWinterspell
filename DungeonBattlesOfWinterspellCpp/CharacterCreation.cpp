@@ -1,32 +1,169 @@
 #include "CharacterCreation.h"
 #include "PlayerCharacter.h"
+#include "Characters.h"
+#include "ICharacter.h"
+#include "IWeapon.h"
+#include "Weapons.h"
+#include "GameText.h"
+#include <sstream>
+#include <cstdlib>
 
-PlayerCharacter CharacterCreation::ChooseClass() {
+//PlayerCharacter
+void ChooseClass() {
 
-	PlayerCharacter playerCharacter;
-	int wait;
-	//ui to ask
-	std::cout << "UI to ask who are you? get input of int to respond" << std::endl;
-	std::cout << "1. wood elf 2. dwarf 3. enchantress" << std::endl;
-	std::string characterChoice;
-	std::cin >> characterChoice;
-	std::cout << "You chose: " + characterChoice << std::endl;
-	// create ICharcter of that base class maybe switch statement
-	// make a comment about each choice
-	// now based on the character choose the weapon from their weapon list and set new Iweapon class = to it
-	std::cout << "UI to ask what weapon you pick? get input of int to respond" << std::endl;
-	std::cout << "1. weapon1 2. weapon2 3. weapon3" << std::endl;
-	std::string weaponChoice;
-	std::cin >> weaponChoice;
-	std::cout << "You chose: " + weaponChoice << std::endl;
-	// ui says stuff to character and builds your player character
-	// let's evaluate your attributes qualities
-	std::cout << "UI to say let's evaluate your attributes qualities" << std::endl;
-	std::cout << "current int, dex and str with number and int 1 dex 2 str 3 pick to change" << std::endl;
-	// here do while player is choosing stats while loop keep showing the main menu of values assigned, then let player pick num, 
-	// switch case of number to then show perhaps a render of that att and any number, once selected it updates it
-	// can start over and clear changes or submit and whatever those values are for each int with assigned name add it to player character
-	std::cout << "YOUVE BUILT YOUR CHARACTER" << std::endl;
-	std::cin >> wait;
-	return playerCharacter;
+	CharacterCreation cc;
+	GameText gameText;
+
+	gameText.WriteText("Who are you?");
+
+	// pick character
+	bool correctCharacter = false;
+	while (!correctCharacter) {
+		gameText.WriteText("1. wood elf \n2. dwarf \n3. enchantress");
+		std::string inputCharChoice; std::cin >> inputCharChoice;
+
+		if (inputCharChoice == "1") {
+
+			correctCharacter = true; // charcter while loop resolved
+			system("cls");
+
+			WoodElf woodElf;
+			IWeapon weaponChoice = cc.ChooseWeapon(&woodElf);  // keeping it on the stack
+
+		}
+		else if (inputCharChoice == "2") {
+			correctCharacter = true;
+			system("cls");
+
+			Dwarf dwarf;
+			IWeapon weaponChoice = cc.ChooseWeapon(&dwarf);
+		}
+		else if (inputCharChoice == "3") {
+			correctCharacter = true;
+			system("cls");
+
+			Enchantress enchantress;
+			IWeapon weaponChoice = cc.ChooseWeapon(&enchantress);
+		}
+		else {
+			gameText.WriteText("Pick from avaiable character choices");
+			system("cls");
+		}
+	}
 }
+
+IWeapon CharacterCreation::ChooseWeapon(ICharacter* character) {
+	GameText gameText;
+
+	// pick weapon
+	std::stringstream ssOptions;
+
+	int weaponId = 1;
+
+	bool correctWeapon = false;
+	while (!correctWeapon) {
+
+		std::stringstream ss; // stringstream is cpp's string interpolation
+		ss << "you r " << character->GetName() << "\nweapon options :" << "\n";
+		std::string presentOptions = ss.str();
+		gameText.WriteText(presentOptions);
+
+		for (std::string weapon : character->GetWeaponOptions()) {
+
+			std::stringstream ss;
+			ss << weaponId << ". " << weapon << "\n";
+			std::string weapon = ss.str();
+			gameText.WriteText(weapon);
+			weaponId++;
+		}
+		std::cout << "\n";
+
+		std::string inputWeaponChoice; std::cin >> inputWeaponChoice;
+
+		if (inputWeaponChoice == "1" || inputWeaponChoice == "2" || inputWeaponChoice == "3") {
+			if (WoodElf* woodelf = dynamic_cast<WoodElf*>(character)) {
+				correctWeapon = true; // weapon while loop resolved
+				system("cls");
+
+				if (inputWeaponChoice == "1") { return new ElvenLongsword(); }
+			}
+			else if (inputWeaponChoice == "2") {
+				correctWeapon = true;
+				system("cls");
+
+				Dwarf dwarf;
+				IWeapon inputWeaponChoice = cc.ChooseWeapon(&dwarf);
+			}
+			else if (inputWeaponChoice == "3") {
+				correctWeapon = true;
+				system("cls");
+
+				Enchantress enchantress;
+				IWeapon inputWeaponChoice = cc.ChooseWeapon(&enchantress);
+			}
+			else {
+				gameText.WriteText("Pick from avaiable weapon choices");
+				system("cls");
+			}
+		}
+
+	}
+}
+
+
+//	GameText gameText;
+//
+//	// pick weapon
+//	std::stringstream ssOptions;
+//
+//	int weaponId = 1;
+//
+//	bool correctWeapon = false;
+//	while(!correctWeapon) {
+//
+//		std::stringstream ss; // stringstream is cpp's string interpolation
+//		ss << "you r " << character->GetName() << "\nweapon options :" << "\n";
+//		std::string presentOptions = ss.str();
+//		gameText.WriteText(presentOptions);
+//
+//		for (std::string weapon : character.GetWeaponOptions()) {
+//
+//			std::stringstream ss;
+//			ss << weaponId << ". " << weapon << "\n";
+//			std::string weaponOptions = ss.str();
+//			std::cout << weaponOptions;
+//			weaponId++;
+//		}
+//
+//		std::string weaponChoice; std::cin >> weaponChoice;
+//
+//		if (weaponChoice == "1") {
+//
+//			correctWeapon = true; // weapon while loop resolved
+//			system("cls");
+//		}
+//	}
+//
+//	return new DoubleBladedAxe();
+
+
+
+//IWeapon weaponChosen;
+
+				//if (input == "1") { // Elven Longsword
+				//	weaponChosen = new ElvenLongsword();
+				//} else if (input == "2") { // Ivory Longbow and Quiver
+				//	weaponChosen = ""
+				//} else if (input == "3") { // Short Ernest Bow and Quiver
+				//	weaponChosen = ""
+
+				//}
+
+				//PlayerCharacter* playerCharacter = new PlayerCharacter(
+				//	woodElf.GetName(),
+				//	woodElf.GetHealth(),
+				//	woodElf.GetIntelligence(),
+				//	woodElf.GetDexterity(),
+				//	woodElf.GetStrength(),
+				//	weaponChosen
+				//);

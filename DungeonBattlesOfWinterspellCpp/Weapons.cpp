@@ -2,6 +2,7 @@
 
 #include "Weapons.h"
 
+// here we are assigning values to private member variables
 ElvenLongsword::ElvenLongsword() {
 	name = "ElvenLongsword";
 	isRanged = false;

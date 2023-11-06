@@ -2,13 +2,13 @@
 
 #include <iostream>
 #include "PlayerCharacter.h"
+#include "ICharacter.h"
 
 
 class CharacterCreation
 {
-
 public:
-
-	PlayerCharacter ChooseClass(); // should return ICharacter after I make the character subclasses
+	void ChooseClass();
+	IWeapon ChooseWeapon(ICharacter* character);
 };
 

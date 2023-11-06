@@ -168,4 +168,7 @@
       <Filter>Header Files\Lifeforms</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <None Include=".gitignore" />
+  </ItemGroup>
 </Project>

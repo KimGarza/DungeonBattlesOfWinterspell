@@ -7,12 +7,12 @@
 
 class ICharacter {
 public:
-	virtual ~ICharacter() = default;
+	std::string GetName();
+	virtual int GetHealth();
+	int GetIntelligence();
+	int GetDexterity();
+	int GetStrength();
+	std::vector<std::string> GetWeaponOptions();
 
-	virtual std::string GetName() = 0;
-	virtual int GetHealth() = 0;
-	virtual int GetIntelligence() = 0;
-	virtual int GetDexterity() = 0;
-	virtual int GetStrength() = 0;
-	virtual std::vector<IWeapon*> GetWeaponOptions() = 0;
+	virtual ~ICharacter() {} // Virtual destructor
 };
