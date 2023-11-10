@@ -1,4 +1,3 @@
 ﻿  CharacterCreation.cpp
-  Game.cpp
-  Generating Code...
-G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterCreation.cpp(83): error C4716: 'CharacterCreation::ChooseWeapon': must return a value
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterCreation.cpp(123,15): warning C4101: 'inputManager': unreferenced local variable
+  DungeonBattlesOfWinterspellCpp.vcxproj -> G:\repos\DungeonBattlesOfWinterspellCpp\x64\Debug\DungeonBattlesOfWinterspellCpp.exe

@@ -1,4 +1,4 @@
-#pragma once
+ #pragma once
 
 #include <iostream>
 #include "PlayerCharacter.h"
@@ -9,6 +9,7 @@ class CharacterCreation
 {
 public:
 	void ChooseClass();
-	IWeapon ChooseWeapon(ICharacter* character);
+	IWeapon* ChooseWeapon(ICharacter* character);
+	void AllocateAttributes(ICharacter* character);
 };
 

@@ -4,7 +4,7 @@
 
 // here we are assigning values to private member variables
 ElvenLongsword::ElvenLongsword() {
-	name = "ElvenLongsword";
+	name = "Elven Longsword";
 	isRanged = false;
 
 	pSkillName = "Elegant Divide";

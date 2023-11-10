@@ -37,9 +37,6 @@
     <Filter Include="Header Files\States">
       <UniqueIdentifier>{34caf5c5-638f-440f-91eb-d12d18585c16}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\States\PlayerCharacter">
-      <UniqueIdentifier>{b1bd656e-a5dd-4cf0-90ff-8257f99886c6}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\States\CharacterCreation">
       <UniqueIdentifier>{b8ace2e3-27fc-464d-ba13-ce2ccc134f4a}</UniqueIdentifier>
     </Filter>
@@ -96,9 +93,6 @@
     <ClCompile Include="GameState.h">
       <Filter>Header Files\Game</Filter>
     </ClCompile>
-    <ClCompile Include="CharacterCreation.cpp">
-      <Filter>Source Files\States\PlayerCharacter</Filter>
-    </ClCompile>
     <ClCompile Include="Map.cpp">
       <Filter>Source Files\States\World</Filter>
     </ClCompile>
@@ -113,6 +107,9 @@
     </ClCompile>
     <ClCompile Include="Weapons.cpp">
       <Filter>Source Files\Lifeforms</Filter>
+    </ClCompile>
+    <ClCompile Include="CharacterCreation.cpp">
+      <Filter>Source Files\States</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

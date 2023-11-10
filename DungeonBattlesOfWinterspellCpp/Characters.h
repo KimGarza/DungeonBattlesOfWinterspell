@@ -15,13 +15,28 @@ private:
 
 public:
 	WoodElf();
+	
+	std::string GetName() const override {
+		return name;
+	}
 
-	std::string GetName() { return name; }
-	int GetHealth() override { return health; }
-	int GetIntelligence() { return intelligence; }
-	int GetDexterity() { return dexterity; }
-	int GetStrength() { return strength; }
-	std::vector<std::string> GetWeaponOptions() { return weaponOptions; }
+	int GetHealth() { return health; }
+
+	int GetIntelligence()  const override {
+		return intelligence; 
+	}
+
+	int GetDexterity() const override {
+		return dexterity; 
+	}
+
+	int GetStrength() const override {
+		return strength; 
+	}
+
+	std::vector<std::string> GetWeaponOptions() const override {
+		return weaponOptions;
+	}
 };
 
 // -------------------------------------------
@@ -39,12 +54,27 @@ private:
 public:
 	Dwarf();
 
-	std::string GetName() { return name; }
-	int GetHealth() override { return health; }
-	int GetIntelligence() { return intelligence; }
-	int GetDexterity() { return dexterity; }
-	int GetStrength() { return strength; }
-	std::vector<std::string> GetWeaponOptions() { return weaponOptions; }
+	std::string GetName() const override {
+		return name;
+	}
+
+	int GetHealth() { return health; }
+
+	int GetIntelligence()  const override {
+		return intelligence;
+	}
+
+	int GetDexterity() const override {
+		return dexterity;
+	}
+
+	int GetStrength() const override {
+		return strength;
+	}
+
+	std::vector<std::string> GetWeaponOptions() const override {
+		return weaponOptions;
+	}
 };
 
 // -------------------------------------------
@@ -62,11 +92,26 @@ private:
 public:
 	Enchantress();
 
-	std::string GetName() { return name; }
-	int GetHealth() override  { return health; }
-	int GetIntelligence() { return intelligence; }
-	int GetDexterity() { return dexterity; }
-	int GetStrength() { return strength; }
-	std::vector<std::string> GetWeaponOptions() { return weaponOptions; }
+	std::string GetName() const override {
+		return name;
+	}
+
+	int GetHealth() { return health; }
+
+	int GetIntelligence()  const override {
+		return intelligence;
+	}
+
+	int GetDexterity() const override {
+		return dexterity;
+	}
+
+	int GetStrength() const override {
+		return strength;
+	}
+
+	std::vector<std::string> GetWeaponOptions() const override {
+		return weaponOptions;
+	}
 
 };

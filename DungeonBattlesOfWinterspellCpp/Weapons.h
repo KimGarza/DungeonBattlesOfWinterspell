@@ -3,7 +3,7 @@
 // Elven weapons ---------------------------------
 class ElvenLongsword : public IWeapon {
 public:
-	ElvenLongsword() {};
+	ElvenLongsword();
 
 	std::string GetName() { return name; }
 	bool GetIsRanged() { return isRanged; }

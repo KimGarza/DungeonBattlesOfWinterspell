@@ -6,13 +6,27 @@
 #include "IWeapon.h"
 
 class ICharacter {
+
+private:
+	std::string name;
+	int health;
+	int intelligence;
+	int dexterity;
+	int strength;
+	std::vector<std::string> weaponOptions;
+
 public:
-	std::string GetName();
-	virtual int GetHealth();
-	int GetIntelligence();
-	int GetDexterity();
-	int GetStrength();
-	std::vector<std::string> GetWeaponOptions();
+	virtual std::string GetName() const = 0;
+
+	virtual int GetHealth() {
+		return health;
+	}
+
+	virtual int GetIntelligence() const = 0;
+	virtual int GetDexterity() const = 0;
+	virtual int GetStrength() const = 0;
+
+	virtual std::vector<std::string> GetWeaponOptions() const = 0;
 
 	virtual ~ICharacter() {} // Virtual destructor
 };
