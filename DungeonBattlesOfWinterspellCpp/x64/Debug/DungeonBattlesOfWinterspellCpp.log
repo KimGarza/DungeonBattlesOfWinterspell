@@ -1,3 +1,4 @@
 ﻿  CharacterCreation.cpp
-G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterCreation.cpp(123,15): warning C4101: 'inputManager': unreferenced local variable
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterCreation.cpp(124,15): warning C4101: 'inputManager': unreferenced local variable
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterCreation.cpp(214): warning C4715: 'CharacterCreation::AllocatePoints': not all control paths return a value
   DungeonBattlesOfWinterspellCpp.vcxproj -> G:\repos\DungeonBattlesOfWinterspellCpp\x64\Debug\DungeonBattlesOfWinterspellCpp.exe

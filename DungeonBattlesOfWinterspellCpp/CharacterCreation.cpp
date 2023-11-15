@@ -12,6 +12,7 @@
 #include <map>
 
 
+
 //PlayerCharacter
 void CharacterCreation::ChooseClass() {
 
@@ -121,41 +122,92 @@ IWeapon* CharacterCreation::ChooseWeapon(ICharacter* character) {
 void CharacterCreation::AllocateAttributes(ICharacter* character) {
 	GameText gameText;
 	InputManager inputManager;
-	std::map<std::string, int> AttributeJournal;
+
+	std::map<std::string, int> attributeJournal = {
+		{"intellegence", character->GetIntelligence()},
+		{"dexterity", character->GetDexterity()},
+		{"strength", character->GetStrength()}
+	};
+
+	std::map<std::string, int> initialAttributeValues = {
+		{"intellegence", attributeJournal["intellegence"]},
+		{"dexterity", attributeJournal["dexterity"]},
+		{"strength", attributeJournal["strength"]}
+	};
+
 
 	gameText.WriteText("Now let's asses your qualities");
 	std::cin.get();
 
 	int remainingPoints = 10;
 	while (remainingPoints > 0) {
-
 		std::stringstream ss;
-		ss << "You have " << remainingPoints << " points left to allocate into each attribute, please assign your skill points";
-		std::string presentPoints = ss.str();
-		gameText.WriteText(presentPoints);
+		ss << "You have " << remainingPoints << " points left to allocate into each attribute, please assign your skill points"; /**/ std::string ssStr = ss.str(); /**/ gameText.WriteText(ssStr);
 
-		std::stringstream ss2;
-		ss2 << "1) Intelligence: " << character->GetIntelligence() << "		2) Dexterity: " << character->GetDexterity() << "		3) Strength: " << character->GetStrength() << "\n";
-		std::string presentCurrentPoints = ss2.str();
-		gameText.WriteText(presentCurrentPoints);
-		gameText.WriteText("Which attribute would you like to assign points to ? : ");
+		std::stringstream ss2; /**/ ss2 << "1) Intelligence: " << attributeJournal["intellegence"] << "		2) Dexterity: " << attributeJournal["dexterity"] << "		3) Strength: " << attributeJournal["strength"] << "\n";
+		std::string ss2Str = ss2.str(); /**/ gameText.WriteText(ss2Str);
 
-		std::string attributeSelect; std::cin >> attributeSelect;
-		if (attributeSelect == "1" || attributeSelect == "2" || attributeSelect == "3") {
-			if (attributeSelect == "1") {
+		gameText.WriteText("Which attribute would you like to assign points to ?");
 
-			} else if (attributeSelect == "2") {
 
-			}
-			else if (attributeSelect == "3") {
-			}
-		}
-		else {
+		// acts as a guide for correlating user selection dynamically with the attribute related
+		std::string attribute;
+		std::map<std::string, std::string> attributeSelection = {
+			{"1", "intellegence"},
+			{"2", "dexterity"},
+			{"3", "strength"}
+		};
+
+		std::string selectedAttribute; std::cin >> selectedAttribute;
+
+		auto it = attributeSelection.find(selectedAttribute); // chatgpt: the auto keyword allows the compiler to automatically deduce the data type of the variable based on the value it's initialized with. In this case, it is being used to declare an iterator for the std::map container.
+		if (it != attributeSelection.end()) { // key was found in the map
+
+			// which character type is ICharacter being passed in, need to pass it down further so must know the type
+			int pointsSpent = AllocatePoints(selectedAttribute, attributeSelection, attributeJournal, initialAttributeValues, remainingPoints, character);
+			// by gathering points spent we must recalculate some things but it's all the info we need to know to do so rather than asking for the updated journal, remaining points, etc...
+			remainingPoints -= pointsSpent;
+			attributeJournal[attributeSelection[selectedAttribute]] += pointsSpent;
+
+		} else {
 			system("cls");
 			gameText.WriteText("Please select from avaialable attributes...");
 		}
 	}
+}
 
+int CharacterCreation::AllocatePoints(std::string selectedAttribute, std::map<std::string, std::string> attributeSelection, std::map<std::string, int> attributeJournal, std::map<std::string, int> initialAttributeValues,
+	int remainingPoints, ICharacter* character) {
+	GameText gameText; // try using one declared in .h file same for input manager
+	InputManager inputManager;
 
+	std::string attribute = attributeSelection[selectedAttribute]; // the attribute user has chosen to alter
 
+	bool playerDeciding = true;
+	while (playerDeciding) {
+		std::stringstream ss; ss << "How many points would you like to spec to " << attributeSelection[selectedAttribute] << "?\n"; /**/ std::string ssStr = ss.str();
+		gameText.WriteText(ssStr);
+
+		std::string pointsToAssign; /**/ std::cin >> pointsToAssign; /**/ int points = inputManager.ParseIntCheck(pointsToAssign);
+					 
+		if (attributeJournal[attribute] + points >= 0 && // checking points allocated doesn't go below 0
+			remainingPoints - points <= 10) { // or user isn't adding so many negetive allocations that it gives them extra points
+
+			if (attributeJournal[attribute] + points < character->GetIntelligence()) { // or go below inherited count for attribute if removing
+				gameText.WriteText("You must maintain your natural values. Don't undersell your own worth!");
+				std::cin.get(); /**/ system("cls"); /**/ gameText.WriteText("So... again");
+			}
+			else {
+				playerDeciding = false;
+				system("cls");
+				return points;
+			}
+		}
+		else {
+			gameText.WriteText("Please stay within the bounds of reality!");
+			std::cin.get(); /**/ system("cls"); /**/ gameText.WriteText("So... again");
+			std::stringstream ss2;
+			ss << "You have " << remainingPoints << " points left to allocate."; /**/ std::string ssStr = ss.str(); /**/ gameText.WriteText(ssStr);
+		}
+	}
 }
