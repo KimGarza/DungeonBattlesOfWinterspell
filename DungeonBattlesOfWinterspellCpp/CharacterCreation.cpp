@@ -11,10 +11,9 @@
 #include <iostream>
 #include <map>
 
-
-
+// add dynamicness forshorter functions
 //PlayerCharacter
-void CharacterCreation::ChooseClass() {
+PlayerCharacter* CharacterCreation::ChooseClass() { // separate out class elements
 
 	CharacterCreation cc;
 	GameText gameText;
@@ -32,8 +31,19 @@ void CharacterCreation::ChooseClass() {
 			system("cls");
 
 			WoodElf woodElf;
+
 			IWeapon* weaponChoice = cc.ChooseWeapon(&woodElf);  // keeping it on the stack
-			AllocateAttributes(&woodElf);
+
+			std::map<std::string, int> attributeJournal = AllocateAttributes(&woodElf); 
+
+			PlayerCharacter* playerCharacter = new PlayerCharacter(
+				woodElf.GetName(),
+				woodElf.GetHealth(),
+				attributeJournal["intellegence"], attributeJournal["dexterity"], attributeJournal["strength"],
+				weaponChoice,
+				true // has naturally
+			);
+			return playerCharacter;
 		}
 		else if (inputCharChoice == "2") {
 			correctCharacter = true;
@@ -41,6 +51,21 @@ void CharacterCreation::ChooseClass() {
 
 			Dwarf dwarf;
 			IWeapon* weaponChoice = cc.ChooseWeapon(&dwarf);
+
+			std::map<std::string, int> attributeJournal = AllocateAttributes(&dwarf);
+			bool hasSwiftness = false;
+			if (attributeJournal["intellegence"] >= 7) {
+				hasSwiftness = true;
+			}
+
+			PlayerCharacter* playerCharacter = new PlayerCharacter(
+				dwarf.GetName(),
+				dwarf.GetHealth(),
+				attributeJournal["intellegence"], attributeJournal["dexterity"], attributeJournal["strength"],
+				weaponChoice,
+				hasSwiftness
+			);
+			return playerCharacter;
 		}
 		else if (inputCharChoice == "3") {
 			correctCharacter = true;
@@ -48,6 +73,23 @@ void CharacterCreation::ChooseClass() {
 
 			Enchantress enchantress;
 			IWeapon* weaponChoice = cc.ChooseWeapon(&enchantress);
+
+			std::map<std::string, int> attributeJournal = AllocateAttributes(&enchantress);
+			bool hasSwiftness = false;
+			if (attributeJournal["intellegence"] >= 7) {
+				hasSwiftness = true;
+			}
+
+			PlayerCharacter* playerCharacter = new PlayerCharacter(
+				enchantress.GetName(),
+				enchantress.GetHealth(),
+				attributeJournal["intellegence"], attributeJournal["dexterity"], attributeJournal["strength"],
+				weaponChoice,
+				hasSwiftness
+			);
+
+			return playerCharacter;
+
 		}
 		else {
 			system("cls");
@@ -90,36 +132,31 @@ IWeapon* CharacterCreation::ChooseWeapon(ICharacter* character) {
 			if (WoodElf* woodelf = dynamic_cast<WoodElf*>(character)) {
 				system("cls");
 
-				if (inputWeaponChoice == "1") { return new ElvenLongsword(); }
-				else if (inputWeaponChoice == "2") { return new IvoryLongBowAndQuiver(); }
-				else { return new ShortErnestBowAndQuiver(); }
-			}
-
+				if (inputWeaponChoice == "1") { return new ElvenLongsword(); } /**/ else if (inputWeaponChoice == "2") { return new IvoryLongBowAndQuiver(); } /**/  else { return new ShortErnestBowAndQuiver(); }
+			} 
 			else if (Dwarf* dwarf = dynamic_cast<Dwarf*>(character)) {
 				system("cls");
 
-				if (inputWeaponChoice == "1") { return new DoubleBladedAxe(); }
-				else if (inputWeaponChoice == "2") { return new OrnateShortSword(); }
-				else { return new SteelSplitHammer(); }
+				if (inputWeaponChoice == "1") { return new DoubleBladedAxe(); } else if (inputWeaponChoice == "2") /**/  { return new OrnateShortSword(); } /**/ else { return new SteelSplitHammer(); }
 			}
 			else if (Enchantress* enchantress = dynamic_cast<Enchantress*>(character)) {
 				system("cls");
 
-				if (inputWeaponChoice == "1") { return new DualEtherealDaggers(); }
-				else if (inputWeaponChoice == "2") { return new GnarledBranchStaff(); }
-				else if (inputWeaponChoice == "2") { return new OakCarvedWand(); }
+				if (inputWeaponChoice == "1") { return new DualEtherealDaggers(); } /**/ else if (inputWeaponChoice == "2") { return new GnarledBranchStaff(); } /**/ else if (inputWeaponChoice == "2") { return new OakCarvedWand(); }
 			}
 			else {
 				gameText.WriteText("Pick from avaiable weapon choices");
 				system("cls");
 			}
 		}
+		else {
+			return nullptr;
+		}
 	}
-	return nullptr;
 }
 
 
-void CharacterCreation::AllocateAttributes(ICharacter* character) {
+std::map<std::string, int> CharacterCreation::AllocateAttributes(ICharacter* character) {
 	GameText gameText;
 	InputManager inputManager;
 
@@ -135,6 +172,7 @@ void CharacterCreation::AllocateAttributes(ICharacter* character) {
 		{"strength", attributeJournal["strength"]}
 	};
 
+	//std::map<std::string, int>* attributeJournalClonePtr = new std::map<std::string, int>(originalMap);
 
 	gameText.WriteText("Now let's asses your qualities");
 	std::cin.get();
@@ -148,7 +186,6 @@ void CharacterCreation::AllocateAttributes(ICharacter* character) {
 		std::string ss2Str = ss2.str(); /**/ gameText.WriteText(ss2Str);
 
 		gameText.WriteText("Which attribute would you like to assign points to ?");
-
 
 		// acts as a guide for correlating user selection dynamically with the attribute related
 		std::string attribute;
@@ -174,7 +211,9 @@ void CharacterCreation::AllocateAttributes(ICharacter* character) {
 			gameText.WriteText("Please select from avaialable attributes...");
 		}
 	}
+	return attributeJournal;
 }
+
 
 int CharacterCreation::AllocatePoints(std::string selectedAttribute, std::map<std::string, std::string> attributeSelection, std::map<std::string, int> attributeJournal, std::map<std::string, int> initialAttributeValues,
 	int remainingPoints, ICharacter* character) {
@@ -191,9 +230,10 @@ int CharacterCreation::AllocatePoints(std::string selectedAttribute, std::map<st
 		std::string pointsToAssign; /**/ std::cin >> pointsToAssign; /**/ int points = inputManager.ParseIntCheck(pointsToAssign);
 					 
 		if (attributeJournal[attribute] + points >= 0 && // checking points allocated doesn't go below 0
-			remainingPoints - points <= 10) { // or user isn't adding so many negetive allocations that it gives them extra points
+			remainingPoints - points <= 10 && // or user isn't adding so many negetive allocations that it gives them extra points, or uses more than they have allowed
+			remainingPoints - points >= 0) {
 
-			if (attributeJournal[attribute] + points < character->GetIntelligence()) { // or go below inherited count for attribute if removing
+			if (attributeJournal[attribute] + points < initialAttributeValues[attribute]) { // or go below inherited count for attribute if removing
 				gameText.WriteText("You must maintain your natural values. Don't undersell your own worth!");
 				std::cin.get(); /**/ system("cls"); /**/ gameText.WriteText("So... again");
 			}
@@ -207,7 +247,7 @@ int CharacterCreation::AllocatePoints(std::string selectedAttribute, std::map<st
 			gameText.WriteText("Please stay within the bounds of reality!");
 			std::cin.get(); /**/ system("cls"); /**/ gameText.WriteText("So... again");
 			std::stringstream ss2;
-			ss << "You have " << remainingPoints << " points left to allocate."; /**/ std::string ssStr = ss.str(); /**/ gameText.WriteText(ssStr);
+			ss << "You have " << remainingPoints << " points left to allocate.\n"; /**/ std::string ssStr = ss.str(); /**/ gameText.WriteText(ssStr);
 		}
 	}
 }

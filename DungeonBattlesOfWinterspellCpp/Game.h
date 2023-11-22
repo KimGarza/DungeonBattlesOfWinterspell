@@ -5,11 +5,11 @@
 class Game {
 private:
 	GameState currentState;
-	//PlayerCharacter playerCharacter;
+	PlayerCharacter* playerCharacter;
 
 public:
 	Game();
 
-	void SetGameState(GameState newState);
 	void CheckGameState();
+	void ChangeGameState(GameState newState);
 };

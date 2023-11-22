@@ -5,7 +5,7 @@
 #include "InvItem.h"
 
 class PlayerCharacter {
-// 1. rivate values make one for every property you want to describe/define your class
+// 1. Private values make one for every property you want to describe/define your class
 private:
 	std::string name;
 	int health;
@@ -20,16 +20,20 @@ private:
 
 // 2. Preparing all values that will come through constructor ( we want xp, level, swift and dead to not be passed in we already know what these will be to start)
 public:
+	PlayerCharacter();
+
 	PlayerCharacter( 
 		std::string name,
 		int health,
 		int intelligence,
 		int dexterity,
 		int strength,
-		IWeapon* weapon
+		IWeapon* weapon,
+		bool hasSwiftness
 		// 3. The reason these are not set here is bc they will be set with default values in source and managed within functions after
 		/*int xp = 0, int level = 1, bool hasSwiftness = false, bool isDead = false*/
 	);
+
 
 	std::string GetName() { return name; }
 	int GetHealth() { return health; }

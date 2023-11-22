@@ -19,9 +19,6 @@
     <Filter Include="Source Files\Game">
       <UniqueIdentifier>{6b990d28-bc83-443d-9b52-d17403a8ec0c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\States">
-      <UniqueIdentifier>{ed663615-145f-4c1e-a2b4-ebd4f860aaad}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\Helper">
       <UniqueIdentifier>{f78ce8d9-26cb-4a57-bf28-e02a821fb016}</UniqueIdentifier>
     </Filter>
@@ -34,14 +31,11 @@
     <Filter Include="Header Files\Helper">
       <UniqueIdentifier>{721926b7-374c-45fb-87f4-e5ab9941f936}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\States">
+    <Filter Include="Header Files\GameStates">
       <UniqueIdentifier>{34caf5c5-638f-440f-91eb-d12d18585c16}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\States\World">
-      <UniqueIdentifier>{4708ce15-a469-412f-a2a0-51b3677e345a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\States\World">
-      <UniqueIdentifier>{a0e34599-2d59-449b-94c7-923c93ebeced}</UniqueIdentifier>
+    <Filter Include="Source Files\GameStates">
+      <UniqueIdentifier>{ed663615-145f-4c1e-a2b4-ebd4f860aaad}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -61,10 +55,7 @@
       <Filter>Source Files\Game</Filter>
     </ClCompile>
     <ClCompile Include="Battle.cpp">
-      <Filter>Source Files\States</Filter>
-    </ClCompile>
-    <ClCompile Include="DungeonRoom.cpp">
-      <Filter>Source Files\States</Filter>
+      <Filter>Source Files\GameStates</Filter>
     </ClCompile>
     <ClCompile Include="IWeapon.cpp">
       <Filter>Source Files\Lifeforms</Filter>
@@ -81,20 +72,11 @@
     <ClCompile Include="InputManager.cpp">
       <Filter>Source Files\Helper</Filter>
     </ClCompile>
-    <ClCompile Include="CharacterBattleOrder.cpp">
-      <Filter>Source Files\States</Filter>
-    </ClCompile>
     <ClCompile Include="Exploration.cpp">
-      <Filter>Source Files\States</Filter>
+      <Filter>Source Files\GameStates</Filter>
     </ClCompile>
     <ClCompile Include="GameState.h">
       <Filter>Header Files\Game</Filter>
-    </ClCompile>
-    <ClCompile Include="Map.cpp">
-      <Filter>Source Files\States\World</Filter>
-    </ClCompile>
-    <ClCompile Include="DungeonRooms.cpp">
-      <Filter>Header Files\States\World</Filter>
     </ClCompile>
     <ClCompile Include="Characters.cpp">
       <Filter>Source Files\Lifeforms</Filter>
@@ -106,7 +88,19 @@
       <Filter>Source Files\Lifeforms</Filter>
     </ClCompile>
     <ClCompile Include="CharacterCreation.cpp">
-      <Filter>Source Files\States</Filter>
+      <Filter>Source Files\GameStates</Filter>
+    </ClCompile>
+    <ClCompile Include="MapState.cpp">
+      <Filter>Source Files\GameStates</Filter>
+    </ClCompile>
+    <ClCompile Include="DungeonRooms.cpp">
+      <Filter>Header Files\GameStates</Filter>
+    </ClCompile>
+    <ClCompile Include="DungeonRoom.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DungeonGenerator.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -135,19 +129,13 @@
       <Filter>Header Files\Lifeforms</Filter>
     </ClInclude>
     <ClInclude Include="Battle.h">
-      <Filter>Header Files\States</Filter>
-    </ClInclude>
-    <ClInclude Include="DungeonRoom.h">
-      <Filter>Header Files\States</Filter>
+      <Filter>Header Files\GameStates</Filter>
     </ClInclude>
     <ClInclude Include="Exploration.h">
-      <Filter>Header Files\States</Filter>
+      <Filter>Header Files\GameStates</Filter>
     </ClInclude>
     <ClInclude Include="GameText.h">
       <Filter>Header Files\Helper</Filter>
-    </ClInclude>
-    <ClInclude Include="Map.h">
-      <Filter>Header Files\States\World</Filter>
     </ClInclude>
     <ClInclude Include="Characters.h">
       <Filter>Header Files\Lifeforms</Filter>
@@ -159,7 +147,16 @@
       <Filter>Header Files\Lifeforms</Filter>
     </ClInclude>
     <ClInclude Include="CharacterCreation.h">
-      <Filter>Header Files\States</Filter>
+      <Filter>Header Files\GameStates</Filter>
+    </ClInclude>
+    <ClInclude Include="MapState.h">
+      <Filter>Header Files\GameStates</Filter>
+    </ClInclude>
+    <ClInclude Include="DungeonRoom.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DungeonGenerator.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

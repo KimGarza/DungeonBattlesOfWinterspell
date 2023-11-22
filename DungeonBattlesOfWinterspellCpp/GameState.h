@@ -4,7 +4,8 @@ enum class GameState {
 	None,
 	Begin,
 	Map,
-	DungeonRoom,
+	Room,
 	Battle,
-	Explore
+	Explore,
+	End
 };
