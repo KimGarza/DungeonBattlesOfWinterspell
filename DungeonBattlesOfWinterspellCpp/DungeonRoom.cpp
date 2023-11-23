@@ -2,5 +2,5 @@
 
 DungeonRoom::DungeonRoom(
 	std::string name, 
-	std::vector<IEnemy> enemyList
-) : completed(false) {}
+	std::vector<std::shared_ptr<IEnemy>> enemyList
+) : name(name), enemyList(enemyList), completed(false) {}

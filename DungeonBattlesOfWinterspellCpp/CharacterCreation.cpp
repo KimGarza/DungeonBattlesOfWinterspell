@@ -9,6 +9,7 @@
 #include <sstream>
 #include <cstdlib>
 #include <iostream>
+#include <vector>
 #include <map>
 
 // add dynamicness forshorter functions

@@ -1,3 +1,6 @@
 ﻿  DungeonGenerator.cpp
-G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\DungeonGenerator.cpp(63): warning C4715: 'DungeonGenerator::GenerateDungeons': not all control paths return a value
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\DungeonGenerator.cpp(73,52): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\DungeonGenerator.cpp(79,52): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  Game.cpp
+  Generating Code...
   DungeonBattlesOfWinterspellCpp.vcxproj -> G:\repos\DungeonBattlesOfWinterspellCpp\x64\Debug\DungeonBattlesOfWinterspellCpp.exe

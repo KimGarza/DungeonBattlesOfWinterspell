@@ -7,7 +7,6 @@ Firespitter::Firespitter() {
 	skillName = "Stealth";
 	skillDescription = "Sneak through the shadows.";
 	skillDamage = 10;
-	monsterLevel = 1;
 }
 
 DungeonDweller::DungeonDweller() {
@@ -17,7 +16,6 @@ DungeonDweller::DungeonDweller() {
 	skillName = "Stealth";
 	skillDescription = "Sneak through the shadows.";
 	skillDamage = 10;
-	monsterLevel = 1;
 }
 
 Goblin::Goblin() {
@@ -27,7 +25,6 @@ Goblin::Goblin() {
 	skillName = "Stealth";
 	skillDescription = "Sneak through the shadows.";
 	skillDamage = 10;
-	monsterLevel = 1;
 }
 
 HauntingSpirit::HauntingSpirit() {
@@ -37,7 +34,6 @@ HauntingSpirit::HauntingSpirit() {
 	skillName = "Stealth";
 	skillDescription = "Sneak through the shadows.";
 	skillDamage = 10;
-	monsterLevel = 1;
 }
 
 Troll::Troll() {
@@ -47,7 +43,6 @@ Troll::Troll() {
 	skillName = "Stealth";
 	skillDescription = "Sneak through the shadows.";
 	skillDamage = 10;
-	monsterLevel = 1;
 }
 
 Skeleton::Skeleton() {
@@ -57,7 +52,6 @@ Skeleton::Skeleton() {
 	skillName = "Stealth";
 	skillDescription = "Sneak through the shadows.";
 	skillDamage = 10;
-	monsterLevel = 1;
 }
 
 UndeadWolf::UndeadWolf() {
@@ -67,5 +61,4 @@ UndeadWolf::UndeadWolf() {
 	skillName = "Stealth";
 	skillDescription = "Sneak through the shadows.";
 	skillDamage = 10;
-	monsterLevel = 1;
 }

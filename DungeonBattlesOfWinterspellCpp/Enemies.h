@@ -10,7 +10,6 @@ public:
 	std::string GetSkillName() override { return skillName; }
 	std::string GetSkillDescription() override { return skillDescription; }
 	int GetSkillDamage() override { return skillDamage; }
-	int GetMonsterLevel() override { return monsterLevel; }
 
 private:
 	std::string name;
@@ -19,7 +18,6 @@ private:
 	std::string skillName;
 	std::string skillDescription;
 	int skillDamage;
-	int monsterLevel;
 };
 
 // -------------------------------------------
@@ -35,7 +33,6 @@ public:
 	std::string GetSkillName() override { return skillName; }
 	std::string GetSkillDescription() override { return skillDescription; }
 	int GetSkillDamage() override { return skillDamage; }
-	int GetMonsterLevel() override { return monsterLevel; }
 
 private:
 	std::string name;
@@ -44,7 +41,6 @@ private:
 	std::string skillName;
 	std::string skillDescription;
 	int skillDamage;
-	int monsterLevel;
 };
 
 // -------------------------------------------
@@ -60,7 +56,6 @@ public:
 	std::string GetSkillName() override { return skillName; }
 	std::string GetSkillDescription() override { return skillDescription; }
 	int GetSkillDamage() override { return skillDamage; }
-	int GetMonsterLevel() override { return monsterLevel; }
 
 private:
 	std::string name;
@@ -69,7 +64,6 @@ private:
 	std::string skillName;
 	std::string skillDescription;
 	int skillDamage;
-	int monsterLevel;
 };
 
 // -------------------------------------------
@@ -85,7 +79,6 @@ public:
 	std::string GetSkillName() override { return skillName; }
 	std::string GetSkillDescription() override { return skillDescription; }
 	int GetSkillDamage() override { return skillDamage; }
-	int GetMonsterLevel() override { return monsterLevel; }
 
 private:
 	std::string name;
@@ -94,7 +87,6 @@ private:
 	std::string skillName;
 	std::string skillDescription;
 	int skillDamage;
-	int monsterLevel;
 };
 
 // -------------------------------------------
@@ -110,7 +102,6 @@ public:
 	std::string GetSkillName() override { return skillName; }
 	std::string GetSkillDescription() override { return skillDescription; }
 	int GetSkillDamage() override { return skillDamage; }
-	int GetMonsterLevel() override { return monsterLevel; }
 
 private:
 	std::string name;
@@ -119,7 +110,6 @@ private:
 	std::string skillName;
 	std::string skillDescription;
 	int skillDamage;
-	int monsterLevel;
 };
 
 // -------------------------------------------
@@ -135,7 +125,6 @@ public:
 	std::string GetSkillName() override { return skillName; }
 	std::string GetSkillDescription() override { return skillDescription; }
 	int GetSkillDamage() override { return skillDamage; }
-	int GetMonsterLevel() override { return monsterLevel; }
 
 private:
 	std::string name;
@@ -144,7 +133,6 @@ private:
 	std::string skillName;
 	std::string skillDescription;
 	int skillDamage;
-	int monsterLevel;
 };
 
 // -------------------------------------------
@@ -160,7 +148,6 @@ public:
 	std::string GetSkillName() override { return skillName; }
 	std::string GetSkillDescription() override { return skillDescription; }
 	int GetSkillDamage() override { return skillDamage; }
-	int GetMonsterLevel() override { return monsterLevel; }
 
 private:
 	std::string name;
@@ -169,5 +156,4 @@ private:
 	std::string skillName;
 	std::string skillDescription;
 	int skillDamage;
-	int monsterLevel;
 };

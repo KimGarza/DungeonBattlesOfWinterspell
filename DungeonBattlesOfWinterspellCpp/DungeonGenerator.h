@@ -9,20 +9,19 @@ private:
     std::vector<std::string> dungeonList = {
         "StilagmiteRuins",
         "TenebrificDepths",
-        "HiddenRoomOfTheRestingDead",
+        //"HiddenRoomOfTheRestingDead",
         "FoulTomb",
         "HozwardianKeep",
         "RoomOfMoonlight",
         "AbyssalCrypts",
         "EnigmasEmbrance",
-        "ShadowedLabyrinth",
+        //"ShadowedLabyrinth",
         "ForgottenCatacombs",
         "CursedAbyssalSanctum",
-        "RoomOfOfferings",
-        "Undiscovered",
-        "Unknown"
+        "RoomOfOfferings"
     };
 
 public:
-    std::vector<DungeonRoom> GenerateDungeons();
+    std::vector < std::shared_ptr<DungeonRoom>> GenerateDungeons();
+    std::vector<std::shared_ptr<IEnemy>> GenerateEnemies(int roomLevel);
 };
