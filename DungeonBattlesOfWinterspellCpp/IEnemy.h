@@ -1,8 +1,9 @@
 #pragma once
 #include <vector>
 #include <string>
+#include "ICreature.h"
 
-class IEnemy {
+class IEnemy : public ICreature {
 
 private:
 	std::string name;
@@ -23,6 +24,8 @@ public:
 	virtual std::string GetSkillName() = 0;
 	virtual std::string GetSkillDescription() = 0;
 	virtual int GetSkillDamage() = 0;
+
+	bool IsPlayableCharacter() const override { return false; } // inherited from ICreature
 
 	virtual ~IEnemy() = default;
 };

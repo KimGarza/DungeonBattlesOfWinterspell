@@ -128,6 +128,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Battle.cpp" />
+    <ClCompile Include="ExploreDungeon.cpp" />
     <ClCompile Include="Characters.cpp" />
     <ClCompile Include="CharacterCreation.cpp" />
     <ClCompile Include="DungeonRoom.cpp" />
@@ -140,17 +141,19 @@
     <ClCompile Include="GameState.h" />
     <ClCompile Include="GameText.cpp" />
     <ClCompile Include="ICharacter.cpp" />
+    <ClCompile Include="ICreature.cpp" />
     <ClCompile Include="IEnemy.cpp" />
     <ClCompile Include="InputManager.cpp" />
     <ClCompile Include="InvItem.cpp" />
     <ClCompile Include="IWeapon.cpp" />
-    <ClCompile Include="MapState.cpp" />
+    <ClCompile Include="Map.cpp" />
     <ClCompile Include="PlayerCharacter.cpp" />
     <ClCompile Include="UI.cpp" />
     <ClCompile Include="Weapons.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Battle.h" />
+    <ClInclude Include="ExploreDungeon.h" />
     <ClInclude Include="Characters.h" />
     <ClInclude Include="CharacterCreation.h" />
     <ClInclude Include="DungeonRoom.h" />
@@ -160,11 +163,12 @@
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameText.h" />
     <ClInclude Include="ICharacter.h" />
+    <ClInclude Include="ICreature.h" />
     <ClInclude Include="IEnemy.h" />
     <ClInclude Include="InputManager.h" />
     <ClInclude Include="InvItem.h" />
     <ClInclude Include="IWeapon.h" />
-    <ClInclude Include="MapState.h" />
+    <ClInclude Include="Map.h" />
     <ClInclude Include="PlayerCharacter.h" />
     <ClInclude Include="UI.h" />
     <ClInclude Include="Weapons.h" />

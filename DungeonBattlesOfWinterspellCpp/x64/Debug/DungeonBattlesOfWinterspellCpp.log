@@ -1,6 +1,9 @@
-﻿  DungeonGenerator.cpp
-G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\DungeonGenerator.cpp(73,52): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\DungeonGenerator.cpp(79,52): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-  Game.cpp
+﻿  ExploreDungeon.cpp
+  CharacterCreation.cpp
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterCreation.cpp(163,15): warning C4101: 'inputManager': unreferenced local variable
+  PlayerCharacter.cpp
   Generating Code...
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterCreation.cpp(255): warning C4715: 'CharacterCreation::AllocatePoints': not all control paths return a value
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterCreation.cpp(101): warning C4715: 'CharacterCreation::ChooseClass': not all control paths return a value
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterCreation.cpp(158): warning C4715: 'CharacterCreation::ChooseWeapon': not all control paths return a value
   DungeonBattlesOfWinterspellCpp.vcxproj -> G:\repos\DungeonBattlesOfWinterspellCpp\x64\Debug\DungeonBattlesOfWinterspellCpp.exe

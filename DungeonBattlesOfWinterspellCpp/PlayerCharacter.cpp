@@ -16,7 +16,12 @@ PlayerCharacter::PlayerCharacter(
 	// In the constructor source, the colon : is used to initiate a member initializer list. It's used to initialize the member variables of a class with values provided to the constructor.
 	// After the : is the assignment secition
 ) : name(inName), health(inHealth), intelligence(inIntelligence), dexterity(inDexterity), strength(inStrength),
-weapon(inWeapon), xp(0), level(1), isDead(false) {}
+weapon(inWeapon), hasSwiftness(hasSwiftness), xp(0), level(1), isDead(false) {}
+
+PlayerCharacter::PlayerCharacter(const PlayerCharacter& other) : name(other.name), health(other.health), intelligence(other.intelligence),
+dexterity(other.dexterity), strength(other.strength), weapon(other.weapon),
+xp(0), level(1), hasSwiftness(other.hasSwiftness), isDead(false) {}
+	// Copy or clone other members if needed
 
 void PlayerCharacter::TakeDamage(int damageTaken) {
 	health -= damageTaken;
@@ -29,3 +34,4 @@ void PlayerCharacter::CheckIfDead() {
 		isDead = true;
 	}
 }
+

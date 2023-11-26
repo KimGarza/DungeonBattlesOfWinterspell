@@ -2,6 +2,7 @@
 #include <vector>
 #include <string>
 #include "IWeapon.h"
+#include "ICreature.h"
 
 class ICharacter {
 
@@ -16,7 +17,7 @@ private:
 public:
 	virtual std::string GetName() const = 0;
 
-	virtual int GetHealth() {
+	virtual int GetHealth() { // If I remove the return on this to make it a pure virtual function I get error that the Characters cannot instanitate pure virutal funciton
 		return health;
 	}
 

@@ -3,4 +3,6 @@
 DungeonRoom::DungeonRoom(
 	std::string name, 
 	std::vector<std::shared_ptr<IEnemy>> enemyList
-) : name(name), enemyList(enemyList), completed(false) {}
+) : name(name), enemyList(enemyList), completed(false), description("wow cool dungeon area, here are enemies") {}
+
+void SetCurrentTurnOrder();

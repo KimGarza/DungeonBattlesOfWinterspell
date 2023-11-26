@@ -14,17 +14,17 @@
 
 // add dynamicness forshorter functions
 //PlayerCharacter
-PlayerCharacter* CharacterCreation::ChooseClass() { // separate out class elements
+std::shared_ptr<PlayerCharacter> CharacterCreation::ChooseClass() { // separate out class elements
 
 	CharacterCreation cc;
 	GameText gameText;
 
-	gameText.WriteText("Who are you?");
+	gameText.WriteLine("Who are you?");
 
 	// pick character
 	bool correctCharacter = false;
 	while (!correctCharacter) {
-		gameText.WriteText("1. wood elf \n2. dwarf \n3. enchantress");
+		gameText.WriteLine("1. wood elf \n2. dwarf \n3. enchantress");
 		std::string inputCharChoice; std::cin >> inputCharChoice;
 
 		if (inputCharChoice == "1") { // no switch statements in cpp for strings/ints
@@ -37,13 +37,14 @@ PlayerCharacter* CharacterCreation::ChooseClass() { // separate out class elemen
 
 			std::map<std::string, int> attributeJournal = AllocateAttributes(&woodElf); 
 
-			PlayerCharacter* playerCharacter = new PlayerCharacter(
+			std::shared_ptr<PlayerCharacter> playerCharacter = std::make_shared<PlayerCharacter>(
 				woodElf.GetName(),
 				woodElf.GetHealth(),
 				attributeJournal["intellegence"], attributeJournal["dexterity"], attributeJournal["strength"],
 				weaponChoice,
 				true // has naturally
 			);
+
 			return playerCharacter;
 		}
 		else if (inputCharChoice == "2") {
@@ -59,7 +60,7 @@ PlayerCharacter* CharacterCreation::ChooseClass() { // separate out class elemen
 				hasSwiftness = true;
 			}
 
-			PlayerCharacter* playerCharacter = new PlayerCharacter(
+			std::shared_ptr<PlayerCharacter> playerCharacter = std::make_shared<PlayerCharacter>(
 				dwarf.GetName(),
 				dwarf.GetHealth(),
 				attributeJournal["intellegence"], attributeJournal["dexterity"], attributeJournal["strength"],
@@ -81,7 +82,7 @@ PlayerCharacter* CharacterCreation::ChooseClass() { // separate out class elemen
 				hasSwiftness = true;
 			}
 
-			PlayerCharacter* playerCharacter = new PlayerCharacter(
+			std::shared_ptr<PlayerCharacter> playerCharacter = std::make_shared<PlayerCharacter>(
 				enchantress.GetName(),
 				enchantress.GetHealth(),
 				attributeJournal["intellegence"], attributeJournal["dexterity"], attributeJournal["strength"],
@@ -94,7 +95,7 @@ PlayerCharacter* CharacterCreation::ChooseClass() { // separate out class elemen
 		}
 		else {
 			system("cls");
-			gameText.WriteText("Pick from avaiable character choices...");
+			gameText.WriteLine("Pick from avaiable character choices...");
 		}
 	}
 }
@@ -113,14 +114,14 @@ IWeapon* CharacterCreation::ChooseWeapon(ICharacter* character) {
 		std::stringstream ss; // stringstream is cpp's string interpolation
 		ss << "you r " << character->GetName() << "\nweapon options :" << "\n";
 		std::string presentOptions = ss.str();
-		gameText.WriteText(presentOptions);
+		gameText.WriteLine(presentOptions);
 
 		for (std::string weapon : character->GetWeaponOptions()) {
 
 			std::stringstream ss;
 			ss << weaponId << ". " << weapon << "\n";
 			std::string weapon = ss.str();
-			gameText.WriteText(weapon);
+			gameText.WriteLine(weapon);
 			weaponId++;
 		}
 		std::cout << "\n";
@@ -146,7 +147,7 @@ IWeapon* CharacterCreation::ChooseWeapon(ICharacter* character) {
 				if (inputWeaponChoice == "1") { return new DualEtherealDaggers(); } /**/ else if (inputWeaponChoice == "2") { return new GnarledBranchStaff(); } /**/ else if (inputWeaponChoice == "2") { return new OakCarvedWand(); }
 			}
 			else {
-				gameText.WriteText("Pick from avaiable weapon choices");
+				gameText.WriteLine("Pick from avaiable weapon choices");
 				system("cls");
 			}
 		}
@@ -175,18 +176,18 @@ std::map<std::string, int> CharacterCreation::AllocateAttributes(ICharacter* cha
 
 	//std::map<std::string, int>* attributeJournalClonePtr = new std::map<std::string, int>(originalMap);
 
-	gameText.WriteText("Now let's asses your qualities");
+	gameText.WriteLine("Now let's asses your qualities");
 	std::cin.get();
 
 	int remainingPoints = 10;
 	while (remainingPoints > 0) {
 		std::stringstream ss;
-		ss << "You have " << remainingPoints << " points left to allocate into each attribute, please assign your skill points"; /**/ std::string ssStr = ss.str(); /**/ gameText.WriteText(ssStr);
+		ss << "You have " << remainingPoints << " points left to allocate into each attribute, please assign your skill points"; /**/ std::string ssStr = ss.str(); /**/ gameText.WriteLine(ssStr);
 
 		std::stringstream ss2; /**/ ss2 << "1) Intelligence: " << attributeJournal["intellegence"] << "		2) Dexterity: " << attributeJournal["dexterity"] << "		3) Strength: " << attributeJournal["strength"] << "\n";
-		std::string ss2Str = ss2.str(); /**/ gameText.WriteText(ss2Str);
+		std::string ss2Str = ss2.str(); /**/ gameText.WriteLine(ss2Str);
 
-		gameText.WriteText("Which attribute would you like to assign points to ?");
+		gameText.WriteLine("Which attribute would you like to assign points to ?");
 
 		// acts as a guide for correlating user selection dynamically with the attribute related
 		std::string attribute;
@@ -209,7 +210,7 @@ std::map<std::string, int> CharacterCreation::AllocateAttributes(ICharacter* cha
 
 		} else {
 			system("cls");
-			gameText.WriteText("Please select from avaialable attributes...");
+			gameText.WriteLine("Please select from avaialable attributes...");
 		}
 	}
 	return attributeJournal;
@@ -226,7 +227,7 @@ int CharacterCreation::AllocatePoints(std::string selectedAttribute, std::map<st
 	bool playerDeciding = true;
 	while (playerDeciding) {
 		std::stringstream ss; ss << "How many points would you like to spec to " << attributeSelection[selectedAttribute] << "?\n"; /**/ std::string ssStr = ss.str();
-		gameText.WriteText(ssStr);
+		gameText.WriteLine(ssStr);
 
 		std::string pointsToAssign; /**/ std::cin >> pointsToAssign; /**/ int points = inputManager.ParseIntCheck(pointsToAssign);
 					 
@@ -235,8 +236,8 @@ int CharacterCreation::AllocatePoints(std::string selectedAttribute, std::map<st
 			remainingPoints - points >= 0) {
 
 			if (attributeJournal[attribute] + points < initialAttributeValues[attribute]) { // or go below inherited count for attribute if removing
-				gameText.WriteText("You must maintain your natural values. Don't undersell your own worth!");
-				std::cin.get(); /**/ system("cls"); /**/ gameText.WriteText("So... again");
+				gameText.WriteLine("You must maintain your natural values. Don't undersell your own worth!");
+				std::cin.get(); /**/ system("cls"); /**/ gameText.WriteLine("So... again");
 			}
 			else {
 				playerDeciding = false;
@@ -245,10 +246,10 @@ int CharacterCreation::AllocatePoints(std::string selectedAttribute, std::map<st
 			}
 		}
 		else {
-			gameText.WriteText("Please stay within the bounds of reality!");
-			std::cin.get(); /**/ system("cls"); /**/ gameText.WriteText("So... again");
+			gameText.WriteLine("Please stay within the bounds of reality!");
+			std::cin.get(); /**/ system("cls"); /**/ gameText.WriteLine("So... again");
 			std::stringstream ss2;
-			ss << "You have " << remainingPoints << " points left to allocate.\n"; /**/ std::string ssStr = ss.str(); /**/ gameText.WriteText(ssStr);
+			ss << "You have " << remainingPoints << " points left to allocate.\n"; /**/ std::string ssStr = ss.str(); /**/ gameText.WriteLine(ssStr);
 		}
 	}
 }

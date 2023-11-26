@@ -54,7 +54,7 @@
     <ClCompile Include="Game.cpp">
       <Filter>Source Files\Game</Filter>
     </ClCompile>
-    <ClCompile Include="Battle.cpp">
+    <ClCompile Include="ExploreDungeon.cpp">
       <Filter>Source Files\GameStates</Filter>
     </ClCompile>
     <ClCompile Include="IWeapon.cpp">
@@ -90,7 +90,7 @@
     <ClCompile Include="CharacterCreation.cpp">
       <Filter>Source Files\GameStates</Filter>
     </ClCompile>
-    <ClCompile Include="MapState.cpp">
+    <ClCompile Include="Map.cpp">
       <Filter>Source Files\GameStates</Filter>
     </ClCompile>
     <ClCompile Include="DungeonRooms.cpp">
@@ -100,6 +100,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="DungeonGenerator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ICreature.cpp">
+      <Filter>Source Files\Lifeforms</Filter>
+    </ClCompile>
+    <ClCompile Include="Battle.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -128,7 +134,7 @@
     <ClInclude Include="InvItem.h">
       <Filter>Header Files\Lifeforms</Filter>
     </ClInclude>
-    <ClInclude Include="Battle.h">
+    <ClInclude Include="ExploreDungeon.h">
       <Filter>Header Files\GameStates</Filter>
     </ClInclude>
     <ClInclude Include="Exploration.h">
@@ -149,13 +155,19 @@
     <ClInclude Include="CharacterCreation.h">
       <Filter>Header Files\GameStates</Filter>
     </ClInclude>
-    <ClInclude Include="MapState.h">
+    <ClInclude Include="Map.h">
       <Filter>Header Files\GameStates</Filter>
     </ClInclude>
     <ClInclude Include="DungeonRoom.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="DungeonGenerator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ICreature.h">
+      <Filter>Header Files\Lifeforms</Filter>
+    </ClInclude>
+    <ClInclude Include="Battle.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

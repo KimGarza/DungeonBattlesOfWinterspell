@@ -11,6 +11,7 @@ public:
 	std::string GetSkillDescription() override { return skillDescription; }
 	int GetSkillDamage() override { return skillDamage; }
 
+
 private:
 	std::string name;
 	int health;

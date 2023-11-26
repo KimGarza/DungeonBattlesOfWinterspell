@@ -3,8 +3,9 @@
 #include <string>
 #include "IWeapon.h"
 #include "InvItem.h"
+#include "ICreature.h"
 
-class PlayerCharacter {
+class PlayerCharacter : public ICreature {
 // 1. Private values make one for every property you want to describe/define your class
 private:
 	std::string name;
@@ -34,6 +35,8 @@ public:
 		/*int xp = 0, int level = 1, bool hasSwiftness = false, bool isDead = false*/
 	);
 
+	PlayerCharacter(const PlayerCharacter& other);
+
 
 	std::string GetName() { return name; }
 	int GetHealth() { return health; }
@@ -49,4 +52,5 @@ public:
 	void TakeDamage(int damageTaken);
 	void CheckIfDead();
 
+	bool IsPlayableCharacter() const override { return true; } // inherited from ICreature
 };
