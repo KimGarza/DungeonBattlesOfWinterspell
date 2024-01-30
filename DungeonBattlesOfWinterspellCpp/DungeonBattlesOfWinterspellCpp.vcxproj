@@ -134,9 +134,7 @@
     <ClCompile Include="DungeonRoom.cpp" />
     <ClCompile Include="DungeonBattlesOfWinterspellCpp.cpp" />
     <ClCompile Include="DungeonGenerator.cpp" />
-    <ClCompile Include="DungeonRooms.cpp" />
     <ClCompile Include="Enemies.cpp" />
-    <ClCompile Include="Exploration.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameState.h" />
     <ClCompile Include="GameText.cpp" />
@@ -159,7 +157,6 @@
     <ClInclude Include="DungeonRoom.h" />
     <ClInclude Include="DungeonGenerator.h" />
     <ClInclude Include="Enemies.h" />
-    <ClInclude Include="Exploration.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameText.h" />
     <ClInclude Include="ICharacter.h" />

@@ -8,15 +8,15 @@ class IWeapon { // Not true interface acts as one by class being abstract. This 
 public:
 	~IWeapon() = default;
 
-	std::string GetName() {}; //these 0s aren't like a number
-	bool GetIsRanged() {};
-	std::string GetPrimarySkillName() {};
-	std::string GetPrimarySkillDescription() {};
-	std::vector<int> GetPrimarySkillDamageRange() {};
-	std::string GetSecondarySkillName() {};
-	std::string GetSecondarySkillDescription() {};
-	std::vector<int> GetSecondarySkillDamageRange() {};
+	std::string GetName() { return "Default Weapon"; } //these 0s aren't like a number
+	virtual bool GetIsRanged() { return false; }
+	virtual std::string GetPrimarySkillName() { return "Default Skill"; }
+	virtual std::string GetPrimarySkillDescription() { return "Default Description"; }
+	virtual std::vector<int> GetPrimarySkillDamageAttack() { return { 0, 0 }; }
+	virtual std::string GetSecondarySkillName() { return "Default Skill"; }
+	virtual std::string GetSecondarySkillDescription() { return "Default Description"; }
+	virtual std::vector<int> GetSecondarySkillDamageRange() { return { 0, 0 }; }
 
-	void UseSkillPrimary() {};
-	void UseSkillSecondary() {};
+	virtual int UseSkillPrimary() { return 0; }
+	virtual int UseSkillSecondary() { return 0; }
 };

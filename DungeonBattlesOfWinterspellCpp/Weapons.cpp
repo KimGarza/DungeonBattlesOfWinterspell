@@ -1,4 +1,6 @@
 #include <vector>
+#include <random>
+#include <iostream>
 
 #include "Weapons.h"
 
@@ -16,6 +18,21 @@ ElvenLongsword::ElvenLongsword() {
 	sSkillDamageRange = { 3, 5 };
 }
 
+int ElvenLongsword::UseSkillPrimary() {
+	std::random_device rd; /**/ std::mt19937 gen(rd()); // Standard mersenne_twister_engine seeded with rd()
+	int min = pSkillDamageRange[0]; /**/ int max = pSkillDamageRange[1];
+	std::uniform_int_distribution<> distrib(min, max); /**/ int random_number = distrib(gen);
+	return random_number;
+}
+
+int ElvenLongsword::UseSkillSecondary() {
+	std::random_device rd; /**/ std::mt19937 gen(rd()); // Standard mersenne_twister_engine seeded with rd()
+	int min = sSkillDamageRange[0]; /**/ int max = sSkillDamageRange[1];
+	std::uniform_int_distribution<> distrib(min, max); /**/ int random_number = distrib(gen);
+	return random_number;
+}
+
+
 IvoryLongBowAndQuiver::IvoryLongBowAndQuiver() {
 	name = "Ivory Longbow and Quiver";
 	isRanged = true;
@@ -29,6 +46,20 @@ IvoryLongBowAndQuiver::IvoryLongBowAndQuiver() {
 	sSkillDamageRange = { 1, 8 };
 }
 
+int IvoryLongBowAndQuiver::UseSkillPrimary() {
+	std::random_device rd; /**/ std::mt19937 gen(rd()); // Standard mersenne_twister_engine seeded with rd()
+	int min = pSkillDamageRange[0]; /**/ int max = pSkillDamageRange[1];
+	std::uniform_int_distribution<> distrib(min, max); /**/ int random_number = distrib(gen);
+	return random_number;
+}
+
+int IvoryLongBowAndQuiver::UseSkillSecondary() {
+	std::random_device rd; /**/ std::mt19937 gen(rd()); // Standard mersenne_twister_engine seeded with rd()
+	int min = sSkillDamageRange[0]; /**/ int max = sSkillDamageRange[1];
+	std::uniform_int_distribution<> distrib(min, max); /**/ int random_number = distrib(gen);
+	return random_number;
+}
+
 ShortErnestBowAndQuiver::ShortErnestBowAndQuiver() {
 	name = "Short Ernest Bow and Quiver";
 	isRanged = true;
@@ -40,6 +71,20 @@ ShortErnestBowAndQuiver::ShortErnestBowAndQuiver() {
 	sSkillName = "Fletchers Folley";
 	sSkillDescription = "a powerful attack by the hand of the elf which effects surrounding enemies to the target";
 	sSkillDamageRange = { 1, 3 };
+}
+
+int ShortErnestBowAndQuiver::UseSkillPrimary() {
+	std::random_device rd; /**/ std::mt19937 gen(rd()); // Standard mersenne_twister_engine seeded with rd()
+	int min = pSkillDamageRange[0]; /**/ int max = pSkillDamageRange[1];
+	std::uniform_int_distribution<> distrib(min, max); /**/ int random_number = distrib(gen);
+	return random_number;
+}
+
+int ShortErnestBowAndQuiver::UseSkillSecondary() {
+	std::random_device rd; /**/ std::mt19937 gen(rd()); // Standard mersenne_twister_engine seeded with rd()
+	int min = sSkillDamageRange[0]; /**/ int max = sSkillDamageRange[1];
+	std::uniform_int_distribution<> distrib(min, max); /**/ int random_number = distrib(gen);
+	return random_number;
 }
 
 // Dwarven weapons ---------------------------------
@@ -57,6 +102,20 @@ DoubleBladedAxe::DoubleBladedAxe() {
 	pSkillDamageRange = { 8, 12 };
 }
 
+int DoubleBladedAxe::UseSkillPrimary() {
+	std::random_device rd; /**/ std::mt19937 gen(rd()); // Standard mersenne_twister_engine seeded with rd()
+	int min = pSkillDamageRange[0]; /**/ int max = pSkillDamageRange[1];
+	std::uniform_int_distribution<> distrib(min, max); /**/ int random_number = distrib(gen);
+	return random_number;
+}
+
+int DoubleBladedAxe::UseSkillSecondary() {
+	std::random_device rd; /**/ std::mt19937 gen(rd()); // Standard mersenne_twister_engine seeded with rd()
+	int min = sSkillDamageRange[0]; /**/ int max = sSkillDamageRange[1];
+	std::uniform_int_distribution<> distrib(min, max); /**/ int random_number = distrib(gen);
+	return random_number;
+}
+
 OrnateShortSword::OrnateShortSword() {
 	name = "Ornate Short Sword ";
 	isRanged = false;
@@ -70,6 +129,21 @@ OrnateShortSword::OrnateShortSword() {
 	pSkillDamageRange = { 3, 8 };
 }
 
+int OrnateShortSword::UseSkillPrimary() {
+	std::random_device rd; /**/ std::mt19937 gen(rd()); // Standard mersenne_twister_engine seeded with rd()
+	int min = pSkillDamageRange[0]; /**/ int max = pSkillDamageRange[1];
+	std::uniform_int_distribution<> distrib(min, max); /**/ int random_number = distrib(gen);
+	return random_number;
+}
+
+int OrnateShortSword::UseSkillSecondary() {
+	std::random_device rd; /**/ std::mt19937 gen(rd()); // Standard mersenne_twister_engine seeded with rd()
+	int min = sSkillDamageRange[0]; /**/ int max = sSkillDamageRange[1];
+	std::uniform_int_distribution<> distrib(min, max); /**/ int random_number = distrib(gen);
+	return random_number;
+}
+
+
 SteelSplitHammer::SteelSplitHammer() {
 	name = "Steel Split Hammer";
 	isRanged = false;
@@ -81,6 +155,20 @@ SteelSplitHammer::SteelSplitHammer() {
 	sSkillName = "Strike of Thunder and Steel";
 	sSkillDescription = "a powerful and mighty blow of a heavy steel to the ground infront of the enemy's feet. This attack is powerful enough to effect the target enemy and one surrounding enemy on either side";
 	sSkillDamageRange = { 14, 20 };
+}
+
+int SteelSplitHammer::UseSkillPrimary() {
+	std::random_device rd; /**/ std::mt19937 gen(rd()); // Standard mersenne_twister_engine seeded with rd()
+	int min = pSkillDamageRange[0]; /**/ int max = pSkillDamageRange[1];
+	std::uniform_int_distribution<> distrib(min, max); /**/ int random_number = distrib(gen);
+	return random_number;
+}
+
+int SteelSplitHammer::UseSkillSecondary() {
+	std::random_device rd; /**/ std::mt19937 gen(rd()); // Standard mersenne_twister_engine seeded with rd()
+	int min = sSkillDamageRange[0]; /**/ int max = sSkillDamageRange[1];
+	std::uniform_int_distribution<> distrib(min, max); /**/ int random_number = distrib(gen);
+	return random_number;
 }
 
 // Enchatress weapons ---------------------------------
@@ -98,6 +186,20 @@ DualEtherealDaggers::DualEtherealDaggers() {
 	sSkillDamageRange = { 14, 20 };
 }
 
+int DualEtherealDaggers::UseSkillPrimary() {
+	std::random_device rd; /**/ std::mt19937 gen(rd()); // Standard mersenne_twister_engine seeded with rd()
+	int min = pSkillDamageRange[0]; /**/ int max = pSkillDamageRange[1];
+	std::uniform_int_distribution<> distrib(min, max); /**/ int random_number = distrib(gen);
+	return random_number;
+}
+
+int DualEtherealDaggers::UseSkillSecondary() {
+	std::random_device rd; /**/ std::mt19937 gen(rd()); // Standard mersenne_twister_engine seeded with rd()
+	int min = sSkillDamageRange[0]; /**/ int max = sSkillDamageRange[1];
+	std::uniform_int_distribution<> distrib(min, max); /**/ int random_number = distrib(gen);
+	return random_number;
+}
+
 GnarledBranchStaff::GnarledBranchStaff() {
 	name = "Gnarled Branch Staff ";
 	isRanged = false;
@@ -111,6 +213,20 @@ GnarledBranchStaff::GnarledBranchStaff() {
 	sSkillDamageRange = { 14, 20 };
 }
 
+int GnarledBranchStaff::UseSkillPrimary() {
+	std::random_device rd; /**/ std::mt19937 gen(rd()); // Standard mersenne_twister_engine seeded with rd()
+	int min = pSkillDamageRange[0]; /**/ int max = pSkillDamageRange[1];
+	std::uniform_int_distribution<> distrib(min, max); /**/ int random_number = distrib(gen);
+	return random_number;
+}
+
+int GnarledBranchStaff::UseSkillSecondary() {
+	std::random_device rd; /**/ std::mt19937 gen(rd()); // Standard mersenne_twister_engine seeded with rd()
+	int min = sSkillDamageRange[0]; /**/ int max = sSkillDamageRange[1];
+	std::uniform_int_distribution<> distrib(min, max); /**/ int random_number = distrib(gen);
+	return random_number;
+}
+
 OakCarvedWand::OakCarvedWand() {
 	name = "Oak Carved Wand ";
 	isRanged = false;
@@ -122,4 +238,19 @@ OakCarvedWand::OakCarvedWand() {
 	sSkillName = "Ancient Incantation";
 	sSkillDescription = "a practice of the lessons, taught by the elders of the homeland";
 	sSkillDamageRange = { 14, 20 };
+}
+
+
+int OakCarvedWand::UseSkillPrimary() {
+	std::random_device rd; /**/ std::mt19937 gen(rd()); // Standard mersenne_twister_engine seeded with rd()
+	int min = pSkillDamageRange[0]; /**/ int max = pSkillDamageRange[1];
+	std::uniform_int_distribution<> distrib(min, max); /**/ int random_number = distrib(gen);
+	return random_number;
+}
+
+int OakCarvedWand::UseSkillSecondary() {
+	std::random_device rd; /**/ std::mt19937 gen(rd()); // Standard mersenne_twister_engine seeded with rd()
+	int min = sSkillDamageRange[0]; /**/ int max = sSkillDamageRange[1];
+	std::uniform_int_distribution<> distrib(min, max); /**/ int random_number = distrib(gen);
+	return random_number;
 }

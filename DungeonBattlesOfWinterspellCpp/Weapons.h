@@ -15,8 +15,8 @@ public:
 	std::string GetSecondarySkillDescription() { return sSkillDescription; }
 	std::vector<int> GetSecondarySkillDamageRange() { return sSkillDamageRange; }
 
-	void UseSkillPrimary() {};
-	void UseSkillSecondary() {};
+	int UseSkillPrimary() override;
+	int UseSkillSecondary() override;
 
 
 private:
@@ -46,8 +46,8 @@ public:
 	std::string GetSecondarySkillDescription() { return sSkillDescription; }
 	std::vector<int> GetSecondarySkillDamageRange() { return sSkillDamageRange; }
 
-	void UseSkillPrimary() {};
-	void UseSkillSecondary() {};
+	int UseSkillPrimary() override;
+	int UseSkillSecondary() override;
 
 
 private:
@@ -77,8 +77,8 @@ public:
 	std::string GetSecondarySkillDescription() { return sSkillDescription; }
 	std::vector<int> GetSecondarySkillDamageRange() { return sSkillDamageRange; }
 
-	void UseSkillPrimary() {};
-	void UseSkillSecondary() {};
+	int UseSkillPrimary() override;
+	int UseSkillSecondary() override;
 
 
 private:
@@ -109,8 +109,8 @@ public:
 	std::string GetSecondarySkillDescription() { return sSkillDescription; }
 	std::vector<int> GetSecondarySkillDamageRange() { return sSkillDamageRange; }
 
-	void UseSkillPrimary() {};
-	void UseSkillSecondary() {};
+	int UseSkillPrimary() override;
+	int UseSkillSecondary() override;
 
 
 private:
@@ -140,8 +140,8 @@ public:
 	std::string GetSecondarySkillDescription() { return sSkillDescription; }
 	std::vector<int> GetSecondarySkillDamageRange() { return sSkillDamageRange; }
 
-	void UseSkillPrimary() {};
-	void UseSkillSecondary() {};
+	int UseSkillPrimary() override;
+	int UseSkillSecondary() override;
 
 
 private:
@@ -171,8 +171,8 @@ public:
 	std::string GetSecondarySkillDescription() { return sSkillDescription; }
 	std::vector<int> GetSecondarySkillDamageRange() { return sSkillDamageRange; }
 
-	void UseSkillPrimary() {};
-	void UseSkillSecondary() {};
+	int UseSkillPrimary() override;
+	int UseSkillSecondary() override;
 
 
 private:
@@ -204,8 +204,8 @@ public:
 	std::string GetSecondarySkillDescription() { return sSkillDescription; }
 	std::vector<int> GetSecondarySkillDamageRange() { return sSkillDamageRange; }
 
-	void UseSkillPrimary() {};
-	void UseSkillSecondary() {};
+	int UseSkillPrimary() override;
+	int UseSkillSecondary() override;
 
 
 private:
@@ -234,8 +234,8 @@ public:
 	std::string GetSecondarySkillDescription() { return sSkillDescription; }
 	std::vector<int> GetSecondarySkillDamageRange() { return sSkillDamageRange; }
 
-	void UseSkillPrimary() {};
-	void UseSkillSecondary() {};
+	int UseSkillPrimary() override;
+	int UseSkillSecondary() override;
 
 
 private:
@@ -264,8 +264,8 @@ public:
 	std::string GetSecondarySkillDescription() { return sSkillDescription; }
 	std::vector<int> GetSecondarySkillDamageRange() { return sSkillDamageRange; }
 
-	void UseSkillPrimary() {};
-	void UseSkillSecondary() {};
+	int UseSkillPrimary() override;
+	int UseSkillSecondary() override;
 
 
 private:

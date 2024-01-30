@@ -12,18 +12,17 @@ private:
 	std::string skillName;
 	std::string skillDescription;
 	int skillDamage;
+	bool isDead;
 
 public:
 	virtual std::string GetName() = 0; //these 0s aren't like a number
-
-	virtual int GetHealth() {
-		return health;
-	}
-
+	virtual int GetHealth() = 0;
 	virtual bool GetHasSwiftness() = 0;
 	virtual std::string GetSkillName() = 0;
 	virtual std::string GetSkillDescription() = 0;
 	virtual int GetSkillDamage() = 0;
+	virtual bool GetIsDead() = 0;
+	virtual void TakeDamage(int hitPoints) {};
 
 	bool IsPlayableCharacter() const override { return false; } // inherited from ICreature
 
