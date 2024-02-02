@@ -33,7 +33,6 @@ std::vector < std::shared_ptr<DungeonRoom>> DungeonGenerator::GenerateDungeons()
 
 std::vector<std::shared_ptr<IEnemy>> DungeonGenerator::GenerateEnemies(int roomLevel) {
 
-    // Create a collection of enemy objects
     std::vector<std::shared_ptr<IEnemy>> enemies;
     enemies.push_back(std::make_shared<Firespitter>());
     enemies.push_back(std::make_shared<DungeonDweller>());
@@ -46,7 +45,9 @@ std::vector<std::shared_ptr<IEnemy>> DungeonGenerator::GenerateEnemies(int roomL
     // get random number between the min/max which are decided based upon what the room levels are. Represents how many enemies can spawn per room.
     // maximum / minimum values (inclusive)
     std::random_device rand; /**/ std::mt19937 gen(rand());
+
     int min_value = 0; /**/ int max_value = 0;
+
     if (roomLevel < 3) {
         min_value = 2; max_value = 4;
     } else if (roomLevel < 5) {
@@ -54,16 +55,17 @@ std::vector<std::shared_ptr<IEnemy>> DungeonGenerator::GenerateEnemies(int roomL
     } else {
         min_value = 4; max_value = 7;
     }
-    std::uniform_int_distribution<int> distribution(min_value, max_value);
-    int random_number = distribution(gen);
-    // random_number is how many enemies can spawn per room
 
+    std::uniform_int_distribution<int> distribution(min_value, max_value);
+
+    int random_number = distribution(gen); // random_number is how many enemies can spawn per room
 
     std::vector<std::shared_ptr<IEnemy>> enemiesInRoom;
 
     int randomIndex = 0;
-    for (int i = 0; i < random_number; i++) { // for each count of enemies in this current room
+    for (int i = 0; i < random_number; i++) { // for each enemy in this current room
 
+        // re evaluate this
         if (roomLevel < 3) {
             int lowLevel = (enemies.size() + 3) / 4; // Adding 3 before dividing by 4 effectively rounds up
             randomIndex = std::rand() % lowLevel; // truncates 

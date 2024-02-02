@@ -23,15 +23,17 @@ dexterity(other.dexterity), strength(other.strength), weapon(other.weapon),
 xp(0), level(1), hasSwiftness(other.hasSwiftness), isDead(false) {}
 	// Copy or clone other members if needed
 
-void PlayerCharacter::TakeDamage(int damageTaken) {
+bool PlayerCharacter::TakeDamage(int damageTaken) {
 	health -= damageTaken;
-	CheckIfDead();
+	return CheckIfDead();
 }
 
-void PlayerCharacter::CheckIfDead() {
+bool PlayerCharacter::CheckIfDead() {
 	if (health < 1) {
 		health = 0;
 		isDead = true;
+		return true;
 	}
+	return false;
 }
 

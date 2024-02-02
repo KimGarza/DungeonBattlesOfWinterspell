@@ -14,6 +14,6 @@ public:
 	Battle(std::vector<std::shared_ptr<ICreature>>);
 
 	void RevealTurnOrder(std::vector<std::shared_ptr<ICreature>> turnOrder, std::string dungeonRoomName);
-	void CommenceBattle();
+	void CommenceBattle(std::shared_ptr<PlayerCharacter> playerCharacter);
 };
 

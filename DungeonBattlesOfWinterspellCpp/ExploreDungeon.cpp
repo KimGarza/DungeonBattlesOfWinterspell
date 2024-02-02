@@ -5,18 +5,19 @@
 #include <cstdlib>   // For rand() and srand()
 #include <ctime> 
 
-ExploreDungeon::ExploreDungeon(std::shared_ptr<DungeonRoom> dungeonRoom, std::shared_ptr<PlayerCharacter> playerCharacter) : dungeonRoom(dungeonRoom), playerCharacter(playerCharacter), ui(ui) {}
+ExploreDungeon::ExploreDungeon(std::shared_ptr<DungeonRoom> currentRoom, std::shared_ptr<PlayerCharacter> playerCharacter) : currentRoom(currentRoom), playerCharacter(playerCharacter), ui(ui) {}
 
 void ExploreDungeon::EnterDungeonRoom() {
-	ui.DescribeDungeonRoom(dungeonRoom->GetDescription());
+	ui.DescribeDungeonRoom(currentRoom->GetDescription());
 	return;
 }
 
 
-// most challenging function yet
+// most challenging function yet but to summarize, simply check for enemy swiftness and add those that are swift to the list first then the rest after
+// insert player character in the group of swift or non swift enemies depending on whichever player is but randomize it so player can be anywhere in the group of either
 std::vector<std::shared_ptr<ICreature>> ExploreDungeon::GenerateTurnOrder() {
 
-	std::vector<std::shared_ptr<IEnemy>> enemiesInRoom = dungeonRoom->GetEnemies();
+	std::vector<std::shared_ptr<IEnemy>> enemiesInRoom = currentRoom->GetEnemies();
 	std::vector<std::shared_ptr<ICreature>> turnOrder;
 
 	int swiftEnemies = 0;

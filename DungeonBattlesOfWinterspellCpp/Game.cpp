@@ -21,42 +21,48 @@ void Game::CheckGameState() {
 	CharacterCreation characterCreation;
 	DungeonGenerator dungeonGenerator;
 
-	while (currentState != GameState::None) {
+	while (currentState != GameState::None) { // not sure if necessary?
 		switch (currentState) {
 
 		case GameState::None:
 			break;
 		case GameState::Begin: { // these xtra curly brackets for scoping purposes since things that are initialized within each case can't pass into the next case
-			playerCharacter = characterCreation.ChooseClass(); // character creation
+			playerCharacter = characterCreation.ChooseClass();
 			
-			std::vector <std::shared_ptr<DungeonRoom>> dungeonRooms = dungeonGenerator.GenerateDungeons(); // generate dungeons
-			map = new Map(dungeonRooms);
-			gameText.WriteLine("Time for battle, off to the dugneons, here is your map\n");
+			dungeonRooms = dungeonGenerator.GenerateDungeons();
+
 			ChangeGameState(GameState::Map);
 			break;
 		}
 		case GameState::Map: {
+			/*map = std::make_shared<Map>(dungeonRooms);
+
+			gameText.WriteLine("Time for battle, off to the dugneons, here is your map\n");
+
 			map->RevealMap();
-			ChangeGameState(GameState::Explore);
+
+			ChangeGameState(GameState::Explore);*/
 			break;
 		}
 		case GameState::Explore: {
+			/*currentRoom = map->GetCurrentRoom();
 
-			std::shared_ptr<DungeonRoom> dungeonRoom = map->GetCurrentRoom();
-			currentRoom = dungeonRoom;
-			ExploreDungeon exploreDungeon(dungeonRoom, playerCharacter);
+			ExploreDungeon exploreDungeon(currentRoom, playerCharacter);
 			exploreDungeon.EnterDungeonRoom();
-			std::vector<std::shared_ptr<ICreature>> turnOrder = exploreDungeon.GenerateTurnOrder();
-			dungeonRoom->SetCurrentTurnOrder(turnOrder);
 
-			ChangeGameState(GameState::Battle);
+			std::vector<std::shared_ptr<ICreature>> turnOrder = exploreDungeon.GenerateTurnOrder();
+
+			currentRoom->SetCurrentTurnOrder(turnOrder);
+
+			ChangeGameState(GameState::Battle);*/
 			break;
 		}
 		case GameState::Battle: {
-			Battle battle(map->GetCurrentRoom()->GetTurnOrder());
+			Battle battle(map->GetCurrentRoom()->GetTurnOrder()); // odd mix here of using game or map to get the current room
 
 			battle.RevealTurnOrder(map->GetCurrentRoom()->GetTurnOrder(), currentRoom->GetName());
-			battle.CommenceBattle();
+
+			battle.CommenceBattle(playerCharacter);
 			
 			break;
 		}

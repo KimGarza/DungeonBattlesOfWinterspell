@@ -4,29 +4,31 @@
 #include <iostream>
 #include <conio.h>
 
+// consider just adding one undiscovered afte rthe last discovered as to prevent player from knowing how many rooms remain, make it feel more mysterious
+
 void UI::DisplayMap(std::vector<std::string> dungeonRooms, int indexStop) {
     gameText.WriteLine("You have made a discovery! Your next dungeon location is revealed before you...\n\n");
 
-    //for (int i = 0; i < dungeonRooms.size(); i++) {
-    //    if (i == 4 || i == 8) {
-    //        std::cout << "\n\n";
-    //    }
-    //    if (i != 0 && i >= indexStop) {
-    //        if (i != dungeonRooms.size() - 1) {
-    //            gameText.WriteText("Undiscovered...    -->  ");
-    //        } else {
-    //            gameText.WriteText("Undiscovered");
-    //        }
-    //    }
-    //    else {
-    //        if (i != dungeonRooms.size() - 1) {
-    //            gameText.WriteText(dungeonRooms[i] + "   -->  ");
-    //        }
-    //        else {
-    //            gameText.WriteText(dungeonRooms[i]);
-    //        }
-    //    }
-    //}
+    for (int i = 0; i < dungeonRooms.size(); i++) {
+        if (i == 4 || i == 8) {
+            std::cout << "\n\n"; // formatting
+        }
+        if (i != 0 && i >= indexStop) {
+            if (i != dungeonRooms.size() - 1) {
+                gameText.WriteText("Undiscovered...    -->  ");
+            } else {
+                gameText.WriteText("Undiscovered");
+            }
+        }
+        else {
+            if (i != dungeonRooms.size() - 1) {
+                gameText.WriteText(dungeonRooms[i] + "   -->  ");
+            }
+            else {
+                gameText.WriteText(dungeonRooms[i]);
+            }
+        }
+    }
 
     _getch();
     system("cls");
@@ -46,4 +48,14 @@ void UI::DisplayTurnOrder(std::vector<std::string> creatureNames, std::string du
     }
     _getch();
     return;
+}
+
+void UI::EnemyAttackPlayer(std::string name, std::string skillName, std::string skillDescription) {
+    gameText.WriteLine(name + " attacked with " + skillName + ". " + skillDescription);
+}
+
+void UI::DescribePlayerOptions(std::shared_ptr<PlayerCharacter> player) {
+    gameText.WriteLine("Now's your chance! What action will you take?!");
+    gameText.WriteLine("1)  Attack\n2)  Drink Health Potion\n3)    flee cowardice");
+    std::string playerChoice; std::cin >> playerChoice; std::cout << playerChoice;
 }

@@ -17,6 +17,11 @@ void Firespitter::TakeDamage(int hitPoints) {
 	}
 }
 
+int Firespitter::AttackPlayer() {
+	ui.EnemyAttackPlayer(name, skillName, skillDescription);
+	return skillDamage;
+}
+
 // ---------------------------------
 
 
@@ -35,6 +40,11 @@ void DungeonDweller::TakeDamage(int hitPoints) {
 	if (health <= 0) {
 		isDead = true;
 	}
+}
+
+int DungeonDweller::AttackPlayer() {
+	ui.EnemyAttackPlayer(name, skillName, skillDescription);
+	return skillDamage;
 }
 
 // ---------------------------------
@@ -57,6 +67,11 @@ void Goblin::TakeDamage(int hitPoints) {
 	}
 }
 
+int Goblin::AttackPlayer() {
+	ui.EnemyAttackPlayer(name, skillName, skillDescription);
+	return skillDamage;
+}
+
 // ---------------------------------
 
 
@@ -75,6 +90,11 @@ void HauntingSpirit::TakeDamage(int hitPoints) {
 	if (health <= 0) {
 		isDead = true;
 	}
+}
+
+int HauntingSpirit::AttackPlayer() {
+	ui.EnemyAttackPlayer(name, skillName, skillDescription);
+	return skillDamage;
 }
 
 // ---------------------------------
@@ -97,6 +117,11 @@ void Troll::TakeDamage(int hitPoints) {
 	}
 }
 
+int Troll::AttackPlayer() {
+	ui.EnemyAttackPlayer(name, skillName, skillDescription);
+	return skillDamage;
+}
+
 // ---------------------------------
 
 
@@ -117,6 +142,11 @@ void Skeleton::TakeDamage(int hitPoints) {
 	}
 }
 
+int Skeleton::AttackPlayer() {
+	ui.EnemyAttackPlayer(name, skillName, skillDescription);
+	return skillDamage;
+}
+
 // ---------------------------------
 
 
@@ -135,4 +165,9 @@ void UndeadWolf::TakeDamage(int hitPoints) {
 	if (health <= 0) {
 		isDead = true;
 	}
+}
+
+int UndeadWolf::AttackPlayer() {
+	ui.EnemyAttackPlayer(name, skillName, skillDescription);
+	return skillDamage;
 }

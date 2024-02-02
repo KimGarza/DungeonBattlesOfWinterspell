@@ -2,6 +2,7 @@
 #include <vector>
 #include <string>
 #include "ICreature.h"
+#include "UI.h"
 
 class IEnemy : public ICreature {
 
@@ -13,6 +14,7 @@ private:
 	std::string skillDescription;
 	int skillDamage;
 	bool isDead;
+	UI ui;
 
 public:
 	virtual std::string GetName() = 0; //these 0s aren't like a number
@@ -23,8 +25,7 @@ public:
 	virtual int GetSkillDamage() = 0;
 	virtual bool GetIsDead() = 0;
 	virtual void TakeDamage(int hitPoints) {};
-
-	bool IsPlayableCharacter() const override { return false; } // inherited from ICreature
+	virtual int AttackPlayer() { return 0; } // since returning int must return a value
 
 	virtual ~IEnemy() = default;
 };

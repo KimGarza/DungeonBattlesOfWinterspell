@@ -49,8 +49,7 @@ public:
 	bool GetHasSwiftness() { return hasSwiftness; }
 	bool GetIsDead() { return isDead; }
 
-	void TakeDamage(int damageTaken);
-	void CheckIfDead();
+	bool TakeDamage(int damageTaken);
+	bool CheckIfDead();
 
-	bool IsPlayableCharacter() const override { return true; } // inherited from ICreature
 };

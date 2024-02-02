@@ -7,10 +7,12 @@ class Game {
 private:
 	GameState currentState;
 	std::shared_ptr<PlayerCharacter> playerCharacter;
-	Map* map;
+	std::shared_ptr<Map> map;
 	std::shared_ptr<DungeonRoom> currentRoom;
+	std::vector<std::shared_ptr<DungeonRoom>> dungeonRooms;
 
 public:
+
 	Game();
 
 	void CheckGameState();
