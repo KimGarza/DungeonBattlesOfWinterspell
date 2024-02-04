@@ -33,13 +33,14 @@ void Battle::CommenceBattle(std::shared_ptr<PlayerCharacter> playerCharacter) {
             std::shared_ptr<PlayerCharacter> player = std::dynamic_pointer_cast<PlayerCharacter>(creature);
             if (player) {
                 // 'creature' is of type ICharacter, and 'character' is now a shared_ptr to it
-                ui.DescribePlayerOptions(player);
+                ui.DescribePlayerOptions(player, turnOrder);
             }
             else {
                 std::shared_ptr<IEnemy> enemy = std::dynamic_pointer_cast<IEnemy>(creature); // down casting
                 bool checkIfDead = playerCharacter->TakeDamage(enemy->AttackPlayer()); // attack player returns the hit points int
                 if (checkIfDead) {
-                    std::cout << "YOU DIED";
+                    std::cout << "YOU DIED. GAME OVER.";
+                    exit(0);
                 } else {
                     //ui.DescribeEnemyAttack(enemy);
                     std::cout << "You have been hit for " + std::to_string(enemy->GetSkillDamage()) << " hit points!";

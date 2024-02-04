@@ -2,7 +2,7 @@
 
 Firespitter::Firespitter() {
 	name = "Firespitter";
-	health = 100;
+	health = 16;
 	hasSwiftness = true;
 	skillName = "Stealth";
 	skillDescription = "Sneak through the shadows.";
@@ -19,7 +19,7 @@ void Firespitter::TakeDamage(int hitPoints) {
 
 int Firespitter::AttackPlayer() {
 	ui.EnemyAttackPlayer(name, skillName, skillDescription);
-	return 0;
+	return 2;
 }
 
 // ---------------------------------
@@ -27,7 +27,7 @@ int Firespitter::AttackPlayer() {
 
 DungeonDweller::DungeonDweller() {
 	name = "DungeonDweller";
-	health = 100;
+	health = 8;
 	hasSwiftness = true;
 	skillName = "Stealth";
 	skillDescription = "Sneak through the shadows.";
@@ -44,7 +44,7 @@ void DungeonDweller::TakeDamage(int hitPoints) {
 
 int DungeonDweller::AttackPlayer() {
 	ui.EnemyAttackPlayer(name, skillName, skillDescription);
-	return 0;
+	return 4;
 }
 
 // ---------------------------------
@@ -52,7 +52,7 @@ int DungeonDweller::AttackPlayer() {
 
 Goblin::Goblin() {
 	name = "Goblin";
-	health = 100;
+	health = 5;
 	hasSwiftness = true;
 	skillName = "Stealth";
 	skillDescription = "Sneak through the shadows.";
@@ -69,7 +69,7 @@ void Goblin::TakeDamage(int hitPoints) {
 
 int Goblin::AttackPlayer() {
 	ui.EnemyAttackPlayer(name, skillName, skillDescription);
-	return 0;
+	return 3;
 }
 
 // ---------------------------------
@@ -77,7 +77,7 @@ int Goblin::AttackPlayer() {
 
 HauntingSpirit::HauntingSpirit() {
 	name = "HauntingSpirit";
-	health = 100;
+	health = 30;
 	hasSwiftness = true;
 	skillName = "Stealth";
 	skillDescription = "Sneak through the shadows.";
@@ -94,7 +94,7 @@ void HauntingSpirit::TakeDamage(int hitPoints) {
 
 int HauntingSpirit::AttackPlayer() {
 	ui.EnemyAttackPlayer(name, skillName, skillDescription);
-	return 0;
+	return 7;
 }
 
 // ---------------------------------
@@ -102,7 +102,7 @@ int HauntingSpirit::AttackPlayer() {
 
 Troll::Troll() {
 	name = "Troll";
-	health = 100;
+	health = 45;
 	hasSwiftness = true;
 	skillName = "Stealth";
 	skillDescription = "Sneak through the shadows.";
@@ -119,7 +119,7 @@ void Troll::TakeDamage(int hitPoints) {
 
 int Troll::AttackPlayer() {
 	ui.EnemyAttackPlayer(name, skillName, skillDescription);
-	return 0;
+	return 19;
 }
 
 // ---------------------------------
@@ -127,7 +127,7 @@ int Troll::AttackPlayer() {
 
 Skeleton::Skeleton() {
 	name = "Skeleton";
-	health = 100;
+	health = 50;
 	hasSwiftness = true;
 	skillName = "Stealth";
 	skillDescription = "Sneak through the shadows.";
@@ -144,7 +144,7 @@ void Skeleton::TakeDamage(int hitPoints) {
 
 int Skeleton::AttackPlayer() {
 	ui.EnemyAttackPlayer(name, skillName, skillDescription);
-	return 0;
+	return 5;
 }
 
 // ---------------------------------
@@ -152,7 +152,7 @@ int Skeleton::AttackPlayer() {
 
 UndeadWolf::UndeadWolf() {
 	name = "UndeadWolf";
-	health = 100;
+	health = 35;
 	hasSwiftness = true;
 	skillName = "Stealth";
 	skillDescription = "Sneak through the shadows.";
@@ -169,5 +169,5 @@ void UndeadWolf::TakeDamage(int hitPoints) {
 
 int UndeadWolf::AttackPlayer() {
 	ui.EnemyAttackPlayer(name, skillName, skillDescription);
-	return 0;
+	return 12;
 }

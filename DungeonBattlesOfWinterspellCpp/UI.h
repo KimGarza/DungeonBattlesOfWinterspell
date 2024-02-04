@@ -16,7 +16,8 @@ public:
 	void DescribeDungeonRoom(std::string description);
 	void DisplayTurnOrder(std::vector<std::string> creatureNames, std::string dungeonRoomName);
 	void EnemyAttackPlayer(std::string  name, std::string skillName, std::string skillDescription);
-	void DescribePlayerOptions(std::shared_ptr<PlayerCharacter> player);
+	void DescribePlayerOptions(std::shared_ptr<PlayerCharacter> player, std::vector<std::shared_ptr<ICreature>> turnOrder);
 	void DescribeEnemyAttack(std::shared_ptr<IEnemy> enemy);
+	void DescribePlayerAttackOptions(std::shared_ptr<IEnemy> enemy, IWeapon* weapon);
 };
 

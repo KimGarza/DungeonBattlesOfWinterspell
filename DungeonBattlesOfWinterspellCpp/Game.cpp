@@ -77,18 +77,4 @@ void Game::ChangeGameState(GameState newState) {
 	CheckGameState();
 }
 
-
 // remove all memory after building and returning
-
-
-//for (const auto& dungeon : dungeonRooms) {
-//	std::cout << "dungeon name: " << dungeon->GetName() << std::endl;
-//	std::cout << "dungeon complete: " << dungeon->GetCompleted() << std::endl;
-//	if (size_t length = dungeon->GetEnemies().size() > 0) {
-//		std::cout << "it is populated" << std::endl;
-//		for (const auto& enemy : dungeon->GetEnemies()) {
-//			std::cout << "enemy: " << enemy->GetName() << std::endl;
-//		}
-//	}
-//
-//}
