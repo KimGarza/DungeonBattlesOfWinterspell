@@ -38,6 +38,12 @@ void Battle::CommenceBattle(std::shared_ptr<PlayerCharacter> playerCharacter) {
             else {
                 std::shared_ptr<IEnemy> enemy = std::dynamic_pointer_cast<IEnemy>(creature); // down casting
                 bool checkIfDead = playerCharacter->TakeDamage(enemy->AttackPlayer()); // attack player returns the hit points int
+                if (checkIfDead) {
+                    std::cout << "YOU DIED";
+                } else {
+                    //ui.DescribeEnemyAttack(enemy);
+                    std::cout << "You have been hit for " + std::to_string(enemy->GetSkillDamage()) << " hit points!";
+                }
             }
         }
     }

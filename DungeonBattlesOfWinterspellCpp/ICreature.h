@@ -8,7 +8,6 @@ public:
 		return name;
 	}
 
-	virtual bool IsPlayableCharacter() const = 0;
 	virtual ~ICreature() = default;
 };
 

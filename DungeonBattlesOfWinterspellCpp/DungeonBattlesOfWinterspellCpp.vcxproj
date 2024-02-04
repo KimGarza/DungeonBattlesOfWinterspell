@@ -132,7 +132,9 @@
     <ClCompile Include="Characters.cpp" />
     <ClCompile Include="CharacterCreation.cpp" />
     <ClCompile Include="DungeonRoom.cpp" />
-    <ClCompile Include="DungeonBattlesOfWinterspellCpp.cpp" />
+    <ClCompile Include="DungeonBattlesOfWinterspellCpp.cpp">
+      <ShowIncludes Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Yes</ShowIncludes>
+    </ClCompile>
     <ClCompile Include="DungeonGenerator.cpp" />
     <ClCompile Include="Enemies.cpp" />
     <ClCompile Include="Game.cpp" />

@@ -3,6 +3,7 @@
 #include <memory>
 #include <string>
 #include "PlayerCharacter.h"
+#include "IEnemy.h"
 #include "GameText.h"
 
 class UI
@@ -16,5 +17,6 @@ public:
 	void DisplayTurnOrder(std::vector<std::string> creatureNames, std::string dungeonRoomName);
 	void EnemyAttackPlayer(std::string  name, std::string skillName, std::string skillDescription);
 	void DescribePlayerOptions(std::shared_ptr<PlayerCharacter> player);
+	void DescribeEnemyAttack(std::shared_ptr<IEnemy> enemy);
 };
 

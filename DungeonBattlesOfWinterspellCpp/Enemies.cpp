@@ -19,7 +19,7 @@ void Firespitter::TakeDamage(int hitPoints) {
 
 int Firespitter::AttackPlayer() {
 	ui.EnemyAttackPlayer(name, skillName, skillDescription);
-	return skillDamage;
+	return 0;
 }
 
 // ---------------------------------
@@ -44,7 +44,7 @@ void DungeonDweller::TakeDamage(int hitPoints) {
 
 int DungeonDweller::AttackPlayer() {
 	ui.EnemyAttackPlayer(name, skillName, skillDescription);
-	return skillDamage;
+	return 0;
 }
 
 // ---------------------------------
@@ -69,7 +69,7 @@ void Goblin::TakeDamage(int hitPoints) {
 
 int Goblin::AttackPlayer() {
 	ui.EnemyAttackPlayer(name, skillName, skillDescription);
-	return skillDamage;
+	return 0;
 }
 
 // ---------------------------------
@@ -94,7 +94,7 @@ void HauntingSpirit::TakeDamage(int hitPoints) {
 
 int HauntingSpirit::AttackPlayer() {
 	ui.EnemyAttackPlayer(name, skillName, skillDescription);
-	return skillDamage;
+	return 0;
 }
 
 // ---------------------------------
@@ -119,7 +119,7 @@ void Troll::TakeDamage(int hitPoints) {
 
 int Troll::AttackPlayer() {
 	ui.EnemyAttackPlayer(name, skillName, skillDescription);
-	return skillDamage;
+	return 0;
 }
 
 // ---------------------------------
@@ -144,7 +144,7 @@ void Skeleton::TakeDamage(int hitPoints) {
 
 int Skeleton::AttackPlayer() {
 	ui.EnemyAttackPlayer(name, skillName, skillDescription);
-	return skillDamage;
+	return 0;
 }
 
 // ---------------------------------
@@ -169,5 +169,5 @@ void UndeadWolf::TakeDamage(int hitPoints) {
 
 int UndeadWolf::AttackPlayer() {
 	ui.EnemyAttackPlayer(name, skillName, skillDescription);
-	return skillDamage;
+	return 0;
 }

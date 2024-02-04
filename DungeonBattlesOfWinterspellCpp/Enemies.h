@@ -1,4 +1,6 @@
 #include "IEnemy.h"
+#include "UI.h"
+
 
 class Firespitter : public IEnemy {
 public:
@@ -40,8 +42,8 @@ public:
 	std::string GetSkillDescription() override { return skillDescription; }
 	int GetSkillDamage() override { return skillDamage; }
 	bool GetIsDead() override { return isDead; }
-	void TakeDamage(int hitPoints);
-	int AttackPlayer();
+	void TakeDamage(int hitPoints) override;
+	int AttackPlayer() override;
 
 private:
 	std::string name;
@@ -68,8 +70,8 @@ public:
 	std::string GetSkillDescription() override { return skillDescription; }
 	int GetSkillDamage() override { return skillDamage; }
 	bool GetIsDead() override { return isDead; }
-	void TakeDamage(int hitPoints);
-	int AttackPlayer();
+	void TakeDamage(int hitPoints) override;
+	int AttackPlayer() override;
 
 private:
 	std::string name;
@@ -96,8 +98,8 @@ public:
 	std::string GetSkillDescription() override { return skillDescription; }
 	int GetSkillDamage() override { return skillDamage; }
 	bool GetIsDead() override { return isDead; }
-	void TakeDamage(int hitPoints);
-	int AttackPlayer();
+	void TakeDamage(int hitPoints) override;
+	int AttackPlayer() override;
 
 private:
 	std::string name;
@@ -124,8 +126,8 @@ public:
 	std::string GetSkillDescription() override { return skillDescription; }
 	int GetSkillDamage() override { return skillDamage; }
 	bool GetIsDead() override { return isDead; }
-	void TakeDamage(int hitPoints);
-	int AttackPlayer();
+	void TakeDamage(int hitPoints) override;
+	int AttackPlayer() override;
 
 private:
 	std::string name;
@@ -152,8 +154,8 @@ public:
 	std::string GetSkillDescription() override { return skillDescription; }
 	int GetSkillDamage() override { return skillDamage; }
 	bool GetIsDead() override { return isDead; }
-	void TakeDamage(int hitPoints);
-	int AttackPlayer();
+	void TakeDamage(int hitPoints) override;
+	int AttackPlayer() override;
 
 private:
 	std::string name;
@@ -173,15 +175,15 @@ class UndeadWolf : public IEnemy {
 public:
 	UndeadWolf();
 
-	std::string GetName() { return name; }
+	std::string GetName() override { return name; }
 	int GetHealth() override { return health; }
 	bool GetHasSwiftness() override { return hasSwiftness; }
 	std::string GetSkillName() override { return skillName; }
 	std::string GetSkillDescription() override { return skillDescription; }
 	int GetSkillDamage() override { return skillDamage; }
 	bool GetIsDead() override { return isDead; }
-	void TakeDamage(int hitPoints);
-	int AttackPlayer();
+	void TakeDamage(int hitPoints) override;
+	int AttackPlayer() override;
 
 
 private:

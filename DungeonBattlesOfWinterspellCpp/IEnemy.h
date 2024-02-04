@@ -2,7 +2,6 @@
 #include <vector>
 #include <string>
 #include "ICreature.h"
-#include "UI.h"
 
 class IEnemy : public ICreature {
 
@@ -14,7 +13,6 @@ private:
 	std::string skillDescription;
 	int skillDamage;
 	bool isDead;
-	UI ui;
 
 public:
 	virtual std::string GetName() = 0; //these 0s aren't like a number

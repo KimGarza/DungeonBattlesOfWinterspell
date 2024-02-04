@@ -2,7 +2,9 @@
 #include "DungeonRoom.h"
 #include <string>
 #include <iostream>
+#include "IEnemy.h"
 #include <conio.h>
+#include <memory>
 
 // consider just adding one undiscovered afte rthe last discovered as to prevent player from knowing how many rooms remain, make it feel more mysterious
 
@@ -56,6 +58,15 @@ void UI::EnemyAttackPlayer(std::string name, std::string skillName, std::string 
 
 void UI::DescribePlayerOptions(std::shared_ptr<PlayerCharacter> player) {
     gameText.WriteLine("Now's your chance! What action will you take?!");
-    gameText.WriteLine("1)  Attack\n2)  Drink Health Potion\n3)    flee cowardice");
+    gameText.WriteLine("1)  Attack\n2)  Drink Health Potion\n3)   flee cowardice");
     std::string playerChoice; std::cin >> playerChoice; std::cout << playerChoice;
+}
+
+//void UI::DescribeEnemyAttack(std::shared_ptr<IEnemy> enemy) {
+//    std::string enemyAttackDescription = "You have been hit for " + std::to_string(enemy->GetSkillDamage()) + " hit points!";
+//    gameText.WriteLine(enemyAttackDescription);
+//}
+
+void UI::DescribeEnemyAttack(std::shared_ptr<IEnemy> enemy) {
+
 }

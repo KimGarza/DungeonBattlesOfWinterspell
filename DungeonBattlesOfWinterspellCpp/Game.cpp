@@ -35,17 +35,17 @@ void Game::CheckGameState() {
 			break;
 		}
 		case GameState::Map: {
-			/*map = std::make_shared<Map>(dungeonRooms);
+			map = std::make_shared<Map>(dungeonRooms);
 
 			gameText.WriteLine("Time for battle, off to the dugneons, here is your map\n");
 
 			map->RevealMap();
 
-			ChangeGameState(GameState::Explore);*/
+			ChangeGameState(GameState::Explore);
 			break;
 		}
 		case GameState::Explore: {
-			/*currentRoom = map->GetCurrentRoom();
+			currentRoom = map->GetCurrentRoom();
 
 			ExploreDungeon exploreDungeon(currentRoom, playerCharacter);
 			exploreDungeon.EnterDungeonRoom();
@@ -54,7 +54,7 @@ void Game::CheckGameState() {
 
 			currentRoom->SetCurrentTurnOrder(turnOrder);
 
-			ChangeGameState(GameState::Battle);*/
+			ChangeGameState(GameState::Battle);
 			break;
 		}
 		case GameState::Battle: {
