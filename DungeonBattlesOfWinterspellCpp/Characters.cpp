@@ -5,7 +5,7 @@
 // Initial assigned attributes: 4, total assigned additional by player 10
 WoodElf::WoodElf() {
 	name = "Wood Elf";
-	health = 10;
+	health = 100;
 	intelligence = 0;
 	dexterity = 4;
 	strength = 0;
@@ -16,7 +16,7 @@ WoodElf::WoodElf() {
 
 Dwarf::Dwarf() {
 	name = "Dwarf";
-	health = 10;
+	health = 125;
 	intelligence = 0;
 	dexterity = 0;
 	strength = 4;
@@ -27,7 +27,7 @@ Dwarf::Dwarf() {
 
 Enchantress::Enchantress() {
 	name = "Enchantress";
-	health = 10;
+	health = 110;
 	intelligence = 3;
 	dexterity = 1;
 	strength = 0;

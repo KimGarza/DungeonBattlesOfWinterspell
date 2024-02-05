@@ -22,7 +22,7 @@ public:
 	virtual std::string GetSkillDescription() = 0;
 	virtual int GetSkillDamage() = 0;
 	virtual bool GetIsDead() = 0;
-	virtual void TakeDamage(int hitPoints) {};
+	virtual void TakeDamage(int hitPoints) = 0;
 	virtual int AttackPlayer() { return 0; } // since returning int must return a value
 
 	virtual ~IEnemy() = default;

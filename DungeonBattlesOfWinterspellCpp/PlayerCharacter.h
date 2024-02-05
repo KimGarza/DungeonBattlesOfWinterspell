@@ -51,5 +51,5 @@ public:
 
 	bool TakeDamage(int damageTaken);
 	bool CheckIfDead();
-
+	void DrinkHealthPotion();
 };

@@ -37,3 +37,7 @@ bool PlayerCharacter::CheckIfDead() {
 	return false;
 }
 
+void PlayerCharacter::DrinkHealthPotion() {
+	health += 20;
+}
+

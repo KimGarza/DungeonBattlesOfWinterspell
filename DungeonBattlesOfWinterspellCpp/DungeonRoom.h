@@ -29,6 +29,7 @@ public:
 
 	std::vector<std::shared_ptr<IEnemy>> GetEnemies() { return enemyList; }
 
-	void EnterDungeonRoom();
-	void GenerateTurnOrder();
+
+	void SetCompleted();
+
 };

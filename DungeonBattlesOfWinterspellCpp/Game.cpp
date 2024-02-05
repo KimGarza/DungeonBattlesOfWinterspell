@@ -63,7 +63,16 @@ void Game::CheckGameState() {
 			battle.RevealTurnOrder(map->GetCurrentRoom()->GetTurnOrder(), currentRoom->GetName());
 
 			battle.CommenceBattle(playerCharacter);
-			
+
+			ChangeGameState(GameState::UpdateMap);
+			break;
+		}
+		case GameState::UpdateMap: {
+
+			map->UpdateMap();
+
+			map->RevealMap();
+
 			break;
 		}
 		default:

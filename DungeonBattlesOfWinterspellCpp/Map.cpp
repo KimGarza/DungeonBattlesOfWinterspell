@@ -13,29 +13,30 @@ void Map::RevealMap() {
 		dungeonNames.push_back(dungeon->GetName());
 	}
 
-	CalcRoomsRemaining(); // since I only passed in dungeon rooms once so here is to hoping shared pointer is a success and setup the right way with keeping track
 	int indexStop = (dungeonRooms.size() - roomsRemaining) - 1; // subtracting the remaining rooms gets us to the current # we are on to know where the last dungeon to write out is
 	ui.DisplayMap(dungeonNames, indexStop);
 }
 
-void Map::CalcRoomsRemaining() {
+std::shared_ptr<DungeonRoom> Map::SetCurrentRoom() {
 	for (int i = 0; i < dungeonRooms.size() - 1; i++) {
 		const auto& dungeon = dungeonRooms[i];
 
-		if (dungeon->GetCompleted() == false) {
-			roomsRemaining = dungeonRooms.size() - (i + 1);
-			break;
+		if (!dungeon->GetCompleted()) {
+			return dungeon;
 		}
 	}
 }
 
-std::shared_ptr<DungeonRoom> Map::GetCurrentRoom() {
+// sets current dungeon room and updates the completed one
+void Map::UpdateMap() {
+	currentRoom->SetCompleted();
+	roomsRemaining - 1;
+
 	for (int i = 0; i < dungeonRooms.size() - 1; i++) {
 		const auto& dungeon = dungeonRooms[i];
 
 		if (!dungeon->GetCompleted()) {
 			currentRoom = dungeon;
-			return currentRoom;
 		}
 	}
 }
