@@ -3,7 +3,7 @@
 #include <string>
 #include <vector>
 
-Map::Map(std::vector <std::shared_ptr<DungeonRoom>> dungeonRooms) : dungeonRooms(dungeonRooms), roomsRemaining(dungeonRooms.size()) {}
+Map::Map(std::vector <std::shared_ptr<DungeonRoom>> dungeonRooms) : dungeonRooms(dungeonRooms), roomsRemaining(std::make_shared<int>(dungeonRooms.size())) {}
 
 void Map::RevealMap() {
 
@@ -13,7 +13,7 @@ void Map::RevealMap() {
 		dungeonNames.push_back(dungeon->GetName());
 	}
 
-	int indexStop = (dungeonRooms.size() - roomsRemaining); // subtracting the remaining rooms gets us to the current # we are on to know where the last dungeon to write out is
+	int indexStop = (dungeonRooms.size() - *roomsRemaining); // subtracting the remaining rooms gets us to the current # we are on to know where the last dungeon to write out is
 	ui.DisplayMap(dungeonNames, indexStop);
 }
 
@@ -31,6 +31,6 @@ std::shared_ptr<DungeonRoom> Map::GetSetCurrentRoom() {
 // sets current dungeon room and updates the completed one
 void Map::UpdateMap() {
 	currentRoom->SetCompleted();
-	roomsRemaining = roomsRemaining - 1;
+	*roomsRemaining -= 1;
 	GetSetCurrentRoom();
 }

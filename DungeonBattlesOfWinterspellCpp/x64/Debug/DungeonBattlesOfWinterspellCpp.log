@@ -1,7 +1,2 @@
 ﻿  Game.cpp
-  Map.cpp
-G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Map.cpp(6,133): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Map.cpp(16,56): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-  Generating Code...
-G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Map.cpp(29): warning C4715: 'Map::GetSetCurrentRoom': not all control paths return a value
   DungeonBattlesOfWinterspellCpp.vcxproj -> G:\repos\DungeonBattlesOfWinterspellCpp\x64\Debug\DungeonBattlesOfWinterspellCpp.exe

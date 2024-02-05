@@ -31,11 +31,12 @@ void Game::CheckGameState() {
 			
 			dungeonRooms = dungeonGenerator.GenerateDungeons();
 
+			map = std::make_shared<Map>(dungeonRooms);
+
 			ChangeGameState(GameState::Map);
 			break;
 		}
 		case GameState::Map: {
-			map = std::make_shared<Map>(dungeonRooms);
 
 			gameText.WriteLine("Time for battle, off to the dugneons, here is your map\n");
 

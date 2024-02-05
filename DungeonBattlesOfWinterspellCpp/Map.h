@@ -7,17 +7,16 @@
 class Map {
 private:
     std::vector <std::shared_ptr<DungeonRoom>> dungeonRooms;
-    int roomsRemaining;
+    std::shared_ptr<int> roomsRemaining;
     std::shared_ptr<DungeonRoom> currentRoom;
     UI ui;
 
 public:
     Map(std::vector <std::shared_ptr<DungeonRoom>>);
 
-    int GetRoomsRemaining() const {
+    std::shared_ptr<int> GetRoomsRemaining() const {
         return roomsRemaining;
     }
-
 
     void RevealMap();
     std::shared_ptr<DungeonRoom> GetSetCurrentRoom();
