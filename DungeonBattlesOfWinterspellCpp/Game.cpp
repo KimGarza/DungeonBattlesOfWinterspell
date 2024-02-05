@@ -45,7 +45,7 @@ void Game::CheckGameState() {
 			break;
 		}
 		case GameState::Explore: {
-			currentRoom = map->GetCurrentRoom();
+			currentRoom = map->GetSetCurrentRoom(); // awkward acts as getter and setter
 
 			ExploreDungeon exploreDungeon(currentRoom, playerCharacter);
 			exploreDungeon.EnterDungeonRoom();
@@ -58,9 +58,9 @@ void Game::CheckGameState() {
 			break;
 		}
 		case GameState::Battle: {
-			Battle battle(map->GetCurrentRoom()->GetTurnOrder()); // odd mix here of using game or map to get the current room
+			Battle battle(map->GetSetCurrentRoom()->GetTurnOrder()); // odd mix here of using game or map to get the current room
 
-			battle.RevealTurnOrder(map->GetCurrentRoom()->GetTurnOrder(), currentRoom->GetName());
+			battle.RevealTurnOrder(map->GetSetCurrentRoom()->GetTurnOrder(), currentRoom->GetName());
 
 			battle.CommenceBattle(playerCharacter);
 
@@ -71,9 +71,17 @@ void Game::CheckGameState() {
 
 			map->UpdateMap();
 
-			map->RevealMap();
+			if (map->GetRoomsRemaining() == 0) {
+				ChangeGameState(GameState::EndGame);
+			}
+
+			ChangeGameState(GameState::Map);
 
 			break;
+		}
+		case GameState::EndGame: {
+			std::cout << "Congrats on finishing the game!";
+			exit(0);
 		}
 		default:
 			currentState = GameState::None;

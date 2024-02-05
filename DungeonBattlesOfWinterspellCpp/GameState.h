@@ -8,5 +8,5 @@ enum class GameState {
 	Battle,
 	Explore,
 	UpdateMap,
-	End
+	EndGame
 };

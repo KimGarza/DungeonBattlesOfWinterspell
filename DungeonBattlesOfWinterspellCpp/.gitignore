@@ -1,1 +1,72 @@
+# Object files
+*.o
+*.obj
+*.a
+*.lib
+*.so
+*.Plo
+*.lo
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Libraries
+/bin/
+/lib/
+/libs/
+
+# Dependency directories
+/vendor/
+/external/
+
+# Executables
+*.exe
+*.out
+*.dll
+*.bin
+*.run
+
+# Build folders
+/build/
+/CMakeFiles/
+Makefile
+*.cmake
+CMakeCache.txt
+
+# IDE - Visual Studio Code
+.vscode/
+
+# IDE - Visual Studio
 .vs/
+*.vcxproj.user
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# IDE - CLion
+.idea/
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Logs and databases
+*.log
+*.sql
+*.sqlite
+*.opendb
+*.VC.db
+
+# *.ilk         (Visual Studio incremental link files)
+# *.aps         (Binary version of the .rc file in MFC (Microsoft Foundation Classes))
+# *.moc_*       (Meta-object compiler files in Qt framework)
+# *.qrc_*       (Qt resource files)
+# *.qmlc        (Compiled Qt QML files)
+# *.jsc         (Qt JSC files)

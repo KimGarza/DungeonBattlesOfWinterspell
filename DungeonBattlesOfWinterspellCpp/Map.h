@@ -13,7 +13,6 @@ private:
 
 public:
     Map(std::vector <std::shared_ptr<DungeonRoom>>);
-    std::shared_ptr<DungeonRoom> GetCurrentRoom() { return currentRoom; }
 
     int GetRoomsRemaining() const {
         return roomsRemaining;
@@ -21,7 +20,7 @@ public:
 
 
     void RevealMap();
-    std::shared_ptr<DungeonRoom> SetCurrentRoom();
+    std::shared_ptr<DungeonRoom> GetSetCurrentRoom();
     void UpdateMap();
 };
 

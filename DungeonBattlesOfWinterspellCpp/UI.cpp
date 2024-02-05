@@ -10,21 +10,22 @@
 // consider just adding one undiscovered afte rthe last discovered as to prevent player from knowing how many rooms remain, make it feel more mysterious
 
 void UI::DisplayMap(std::vector<std::string> dungeonRooms, int indexStop) {
+    system("cls");
     gameText.WriteLine("You have made a discovery! Your next dungeon location is revealed before you...\n\n");
 
     for (int i = 0; i < dungeonRooms.size(); i++) {
         if (i == 4 || i == 8) {
             std::cout << "\n\n"; // formatting
         }
-        if (i != 0 && i >= indexStop) {
-            if (i != dungeonRooms.size() - 1) {
+        if (i > indexStop) {
+            if (i < dungeonRooms.size() - 1) {
                 gameText.WriteText("Undiscovered...    -->  ");
             } else {
                 gameText.WriteText("Undiscovered");
             }
         }
         else {
-            if (i != dungeonRooms.size() - 1) {
+            if (i < dungeonRooms.size() - 1) {
                 gameText.WriteText(dungeonRooms[i] + "   -->  ");
             }
             else {

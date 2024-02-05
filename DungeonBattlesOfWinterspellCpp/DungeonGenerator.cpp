@@ -49,7 +49,8 @@ std::vector<std::shared_ptr<IEnemy>> DungeonGenerator::GenerateEnemies(int roomL
     int min_value = 0; /**/ int max_value = 0;
 
     if (roomLevel < 3) {
-        min_value = 2; max_value = 4;
+        //min_value = 2; max_value = 4;
+        min_value = 1; max_value = 1;
     } else if (roomLevel < 5) {
         min_value = 3; max_value = 6;
     } else {
