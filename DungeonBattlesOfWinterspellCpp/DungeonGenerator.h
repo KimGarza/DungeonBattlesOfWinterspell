@@ -9,16 +9,16 @@ private:
     std::vector<std::string> dungeonList = {
         "StilagmiteRuins",
         "TenebrificDepths",
-        //"HiddenRoomOfTheRestingDead",
-        "FoulTomb",
-        "HozwardianKeep",
-        "RoomOfMoonlight",
-        "AbyssalCrypts",
-        "EnigmasEmbrance",
-        //"ShadowedLabyrinth",
-        "ForgottenCatacombs",
-        "CursedAbyssalSanctum",
-        "RoomOfOfferings"
+        ////"HiddenRoomOfTheRestingDead",
+        //"FoulTomb",
+        //"HozwardianKeep",
+        //"RoomOfMoonlight",
+        //"AbyssalCrypts",
+        //"EnigmasEmbrance",
+        ////"ShadowedLabyrinth",
+        //"ForgottenCatacombs",
+        //"CursedAbyssalSanctum",
+        //"RoomOfOfferings"
     };
 
 public:

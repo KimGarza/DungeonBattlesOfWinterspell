@@ -3,7 +3,7 @@
 #include <string>
 #include <vector>
 
-Map::Map(std::vector <std::shared_ptr<DungeonRoom>> dungeonRooms) : dungeonRooms(dungeonRooms), roomsRemaining(std::make_shared<int>(dungeonRooms.size())) {}
+Map::Map(std::vector <std::shared_ptr<DungeonRoom>> dungeonRooms) : dungeonRooms(dungeonRooms), roomsRemaining(std::make_shared<int>(dungeonRooms.size() - 1)) {}
 
 void Map::RevealMap() {
 
@@ -31,6 +31,8 @@ std::shared_ptr<DungeonRoom> Map::GetSetCurrentRoom() {
 // sets current dungeon room and updates the completed one
 void Map::UpdateMap() {
 	currentRoom->SetCompleted();
+	int test = *roomsRemaining;
 	*roomsRemaining -= 1;
+	int test2 = *roomsRemaining;
 	GetSetCurrentRoom();
 }

@@ -27,7 +27,7 @@ void Game::CheckGameState() {
 		case GameState::None:
 			break;
 		case GameState::Begin: { // these xtra curly brackets for scoping purposes since things that are initialized within each case can't pass into the next case
-			playerCharacter = characterCreation.ChooseClass();
+			playerCharacter = characterCreation.CreateCharacter();
 			
 			dungeonRooms = dungeonGenerator.GenerateDungeons();
 
@@ -72,7 +72,7 @@ void Game::CheckGameState() {
 
 			map->UpdateMap();
 
-			if (map->GetRoomsRemaining() == 0) {
+			if (*map->GetRoomsRemaining() < 0) {
 				ChangeGameState(GameState::EndGame);
 			}
 

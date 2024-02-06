@@ -1,5 +1,6 @@
 #pragma once
 #include <vector>
+#include <memory>
 #include <string>
 #include "IWeapon.h"
 #include "InvItem.h"
@@ -13,7 +14,7 @@ private:
 	int intelligence;
 	int dexterity;
 	int strength;
-	IWeapon* weapon;
+	std::shared_ptr<IWeapon> weapon;
 	int xp;
 	int level;
 	bool hasSwiftness;
@@ -29,8 +30,8 @@ public:
 		int intelligence,
 		int dexterity,
 		int strength,
-		IWeapon* weapon,
-		bool hasSwiftness
+		bool hasSwiftness,
+		std::shared_ptr<IWeapon> weapon
 		// 3. The reason these are not set here is bc they will be set with default values in source and managed within functions after
 		/*int xp = 0, int level = 1, bool hasSwiftness = false, bool isDead = false*/
 	);
@@ -43,7 +44,7 @@ public:
 	int GetIntelligence() { return intelligence; }
 	int GetDexterity() { return dexterity; }
 	int GetStrength() { return strength; }
-	IWeapon* GetWeapon() { return weapon; }
+	std::shared_ptr<IWeapon> GetWeapon() { return weapon; }
 	int GetXP() { return xp; }
 	int GetLevel() { return level; }
 	bool GetHasSwiftness() { return hasSwiftness; }
