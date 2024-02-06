@@ -8,6 +8,7 @@ private:
 
 public:
 	std::string PlayerChoice(std::vector<int> selectionRange);
+	std::string PlayerChoiceYN();
 	std::string AttributePoints(int pointsRemaining);
 };
 

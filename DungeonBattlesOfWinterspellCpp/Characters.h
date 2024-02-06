@@ -39,6 +39,8 @@ public:
 		return hasSwiftness;
 	}
 
+	void SetHasSwiftness(bool isSwift) { hasSwiftness = isSwift; }
+
 	std::vector<std::string> GetWeaponOptions() const override {
 		return weaponOptions;
 	}
@@ -82,6 +84,8 @@ public:
 		return hasSwiftness;
 	}
 
+	void SetHasSwiftness(bool isSwift) { hasSwiftness = isSwift; }
+
 	std::vector<std::string> GetWeaponOptions() const override {
 		return weaponOptions;
 	}
@@ -124,6 +128,8 @@ public:
 	bool GetHasSwiftness() const override {
 		return hasSwiftness;
 	}
+
+	void SetHasSwiftness(bool isSwift) { hasSwiftness = isSwift; }
 
 	std::vector<std::string> GetWeaponOptions() const override {
 		return weaponOptions;

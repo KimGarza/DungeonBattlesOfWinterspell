@@ -14,11 +14,13 @@ private:
 	int intelligence;
 	int dexterity;
 	int strength;
+	int maxHealth;
 	std::shared_ptr<IWeapon> weapon;
 	int xp;
 	int level;
 	bool hasSwiftness;
 	bool isDead;
+	int healthPotions;
 
 // 2. Preparing all values that will come through constructor ( we want xp, level, swift and dead to not be passed in we already know what these will be to start)
 public:
@@ -30,6 +32,7 @@ public:
 		int intelligence,
 		int dexterity,
 		int strength,
+		int maxHealth,
 		bool hasSwiftness,
 		std::shared_ptr<IWeapon> weapon
 		// 3. The reason these are not set here is bc they will be set with default values in source and managed within functions after
@@ -41,12 +44,14 @@ public:
 
 	std::string GetName() { return name; }
 	int GetHealth() { return health; }
+	int GetMaxHealth() { return maxHealth; }
 	int GetIntelligence() { return intelligence; }
 	int GetDexterity() { return dexterity; }
 	int GetStrength() { return strength; }
 	std::shared_ptr<IWeapon> GetWeapon() { return weapon; }
 	int GetXP() { return xp; }
 	int GetLevel() { return level; }
+	int GetHealthPotions() { return healthPotions; }
 	bool GetHasSwiftness() { return hasSwiftness; }
 	bool GetIsDead() { return isDead; }
 

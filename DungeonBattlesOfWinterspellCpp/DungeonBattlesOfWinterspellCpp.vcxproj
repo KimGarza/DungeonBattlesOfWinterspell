@@ -149,6 +149,7 @@
     <ClCompile Include="IWeapon.cpp" />
     <ClCompile Include="Map.cpp" />
     <ClCompile Include="PlayerCharacter.cpp" />
+    <ClCompile Include="Story.cpp" />
     <ClCompile Include="UI.cpp" />
     <ClCompile Include="Weapons.cpp" />
   </ItemGroup>
@@ -171,6 +172,7 @@
     <ClInclude Include="IWeapon.h" />
     <ClInclude Include="Map.h" />
     <ClInclude Include="PlayerCharacter.h" />
+    <ClInclude Include="Story.h" />
     <ClInclude Include="UI.h" />
     <ClInclude Include="Weapons.h" />
   </ItemGroup>

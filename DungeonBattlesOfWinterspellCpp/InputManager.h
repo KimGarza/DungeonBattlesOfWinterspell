@@ -10,5 +10,6 @@ public:
 	bool ValidatePlayerInput(std::string userInput);
 	bool ValidatePlayerInput(std::string userInput, std::vector<int> selectionRange);
 	bool ValidatePoints(std::string pointsToAssign, int pointsRemaining);
+	std::string ValidateYN(std::string playerInput);
 };
 

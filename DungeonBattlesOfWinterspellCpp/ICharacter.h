@@ -30,5 +30,7 @@ public:
 
 	virtual std::vector<std::string> GetWeaponOptions() const = 0;
 
+	virtual void SetHasSwiftness(bool hasSwiftness) = 0;
+
 	virtual ~ICharacter() {} // Virtual destructor
 };

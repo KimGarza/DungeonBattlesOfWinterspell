@@ -129,6 +129,9 @@
     <ClCompile Include="Input.cpp">
       <Filter>Source Files\Helper</Filter>
     </ClCompile>
+    <ClCompile Include="Story.cpp">
+      <Filter>Source Files\Game</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -188,8 +191,11 @@
     <ClInclude Include="DungeonRoom.h">
       <Filter>Header Files\Actors</Filter>
     </ClInclude>
+    <ClInclude Include="Story.h">
+      <Filter>Header Files\Game</Filter>
+    </ClInclude>
     <ClInclude Include="Input.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Helper</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

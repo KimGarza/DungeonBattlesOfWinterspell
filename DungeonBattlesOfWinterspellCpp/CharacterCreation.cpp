@@ -12,34 +12,40 @@
 #include <vector>
 #include <map>
 
+/// <summary>
+/// Utilizes UI class to describe options, and UI uses Input to receive palyer choices as to their class/race and weapon (based upon their class/race). 
+/// PlayerCharacter is built based off of these choices.
+/// </summary>
+/// <returns></returns>
 std::shared_ptr<PlayerCharacter> CharacterCreation::CreateCharacter() { // separate out class elements
 
 	CharacterCreation cc;
 	GameText gameText;
 
-	std::shared_ptr<ICharacter> charClass = ui.ChooseClass();
-	characterInGrogpress = charClass;
-	if (charClass->GetName() == "Wood Elf") { specializedAttribute = "dexterity"; } 
-	else if (charClass->GetName() == "Dwarf") { specializedAttribute = "strength"; }
-	else if (charClass->GetName() == "Enchantress") { specializedAttribute = "intellegence"; }
+	characterInGrogpress = ui.ChooseClass();
 
-	/*specializedAttribute = (charClass->GetName() == "Wood Elf") ? "dexterity" :
-	(charClass->GetName() == "Dwarf") ? "strength" :
-	(charClass->GetName() == "Enchantress") ? "intellegence" : "";*/
+	if (characterInGrogpress->GetName() == "Wood Elf") { specializedAttribute = "dexterity"; }
+	else if (characterInGrogpress->GetName() == "Dwarf") { specializedAttribute = "strength"; }
+	else if (characterInGrogpress->GetName() == "Enchantress") { specializedAttribute = "intellegence"; }
 
-	std::shared_ptr<IWeapon> weaponChosen = ui.ChooseWeapon(charClass);
+	weapon = ui.ChooseWeapon(characterInGrogpress);
 
-	std::map<std::string, int> attributeJournal = AllocateAttributes();
+	attributeJournal = AllocateAttributes();
 
-	return GeneratePlayerCharacter(weaponChosen, attributeJournal); // returns the fully built player character
+	std::shared_ptr<PlayerCharacter> playerCharacter = GeneratePlayerCharacter(); // returns the fully built player character
+
+	Deallocation();
+
+	return playerCharacter;
 }
 
-std::shared_ptr<PlayerCharacter> CharacterCreation::GeneratePlayerCharacter(std::shared_ptr<IWeapon> weapon, std::map<std::string, int> attributeJournal) {
+std::shared_ptr<PlayerCharacter> CharacterCreation::GeneratePlayerCharacter() {
 	
 	return std::make_shared<PlayerCharacter>(
 		characterInGrogpress->GetName(),
 		characterInGrogpress->GetHealth(),
 		attributeJournal["intellegence"], attributeJournal["dexterity"], attributeJournal["strength"],
+		characterInGrogpress->GetHealth(),
 		characterInGrogpress->GetHasSwiftness(),
 		weapon
 	);
@@ -68,7 +74,7 @@ std::map<std::string, int> CharacterCreation::AllocateAttributes() {
 		auto it = selectableAttributes.find(chosenAttribute);
 		if (it != selectableAttributes.end()) {
 
-			int pointsSpent = AllocatePoints(chosenAttribute, selectableAttributes, attributeJournal, pointsRemaining);
+			int pointsSpent = AllocatePoints(chosenAttribute, selectableAttributes, pointsRemaining);
 			
 			pointsRemaining -= pointsSpent;
 
@@ -76,11 +82,14 @@ std::map<std::string, int> CharacterCreation::AllocateAttributes() {
 			attributeJournal[selectableAttributes[chosenAttribute]] += pointsSpent; 
 		}
 	}
+
+	CheckForSwiftness();
+
 	return attributeJournal;
 }
 
 
-int CharacterCreation::AllocatePoints(std::string chosenAttribute, std::map<std::string, std::string> selectableAttributes, std::map<std::string, int> attributeJournal, int pointsRemaining) {
+int CharacterCreation::AllocatePoints(std::string chosenAttribute, std::map<std::string, std::string> selectableAttributes, int pointsRemaining) {
 	
 	int pointsToAssign = ui.PointsAllocation(chosenAttribute, selectableAttributes, pointsRemaining, specializedAttribute, attributeJournal);
 
@@ -89,5 +98,14 @@ int CharacterCreation::AllocatePoints(std::string chosenAttribute, std::map<std:
 	return pointsToAssign;
 }
 
+void CharacterCreation::CheckForSwiftness() {
 
+	if (characterInGrogpress->GetDexterity() >= 4) {
+		characterInGrogpress->SetHasSwiftness(true);
+	}
+}
+
+void CharacterCreation::Deallocation() {
+	characterInGrogpress.reset();
+}
 

@@ -12,7 +12,6 @@
 #include <numeric>
 #include <map>
 
-// consider just adding one undiscovered afte rthe last discovered as to prevent player from knowing how many rooms remain, make it feel more mysterious
 
 // Player Creation
 std::shared_ptr<ICharacter> UI::ChooseClass() {
@@ -20,8 +19,9 @@ std::shared_ptr<ICharacter> UI::ChooseClass() {
    bool selectionComplete = false;
    while (!selectionComplete) {
 
-       gameText.WriteLine("Who are you?");
-       gameText.WriteLine("1. wood elf \n2. dwarf \n3. enchantress");
+       system("cls");
+       gameText.WriteLine("Pray tell... Who are you?\n");
+       gameText.WriteLine("1)  Woodelf \n2)  Dwarf \n3)  Enchantress\n");
 
        std::string playerChoice = input.PlayerChoice(std::vector<int> {1, 2, 3});
 
@@ -29,14 +29,24 @@ std::shared_ptr<ICharacter> UI::ChooseClass() {
            
            if (playerChoice == "1") {
                std::shared_ptr<ICharacter> woodElf = std::make_shared<WoodElf>(); // consider making these unique pointers after test
+               
+               gameText.WriteLine("From the Halls of Miritar, you venture, where the ruins of Myth Drannor await your return."); /**/ _getch();
+
                return woodElf;
            }
            else if (playerChoice == "2") {
                std::shared_ptr<ICharacter> dwarf = std::make_shared<Dwarf>();
+               
+               gameText.WriteLine("Aw, what an adoarable gnome!"); /**/ _getch();
+               gameText.WriteLine("Okay, okay calm down, I was only jesting!"); /**/ _getch();
+
                return dwarf;
            }
            else if (playerChoice == "3") {
                std::shared_ptr<ICharacter> enchantress = std::make_shared<Enchantress>();
+               
+               gameText.WriteLine("You posses the Thaumaturgy of the ancient world within you."); /**/ _getch();
+
                return enchantress;
            }
        }
@@ -52,7 +62,12 @@ std::shared_ptr<ICharacter> UI::ChooseClass() {
 std::shared_ptr<IWeapon> UI::ChooseWeapon(std::shared_ptr<ICharacter> characterClass) {
 
     system("cls");
+    
+    gameText.WriteLine("Now, you can't go around fight gobgobs and the undead with just your bare hands..."); /**/ _getch();
+
     bool selectionComplete = false;
+    std::shared_ptr<IWeapon> weapon;
+
     while (!selectionComplete) {
 
         DisplayWeaponOptions(characterClass);
@@ -61,40 +76,42 @@ std::shared_ptr<IWeapon> UI::ChooseWeapon(std::shared_ptr<ICharacter> characterC
 
         if (playerChoice != "") {
             
-
             if (std::shared_ptr<WoodElf> woodElf = std::dynamic_pointer_cast<WoodElf>(characterClass)) {
                 if (playerChoice == "1") {
-                    return std::make_unique<ElvenLongsword>();
+                    weapon = std::make_shared<ElvenLongsword>();
                 }
                 else if (playerChoice == "2") {
-                    return std::make_unique<IvoryLongBowAndQuiver>();
+                    weapon = std::make_shared<IvoryLongBowAndQuiver>();
                 }
                 else if (playerChoice == "3") {
-                    return std::make_unique<ShortErnestBowAndQuiver>();
+                    weapon = std::make_shared<ShortErnestBowAndQuiver>();
                 }
             }
             else if (std::shared_ptr<Dwarf> dwarf = std::dynamic_pointer_cast<Dwarf>(characterClass)) {
                 if (playerChoice == "1") {
-                    return std::make_unique<DoubleBladedAxe>();
+                    weapon = std::make_shared<DoubleBladedAxe>();
                 }
                 else if (playerChoice == "2") {
-                    return std::make_unique<OrnateShortSword>();
+                    weapon = std::make_shared<OrnateShortSword>();
                 }
                 else if (playerChoice == "3") {
-                    return std::make_unique<SteelSplitHammer>();
+                    weapon = std::make_shared<SteelSplitHammer>();
                 }
             }
             else if (std::shared_ptr<Enchantress> enchantress = std::dynamic_pointer_cast<Enchantress>(characterClass)) {
                 if (playerChoice == "1") {
-                    return std::make_unique<DualEtherealDaggers>();
+                    weapon = std::make_shared<DualEtherealDaggers>();
                 }
                 else if (playerChoice == "2") {
-                    return std::make_unique<GnarledBranchStaff>();
+                    weapon = std::make_shared<GnarledBranchStaff>();
                 }
                 else if (playerChoice == "3") {
-                    return std::make_unique<OakCarvedWand>();
+                    weapon = std::make_shared<OakCarvedWand>();
                 }
             }
+            std::string weaponName = weapon->GetName();
+            gameText.WriteLine("The " + weaponName + ", an ardent choice!");
+            return weapon;
         }
         else {
             system("cls");
@@ -107,15 +124,13 @@ std::shared_ptr<IWeapon> UI::ChooseWeapon(std::shared_ptr<ICharacter> characterC
 
 void UI::DisplayWeaponOptions(std::shared_ptr<ICharacter> characterClass) {
 
-    std::stringstream ss;
-    ss << "you r " << characterClass->GetName() << "\nweapon options :" << "\n";
-    gameText.WriteLine(ss.str()); 
+    gameText.WriteLine("These are the only weapons fit for you from the armoury, please make your choice.\n");
 
     int weaponID = 1;
     for (std::string weapon : characterClass->GetWeaponOptions()) {
         
         std::stringstream ss;
-        ss << weaponID << ")    " << weapon << "\n";
+        ss << weaponID << ")    " << weapon;
         std::string weaponOption = ss.str();
         weaponID++;
 
@@ -133,7 +148,7 @@ std::string UI::AttributeAssignment(int pointsRemaining, std::map<std::string, i
     while (!selectionComplete) {
 
         if (pointsRemaining == 10) {
-            gameText.WriteLine("Now let's asses your qualities");
+            gameText.WriteLine("Now let's asses your qualities...");
         }
         
         std::stringstream ssPrompt;
@@ -214,7 +229,10 @@ int UI::PointsAllocation(std::string chosenAttribute, std::map<std::string, std:
 }
 
 
+// Map
+
 void UI::DisplayMap(std::vector<std::string> dungeonRooms, int indexStop) {
+
     system("cls");
     gameText.WriteLine("You have made a discovery! Your next dungeon location is revealed before you...\n\n");
 
@@ -244,13 +262,16 @@ void UI::DisplayMap(std::vector<std::string> dungeonRooms, int indexStop) {
 };
 
 void UI::DescribeDungeonRoom(std::string description) {
+    
     gameText.WriteLine(description);
     _getch();
     return;
 }
 
 void UI::DisplayTurnOrder(std::vector<std::string> creatureNames, std::string dungeonRoomName) {
+
     system("cls");
+
     gameText.WriteLine(dungeonRoomName + "\n\n");
     for (std::string name : creatureNames) {
         gameText.WriteLine(name);
@@ -260,13 +281,18 @@ void UI::DisplayTurnOrder(std::vector<std::string> creatureNames, std::string du
 }
 
 bool UI::DescribePlayerOptions(std::shared_ptr<PlayerCharacter> player) {
-    gameText.WriteLine("Now's your chance! What action will you take?!");
-    gameText.WriteLine("1)  Attack\n2)  Drink Health Potion\n3)   flee cowardice");
+
+    system("cls");
+
+    gameText.WriteLine("Now's your chance! What action will you do?!");
+    gameText.WriteLine("1)  Attack\n2)  Drink Health Potion (" + std::to_string(player->GetHealthPotions()) + " remaining)");
 
     std::string playerChoice; /**/ std::cin >> playerChoice; 
 
     bool validChoice = false;
     while (!validChoice) {
+
+        gameText.WriteLine("1)  Attack\n2)  Drink Health Potion (" + std::to_string(player->GetHealthPotions()) + " remaining)");
 
         if (playerChoice == "1") {
             validChoice = true; /**/ system("cls");
@@ -289,6 +315,8 @@ bool UI::DescribePlayerOptions(std::shared_ptr<PlayerCharacter> player) {
             _getch();
 
             system("cls");
+            gameText.WriteLine("Be hasty now!");
+
             return false;
         }
     }

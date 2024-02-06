@@ -1,14 +1,17 @@
 #include "InputManager.h"
+#include <cctype>
+#include <iostream>
+#include <string>
 
 // Checks user's input can convert to int in response to prompt
-bool InputManager::ValidatePlayerInput(std::string userInput) {
+bool InputManager::ValidatePlayerInput(std::string playerInput) {
 
 	bool parsable = false;
 	int num;
 
 	while (!parsable) {
 		try {
-			num = std::stoi(userInput);
+			num = std::stoi(playerInput);
 			return true;
 		}
 		catch (const std::invalid_argument& e) {
@@ -19,11 +22,11 @@ bool InputManager::ValidatePlayerInput(std::string userInput) {
 }
 
 // Checks user's input can convert to int in response to prompt and is within range provided
-bool InputManager::ValidatePlayerInput(std::string userInput, std::vector<int> selectionRange) {
+bool InputManager::ValidatePlayerInput(std::string playerInput, std::vector<int> selectionRange) {
 
 	try {
 		int num;
-		num = std::stoi(userInput); // catches
+		num = std::stoi(playerInput); // catches
 
 		auto it = std::find(selectionRange.begin(), selectionRange.end(), num); // num wasn't found in range provided
 		if (it != selectionRange.end()) {
@@ -59,5 +62,26 @@ bool InputManager::ValidatePoints(std::string pointsToAssign, int pointsRemainin
 	catch (const std::invalid_argument& e) {
 		std::cerr << "Invalid input" << std::endl;
 		return false;
+	}
+}
+
+std::string InputManager::ValidateYN(std::string playerInput) {
+
+	try {
+		for (char& c : playerInput) {
+			c = std::toupper(c);
+		}
+
+		if (playerInput == "Y" || playerInput == "YES" ) {
+			return "y";
+		}
+		else if (playerInput == "N" || playerInput == "NO") {
+			return "n";
+		}
+		return "";
+	}
+	catch (const std::invalid_argument& e) {
+		std::cerr << "Invalid input" << std::endl;
+		return "";
 	}
 }
