@@ -11,6 +11,7 @@ private:
 	int intelligence;
 	int dexterity;
 	int strength;
+	bool hasSwiftness;
 	std::vector<std::string> weaponOptions;
 
 public:
@@ -34,6 +35,10 @@ public:
 		return strength; 
 	}
 
+	bool GetHasSwiftness() const override {
+		return hasSwiftness;
+	}
+
 	std::vector<std::string> GetWeaponOptions() const override {
 		return weaponOptions;
 	}
@@ -49,6 +54,7 @@ private:
 	int intelligence;
 	int dexterity;
 	int strength;
+	bool hasSwiftness;
 	std::vector<std::string> weaponOptions;
 
 public:
@@ -72,6 +78,10 @@ public:
 		return strength;
 	}
 
+	bool GetHasSwiftness() const override {
+		return hasSwiftness;
+	}
+
 	std::vector<std::string> GetWeaponOptions() const override {
 		return weaponOptions;
 	}
@@ -86,6 +96,7 @@ private:
 	int intelligence;
 	int dexterity;
 	int strength;
+	bool hasSwiftness;
 	std::vector<std::string> weaponOptions;
 
 
@@ -108,6 +119,10 @@ public:
 
 	int GetStrength() const override {
 		return strength;
+	}
+
+	bool GetHasSwiftness() const override {
+		return hasSwiftness;
 	}
 
 	std::vector<std::string> GetWeaponOptions() const override {

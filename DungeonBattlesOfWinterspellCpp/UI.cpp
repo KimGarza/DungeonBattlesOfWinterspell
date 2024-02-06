@@ -3,11 +3,216 @@
 #include <string>
 #include <iostream>
 #include "IEnemy.h"
+#include "Characters.h"
+#include "IWeapon.h"
+#include "Weapons.h"
+#include <sstream>
 #include <conio.h>
 #include <memory>
+#include <numeric>
 #include <map>
 
 // consider just adding one undiscovered afte rthe last discovered as to prevent player from knowing how many rooms remain, make it feel more mysterious
+
+// Player Creation
+std::shared_ptr<ICharacter> UI::ChooseClass() {
+
+   bool selectionComplete = false;
+   while (!selectionComplete) {
+
+       gameText.WriteLine("Who are you?");
+       gameText.WriteLine("1. wood elf \n2. dwarf \n3. enchantress");
+
+       std::string playerChoice = input.PlayerChoice(std::vector<int> {1, 2, 3});
+
+       if (playerChoice != "") {
+           
+           if (playerChoice == "1") {
+               std::shared_ptr<ICharacter> woodElf = std::make_shared<WoodElf>(); // consider making these unique pointers after test
+               return woodElf;
+           }
+           else if (playerChoice == "2") {
+               std::shared_ptr<ICharacter> dwarf = std::make_shared<Dwarf>();
+               return dwarf;
+           }
+           else if (playerChoice == "3") {
+               std::shared_ptr<ICharacter> enchantress = std::make_shared<Enchantress>();
+               return enchantress;
+           }
+       }
+       else {
+           system("cls");
+           gameText.WriteLine("Indeed you are a cheeky one aren't you? Please tell me true now, who art thou?");
+       }
+   }
+
+   return nullptr;
+}
+
+std::shared_ptr<IWeapon> UI::ChooseWeapon(std::shared_ptr<ICharacter> characterClass) {
+
+    system("cls");
+    bool selectionComplete = false;
+    while (!selectionComplete) {
+
+        DisplayWeaponOptions(characterClass);
+
+        std::string playerChoice = input.PlayerChoice(std::vector<int> {1, 2, 3});
+
+        if (playerChoice != "") {
+            
+
+            if (std::shared_ptr<WoodElf> woodElf = std::dynamic_pointer_cast<WoodElf>(characterClass)) {
+                if (playerChoice == "1") {
+                    return std::make_unique<ElvenLongsword>();
+                }
+                else if (playerChoice == "2") {
+                    return std::make_unique<IvoryLongBowAndQuiver>();
+                }
+                else if (playerChoice == "3") {
+                    return std::make_unique<ShortErnestBowAndQuiver>();
+                }
+            }
+            else if (std::shared_ptr<Dwarf> dwarf = std::dynamic_pointer_cast<Dwarf>(characterClass)) {
+                if (playerChoice == "1") {
+                    return std::make_unique<DoubleBladedAxe>();
+                }
+                else if (playerChoice == "2") {
+                    return std::make_unique<OrnateShortSword>();
+                }
+                else if (playerChoice == "3") {
+                    return std::make_unique<SteelSplitHammer>();
+                }
+            }
+            else if (std::shared_ptr<Enchantress> enchantress = std::dynamic_pointer_cast<Enchantress>(characterClass)) {
+                if (playerChoice == "1") {
+                    return std::make_unique<DualEtherealDaggers>();
+                }
+                else if (playerChoice == "2") {
+                    return std::make_unique<GnarledBranchStaff>();
+                }
+                else if (playerChoice == "3") {
+                    return std::make_unique<OakCarvedWand>();
+                }
+            }
+        }
+        else {
+            system("cls");
+            gameText.WriteLine("Indeed you are a cheeky one aren't you? Please tell me true now, which weapon is of choice?");
+        }
+    }
+
+    return nullptr;
+}
+
+void UI::DisplayWeaponOptions(std::shared_ptr<ICharacter> characterClass) {
+
+    std::stringstream ss;
+    ss << "you r " << characterClass->GetName() << "\nweapon options :" << "\n";
+    gameText.WriteLine(ss.str()); 
+
+    int weaponID = 1;
+    for (std::string weapon : characterClass->GetWeaponOptions()) {
+        
+        std::stringstream ss;
+        ss << weaponID << ")    " << weapon << "\n";
+        std::string weaponOption = ss.str();
+        weaponID++;
+
+        gameText.WriteLine(weaponOption);
+    }
+
+    std::cout << "\n";
+}
+
+std::string UI::AttributeAssignment(int pointsRemaining, std::map<std::string, int> attributeJournal) {
+    
+    system("cls");
+
+    bool selectionComplete = false;
+    while (!selectionComplete) {
+
+        if (pointsRemaining == 10) {
+            gameText.WriteLine("Now let's asses your qualities");
+        }
+        
+        std::stringstream ssPrompt;
+        ssPrompt << "You have " << pointsRemaining << " points left to allocate into each attribute, please assign your skill points";
+        gameText.WriteLine(ssPrompt.str());
+
+        std::stringstream ssAttributes;
+        ssAttributes << "1) Intelligence: " << attributeJournal["intellegence"] << "		2) Dexterity: " << attributeJournal["dexterity"] << "		3) Strength: " << attributeJournal["strength"] << "\n";
+        gameText.WriteLine(ssAttributes.str());
+
+        gameText.WriteLine("Which attribute would you like to assign points to ?");
+
+        // acts as a guide for correlating user selection dynamically with the attribute related
+        std::map<std::string, std::string> selectableAttributes = {
+            {"1", "intellegence"},
+            {"2", "dexterity"},
+            {"3", "strength"}
+        };
+
+        std::string playerChoice = input.PlayerChoice(std::vector<int>{ 1, 2, 3 });
+
+        if (playerChoice != "") {
+            return playerChoice;
+        }
+        else {
+            system("cls");
+            gameText.WriteLine("Please select from available attributes...");
+        }
+    }
+    
+}
+
+int UI::PointsAllocation(std::string chosenAttribute, std::map<std::string, std::string> selectableAttributes, int pointsRemaining, std::string specializedAttribute, std::map<std::string, int> attributeJournal) {
+
+    system("cls");
+
+    bool playerDeciding = true;
+    while (playerDeciding) {
+
+        std::stringstream ssPrompt; ssPrompt << "How many points would you like to spec to " << selectableAttributes[chosenAttribute] << "?\n";
+        gameText.WriteLine(ssPrompt.str());
+
+        std::string pointsToAssignStr = input.AttributePoints(pointsRemaining);
+        int pointsToAssign = std::stoi(pointsToAssignStr);
+
+        if (pointsToAssignStr != "") {
+
+            // Checking that points do not reduce the naturally occuring 4 pts for users specialized attribute (ex: dwarf has 4 base strength)
+            if (selectableAttributes[chosenAttribute] == specializedAttribute && (attributeJournal[selectableAttributes[chosenAttribute]] += pointsToAssign < 4)) {
+                
+                gameText.WriteLine("Don't certainly underestimate your natural abilities!");
+                _getch();
+
+                system("cls");
+                gameText.WriteLine("So again...");
+                std::stringstream ssPrompt;
+                ssPrompt << "You have " << pointsRemaining << " points left to allocate into each attribute, please assign your skill points";
+                gameText.WriteLine(ssPrompt.str());
+            }
+            else {
+                return pointsToAssign;
+            }
+        }
+        else {
+            gameText.WriteLine("Why don't we try to be reasonable and stay within the bounds of reality?");
+            _getch();
+
+            system("cls");
+            gameText.WriteLine("So again...");
+            std::stringstream ssPrompt;
+            ssPrompt << "You have " << pointsRemaining << " points left to allocate into each attribute, please assign your skill points";
+            gameText.WriteLine(ssPrompt.str());
+
+        }
+    }
+
+    return 0;
+}
+
 
 void UI::DisplayMap(std::vector<std::string> dungeonRooms, int indexStop) {
     system("cls");
@@ -117,7 +322,7 @@ std::shared_ptr<IEnemy> UI::GetEnemyTargetForAttack(std::shared_ptr<PlayerCharac
 
         if (selectedEnemy != enemyWithCounter.end()) {
 
-            IWeapon* weapon = player->GetWeapon();
+            std::shared_ptr<IWeapon> weapon = player->GetWeapon();
 
             std::shared_ptr<IEnemy> value = selectedEnemy->second;
 
@@ -134,7 +339,7 @@ void UI::DescribeEnemyAttack(std::string name, std::string skillName, std::strin
     gameText.WriteLine("You have been hit for " + std::to_string(attackDmg) + " hit points!");
 }
 
-bool UI::DescribePlayerAttackOptions(std::shared_ptr<IEnemy> enemy, IWeapon* weapon) {
+bool UI::DescribePlayerAttackOptions(std::shared_ptr<IEnemy> enemy, std::shared_ptr<IWeapon> weapon) {
     system("cls");
 
     gameText.WriteLine(std::string("Target in sights, choose your skill\n1)  ") + weapon->GetPrimarySkillName() + "\n2)   " + weapon->GetSecondarySkillName());

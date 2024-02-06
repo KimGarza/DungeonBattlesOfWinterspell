@@ -143,6 +143,7 @@
     <ClCompile Include="ICharacter.cpp" />
     <ClCompile Include="ICreature.cpp" />
     <ClCompile Include="IEnemy.cpp" />
+    <ClCompile Include="Input.cpp" />
     <ClCompile Include="InputManager.cpp" />
     <ClCompile Include="InvItem.cpp" />
     <ClCompile Include="IWeapon.cpp" />
@@ -164,6 +165,7 @@
     <ClInclude Include="ICharacter.h" />
     <ClInclude Include="ICreature.h" />
     <ClInclude Include="IEnemy.h" />
+    <ClInclude Include="Input.h" />
     <ClInclude Include="InputManager.h" />
     <ClInclude Include="InvItem.h" />
     <ClInclude Include="IWeapon.h" />
