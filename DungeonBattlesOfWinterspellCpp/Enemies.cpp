@@ -51,7 +51,7 @@ int DungeonDweller::AttackPlayer() {
 Goblin::Goblin() {
 	name = "Goblin";
 	health = 5;
-	hasSwiftness = true;
+	hasSwiftness = false;
 	skillName = "Stealth";
 	skillDescription = "Sneak through the shadows.";
 	skillDamage = 3;
@@ -74,8 +74,8 @@ int Goblin::AttackPlayer() {
 
 HauntingSpirit::HauntingSpirit() {
 	name = "HauntingSpirit";
-	health = 30;
-	hasSwiftness = true;
+	health = 26;
+	hasSwiftness = false;
 	skillName = "Stealth";
 	skillDescription = "Sneak through the shadows.";
 	skillDamage = 7;
@@ -99,7 +99,7 @@ int HauntingSpirit::AttackPlayer() {
 Troll::Troll() {
 	name = "Troll";
 	health = 45;
-	hasSwiftness = true;
+	hasSwiftness = false;
 	skillName = "Stealth";
 	skillDescription = "Sneak through the shadows.";
 	skillDamage = 19;
@@ -122,8 +122,8 @@ int Troll::AttackPlayer() {
 
 Skeleton::Skeleton() {
 	name = "Skeleton";
-	health = 50;
-	hasSwiftness = true;
+	health = 30;
+	hasSwiftness = false;
 	skillName = "Stealth";
 	skillDescription = "Sneak through the shadows.";
 	skillDamage = 5;

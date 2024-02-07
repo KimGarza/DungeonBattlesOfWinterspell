@@ -12,6 +12,7 @@ private:
 	int intelligence;
 	int dexterity;
 	int strength;
+	bool hasSwiftness;
 	std::vector<std::string> weaponOptions;
 
 public:
@@ -25,7 +26,11 @@ public:
 	virtual int GetDexterity() const = 0;
 	virtual int GetStrength() const = 0;
 
+	virtual bool GetHasSwiftness() const = 0;
+
 	virtual std::vector<std::string> GetWeaponOptions() const = 0;
+
+	virtual void SetHasSwiftness(bool hasSwiftness) = 0;
 
 	virtual ~ICharacter() {} // Virtual destructor
 };
