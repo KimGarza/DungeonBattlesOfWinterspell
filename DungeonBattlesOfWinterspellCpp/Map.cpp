@@ -1,20 +1,23 @@
-#include "Map.h"
-#include "DungeonRoom.h"
 #include <string>
 #include <vector>
+#include "Map.h"
+#include "DungeonRoom.h"
+
 
 Map::Map(std::vector <std::shared_ptr<DungeonRoom>> dungeonRooms) : dungeonRooms(dungeonRooms), roomsRemaining(std::make_shared<int>(dungeonRooms.size())) {}
 
+void Map::PopulateDungeonMap() {
+
+	for (const auto& dungeon : dungeonRooms) {
+
+		dungeonRoomNames.push_back(dungeon->GetName());
+	}
+}
+
 void Map::RevealMap() {
 
-	std::vector<std::string> dungeonNames;
-	for (const auto& dungeon : dungeonRooms) { // auto represents cpp inheritely knowing that the type is DungeonRoom
-
-		dungeonNames.push_back(dungeon->GetName());
-	}
-
-	int indexStop = (dungeonRooms.size() - *roomsRemaining); // subtracting the remaining rooms gets us to the current # we are on to know where the last dungeon to write out is
-	ui.DisplayMap(dungeonNames, indexStop);
+	int indexStop = (dungeonRooms.size() - *roomsRemaining); // by subtracting the remaining rooms from all rooms, gets us to the current room by index we are on to know where the last dungeon to write out is
+	ui.DisplayMap(dungeonRoomNames, indexStop);
 }
 
 std::shared_ptr<DungeonRoom> Map::GetSetCurrentRoom() {

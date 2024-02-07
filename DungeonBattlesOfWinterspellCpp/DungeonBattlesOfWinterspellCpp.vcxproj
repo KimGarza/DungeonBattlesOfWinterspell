@@ -143,11 +143,13 @@
     <ClCompile Include="ICharacter.cpp" />
     <ClCompile Include="ICreature.cpp" />
     <ClCompile Include="IEnemy.cpp" />
+    <ClCompile Include="Input.cpp" />
     <ClCompile Include="InputManager.cpp" />
     <ClCompile Include="InvItem.cpp" />
     <ClCompile Include="IWeapon.cpp" />
     <ClCompile Include="Map.cpp" />
     <ClCompile Include="PlayerCharacter.cpp" />
+    <ClCompile Include="Story.cpp" />
     <ClCompile Include="UI.cpp" />
     <ClCompile Include="Weapons.cpp" />
   </ItemGroup>
@@ -164,11 +166,13 @@
     <ClInclude Include="ICharacter.h" />
     <ClInclude Include="ICreature.h" />
     <ClInclude Include="IEnemy.h" />
+    <ClInclude Include="Input.h" />
     <ClInclude Include="InputManager.h" />
     <ClInclude Include="InvItem.h" />
     <ClInclude Include="IWeapon.h" />
     <ClInclude Include="Map.h" />
     <ClInclude Include="PlayerCharacter.h" />
+    <ClInclude Include="Story.h" />
     <ClInclude Include="UI.h" />
     <ClInclude Include="Weapons.h" />
   </ItemGroup>

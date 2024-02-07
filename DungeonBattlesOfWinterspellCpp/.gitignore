@@ -47,6 +47,8 @@ CMakeCache.txt
 
 # IDE - CLion
 .idea/
+.idb
+.pdb
 
 # OS generated files
 .DS_Store
@@ -63,6 +65,8 @@ Thumbs.db
 *.sqlite
 *.opendb
 *.VC.db
+*ipch
+
 
 # *.ilk         (Visual Studio incremental link files)
 # *.aps         (Binary version of the .rc file in MFC (Microsoft Foundation Classes))
