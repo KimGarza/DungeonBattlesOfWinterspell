@@ -1,15 +1,25 @@
  #pragma once
-#include "map"
 #include <iostream>
+#include "map"
+#include "UI.h"
 #include "PlayerCharacter.h"
 #include "ICharacter.h"
 
 class CharacterCreation
 {
+private:
+	UI ui;
+	std::shared_ptr<ICharacter> characterInGrogpress;
+	std::string specializedAttribute;
+	std::shared_ptr<IWeapon> weapon;
+	std::map<std::string, int> attributeJournal;
+
 public:
-	std::shared_ptr<PlayerCharacter> ChooseClass();
-	IWeapon* ChooseWeapon(ICharacter* character);
-	std::map<std::string, int> AllocateAttributes(ICharacter* character);
-	int AllocatePoints(std::string selectedAttribute, std::map<std::string, std::string> attributeSelection, std::map<std::string, int> attributeJournal, std::map<std::string, int> initialAttributeValues, int remainingPoints, ICharacter* character);
+	std::shared_ptr<PlayerCharacter> CreateCharacter();
+	std::map<std::string, int> AllocateAttributes();
+	int AllocatePoints(std::string chosenAttribute, std::map<std::string, std::string> selectableAttributes, int pointsRemaining);
+	void CheckForSwiftness();
+	std::shared_ptr<PlayerCharacter> GeneratePlayerCharacter();
+	void Deallocation();
 };
 

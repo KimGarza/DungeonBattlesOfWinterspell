@@ -11,11 +11,11 @@ ElvenLongsword::ElvenLongsword() {
 
 	pSkillName = "Elegant Divide";
 	pSkillDescription = "a highly precise and powerful slash to a single enemy target";
-	pSkillDamageRange = { 3, 14 };
+	pSkillDamageRange = { 3, 11 };
 
 	sSkillName = "Teachings of The Elders";
 	sSkillDescription = "a practice of the lessons, taught by the elders of homeland";
-	sSkillDamageRange = { 3, 5 };
+	sSkillDamageRange = { 2, 4 };
 }
 
 int ElvenLongsword::UseSkillPrimary() {
@@ -39,11 +39,11 @@ IvoryLongBowAndQuiver::IvoryLongBowAndQuiver() {
 
 	pSkillName = "Snipers Mark";
 	pSkillDescription = "a highly precise shot to the head which never misses it's mark";
-	pSkillDamageRange = { 12 };
+	pSkillDamageRange = { 1, 15 };
 
 	sSkillName = "Majestic Volley";
 	sSkillDescription = "a majestic volley of arrows are shot up and rain down from above";
-	sSkillDamageRange = { 1, 8 };
+	sSkillDamageRange = { 0, 8 };
 }
 
 int IvoryLongBowAndQuiver::UseSkillPrimary() {
@@ -66,11 +66,11 @@ ShortErnestBowAndQuiver::ShortErnestBowAndQuiver() {
 
 	pSkillName = "Piercing Arrow";
 	pSkillDescription = "an arrow to peirce through the heart of the enemy";
-	pSkillDamageRange = { 9, 18 };
+	pSkillDamageRange = { 3, 12 };
 
 	sSkillName = "Fletchers Folley";
 	sSkillDescription = "a powerful attack by the hand of the elf which effects surrounding enemies to the target";
-	sSkillDamageRange = { 1, 3 };
+	sSkillDamageRange = { 0, 6 };
 }
 
 int ShortErnestBowAndQuiver::UseSkillPrimary() {
@@ -95,11 +95,11 @@ DoubleBladedAxe::DoubleBladedAxe() {
 
 	sSkillName = "Aged, Sliced and Served";
 	sSkillDescription = "fine wedge cuts to the targeted enemy, if the hit is critical, he may be served on a wooden board with Dom Pérignon";
-	sSkillDamageRange = { 5, 8 };
+	sSkillDamageRange = { 3, 14 };
 
 	pSkillName = "Mighty Cleave";
 	pSkillDescription = "a swipe of the axe horizontally to the surrounding enemies";
-	pSkillDamageRange = { 8, 12 };
+	pSkillDamageRange = { 3, 4 };
 }
 
 int DoubleBladedAxe::UseSkillPrimary() {
@@ -122,11 +122,11 @@ OrnateShortSword::OrnateShortSword() {
 
 	sSkillName = "Gut Wrencher";
 	sSkillDescription = "a stab through the enemies ribs";
-	sSkillDamageRange = { 5, 18 };
+	sSkillDamageRange = { 3, 8 };
 
 	pSkillName = "Double Swing";
 	pSkillDescription = "a swing of the sword twice, with the ability to attack twice in one attack";
-	pSkillDamageRange = { 3, 8 };
+	pSkillDamageRange = { 0, 6 };
 }
 
 int OrnateShortSword::UseSkillPrimary() {
@@ -150,11 +150,11 @@ SteelSplitHammer::SteelSplitHammer() {
 
 	pSkillName = "Wounding Skull Cruncher";
 	pSkillDescription = "a disturbing and heavy fall of his hammer, to the enemy's head, where, if it hits at it's mightiest";
-	pSkillDamageRange = { 33, 40 };
+	pSkillDamageRange = { 2, 8 };
 
 	sSkillName = "Strike of Thunder and Steel";
 	sSkillDescription = "a powerful and mighty blow of a heavy steel to the ground infront of the enemy's feet. This attack is powerful enough to effect the target enemy and one surrounding enemy on either side";
-	sSkillDamageRange = { 14, 20 };
+	sSkillDamageRange = { 1, 20 };
 }
 
 int SteelSplitHammer::UseSkillPrimary() {
@@ -179,11 +179,11 @@ DualEtherealDaggers::DualEtherealDaggers() {
 
 	pSkillName = "Wind of Furry";
 	pSkillDescription = "a highly precise and powerful slash to a single enemy target";
-	pSkillDamageRange = { 33, 40 };
+	pSkillDamageRange = { 3, 7 };
 
 	sSkillName = "Dual Stab";
 	sSkillDescription = "a practice of the lessons, taught by the elders of the homeland";
-	sSkillDamageRange = { 14, 20 };
+	sSkillDamageRange = { 1, 5 };
 }
 
 int DualEtherealDaggers::UseSkillPrimary() {
@@ -206,11 +206,11 @@ GnarledBranchStaff::GnarledBranchStaff() {
 
 	pSkillName = "Brewed Storm";
 	pSkillDescription = "a highly precise and powerful slash to a single enemy target";
-	pSkillDamageRange = { 33, 40 };
+	pSkillDamageRange = { 3, 9 };
 
 	sSkillName = "Fire Beacon";
 	sSkillDescription = "a practice of the lessons, taught by the elders of the homeland";
-	sSkillDamageRange = { 14, 20 };
+	sSkillDamageRange = { 1, 5 };
 }
 
 int GnarledBranchStaff::UseSkillPrimary() {
@@ -233,11 +233,11 @@ OakCarvedWand::OakCarvedWand() {
 
 	pSkillName = "Dark Charm";
 	pSkillDescription = "a highly precise and powerful slash to a single enemy target";
-	pSkillDamageRange = { 33, 40 };
+	pSkillDamageRange = { 0, 13 };
 
 	sSkillName = "Ancient Incantation";
 	sSkillDescription = "a practice of the lessons, taught by the elders of the homeland";
-	sSkillDamageRange = { 14, 20 };
+	sSkillDamageRange = { 0, 22 };
 }
 
 
