@@ -1,2 +1,4 @@
-﻿  Story.cpp
+﻿  UI.cpp
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.cpp(184): warning C4715: 'UI::AttributeAssignment': not all control paths return a value
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.cpp(414): warning C4715: 'UI::GetEnemyTargetForAttack': not all control paths return a value
   DungeonBattlesOfWinterspellCpp.vcxproj -> G:\repos\DungeonBattlesOfWinterspellCpp\x64\Debug\DungeonBattlesOfWinterspellCpp.exe

@@ -8,6 +8,7 @@
 ExploreDungeon::ExploreDungeon(std::shared_ptr<DungeonRoom> currentRoom, std::shared_ptr<PlayerCharacter> playerCharacter) : currentRoom(currentRoom), playerCharacter(playerCharacter), ui(ui) {}
 
 void ExploreDungeon::EnterDungeonRoom() {
+	system("cls");
 	ui.DescribeDungeonRoom(currentRoom->GetDescription());
 	return;
 }

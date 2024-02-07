@@ -64,6 +64,7 @@ void Game::CheckGameState() {
 		Battle battle(map->GetSetCurrentRoom()->GetTurnOrder()); // odd mix here of using game or map to get the current room
 
 		battle.RevealTurnOrder(map->GetSetCurrentRoom()->GetTurnOrder(), currentRoom->GetName());
+		
 
 		battle.CommenceBattle(playerCharacter);
 

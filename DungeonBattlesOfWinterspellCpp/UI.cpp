@@ -10,16 +10,18 @@
 #include <conio.h>
 #include <memory>
 #include <numeric>
+#include <iostream>
+#include <cctype>
 #include <map>
 
 
 // Player Creation
 std::shared_ptr<ICharacter> UI::ChooseClass() {
+    system("cls");
 
    bool selectionComplete = false;
    while (!selectionComplete) {
 
-       system("cls");
        gameText.WriteLine("Pray tell... Who are you?\n");
        gameText.WriteLine("1)  Woodelf \n2)  Dwarf \n3)  Enchantress\n");
 
@@ -110,7 +112,7 @@ std::shared_ptr<IWeapon> UI::ChooseWeapon(std::shared_ptr<ICharacter> characterC
                 }
             }
             std::string weaponName = weapon->GetName();
-            gameText.WriteLine("The " + weaponName + ", an ardent choice!");
+            gameText.WriteLine("The " + weaponName + ", an ardent choice!"); /**/ _getch();
             return weapon;
         }
         else {
@@ -272,9 +274,25 @@ void UI::DisplayTurnOrder(std::vector<std::string> creatureNames, std::string du
 
     system("cls");
 
-    gameText.WriteLine(dungeonRoomName + "\n\n");
-    for (std::string name : creatureNames) {
-        gameText.WriteLine(name);
+    gameText.WriteLine("You discover lurkers in the dark!\n");
+
+    for (char& c : dungeonRoomName) {
+        c = std::toupper(c);
+    }
+    gameText.WriteLine(dungeonRoomName);
+
+    if (!creatureNames.empty()) {
+        for (auto it = creatureNames.begin(); it != creatureNames.end(); ++it) {
+
+            gameText.WriteText(*it);
+
+            if (it != creatureNames.end() - 1) {
+                gameText.WriteText(", ");
+            }
+            else {
+                gameText.WriteLine("\n");
+            }
+        }
     }
     _getch();
     return;
@@ -283,6 +301,23 @@ void UI::DisplayTurnOrder(std::vector<std::string> creatureNames, std::string du
 bool UI::DescribePlayerOptions(std::shared_ptr<PlayerCharacter> player) {
 
     system("cls");
+    int consoleWidth = 100; // This is an example width, you may get or set this programmatically
+    int panelWidth = 20; // The fixed width of your stats panel
+
+    int spaceBeforePanel = consoleWidth - panelWidth;
+
+    // Print the stats panel with the correct spacing
+    for (int i = 0; i < spaceBeforePanel; ++i) {
+        std::cout << " "; // Print spaces before the panel starts
+    }
+    std::cout << "| Health: " << "health" << " |\n";
+
+    for (int i = 0; i < spaceBeforePanel; ++i) {
+        std::cout << " ";
+    }
+    std::cout << "| Potions: " << "potionCount" << " |\n";
+
+    // ... print other stats with the same spacing
 
     gameText.WriteLine("Now's your chance! What action will you do?!");
     gameText.WriteLine("1)  Attack\n2)  Drink Health Potion (" + std::to_string(player->GetHealthPotions()) + " remaining)");
@@ -329,6 +364,22 @@ std::shared_ptr<IEnemy> UI::GetEnemyTargetForAttack(std::shared_ptr<PlayerCharac
     while (!targetChosen) {
         system("cls");
 
+        int consoleWidth = 100; // This is an example width, you may get or set this programmatically
+        int panelWidth = 20; // The fixed width of your stats panel
+
+        int spaceBeforePanel = consoleWidth - panelWidth;
+
+        // Print the stats panel with the correct spacing
+        for (int i = 0; i < spaceBeforePanel; ++i) {
+            std::cout << " "; // Print spaces before the panel starts
+        }
+        std::cout << "| Health: " << "health" << " |\n";
+
+        for (int i = 0; i < spaceBeforePanel; ++i) {
+            std::cout << " ";
+        }
+        std::cout << "| Potions: " << "potionCount" << " |\n";
+
         gameText.WriteLine("You have chosen to attack!\nChoose your target\n");
 
         std::map<std::string, std::shared_ptr<IEnemy>> enemyWithCounter; /**/ int counter = 1; // for display and selection ex: #) enemy name
@@ -363,44 +414,65 @@ std::shared_ptr<IEnemy> UI::GetEnemyTargetForAttack(std::shared_ptr<PlayerCharac
 }
 
 void UI::DescribeEnemyAttack(std::string name, std::string skillName, std::string skillDescription, int attackDmg) {
-    gameText.WriteLine(name + " attacked with " + skillName + ". " + skillDescription);
-    gameText.WriteLine("You have been hit for " + std::to_string(attackDmg) + " hit points!");
+
+    gameText.WriteLine("\n" + name + " attacked you with " + skillName + ". " + skillDescription + " for " + std::to_string(attackDmg) + " hit points!\n");
+    _getch();
 }
 
 bool UI::DescribePlayerAttackOptions(std::shared_ptr<IEnemy> enemy, std::shared_ptr<IWeapon> weapon) {
     system("cls");
 
-    gameText.WriteLine(std::string("Target in sights, choose your skill\n1)  ") + weapon->GetPrimarySkillName() + "\n2)   " + weapon->GetSecondarySkillName());
+    int consoleWidth = 100; // This is an example width, you may get or set this programmatically
+    int panelWidth = 20; // The fixed width of your stats panel
+
+    int spaceBeforePanel = consoleWidth - panelWidth;
+
+    // Print the stats panel with the correct spacing
+    for (int i = 0; i < spaceBeforePanel; ++i) {
+        std::cout << " "; // Print spaces before the panel starts
+    }
+    std::cout << "| Health: " << "health" << " |\n";
+
+    for (int i = 0; i < spaceBeforePanel; ++i) {
+        std::cout << " ";
+    }
+    std::cout << "| Potions: " << "potionCount" << " |\n";
+
+    gameText.WriteLine(std::string("Target is in sights, choose your next move...\n1)  ") + weapon->GetPrimarySkillName() + "\n2)   " + weapon->GetSecondarySkillName());
 
     std::string playerChoice; /**/ std::cin >> playerChoice;
+
     bool validChoice = false;
     while (!validChoice) {
+
         if (playerChoice == "1") {
-            validChoice = true;
+
             system("cls");
             gameText.WriteLine(std::string(enemy->GetName()) + " currently has " + std::to_string(enemy->GetHealth()) + " hp remaining");
-            gameText.WriteLine("You have chosen to use " + weapon->GetPrimarySkillName() + ", " + weapon->GetPrimarySkillDescription());
+            gameText.WriteLine("You have chosen to use " + weapon->GetPrimarySkillName() + ", " + weapon->GetPrimarySkillDescription() + "...");
             _getch();
+
             int attackDmg = weapon->UseSkillPrimary(); /**/ enemy->TakeDamage(attackDmg);
             gameText.WriteLine("You have inflicted " + std::to_string(attackDmg) + " onto " + enemy->GetName());
             gameText.WriteLine(std::string(enemy->GetName()) + " now has " + std::to_string(enemy->GetHealth()) + " hp remaining");
-            return enemy->GetIsDead();
 
             _getch();
-
+            return enemy->GetIsDead();
         }
         else if (playerChoice == "2") {
-            validChoice = true;
+
             system("cls");
+
             gameText.WriteLine(std::string(enemy->GetName()) + " currently has " + std::to_string(enemy->GetHealth()) + " hp remaining");
             gameText.WriteLine("You have chosen to use " + weapon->GetSecondarySkillName() + ", " + weapon->GetSecondarySkillDescription());
             _getch();
+
             int attackDmg = weapon->UseSkillSecondary(); /**/ enemy->TakeDamage(attackDmg);
             gameText.WriteLine("You have inflicted " + std::to_string(attackDmg) + " onto " + enemy->GetName());
             gameText.WriteLine(std::string(enemy->GetName()) + " now has " + std::to_string(enemy->GetHealth()) + " hp remaining");
+
             _getch();
             return enemy->GetIsDead();
-
         }
         return false;
     }
@@ -409,14 +481,13 @@ bool UI::DescribePlayerAttackOptions(std::shared_ptr<IEnemy> enemy, std::shared_
 }
 
 void UI::HealthRemaining(int healthRemaining) {
-    gameText.WriteLine("You have " + std::to_string(healthRemaining) + "remaining");
+    gameText.WriteLine("You have " + std::to_string(healthRemaining) + "remaining"); /**/ _getch();
 }
 
 void UI::KilledEnemy(std::shared_ptr<IEnemy> enemy) {
-    gameText.WriteLine("You have slain " + enemy->GetName());
+    gameText.WriteLine("You have slain " + enemy->GetName()); /**/ _getch();
 }
 
 void UI::SlainAllEnemies() {
-    gameText.WriteLine("You have slain all the scorbles that plague this room");
-    _getch();
+    gameText.WriteLine("You have slain all the scorbles that plague this room"); /**/ _getch();
 }
