@@ -1,43 +1,8 @@
-﻿  Battle.cpp
-  CharacterCreation.cpp
-G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterCreation.cpp(23,11): warning C4101: 'gameText': unreferenced local variable
-  DungeonGenerator.cpp
-G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\DungeonGenerator.cpp(78,52): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\DungeonGenerator.cpp(84,52): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-  DungeonRoom.cpp
-  Enemies.cpp
-  ExploreDungeon.cpp
-  Game.cpp
-  Input.cpp
-  Map.cpp
-G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Map.cpp(19,57): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\xutility(268): warning C4267: 'initializing': conversion from 'size_t' to '_Ty', possible loss of data
-          with
-          [
-              _Ty=int
-          ]
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\memory(1983): message : see reference to function template instantiation 'void std::_Construct_in_place<_Ty,unsigned __int64>(_Ty &,unsigned __int64 &&) noexcept' being compiled
-          with
-          [
-              _Ty=int
-          ]
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\memory(2663): message : see reference to function template instantiation 'std::_Ref_count_obj2<int>::_Ref_count_obj2<_Ty>(_Ty &&)' being compiled
-          with
-          [
-              _Ty=unsigned __int64
-          ]
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\memory(2664,20): message : see reference to function template instantiation 'std::_Ref_count_obj2<int>::_Ref_count_obj2<_Ty>(_Ty &&)' being compiled
-          with
-          [
-              _Ty=unsigned __int64
-          ]
-G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Map.cpp(7,153): message : see reference to function template instantiation 'std::shared_ptr<int> std::make_shared<int,unsigned __int64>(unsigned __int64 &&)' being compiled
-  Story.cpp
+﻿  Story.cpp
   UI.cpp
   Generating Code...
 G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.cpp(184): warning C4715: 'UI::AttributeAssignment': not all control paths return a value
 G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.cpp(414): warning C4715: 'UI::GetEnemyTargetForAttack': not all control paths return a value
-G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Map.cpp(32): warning C4715: 'Map::GetSetCurrentRoom': not all control paths return a value
   DungeonBattlesOfWinterspellCpp.cpp
   Note: including file: C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\iostream
   Note: including file:  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\yvals_core.h
@@ -165,5 +130,4 @@ G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Map.cpp(3
   Note: including file:   C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\sstream
   Note: including file:   G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\DungeonRoom.h
   Note: including file:  G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Map.h
-  LINK : G:\repos\DungeonBattlesOfWinterspellCpp\x64\Debug\DungeonBattlesOfWinterspellCpp.exe not found or not built by the last incremental link; performing full link
   DungeonBattlesOfWinterspellCpp.vcxproj -> G:\repos\DungeonBattlesOfWinterspellCpp\x64\Debug\DungeonBattlesOfWinterspellCpp.exe

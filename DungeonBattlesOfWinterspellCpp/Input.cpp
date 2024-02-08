@@ -6,7 +6,7 @@
 std::string Input::PlayerChoice(std::vector<int> selectionRange) {
 
 	std::string playerSelection; /**/ std::cin >> playerSelection;
-	
+
 	if (inputMgr.ValidatePlayerInput(playerSelection, selectionRange)) {
 		return playerSelection;
 	}
@@ -22,7 +22,7 @@ std::string Input::PlayerChoiceYN() {
 }
 
 std::string Input::AttributePoints(int pointsRemaining) {
-	
+
 	std::string points; /**/ std::cin >> points;
 
 	if (inputMgr.ValidatePoints(points, pointsRemaining)) {

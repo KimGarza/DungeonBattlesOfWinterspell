@@ -11,4 +11,3 @@ public:
 	std::string PlayerChoiceYN();
 	std::string AttributePoints(int pointsRemaining);
 };
-
