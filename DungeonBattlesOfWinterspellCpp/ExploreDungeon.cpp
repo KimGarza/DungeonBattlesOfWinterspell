@@ -7,10 +7,29 @@
 
 ExploreDungeon::ExploreDungeon(std::shared_ptr<DungeonRoom> currentRoom, std::shared_ptr<PlayerCharacter> playerCharacter) : currentRoom(currentRoom), playerCharacter(playerCharacter), ui(ui) {}
 
+/// <summary>
+/// Enter dungeon, if it is locked, it will inform player that it is locked and return. If it is not locked but no enemies are present,
+/// that can only mean that the player has vanquished them since upon entering all new dungeon rooms, enemies will generate.
+/// If neither of those are true, the dungeon room will newly be described.
+/// </summary>
 void ExploreDungeon::EnterDungeonRoom() {
 	system("cls");
-	ui.DescribeDungeonRoom(currentRoom->GetDescription());
+
+	if (currentRoom->GetIsLocked()) {
+		ui.RoomLocked();
+	}
+	else if (currentRoom->GetCompleted()) {
+		ui.NoEnemies();
+	}
+	else {
+		ui.DescribeDungeonRoom(currentRoom->GetDescription());
+	}
+		
 	return;
+}
+
+void ExploreDungeon::ReExploreRoom() {
+
 }
 
 
@@ -52,5 +71,6 @@ std::vector<std::shared_ptr<ICreature>> ExploreDungeon::GenerateTurnOrder() {
 		}
 	}
 
+	currentRoom->SetCurrentTurnOrder(turnOrder);
 	return turnOrder;
 }

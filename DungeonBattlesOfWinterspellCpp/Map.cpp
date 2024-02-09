@@ -14,26 +14,39 @@ void Map::PopulateDungeonMap() {
 	}
 }
 
-void Map::RevealMap() {
+/// <summary>
+/// Reveals the current rooms discovered by name and undiscovered, includes a menu of available discovered locations the player can choose to go to, 
+/// or fast travel to the previously excivated ones. The selected room is now the current room.
+/// </summary>
+std::shared_ptr<DungeonRoom> Map::RevealMapMenu() {
 
 	int indexStop = (dungeonRooms.size() - *roomsRemaining); // by subtracting the remaining rooms from all rooms, gets us to the current room by index we are on to know where the last dungeon to write out is
-	ui.DisplayMap(dungeonRoomNames, indexStop);
-}
+	std::string playerSelectedRoom = ui.DisplayMapMenu(dungeonRoomNames, indexStop);
 
-std::shared_ptr<DungeonRoom> Map::GetSetCurrentRoom() {
-	for (int i = 0; i < dungeonRooms.size(); i++) {
-		const auto& dungeon = dungeonRooms[i];
+	auto travelTo = std::find_if(dungeonRooms.begin(), dungeonRooms.end(), [playerSelectedRoom](const std::shared_ptr<DungeonRoom>& room) {
+		return room->GetName() == playerSelectedRoom;
+	});
 
-		if (!dungeon->GetCompleted()) {
-			currentRoom = dungeon;
-			return dungeon;
-		}
+	
+
+	if (travelTo != dungeonRooms.end()) {
+		currentRoom = *travelTo;
+		return *travelTo;
 	}
 }
 
+std::shared_ptr<DungeonRoom> Map::GetCurrentRoom() {
+
+	return currentRoom;
+}
+
+
 // sets current dungeon room and updates the completed one
 void Map::UpdateMap() {
-	currentRoom->SetCompleted();
-	*roomsRemaining -= 1;
-	GetSetCurrentRoom();
+
+	if (currentRoom->GetTimesExplored() == 1) {
+
+		currentRoom->SetCompleted();
+		*roomsRemaining -= 1;
+	}
 }

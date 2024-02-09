@@ -233,10 +233,12 @@ int UI::PointsAllocation(std::string chosenAttribute, std::map<std::string, std:
 
 // Map
 
-void UI::DisplayMap(std::vector<std::string> dungeonRooms, int indexStop) {
+std::string UI::DisplayMapMenu(std::vector<std::string> dungeonRooms, int indexStop) {
 
     system("cls");
     gameText.WriteLine("You have made a discovery! Your next dungeon location is revealed before you...\n\n");
+
+    std::vector<std::pair<int, std::string>> selectableDungeons; /**/ int roomCount;
 
     for (int i = 0; i < dungeonRooms.size(); i++) {
         if (i == 4 || i == 8) {
@@ -251,7 +253,10 @@ void UI::DisplayMap(std::vector<std::string> dungeonRooms, int indexStop) {
         }
         else {
             if (i < dungeonRooms.size() - 1) {
+
                 gameText.WriteText(dungeonRooms[i] + "   -->  ");
+
+                selectableDungeons.emplace_back((i + 1), dungeonRooms[i]); // creating a menu for the player to select a room to enter
             }
             else {
                 gameText.WriteText(dungeonRooms[i]);
@@ -259,9 +264,46 @@ void UI::DisplayMap(std::vector<std::string> dungeonRooms, int indexStop) {
         }
     }
 
+    return DisplayRoomSelect(selectableDungeons);
+
     _getch();
     system("cls");
 };
+
+std::string UI::DisplayRoomSelect(std::vector<std::pair<int, std::string>> availableRooms) {
+
+    while (true) {
+
+
+        for (const auto& room : availableRooms) {
+            gameText.WriteLine("\n" + std::to_string(room.first) + ")  " + room.second);
+        }
+
+        std::string playerChoice = input.PlayerChoice(availableRooms.size());
+
+        int roomNum = std::stoi(playerChoice);
+
+        // std::find_if with a lambda to find the matching room
+        auto selectedRoomIt = std::find_if(availableRooms.begin(), availableRooms.end(), [roomNum](const std::pair<int, std::string>& room) {
+            return room.first == roomNum;
+        });
+
+        if (selectedRoomIt != availableRooms.end()) {
+            std::pair<int, std::string> room = *selectedRoomIt;
+
+            return room.second;
+        }
+        else {
+            gameText.WriteLine("Check your eyes buster");
+            _getch();
+
+            system("cls");
+            gameText.WriteLine("Please select a dungeon room...");
+        }
+    }
+
+    return "";
+}
 
 void UI::DescribeDungeonRoom(std::string description) {
     
@@ -298,6 +340,10 @@ void UI::DisplayTurnOrder(std::vector<std::string> creatureNames, std::string du
     return;
 }
 
+void UI::NoEnemies() {
+    gameText.WriteLine("The shallow wispers in the room are faint and dismal, this room has had blood spilled of your hand this night. Seems safe enough.");
+}
+
 bool UI::DescribePlayerOptions(std::shared_ptr<PlayerCharacter> player) {
 
     system("cls");
@@ -324,24 +370,20 @@ bool UI::DescribePlayerOptions(std::shared_ptr<PlayerCharacter> player) {
 
     std::string playerChoice; /**/ std::cin >> playerChoice; 
 
-    bool validChoice = false;
-    while (!validChoice) {
-
+    while (true) {
         gameText.WriteLine("1)  Attack\n2)  Drink Health Potion (" + std::to_string(player->GetHealthPotions()) + " remaining)");
 
         if (playerChoice == "1") {
-            validChoice = true; /**/ system("cls");
+            system("cls");
             return true;
         } 
         else if (playerChoice == "2") {
-            validChoice = true;
 
             player->DrinkHealthPotion();
             return false;
 
         }
         else if (playerChoice == "3") {
-            validChoice = true;
             return false;
 
         }
@@ -490,4 +532,28 @@ void UI::KilledEnemy(std::shared_ptr<IEnemy> enemy) {
 
 void UI::SlainAllEnemies() {
     gameText.WriteLine("You have slain all the scorbles that plague this room"); /**/ _getch();
+}
+
+void UI::FoundKey(std::string dungeonName) {
+    if (dungeonName == "Tenebrific Depths") {
+        gameText.WriteLine("You have filled your pockets with all the glitters of this Foul Tomb, but upon your leave, a strange twinkle catches your glance"); /**/ _getch();
+        gameText.WriteLine("A key! Tis metal and skeletal, an iron thing. You should pocket it for safe keeping, in case you will need it later on!"); /**/ _getch();
+    }
+    else if (dungeonName == "Cursed Abyssal Sanctum") {
+        gameText.WriteLine("What's this??"); /**/ _getch();
+        gameText.WriteLine("How intriguing... You notice upon stepping upon a particular brick in the floor, that is one quite loose! As you remove it from it's place of settlement you see..."); /**/ _getch();
+        gameText.WriteLine("Another key!! But this one is rather unique..."); /**/ _getch();
+        gameText.WriteLine("It glimmers of fine iron and with an ornate hand made crest on the handle. A purple gem placed in the center surrounded by small black rustic unpolished rare gemstones.");
+        gameText.WriteLine("Surely this is dwarven-make. I would keep that if I were you sire, could open doors of great mytery."); /**/ _getch();
+    }
+}
+
+void UI::RoomLocked() {
+    gameText.WriteLine("The room is locked, you will need a key to enter."); /**/ _getch();
+}
+
+void UI::LootBegin() {
+    gameText.WriteLine("You peer around, silence. The town of Winterspell inches closer to security by victory of your hand!"); /**/ _getch();
+    gameText.WriteLine("You wander through the empty dark decrepid room to fill your pockets, you greedy little thing."); /**/ _getch();
+    gameText.WriteLine("You find..."); /**/ _getch();
 }

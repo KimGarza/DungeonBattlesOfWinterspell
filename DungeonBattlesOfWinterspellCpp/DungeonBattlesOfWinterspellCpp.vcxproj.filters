@@ -61,6 +61,12 @@
     <Filter Include="Source Files\Actors">
       <UniqueIdentifier>{b00191eb-d987-4cd1-934b-8a7efb4a4d28}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\GameStates\Loot">
+      <UniqueIdentifier>{2d9a1631-1ce7-4530-b627-e601aa4a3cf7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GameStates\Loot">
+      <UniqueIdentifier>{b990ec16-4fbe-45b5-b182-90ca605d5b01}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DungeonBattlesOfWinterspellCpp.cpp">
@@ -132,6 +138,12 @@
     <ClCompile Include="Input.cpp">
       <Filter>Source Files\Helper</Filter>
     </ClCompile>
+    <ClCompile Include="LootFactory.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="LootRoom.cpp">
+      <Filter>Source Files\GameStates\Loot</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -196,6 +208,12 @@
     </ClInclude>
     <ClInclude Include="Input.h">
       <Filter>Header Files\Helper</Filter>
+    </ClInclude>
+    <ClInclude Include="LootFactory.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LootRoom.h">
+      <Filter>Header Files\GameStates\Loot</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

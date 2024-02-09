@@ -1,4 +1,3 @@
-﻿  UI.cpp
-G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.cpp(184): warning C4715: 'UI::AttributeAssignment': not all control paths return a value
-G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.cpp(414): warning C4715: 'UI::GetEnemyTargetForAttack': not all control paths return a value
+﻿  DungeonGenerator.cpp
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\DungeonGenerator.cpp(88,52): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
   DungeonBattlesOfWinterspellCpp.vcxproj -> G:\repos\DungeonBattlesOfWinterspellCpp\x64\Debug\DungeonBattlesOfWinterspellCpp.exe

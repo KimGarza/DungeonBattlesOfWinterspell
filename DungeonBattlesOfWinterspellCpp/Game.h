@@ -4,6 +4,7 @@
 #include "PlayerCharacter.h"
 #include "CharacterCreation.h"
 #include "DungeonGenerator.h"
+#include "ExploreDungeon.h"
 #include "Map.h"
 
 class Game {

@@ -14,5 +14,9 @@ public:
 	ExploreDungeon(std::shared_ptr<DungeonRoom> currentRoom, std::shared_ptr<PlayerCharacter> playerCharacter);
 	void EnterDungeonRoom();
 	std::vector<std::shared_ptr<ICreature>> GenerateTurnOrder();
+
+	void ReExploreRoom();
+
+	void LootDungeon();
 };
 

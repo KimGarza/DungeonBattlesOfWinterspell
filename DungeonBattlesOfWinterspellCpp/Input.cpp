@@ -14,6 +14,22 @@ std::string Input::PlayerChoice(std::vector<int> selectionRange) {
 	return "";
 }
 
+std::string Input::PlayerChoice(std::size_t count) {
+
+	std::string playerSelection; /**/ std::cin >> playerSelection;
+	std::vector<int> selectionRange;
+
+	for (int i = 0; i < count; i++) {
+		selectionRange.emplace_back(i + 1);
+	}
+
+	if (inputMgr.ValidatePlayerInput(playerSelection, selectionRange)) {
+		return playerSelection;
+	}
+
+	return "";
+}
+
 std::string Input::PlayerChoiceYN() {
 
 	std::string playerSelection; /**/ std::cin >> playerSelection;

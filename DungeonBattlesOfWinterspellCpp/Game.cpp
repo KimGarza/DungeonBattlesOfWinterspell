@@ -2,6 +2,7 @@
 #include "Game.h"
 #include "GameState.h"
 #include "Battle.h"
+#include "LootRoom.h"
 #include "CharacterCreation.h"
 #include "DungeonGenerator.h"
 #include "PlayerCharacter.h"
@@ -25,7 +26,6 @@ void Game::CheckGameState() {
 
 		playerCharacter = characterCreation.CreateCharacter();
 		dungeonRooms = dungeonGenerator.GenerateDungeons();
-
 		map = std::make_shared<Map>(dungeonRooms);
 		map->PopulateDungeonMap();
 
@@ -37,7 +37,7 @@ void Game::CheckGameState() {
 	}
 	case GameState::Map: {
 
-		map->RevealMap();
+		currentRoom = map->RevealMapMenu();
 
 		ChangeGameState(GameState::Explore);
 
@@ -45,31 +45,43 @@ void Game::CheckGameState() {
 	}
 	case GameState::Explore: {
 
-		currentRoom = map->GetSetCurrentRoom(); // awkward acts as getter and setter
-
 		ExploreDungeon exploreDungeon(currentRoom, playerCharacter);
 
 		story.EnterDungeonRoom();
 
 		exploreDungeon.EnterDungeonRoom();
 
-		std::vector<std::shared_ptr<ICreature>> turnOrder = exploreDungeon.GenerateTurnOrder();
+		if (!currentRoom->GetCompleted()) {
+			std::vector<std::shared_ptr<ICreature>> turnOrder = exploreDungeon.GenerateTurnOrder();
 
-		currentRoom->SetCurrentTurnOrder(turnOrder);
+			ChangeGameState(GameState::Battle);
+		}
+		else {
+			exploreDungeon.ReExploreRoom();
 
-		ChangeGameState(GameState::Battle);
+			ChangeGameState(GameState::Loot);
+		}
+
 		break;
 	}
 	case GameState::Battle: {
-		Battle battle(map->GetSetCurrentRoom()->GetTurnOrder()); // odd mix here of using game or map to get the current room
 
-		battle.RevealTurnOrder(map->GetSetCurrentRoom()->GetTurnOrder(), currentRoom->GetName());
-		
+		Battle battle(map->GetCurrentRoom()->GetTurnOrder()); // odd mix here of using game or map to get the current room
+
+		battle.RevealTurnOrder(map->GetCurrentRoom()->GetTurnOrder(), currentRoom->GetName());
 
 		battle.CommenceBattle(playerCharacter);
 
-		ChangeGameState(GameState::UpdateMap);
+		ChangeGameState(GameState::Loot);
+
 		break;
+	}
+	case GameState::Loot: {
+
+		LootRoom loot(currentRoom);
+		loot.Loot();
+
+		ChangeGameState(GameState::UpdateMap);
 	}
 	case GameState::UpdateMap: {
 
@@ -78,7 +90,7 @@ void Game::CheckGameState() {
 		if (*map->GetRoomsRemaining() == 0) {
 			ChangeGameState(GameState::EndGame);
 		}
-
+		
 		ChangeGameState(GameState::Map);
 
 		break;

@@ -22,9 +22,11 @@ public:
 	std::string AttributeAssignment(int pointsRemaining, std::map<std::string, int> attributeJournal);
 	int PointsAllocation(std::string chosenAttribute, std::map<std::string, std::string> selectableAttributes, int pointsRemaining, std::string specializedAttribute, std::map<std::string, int> attributeJournal);
 
-	void DisplayMap(std::vector<std::string> dungeonRooms, int indexStop);
+	std::string DisplayMapMenu(std::vector<std::string> dungeonRooms, int indexStop);
+	std::string DisplayRoomSelect(std::vector<std::pair<int, std::string>> availableRooms);
 	void DescribeDungeonRoom(std::string description);
 	void DisplayTurnOrder(std::vector<std::string> creatureNames, std::string dungeonRoomName);
+	void NoEnemies();
 	bool DescribePlayerOptions(std::shared_ptr<PlayerCharacter> player);
 	void DescribeEnemyAttack(std::string name, std::string skillName, std::string skillDescription, int attackDmg);
 	bool DescribePlayerAttackOptions(std::shared_ptr<IEnemy> enemy, std::shared_ptr<IWeapon> weapon);
@@ -32,5 +34,11 @@ public:
 	void HealthRemaining(int healthRemaining);
 	void KilledEnemy(std::shared_ptr<IEnemy> enemy);
 	void SlainAllEnemies();
+
+	void FoundKey(std::string dungeonName);
+	void RoomLocked();
+
+	void LootBegin();
+
 };
 

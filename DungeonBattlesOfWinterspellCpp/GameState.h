@@ -6,6 +6,7 @@ enum class GameState {
 	Map,
 	Room,
 	Battle,
+	Loot,
 	Explore,
 	UpdateMap,
 	EndGame

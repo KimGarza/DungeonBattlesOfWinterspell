@@ -22,8 +22,8 @@ public:
         return roomsRemaining;
     }
 
-    void RevealMap();
-    std::shared_ptr<DungeonRoom> GetSetCurrentRoom();
+    std::shared_ptr<DungeonRoom> RevealMapMenu();
+    std::shared_ptr<DungeonRoom> GetCurrentRoom();
     void UpdateMap();
 };
 

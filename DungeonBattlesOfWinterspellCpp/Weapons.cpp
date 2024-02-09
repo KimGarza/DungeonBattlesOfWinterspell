@@ -11,7 +11,7 @@ ElvenLongsword::ElvenLongsword() {
 
 	pSkillName = "Elegant Divide";
 	pSkillDescription = "a highly precise and powerful slash to a single enemy target";
-	pSkillDamageRange = { 3, 11 };
+	pSkillDamageRange = { 30, 40 };
 
 	sSkillName = "Teachings of The Elders";
 	sSkillDescription = "a practice of the lessons, taught by the elders of homeland";
