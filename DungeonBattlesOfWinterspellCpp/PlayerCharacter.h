@@ -5,6 +5,7 @@
 #include "IWeapon.h"
 #include "InvItem.h"
 #include "ICreature.h"
+#include "LootItem.h"
 
 class PlayerCharacter : public ICreature {
 // 1. Private values make one for every property you want to describe/define your class
@@ -21,6 +22,7 @@ private:
 	bool hasSwiftness;
 	bool isDead;
 	int healthPotions;
+	std::vector<std::shared_ptr<LootItem>> loot;
 
 // 2. Preparing all values that will come through constructor ( we want xp, level, swift and dead to not be passed in we already know what these will be to start)
 public:
@@ -54,8 +56,11 @@ public:
 	int GetHealthPotions() { return healthPotions; }
 	bool GetHasSwiftness() { return hasSwiftness; }
 	bool GetIsDead() { return isDead; }
+	std::vector<std::shared_ptr<LootItem>> GetLoot() { return loot; }
 
 	bool TakeDamage(int damageTaken);
 	bool CheckIfDead();
 	void DrinkHealthPotion();
+	void AddToInventory(std::vector<std::shared_ptr<LootItem>> newItems);
+
 };

@@ -51,3 +51,9 @@ void PlayerCharacter::DrinkHealthPotion() {
 	healthPotions -= 1;
 }
 
+void PlayerCharacter::AddToInventory(std::vector<std::shared_ptr<LootItem>> newItems) {
+	
+	for (const auto& item : newItems) {
+		loot.push_back(item);
+	}
+}

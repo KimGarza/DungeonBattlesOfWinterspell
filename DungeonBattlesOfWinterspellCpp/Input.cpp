@@ -17,6 +17,9 @@ std::string Input::PlayerChoice(std::vector<int> selectionRange) {
 std::string Input::PlayerChoice(std::size_t count) {
 
 	std::string playerSelection; /**/ std::cin >> playerSelection;
+
+	if (playerSelection == "x") { return "x"; }
+
 	std::vector<int> selectionRange;
 
 	for (int i = 0; i < count; i++) {

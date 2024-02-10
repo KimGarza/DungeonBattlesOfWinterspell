@@ -9,12 +9,12 @@ class Battle
 {
 private:
 	UI ui;
-	std::shared_ptr<DungeonRoom> currentRoom;
+	std::vector<std::shared_ptr<ICreature>> turnOrder;
 
 public:
-	Battle(std::shared_ptr<DungeonRoom> currentRoom);
+	Battle(std::vector<std::shared_ptr<ICreature>> turnOrder);
 
-	void RevealTurnOrder();
+	void RevealTurnOrder(std::vector<std::shared_ptr<ICreature>> turnOrder, std::string dungeonRoomName);
 	void CommenceBattle(std::shared_ptr<PlayerCharacter> playerCharacter);
 };
 

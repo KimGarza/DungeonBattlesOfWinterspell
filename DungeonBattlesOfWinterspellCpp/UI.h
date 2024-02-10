@@ -40,6 +40,7 @@ public:
 	void RoomLocked();
 
 	void LootBegin(std::vector<std::shared_ptr<LootItem>> loot);
+	std::shared_ptr<LootItem> DisplayInventoryMenu(std::vector<std::shared_ptr<LootItem>> playersLoot);
 
 };
 

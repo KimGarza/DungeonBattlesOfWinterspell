@@ -67,9 +67,9 @@ void Game::CheckGameState() {
 	}
 	case GameState::Battle: {
 
-		Battle battle(currentRoom);
+		Battle battle(currentRoom->GetTurnOrder());
 
-		battle.RevealTurnOrder();
+		battle.RevealTurnOrder(currentRoom->GetTurnOrder(), currentRoom->GetName());
 
 		battle.CommenceBattle(playerCharacter);
 
@@ -79,8 +79,9 @@ void Game::CheckGameState() {
 	}
 	case GameState::Loot: {
 
-		LootRoom loot(currentRoom);
-		loot.Loot();
+		LootRoom lootRoom;
+
+		lootRoom.Loot(playerCharacter, currentRoom);
 
 		ChangeGameState(GameState::UpdateMap);
 	}

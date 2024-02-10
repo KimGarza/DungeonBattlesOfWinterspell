@@ -9,8 +9,7 @@ private:
 	std::shared_ptr<DungeonRoom> currentRoom;
 
 public:
-	LootRoom(std::shared_ptr<DungeonRoom> currentRoom);
-
-	void Loot();
+	void Loot(std::shared_ptr<PlayerCharacter> playerCharacter, std::shared_ptr<DungeonRoom> currentRoom);
+	void OpenInventory(std::shared_ptr<PlayerCharacter> playerCharacter);
 };
 

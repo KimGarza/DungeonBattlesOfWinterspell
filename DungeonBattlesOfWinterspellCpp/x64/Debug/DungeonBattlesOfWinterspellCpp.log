@@ -1,2 +1,5 @@
 ﻿  Battle.cpp
+  Game.cpp
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\LootRoom.h(2,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  Generating Code...
   DungeonBattlesOfWinterspellCpp.vcxproj -> G:\repos\DungeonBattlesOfWinterspellCpp\x64\Debug\DungeonBattlesOfWinterspellCpp.exe

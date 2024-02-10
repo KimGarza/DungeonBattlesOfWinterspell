@@ -553,6 +553,7 @@ void UI::RoomLocked() {
 }
 
 void UI::LootBegin(std::vector<std::shared_ptr<LootItem>> loot) {
+    system("cls");
     gameText.WriteLine("You peer around, silence. The town of Winterspell inches closer to security by victory of your hand!"); /**/ _getch();
     gameText.WriteLine("You wander through the empty dark decrepid room to fill your pockets, you greedy little thing."); /**/ _getch();
     gameText.WriteLine("You find ");
@@ -568,4 +569,52 @@ void UI::LootBegin(std::vector<std::shared_ptr<LootItem>> loot) {
             }
         }
     }
+
+    _getch();
+}
+
+std::shared_ptr<LootItem> UI::DisplayInventoryMenu(std::vector<std::shared_ptr<LootItem>> inventory) {
+    
+    while (true) {
+        system("cls");
+        gameText.WriteLine("*____________Inventory____________*\n\n");
+
+        int itemID = 0;
+
+
+        for (const auto& item : inventory) {
+
+            gameText.WriteLine(std::to_string(itemID) + ")  " + item->GetName());
+
+            itemID++;
+        }
+
+        gameText.WriteLine("x)  exit menu");
+
+        std::string playerChoice = input.PlayerChoice(inventory.size());
+        if (playerChoice == "x") { // player wishes to exit menu
+            return nullptr;
+        }
+
+        int IDSelected = std::stoi(playerChoice);
+
+        // lambda function
+        auto selectedItem = std::find_if(inventory.begin(), inventory.end(), [IDSelected](const std::pair<int, std::shared_ptr<LootItem>>& item) {
+            return item.first == IDSelected;
+            });
+
+        if (selectedItem != inventory.end()) {
+
+            return *selectedItem;;
+        }
+        else {
+            gameText.WriteLine("Not sure you are being rational! Please save all the cans of beans for the charity this spring");
+            _getch();
+        }
+    }
+
+    _getch();
+    system("cls");
+
+
 }

@@ -4,13 +4,13 @@
 #include "ICharacter.h"
 #include "PlayerCharacter.h"
 
-Battle::Battle(std::shared_ptr<DungeonRoom> currentRoom) : currentRoom(currentRoom), ui(ui) {}
+Battle::Battle(std::vector<std::shared_ptr<ICreature>> turnOrder) : ui(ui), turnOrder(turnOrder) {}
 
-void Battle::RevealTurnOrder() {
-	
-	std::vector<std::string> creatureNames;
-	
-    for (std::shared_ptr<ICreature> creature : currentRoom->GetTurnOrder()) {
+void Battle::RevealTurnOrder(std::vector<std::shared_ptr<ICreature>> turnOrder, std::string dungeonRoomName) {
+
+    std::vector<std::string> creatureNames;
+
+    for (std::shared_ptr<ICreature> creature : turnOrder) {
 
         std::shared_ptr<PlayerCharacter> player = std::dynamic_pointer_cast<PlayerCharacter>(creature);
         if (player) {
@@ -22,7 +22,7 @@ void Battle::RevealTurnOrder() {
             creatureNames.push_back(enemy->GetName());
         }
     }
-    ui.DisplayTurnOrder(creatureNames, currentRoom->GetName());
+    ui.DisplayTurnOrder(creatureNames, dungeonRoomName);
 }
 
 void Battle::CommenceBattle(std::shared_ptr<PlayerCharacter> playerCharacter) {
@@ -31,39 +31,35 @@ void Battle::CommenceBattle(std::shared_ptr<PlayerCharacter> playerCharacter) {
 
     bool inBattle = true;
     while (inBattle) {
-        std::shared_ptr<ICreature> address = slaughteredEnemy;
-        if (slaughteredEnemy) { // this will only be a non nillptr after the player successfully kills an enemy
-            
-            auto it2 = std::find_if(currentRoom->GetTurnOrder().begin(), currentRoom->GetTurnOrder().end(), [slaughteredEnemy](std::shared_ptr<ICreature>& enemy) {
-                return enemy;
-             });
 
-            if (it2 != currentRoom->GetTurnOrder().end()) {
-                currentRoom->GetTurnOrder().erase(it2);
+        if (slaughteredEnemy) { // this will only be a non nillptr after the player successfully kills an enemy
+
+            auto it = std::find(turnOrder.begin(), turnOrder.end(), slaughteredEnemy); // iterate through to search for enemyToRemove (find it's iterator)
+
+            if (it != turnOrder.end()) {
+                turnOrder.erase(it);
             }
         }
-        if (currentRoom->GetTurnOrder().size() == 1) {
+
+        if (turnOrder.size() == 1) {
             ui.SlainAllEnemies();
             return;
         }
-        for (const auto& creature : currentRoom->GetTurnOrder()) {
-            
+
+        for (const auto& creature : turnOrder) {
+
             std::shared_ptr<PlayerCharacter> player = std::dynamic_pointer_cast<PlayerCharacter>(creature); // down casting
-            
+
             if (player) {
 
                 // 'creature' is of type ICharacter, and 'character' is now a shared_ptr to it
                 bool isPlayerAttacking = ui.DescribePlayerOptions(player);
 
                 if (isPlayerAttacking) {
-                    std::shared_ptr<IEnemy> targetedEnemy = ui.GetEnemyTargetForAttack(player, currentRoom->GetTurnOrder());
+                    std::shared_ptr<IEnemy> targetedEnemy = ui.GetEnemyTargetForAttack(player, turnOrder);
                     bool isEnemyDead = ui.DescribePlayerAttackOptions(targetedEnemy, player->GetWeapon());
-
                     if (isEnemyDead) {
-
-                        std::shared_ptr<ICreature> enemyToRemove = std::make_shared<ICreature>();
-                        slaughteredEnemy = enemyToRemove;
-
+                        slaughteredEnemy = targetedEnemy;
                         ui.KilledEnemy(targetedEnemy);
                         break;
                     }
@@ -77,7 +73,8 @@ void Battle::CommenceBattle(std::shared_ptr<PlayerCharacter> playerCharacter) {
                 if (checkIfDead) {
                     std::cout << "YOU DIED. GAME OVER.";
                     exit(0);
-                } else {
+                }
+                else {
                     ui.HealthRemaining(playerCharacter->GetHealth());
                 }
             }
