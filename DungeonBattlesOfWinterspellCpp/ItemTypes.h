@@ -1,17 +1,10 @@
 #pragma once
 
 enum class ItemType {
-	Gold,
-	Silver,
-	RubyGem,
-	StarlightGem,
-	Moonstone,
-	LuminescentMushies,
+	Currency,
 	Key,
 	AncientScroll,
-	JewelEncrestedChalice,
 	Equiptment,
 	HealthPotion,
-	Palantíri,
 	EnumSize
 };

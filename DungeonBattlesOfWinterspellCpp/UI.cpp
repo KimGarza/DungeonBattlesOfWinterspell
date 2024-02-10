@@ -616,5 +616,65 @@ std::shared_ptr<LootItem> UI::DisplayInventoryMenu(std::vector<std::shared_ptr<L
     _getch();
     system("cls");
 
+}
 
+void UI::CannotUseItem() {
+    gameText.WriteLine("Not sure what you can use that right now.");
+    _getch();
+}
+
+// maybe need to scope some out to inventory
+void UI::EquiptmentItemMenu(std::shared_ptr<LootItem> item, std::shared_ptr<PlayerCharacter> playerCharacter) {
+
+    while (true) {
+        gameText.WriteLine("What would you like to do with this item?");
+
+        gameText.WriteLine("1)  Equipt");
+        gameText.WriteLine("2)  Drop");
+        gameText.WriteLine("3)  Cancel");
+
+        std::string playerChoice = input.PlayerChoice(std::vector<int> {1,2,3});
+        if (playerChoice != "") {
+            if (playerChoice == "1") {
+                playerCharacter->SetEquiptItems(item);
+            }
+            else if (playerChoice == "2") {
+                playerCharacter->RemoveFromInventory(item);
+            }
+            else if (playerChoice == "3") {
+                system("cls");
+                return;
+            }
+        }
+        else {
+            system("cls");
+
+            gameText.WriteLine("wut? UwU");
+            _getch();
+        }
+    }
+    _getch();
+}
+
+bool UI::OpenInventoryInquiry() {
+
+    while (true) {
+
+        gameText.WriteLine("Would you like to view your inventory view your goods?");
+        gameText.WriteLine("i)  Inventory");
+        gameText.WriteLine("n)  venture forth");
+
+        std::string playerChoice; /**/ std::cin >> playerChoice;
+
+        if (playerChoice == "i" || "y") {
+            return true;
+        }
+        else if ("n") {
+            return false;
+        }
+        else {
+            system("cls");
+            gameText.WriteLine("wut UwU");
+        }
+    }
 }

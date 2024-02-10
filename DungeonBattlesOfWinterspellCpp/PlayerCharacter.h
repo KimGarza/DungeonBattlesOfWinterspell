@@ -23,6 +23,8 @@ private:
 	bool isDead;
 	int healthPotions;
 	std::vector<std::shared_ptr<LootItem>> loot;
+	std::vector<std::shared_ptr<LootItem>> equiptItems;
+	int armour;
 
 // 2. Preparing all values that will come through constructor ( we want xp, level, swift and dead to not be passed in we already know what these will be to start)
 public:
@@ -57,10 +59,14 @@ public:
 	bool GetHasSwiftness() { return hasSwiftness; }
 	bool GetIsDead() { return isDead; }
 	std::vector<std::shared_ptr<LootItem>> GetLoot() { return loot; }
+	std::vector<std::shared_ptr<LootItem>> GetEquiptItems() { return equiptItems; }
+	int GetArmour() { return armour; }
 
 	bool TakeDamage(int damageTaken);
 	bool CheckIfDead();
 	void DrinkHealthPotion();
+	void SetHealthPotions(int healthPotion);
 	void AddToInventory(std::vector<std::shared_ptr<LootItem>> newItems);
-
+	void SetEquiptItems(std::shared_ptr<LootItem> item);
+	void RemoveFromInventory(std::shared_ptr<LootItem> item);
 };

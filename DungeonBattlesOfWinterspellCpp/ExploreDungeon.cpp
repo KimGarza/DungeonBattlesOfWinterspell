@@ -1,5 +1,6 @@
 #include "ExploreDungeon.h"
 #include "PlayerCharacter.h"
+#include "Inventory.h"
 #include <iostream>
 #include <vector>
 #include <cstdlib>   // For rand() and srand()
@@ -14,6 +15,11 @@ ExploreDungeon::ExploreDungeon(std::shared_ptr<DungeonRoom> currentRoom, std::sh
 /// </summary>
 void ExploreDungeon::EnterDungeonRoom() {
 	system("cls");
+
+	if (ui.OpenInventoryInquiry()) {
+		Inventory inv;
+		inv.OpenInventory(playerCharacter);
+	}
 
 	if (currentRoom->GetIsLocked()) {
 		ui.RoomLocked();

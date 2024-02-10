@@ -10,6 +10,5 @@ private:
 
 public:
 	void Loot(std::shared_ptr<PlayerCharacter> playerCharacter, std::shared_ptr<DungeonRoom> currentRoom);
-	void OpenInventory(std::shared_ptr<PlayerCharacter> playerCharacter);
 };
 

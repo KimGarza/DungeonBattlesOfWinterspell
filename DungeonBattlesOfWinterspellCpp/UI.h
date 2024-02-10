@@ -41,6 +41,9 @@ public:
 
 	void LootBegin(std::vector<std::shared_ptr<LootItem>> loot);
 	std::shared_ptr<LootItem> DisplayInventoryMenu(std::vector<std::shared_ptr<LootItem>> playersLoot);
-
+	void CannotUseItem();
+	void PotionItemMenu();
+	void EquiptmentItemMenu(std::shared_ptr<LootItem> item, std::shared_ptr<PlayerCharacter> playerCharacter);
+	bool OpenInventoryInquiry();
 };
 

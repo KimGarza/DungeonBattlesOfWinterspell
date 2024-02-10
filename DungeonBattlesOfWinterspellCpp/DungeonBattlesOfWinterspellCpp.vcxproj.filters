@@ -141,11 +141,11 @@
     <ClCompile Include="LootRoom.cpp">
       <Filter>Source Files\GameStates\Loot</Filter>
     </ClCompile>
-    <ClCompile Include="LootFactory.cpp">
-      <Filter>Source Files\GameStates\Explore</Filter>
-    </ClCompile>
     <ClCompile Include="LootItem.cpp">
       <Filter>Source Files\Actors</Filter>
+    </ClCompile>
+    <ClCompile Include="Inventory.cpp">
+      <Filter>Source Files\Helper</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -215,14 +215,14 @@
     <ClInclude Include="LootRoom.h">
       <Filter>Header Files\GameStates\Loot</Filter>
     </ClInclude>
-    <ClInclude Include="LootFactory.h">
-      <Filter>Header Files\GameStates\Explore</Filter>
-    </ClInclude>
     <ClInclude Include="LootItem.h">
       <Filter>Header Files\Actors</Filter>
     </ClInclude>
     <ClInclude Include="ItemTypes.h">
       <Filter>Header Files\Actors</Filter>
+    </ClInclude>
+    <ClInclude Include="Inventory.h">
+      <Filter>Header Files\Helper</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
