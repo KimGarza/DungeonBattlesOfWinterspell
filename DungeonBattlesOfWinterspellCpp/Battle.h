@@ -1,5 +1,6 @@
 #pragma once
 #include "ICreature.h"
+#include "DungeonRoom.h"
 #include "UI.h"
 #include <vector>
 #include <iostream>
@@ -8,12 +9,12 @@ class Battle
 {
 private:
 	UI ui;
-	std::vector<std::shared_ptr<ICreature>> turnOrder;
+	std::shared_ptr<DungeonRoom> currentRoom;
 
 public:
-	Battle(std::vector<std::shared_ptr<ICreature>>);
+	Battle(std::shared_ptr<DungeonRoom> currentRoom);
 
-	void RevealTurnOrder(std::vector<std::shared_ptr<ICreature>> turnOrder, std::string dungeonRoomName);
+	void RevealTurnOrder();
 	void CommenceBattle(std::shared_ptr<PlayerCharacter> playerCharacter);
 };
 

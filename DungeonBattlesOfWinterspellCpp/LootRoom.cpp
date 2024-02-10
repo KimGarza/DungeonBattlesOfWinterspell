@@ -11,7 +11,7 @@ void LootRoom::Loot() {
 		ui.FoundKey(currentRoom->GetName());
 	}
 	else if (currentRoom->GetTimesExplored() == 1) {
-		ui.LootBegin();
+		ui.LootBegin(currentRoom->GetLoot());
 	}
 
 	// generate random or constant loot

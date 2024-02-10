@@ -3,6 +3,7 @@
 #include <sstream>
 #include <map>
 #include "DungeonRoom.h"
+#include "LootItem.h"
 
 class DungeonGenerator
 {
@@ -25,4 +26,5 @@ private:
 public:
     std::vector < std::shared_ptr<DungeonRoom>> GenerateDungeons();
     std::vector<std::shared_ptr<IEnemy>> GenerateEnemies(int roomLevel);
+    std::vector<std::shared_ptr<LootItem>> GenerateLoot();
 };

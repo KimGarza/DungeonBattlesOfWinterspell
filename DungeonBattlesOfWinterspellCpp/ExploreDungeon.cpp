@@ -28,11 +28,6 @@ void ExploreDungeon::EnterDungeonRoom() {
 	return;
 }
 
-void ExploreDungeon::ReExploreRoom() {
-
-}
-
-
 // most challenging function yet but to summarize, simply check for enemy swiftness and add those that are swift to the list first then the rest after
 // insert player character in the group of swift or non swift enemies depending on whichever player is but randomize it so player can be anywhere in the group of either
 std::vector<std::shared_ptr<ICreature>> ExploreDungeon::GenerateTurnOrder() {

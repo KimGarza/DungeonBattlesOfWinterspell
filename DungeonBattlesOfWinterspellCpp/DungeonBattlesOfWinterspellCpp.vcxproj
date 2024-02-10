@@ -147,6 +147,7 @@
     <ClCompile Include="InputManager.cpp" />
     <ClCompile Include="InvItem.cpp" />
     <ClCompile Include="IWeapon.cpp" />
+    <ClCompile Include="LootItem.cpp" />
     <ClCompile Include="LootFactory.cpp" />
     <ClCompile Include="LootRoom.cpp" />
     <ClCompile Include="Map.cpp" />
@@ -171,7 +172,9 @@
     <ClInclude Include="Input.h" />
     <ClInclude Include="InputManager.h" />
     <ClInclude Include="InvItem.h" />
+    <ClInclude Include="ItemTypes.h" />
     <ClInclude Include="IWeapon.h" />
+    <ClInclude Include="LootItem.h" />
     <ClInclude Include="LootFactory.h" />
     <ClInclude Include="LootRoom.h" />
     <ClInclude Include="Map.h" />

@@ -6,6 +6,7 @@
 #include "PlayerCharacter.h"
 #include "IEnemy.h"
 #include "Input.h"
+#include "LootItem.h"
 #include "ICharacter.h"
 #include "GameText.h"
 
@@ -38,7 +39,7 @@ public:
 	void FoundKey(std::string dungeonName);
 	void RoomLocked();
 
-	void LootBegin();
+	void LootBegin(std::vector<std::shared_ptr<LootItem>> loot);
 
 };
 

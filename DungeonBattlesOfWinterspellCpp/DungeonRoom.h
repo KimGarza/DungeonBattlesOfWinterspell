@@ -1,9 +1,11 @@
 #pragma once
 #include "IEnemy.h"
+#include "LootItem.h"
 #include "UI.h"
 #include <vector>
 #include <string>
 #include <iostream>
+#include <memory>
 
 class DungeonRoom
 {
@@ -16,9 +18,14 @@ private:
 	int timesExplored;
 	std::vector<std::shared_ptr<IEnemy>> enemyList;
 	std::vector<std::shared_ptr<ICreature>> currentTurnOrder;
+	std::vector<std::shared_ptr<LootItem>> loot;
 
 public:
-	DungeonRoom(std::string name, std::string description, int roomLevel, bool isLocked, std::vector<std::shared_ptr<IEnemy>> enemieList);
+	DungeonRoom(std::string name, 
+		std::string description, 
+		int roomLevel, bool isLocked, 
+		std::vector<std::shared_ptr<IEnemy>> enemieList, 
+		std::vector<std::shared_ptr<LootItem>> loot);
 
 	std::string GetName() { return name; }
 	bool GetCompleted() { return completed; }
@@ -28,6 +35,8 @@ public:
 	std::string GetDescription() { return description; }
 	std::vector<std::shared_ptr<ICreature>> GetTurnOrder() { return currentTurnOrder; }
 	std::vector<std::shared_ptr<IEnemy>> GetEnemies() { return enemyList; }
+	std::vector<std::shared_ptr<LootItem>> GetLoot() { return loot; }
+
 
 	void SetCompleted();
 	void SetTimesExplored();
@@ -35,4 +44,6 @@ public:
 	void SetCurrentTurnOrder(std::vector<std::shared_ptr<ICreature>> turnOrder) {
 		currentTurnOrder = turnOrder;
 	}
+	void SetLoot();
+
 };

@@ -9,6 +9,7 @@
 #include <cstdlib>
 #include <ctime>
 #include "Enemies.h"
+#include "ItemTypes.h"
 #include "IEnemy.h"
 
 
@@ -26,12 +27,13 @@ std::vector < std::shared_ptr<DungeonRoom>> DungeonGenerator::GenerateDungeons()
     for (const auto& dungeon : dungeonList) {
 
         std::vector<std::shared_ptr<IEnemy>> enemyList = GenerateEnemies(roomLevel);
+        std::vector<std::shared_ptr<LootItem>> loot = GenerateLoot();
 
         if (dungeon.first == "Hozwardian Keep" || dungeon.first == "Room of Offerings") { // lock these two rooms
-            std::shared_ptr<DungeonRoom> newDungeonRoom = std::make_shared<DungeonRoom>(dungeon.first, dungeon.second, roomLevel, true, enemyList);
+            std::shared_ptr<DungeonRoom> newDungeonRoom = std::make_shared<DungeonRoom>(dungeon.first, dungeon.second, roomLevel, true, enemyList, loot);
         }
         else {
-            std::shared_ptr<DungeonRoom> newDungeonRoom = std::make_shared<DungeonRoom>(dungeon.first, dungeon.second, roomLevel, false, enemyList);
+            std::shared_ptr<DungeonRoom> newDungeonRoom = std::make_shared<DungeonRoom>(dungeon.first, dungeon.second, roomLevel, false, enemyList, loot);
             dungeonRooms.push_back(newDungeonRoom);
         }
 
@@ -62,18 +64,18 @@ std::vector<std::shared_ptr<IEnemy>> DungeonGenerator::GenerateEnemies(int roomL
     // Gets random number between the min/max which are decided based upon what the room levels are. Represents how many enemies can spawn per room. (Maximum & minimum values inclusive).
     std::random_device rand; /**/ std::mt19937 gen(rand()); /**/ int min_value = 0; /**/ int max_value = 0;
 
-    if (roomLevel < 3) {
+    //if (roomLevel < 3) {
         //min_value = 2; max_value = 4;
         min_value = 1; max_value = 1;
-    } else if (roomLevel < 5) {
-        //min_value = 3; max_value = 6;
-        min_value = 1; max_value = 1;
+    //} else if (roomLevel < 5) {
+    //    //min_value = 3; max_value = 6;
+    //    min_value = 1; max_value = 1;
 
-    } else {
-        //min_value = 4; max_value = 7;
-        min_value = 1; max_value = 1;
+    //} else {
+    //    //min_value = 4; max_value = 7;
+    //    min_value = 1; max_value = 1;
 
-    }
+    //}
 
     std::uniform_int_distribution<int> distribution(min_value, max_value);
 
@@ -103,4 +105,42 @@ std::vector<std::shared_ptr<IEnemy>> DungeonGenerator::GenerateEnemies(int roomL
     }
 
     return enemiesInRoom;
+}
+
+std::vector<std::shared_ptr<LootItem>> DungeonGenerator::GenerateLoot() {
+
+    std::vector<std::shared_ptr<LootItem>> lootInRoom;
+
+    std::vector<std::shared_ptr<LootItem>> lootStock{
+        std::make_shared<LootItem>("Gold coin", ItemType::Gold, "a very valueable piece of currency; Can be used for purchasing in the markets.", 1),
+        std::make_shared<LootItem>("Silver coin", ItemType::Silver, "a valueable piece of currency; Can be used for purchasing in the markets.", .5),
+        std::make_shared<LootItem>("Ruby gem", ItemType::RubyGem, "a dazzling rich red jewel; Tradeable for cold coin", 4),
+        std::make_shared<LootItem>("Starlight gem", ItemType::StarlightGem, "a valueable piece of currency; can be used to purchase things in the markets.", 2),
+        std::make_shared<LootItem>("Moonstone", ItemType::Moonstone, "a valueable piece of currency; can be used to purchase things in the markets.", 1),
+        std::make_shared<LootItem>("Luminescent mushie", ItemType::LuminescentMushies, "a valueable piece of currency; can be used to purchase things in the markets.", 1),
+        std::make_shared<LootItem>("Key", ItemType::Key, "for unlocking doors of course.", 1),
+        std::make_shared<LootItem>("Ancient scroll", ItemType::AncientScroll, "hidden secrets are etched upon a tattered sturdy cloth.", 1),
+        std::make_shared<LootItem>("Jewel encrested chalice", ItemType::JewelEncrestedChalice, "a beautifully ornately crafted chalice, encrested in colorful polished jewels, looks of dwarven-make.", 1),
+        std::make_shared<LootItem>("Health potion", ItemType::HealthPotion, "which restores 20 HP.", 1),
+        std::make_shared<LootItem>("Boots of swiftness", ItemType::Equiptment, "which gives wearer swiftness.", 1),
+        std::make_shared<LootItem>("Helm of protection", ItemType::Equiptment, "+10 to armour.", 1),
+        std::make_shared<LootItem>("Palantíri", ItemType::Palantíri, "an orb of pondering, it can see things that may not be meant for our eyes. Looks to belong to a wise mage or wizard.", 1),
+    };
+
+    std::random_device rd;  // Obtain a random number from hardware
+    std::mt19937 gen(rd()); // Seed the generator
+    std::uniform_int_distribution<> distr(1, 4); // Define the range
+    // Generate and print a random number between 1 and 10
+    int randomNumber = distr(gen);
+
+
+    for (int i = 0; i < randomNumber; i++) {
+
+        std::uniform_int_distribution<> distr(0, lootStock.size() - 1);
+        int randomLootPull = distr(gen);
+
+        lootInRoom.push_back(lootStock[randomLootPull]);
+    }
+    return lootInRoom;
+
 }

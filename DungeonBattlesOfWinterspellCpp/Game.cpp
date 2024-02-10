@@ -57,7 +57,8 @@ void Game::CheckGameState() {
 			ChangeGameState(GameState::Battle);
 		}
 		else {
-			exploreDungeon.ReExploreRoom();
+
+			//exploreDungeon.ChangeInstnace();
 
 			ChangeGameState(GameState::Loot);
 		}
@@ -66,9 +67,9 @@ void Game::CheckGameState() {
 	}
 	case GameState::Battle: {
 
-		Battle battle(map->GetCurrentRoom()->GetTurnOrder()); // odd mix here of using game or map to get the current room
+		Battle battle(currentRoom);
 
-		battle.RevealTurnOrder(map->GetCurrentRoom()->GetTurnOrder(), currentRoom->GetName());
+		battle.RevealTurnOrder();
 
 		battle.CommenceBattle(playerCharacter);
 

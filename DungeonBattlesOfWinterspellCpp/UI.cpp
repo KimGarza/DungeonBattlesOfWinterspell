@@ -552,8 +552,20 @@ void UI::RoomLocked() {
     gameText.WriteLine("The room is locked, you will need a key to enter."); /**/ _getch();
 }
 
-void UI::LootBegin() {
+void UI::LootBegin(std::vector<std::shared_ptr<LootItem>> loot) {
     gameText.WriteLine("You peer around, silence. The town of Winterspell inches closer to security by victory of your hand!"); /**/ _getch();
     gameText.WriteLine("You wander through the empty dark decrepid room to fill your pockets, you greedy little thing."); /**/ _getch();
-    gameText.WriteLine("You find..."); /**/ _getch();
+    gameText.WriteLine("You find ");
+
+    for (const auto& item : loot) {
+
+        for (auto it = loot.begin(); it != loot.end(); ++it) {
+
+            gameText.WriteText(item->GetName());
+
+            if (it != loot.end() - 1) {
+                gameText.WriteText(", \n");
+            }
+        }
+    }
 }
