@@ -13,6 +13,7 @@ private:
 	int dexterity;
 	int strength;
 	bool hasSwiftness;
+	int armourRating;
 	std::vector<std::string> weaponOptions;
 
 public:
@@ -25,6 +26,7 @@ public:
 	virtual int GetIntelligence() const = 0;
 	virtual int GetDexterity() const = 0;
 	virtual int GetStrength() const = 0;
+	virtual int GetArmourRating() const = 0;
 
 	virtual bool GetHasSwiftness() const = 0;
 

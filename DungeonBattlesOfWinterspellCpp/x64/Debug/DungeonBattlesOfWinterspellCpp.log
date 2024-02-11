@@ -1,85 +1,133 @@
-﻿  DungeonGenerator.cpp
-G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\DungeonGenerator.cpp(90,52): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\DungeonGenerator.cpp(141,70): warning C4267: 'argument': conversion from 'size_t' to '_Ty', possible loss of data
-          with
-          [
-              _Ty=int
-          ]
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\xutility(275,77): warning C4244: 'argument': conversion from '_Ty' to 'int', possible loss of data
-          with
-          [
-              _Ty=double
-          ]
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\memory(1983): message : see reference to function template instantiation 'void std::_Construct_in_place<_Ty,const char(&)[12],ItemType,const char(&)[74],double>(_Ty &,const char (&)[12],ItemType &&,const char (&)[74],double &&) noexcept(false)' being compiled
-          with
-          [
-              _Ty=LootItem
-          ]
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\memory(2663): message : see reference to function template instantiation 'std::_Ref_count_obj2<LootItem>::_Ref_count_obj2<const char(&)[12],_Ty,const char(&)[74],double>(const char (&)[12],_Ty &&,const char (&)[74],double &&)' being compiled
-          with
-          [
-              _Ty=ItemType
-          ]
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\memory(2664,20): message : see reference to function template instantiation 'std::_Ref_count_obj2<LootItem>::_Ref_count_obj2<const char(&)[12],_Ty,const char(&)[74],double>(const char (&)[12],_Ty &&,const char (&)[74],double &&)' being compiled
-          with
-          [
-              _Ty=ItemType
-          ]
-G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\DungeonGenerator.cpp(116,150): message : see reference to function template instantiation 'std::shared_ptr<LootItem> std::make_shared<LootItem,const char(&)[12],ItemType,const char(&)[74],double>(const char (&)[12],ItemType &&,const char (&)[74],double &&)' being compiled
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\xutility(275,56): error C2661: 'LootItem::LootItem': no overloaded function takes 6 arguments
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\xutility(275,56): message : while trying to match the argument list '(const char [17], _Ty, const char [15], _Ty, _Ty, _Ty)'
-          with
-          [
-              _Ty=ItemType
-          ]
-          and
-          [
-              _Ty=int
-          ]
-          and
-          [
-              _Ty=int
-          ]
-          and
-          [
-              _Ty=int
-          ]
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\memory(1983): message : see reference to function template instantiation 'void std::_Construct_in_place<_Ty,const char(&)[17],ItemType,const char(&)[15],int,int,int>(_Ty &,const char (&)[17],ItemType &&,const char (&)[15],int &&,int &&,int &&) noexcept(false)' being compiled
-          with
-          [
-              _Ty=LootItem
-          ]
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\memory(2663): message : see reference to function template instantiation 'std::_Ref_count_obj2<LootItem>::_Ref_count_obj2<const char(&)[17],_Ty,const char(&)[15],int,int,int>(const char (&)[17],_Ty &&,const char (&)[15],int &&,int &&,int &&)' being compiled
-          with
-          [
-              _Ty=ItemType
-          ]
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\memory(2664,20): message : see reference to function template instantiation 'std::_Ref_count_obj2<LootItem>::_Ref_count_obj2<const char(&)[17],_Ty,const char(&)[15],int,int,int>(const char (&)[17],_Ty &&,const char (&)[15],int &&,int &&,int &&)' being compiled
-          with
-          [
-              _Ty=ItemType
-          ]
-G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\DungeonGenerator.cpp(127,105): message : see reference to function template instantiation 'std::shared_ptr<LootItem> std::make_shared<LootItem,const char(&)[17],ItemType,const char(&)[15],int,int,int>(const char (&)[17],ItemType &&,const char (&)[15],int &&,int &&,int &&)' being compiled
-  Enemies.cpp
-  Game.cpp
+﻿  Game.cpp
 G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\LootRoom.h(2,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-  LootRoom.cpp
-G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\LootRoom.h(2,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-  PlayerCharacter.cpp
-G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\PlayerCharacter.cpp(103,34): warning C4244: '-=': conversion from 'double' to 'int', possible loss of data
-G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\PlayerCharacter.cpp(108,34): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
-  UI.cpp
-G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.cpp(241,75): warning C4101: 'roomCount': unreferenced local variable
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\xutility(5993,13): error C2664: 'bool UI::DisplayInventoryMenu::<lambda_1>::operator ()(const std::pair<int,std::shared_ptr<LootItem>> &) const': cannot convert argument 1 from 'std::shared_ptr<LootItem>' to 'const std::pair<int,std::shared_ptr<LootItem>> &'
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\xutility(5993,19): message : Reason: cannot convert from 'std::shared_ptr<LootItem>' to 'const std::pair<int,std::shared_ptr<LootItem>>'
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\xutility(5993,19): message : No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
-G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.cpp(602,146): message : see declaration of 'UI::DisplayInventoryMenu::<lambda_1>::operator ()'
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\xutility(5993,13): message : while trying to match the argument list '(std::shared_ptr<LootItem>)'
-G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.cpp(604,14): message : see reference to function template instantiation '_InIt std::find_if<std::_Vector_iterator<std::_Vector_val<std::_Simple_types<_Ty>>>,UI::DisplayInventoryMenu::<lambda_1>>(_InIt,const _InIt,_Pr)' being compiled
-          with
-          [
-              _InIt=std::_Vector_iterator<std::_Vector_val<std::_Simple_types<std::shared_ptr<LootItem>>>>,
-              _Ty=std::shared_ptr<LootItem>,
-              _Pr=UI::DisplayInventoryMenu::<lambda_1>
-          ]
-  Generating Code...
+  DungeonBattlesOfWinterspellCpp.cpp
+  Note: including file: C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\iostream
+  Note: including file:  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\yvals_core.h
+  Note: including file:   C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\vcruntime.h
+  Note: including file:    C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\sal.h
+  Note: including file:     C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\concurrencysal.h
+  Note: including file:    C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\vadefs.h
+  Note: including file:   C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\xkeycheck.h
+  Note: including file:  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\istream
+  Note: including file:   C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\ostream
+  Note: including file:    C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\ios
+  Note: including file:     C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\xlocnum
+  Note: including file:      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\climits
+  Note: including file:       C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\limits.h
+  Note: including file:      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\cmath
+  Note: including file:       C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\yvals.h
+  Note: including file:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\ucrt\crtdbg.h
+  Note: including file:         C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\ucrt\corecrt.h
+  Note: including file:         C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\vcruntime_new_debug.h
+  Note: including file:          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\vcruntime_new.h
+  Note: including file:        C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\crtdefs.h
+  Note: including file:        C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\use_ansi.h
+  Note: including file:       C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\cstdlib
+  Note: including file:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\ucrt\math.h
+  Note: including file:         C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\ucrt\corecrt_math.h
+  Note: including file:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\ucrt\stdlib.h
+  Note: including file:         C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\ucrt\corecrt_malloc.h
+  Note: including file:         C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\ucrt\corecrt_search.h
+  Note: including file:          C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\ucrt\stddef.h
+  Note: including file:         C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\ucrt\corecrt_wstdlib.h
+  Note: including file:       C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\xtr1common
+  Note: including file:       C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\intrin0.h
+  Note: including file:        C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\intrin0.inl.h
+  Note: including file:      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\cstdio
+  Note: including file:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\ucrt\stdio.h
+  Note: including file:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\ucrt\corecrt_wstdio.h
+  Note: including file:         C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\ucrt\corecrt_stdio_config.h
+  Note: including file:      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\iterator
+  Note: including file:       C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\iosfwd
+  Note: including file:        C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\cstring
+  Note: including file:         C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\ucrt\string.h
+  Note: including file:          C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\ucrt\corecrt_memory.h
+  Note: including file:           C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\ucrt\corecrt_memcpy_s.h
+  Note: including file:            C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\ucrt\errno.h
+  Note: including file:            C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\vcruntime_string.h
+  Note: including file:          C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\ucrt\corecrt_wstring.h
+  Note: including file:        C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\cwchar
+  Note: including file:         C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\ucrt\wchar.h
+  Note: including file:          C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\ucrt\corecrt_wconio.h
+  Note: including file:          C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\ucrt\corecrt_wctype.h
+  Note: including file:          C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\ucrt\corecrt_wdirect.h
+  Note: including file:          C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\ucrt\corecrt_wio.h
+  Note: including file:           C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\ucrt\corecrt_share.h
+  Note: including file:          C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\ucrt\corecrt_wprocess.h
+  Note: including file:          C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\ucrt\corecrt_wtime.h
+  Note: including file:          C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\ucrt\sys/stat.h
+  Note: including file:           C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\ucrt\sys/types.h
+  Note: including file:        C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\xstddef
+  Note: including file:         C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\cstddef
+  Note: including file:         C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\initializer_list
+  Note: including file:       C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\xutility
+  Note: including file:        C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\__msvc_iter_core.hpp
+  Note: including file:         C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\utility
+  Note: including file:          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\type_traits
+  Note: including file:           C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\cstdint
+  Note: including file:            C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\stdint.h
+  Note: including file:      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\streambuf
+  Note: including file:       C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\xiosbase
+  Note: including file:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\ucrt\share.h
+  Note: including file:        C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\system_error
+  Note: including file:         C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\__msvc_system_error_abi.hpp
+  Note: including file:         C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\cerrno
+  Note: including file:         C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\stdexcept
+  Note: including file:          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\exception
+  Note: including file:           C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\ucrt\malloc.h
+  Note: including file:           C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\vcruntime_exception.h
+  Note: including file:            C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\eh.h
+  Note: including file:             C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\ucrt\corecrt_terminate.h
+  Note: including file:          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\xstring
+  Note: including file:           C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\xmemory
+  Note: including file:            C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\limits
+  Note: including file:             C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\cfloat
+  Note: including file:              C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\ucrt\float.h
+  Note: including file:             C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\isa_availability.h
+  Note: including file:            C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\new
+  Note: including file:            C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\xatomic.h
+  Note: including file:         C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\xcall_once.h
+  Note: including file:         C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\xerrc.h
+  Note: including file:         C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\atomic
+  Note: including file:          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\xthreads.h
+  Note: including file:           C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\xtimec.h
+  Note: including file:            C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\ctime
+  Note: including file:             C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\ucrt\time.h
+  Note: including file:        C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\xlocale
+  Note: including file:         C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\memory
+  Note: including file:          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\typeinfo
+  Note: including file:           C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\vcruntime_typeinfo.h
+  Note: including file:         C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\xfacet
+  Note: including file:         C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\xlocinfo
+  Note: including file:          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\__msvc_xlocinfo_types.hpp
+  Note: including file:          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\cctype
+  Note: including file:           C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\ucrt\ctype.h
+  Note: including file:          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\clocale
+  Note: including file:           C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\ucrt\locale.h
+  Note: including file: G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Game.h
+  Note: including file:  G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\GameState.h
+  Note: including file:  G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Story.h
+  Note: including file:   G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\GameText.h
+  Note: including file:    C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\string
+  Note: including file:   G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Input.h
+  Note: including file:    G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\InputManager.h
+  Note: including file:     C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\vector
+  Note: including file:  G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\PlayerCharacter.h
+  Note: including file:   G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\IWeapon.h
+  Note: including file:   G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\InvItem.h
+  Note: including file:   G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\ICreature.h
+  Note: including file:   G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\LootItem.h
+  Note: including file:    G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\ItemTypes.h
+  Note: including file:  G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterCreation.h
+  Note: including file:   C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\map
+  Note: including file:    C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\tuple
+  Note: including file:    C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\xtree
+  Note: including file:   G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.h
+  Note: including file:    G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\IEnemy.h
+  Note: including file:    G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\ICharacter.h
+  Note: including file:  G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\DungeonGenerator.h
+  Note: including file:   C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\sstream
+  Note: including file:   G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\DungeonRoom.h
+  Note: including file:  G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\ExploreDungeon.h
+  Note: including file:  G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Map.h
+  DungeonBattlesOfWinterspellCpp.vcxproj -> G:\repos\DungeonBattlesOfWinterspellCpp\x64\Debug\DungeonBattlesOfWinterspellCpp.exe

@@ -9,6 +9,7 @@ WoodElf::WoodElf() {
 	intelligence = 0;
 	dexterity = 4;
 	strength = 0;
+	armourRating = 10;
 	hasSwiftness = true;
 	weaponOptions.push_back("Elven Longsword");
 	weaponOptions.push_back("Ivory Longbow and Quiver");
@@ -21,6 +22,7 @@ Dwarf::Dwarf() {
 	intelligence = 0;
 	dexterity = 0;
 	strength = 4;
+	armourRating = 25;
 	hasSwiftness = false;
 	weaponOptions.push_back("DoubleBladedAxe");
 	weaponOptions.push_back("OrnateShortSword");
@@ -33,6 +35,7 @@ Enchantress::Enchantress() {
 	intelligence = 4;
 	dexterity = 0;
 	strength = 0;
+	armourRating = 2;
 	hasSwiftness = false;
 	weaponOptions.push_back("DualEtherealDaggers");
 	weaponOptions.push_back("GnarledBranchStaff");

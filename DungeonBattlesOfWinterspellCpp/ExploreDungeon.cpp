@@ -14,24 +14,57 @@ ExploreDungeon::ExploreDungeon(std::shared_ptr<DungeonRoom> currentRoom, std::sh
 /// If neither of those are true, the dungeon room will newly be described.
 /// </summary>
 void ExploreDungeon::EnterDungeonRoom() {
-	system("cls");
 
-	if (ui.OpenInventoryInquiry()) {
-		Inventory inv;
-		inv.OpenInventory(playerCharacter);
-	}
+	while (true) {
+		system("cls");
 
-	if (currentRoom->GetIsLocked()) {
-		ui.RoomLocked();
+		std::string playerChoice = ui.Inquiry();
+		if (playerChoice == "i") {
+			Inventory inv;
+			inv.OpenInventory(playerCharacter);
+		}
+		else if (playerChoice == "c") {
+			ui.OpenCharacterMenu(playerCharacter);
+		}
+		else {
+			break;
+		}
+
 	}
-	else if (currentRoom->GetCompleted()) {
-		ui.NoEnemies();
-	}
-	else {
-		ui.DescribeDungeonRoom(currentRoom->GetDescription());
-	}
-		
+		if (currentRoom->GetIsLocked()) {
+			ui.RoomLocked();
+		}
+		else if (currentRoom->GetCompleted()) {
+			ui.NoEnemies();
+		}
+		else {
+			ui.DescribeDungeonRoom(currentRoom->GetDescription());
+		}
 	return;
+}
+
+bool ExploreDungeon::CheckForKey() {
+
+	std::vector<std::shared_ptr<LootItem>> loot = playerCharacter->GetLoot(); // when utilizing player from member varaible, vector container variant error
+
+	if (currentRoom->GetName() == "Hozwardian Keep") {
+
+		auto key = std::find_if(loot.begin(), loot.end(), [](const std::shared_ptr<LootItem>& requiredKey) {
+			return requiredKey->GetName() == "Iron Key";
+			});
+
+		return key != loot.end();
+	}
+	else if (currentRoom->GetName() == "Room of Offerings") {
+		auto key = std::find_if(loot.begin(), loot.end(), [](const std::shared_ptr<LootItem>& requiredKey) {
+			return requiredKey->GetName() == "Jewel Encrested Key";
+			});
+
+		return key != loot.end();
+	}
+	return false;
+	
+	ui.RoomLocked();
 }
 
 // most challenging function yet but to summarize, simply check for enemy swiftness and add those that are swift to the list first then the rest after

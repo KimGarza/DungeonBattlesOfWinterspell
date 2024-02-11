@@ -24,7 +24,7 @@ private:
 	int healthPotions;
 	std::vector<std::shared_ptr<LootItem>> loot;
 	std::vector<std::shared_ptr<LootItem>> equiptItems;
-	int armour;
+	int armourRating;
 
 // 2. Preparing all values that will come through constructor ( we want xp, level, swift and dead to not be passed in we already know what these will be to start)
 public:
@@ -38,6 +38,7 @@ public:
 		int strength,
 		int maxHealth,
 		bool hasSwiftness,
+		int armour,
 		std::shared_ptr<IWeapon> weapon
 		// 3. The reason these are not set here is bc they will be set with default values in source and managed within functions after
 		/*int xp = 0, int level = 1, bool hasSwiftness = false, bool isDead = false*/
@@ -60,8 +61,10 @@ public:
 	bool GetIsDead() { return isDead; }
 	std::vector<std::shared_ptr<LootItem>> GetLoot() { return loot; }
 	std::vector<std::shared_ptr<LootItem>> GetEquiptItems() { return equiptItems; }
-	int GetArmour() { return armour; }
+	void AddToInventory(std::shared_ptr<LootItem> newItem);
+	int GetArmourRating() { return armourRating; }
 
+	float CheckDamageReduction(int incomingDmg);
 	bool TakeDamage(int damageTaken);
 	bool CheckIfDead();
 	void DrinkHealthPotion();

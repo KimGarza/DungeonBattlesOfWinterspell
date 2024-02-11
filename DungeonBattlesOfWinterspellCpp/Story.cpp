@@ -1,4 +1,4 @@
-#include "Story.h"
+﻿#include "Story.h"
 #include <conio.h>
 
 void Story::OpeningStory() {
@@ -9,7 +9,10 @@ void Story::OpeningStory() {
 	bool validResult = false;
 	while (!validResult) {
 
-		gameText.WriteLine("Will you help fight? And save the town of Winterspell?(y/n): ");
+
+		gameText.WriteLine("\n#%*		Will you help fight? And save the town of Winterspell?(y/n):		%#*");
+
+
 
 		std::string result = input.PlayerChoiceYN();
 
@@ -23,6 +26,7 @@ void Story::OpeningStory() {
 		else if (result == "y") {
 			validResult = true;
 			gameText.WriteLine("Wonderful! I shall meet you at the Iron Gates! Be weary of ice traveller."); /**/ _getch();
+
 		}
 		else {
 			system("cls");

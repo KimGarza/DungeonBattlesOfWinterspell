@@ -18,5 +18,6 @@ public:
 	void ReExploreRoom();
 
 	void LootDungeon();
+	bool CheckForKey();
 };
 

@@ -23,7 +23,7 @@ public:
 	virtual bool GetIsRanged() { return isRanged; }
 	virtual std::string GetPrimarySkillName() { return primarySkillName; }
 	virtual std::string GetPrimarySkillDescription() { return primarySkillDescription; }
-	virtual std::vector<int> GetPrimarySkillDamageAttack() { return primarySkillDamageRange; }
+	virtual std::vector<int> GetPrimarySkillDamageRange() { return primarySkillDamageRange; }
 	virtual std::string GetSecondarySkillName() { return secondarySkillName; }
 	virtual std::string GetSecondarySkillDescription() { return secondarySkillDescription; }
 	virtual std::vector<int> GetSecondarySkillDamageRange() { return secondarySkillDamageRange; }

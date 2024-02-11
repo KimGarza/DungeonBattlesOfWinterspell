@@ -23,5 +23,6 @@ public:
 	Game();
 
 	void CheckGameState();
+	void ChangeConsoleDesign();
 	void ChangeGameState(GameState newState);
 };

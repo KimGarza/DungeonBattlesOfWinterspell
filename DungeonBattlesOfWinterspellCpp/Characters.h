@@ -12,6 +12,7 @@ private:
 	int dexterity;
 	int strength;
 	bool hasSwiftness;
+	int armourRating;
 	std::vector<std::string> weaponOptions;
 
 public:
@@ -39,6 +40,10 @@ public:
 		return hasSwiftness;
 	}
 
+	int GetArmourRating() const override {
+		return armourRating;
+	}
+
 	void SetHasSwiftness(bool isSwift) { hasSwiftness = isSwift; }
 
 	std::vector<std::string> GetWeaponOptions() const override {
@@ -57,6 +62,7 @@ private:
 	int dexterity;
 	int strength;
 	bool hasSwiftness;
+	int armourRating;
 	std::vector<std::string> weaponOptions;
 
 public:
@@ -84,6 +90,10 @@ public:
 		return hasSwiftness;
 	}
 
+	int GetArmourRating() const override {
+		return armourRating;
+	}
+
 	void SetHasSwiftness(bool isSwift) { hasSwiftness = isSwift; }
 
 	std::vector<std::string> GetWeaponOptions() const override {
@@ -101,6 +111,7 @@ private:
 	int dexterity;
 	int strength;
 	bool hasSwiftness;
+	int armourRating;
 	std::vector<std::string> weaponOptions;
 
 
@@ -127,6 +138,10 @@ public:
 
 	bool GetHasSwiftness() const override {
 		return hasSwiftness;
+	}
+
+	int GetArmourRating() const override {
+		return armourRating;
 	}
 
 	void SetHasSwiftness(bool isSwift) { hasSwiftness = isSwift; }

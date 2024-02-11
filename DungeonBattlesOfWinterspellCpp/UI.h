@@ -44,6 +44,8 @@ public:
 	void CannotUseItem();
 	void PotionItemMenu();
 	void EquiptmentItemMenu(std::shared_ptr<LootItem> item, std::shared_ptr<PlayerCharacter> playerCharacter);
-	bool OpenInventoryInquiry();
+	std::string Inquiry();
+	void AlreadyEquiptItem();
+	void OpenCharacterMenu(std::shared_ptr<PlayerCharacter> playerCharacter);
 };
 

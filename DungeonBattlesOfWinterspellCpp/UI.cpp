@@ -259,7 +259,7 @@ std::string UI::DisplayMapMenu(std::vector<std::string> dungeonRooms, int indexS
                 selectableDungeons.emplace_back((i + 1), dungeonRooms[i]); // creating a menu for the player to select a room to enter
             }
             else {
-                gameText.WriteText(dungeonRooms[i]);
+                gameText.WriteText(dungeonRooms[i] + "\n");
             }
         }
     }
@@ -341,7 +341,8 @@ void UI::DisplayTurnOrder(std::vector<std::string> creatureNames, std::string du
 }
 
 void UI::NoEnemies() {
-    gameText.WriteLine("The shallow wispers in the room are faint and dismal, this room has had blood spilled of your hand this night. Seems safe enough.");
+    gameText.WriteLine("The shallow wispers in the room are faint and dismal, this room has had blood spilled of your hand this night.");
+    gameText.WriteLine("Seems safe enough, no more you can gain from this hallowed hall..."); /**/ _getch();
 }
 
 bool UI::DescribePlayerOptions(std::shared_ptr<PlayerCharacter> player) {
@@ -560,14 +561,7 @@ void UI::LootBegin(std::vector<std::shared_ptr<LootItem>> loot) {
 
     for (const auto& item : loot) {
 
-        for (auto it = loot.begin(); it != loot.end(); ++it) {
-
-            gameText.WriteText(item->GetName());
-
-            if (it != loot.end() - 1) {
-                gameText.WriteText(", \n");
-            }
-        }
+        gameText.WriteText(item->GetName() + ", \n");
     }
 
     _getch();
@@ -579,33 +573,35 @@ std::shared_ptr<LootItem> UI::DisplayInventoryMenu(std::vector<std::shared_ptr<L
         system("cls");
         gameText.WriteLine("*____________Inventory____________*\n\n");
 
-        int itemID = 0;
+        std::vector < std::pair<int, std::shared_ptr<LootItem>>> selectableLoot;
 
+        for (int i = 0; i < inventory.size(); i++) {
 
-        for (const auto& item : inventory) {
+            std::shared_ptr<LootItem> item = inventory[i];
+            gameText.WriteLine(std::to_string(i + 1) + ")  " + item->GetName() + item->GetInfo());
 
-            gameText.WriteLine(std::to_string(itemID) + ")  " + item->GetName());
-
-            itemID++;
+            selectableLoot.emplace_back((i + 1), inventory[i]);
         }
 
         gameText.WriteLine("x)  exit menu");
 
         std::string playerChoice = input.PlayerChoice(inventory.size());
         if (playerChoice == "x") { // player wishes to exit menu
+            system("cls");
+
             return nullptr;
         }
 
         int IDSelected = std::stoi(playerChoice);
 
         // lambda function
-        auto selectedItem = std::find_if(inventory.begin(), inventory.end(), [IDSelected](const std::pair<int, std::shared_ptr<LootItem>>& item) {
+        auto selectedItem = std::find_if(selectableLoot.begin(), selectableLoot.end(), [IDSelected](const std::pair<int, std::shared_ptr<LootItem>>& item) {
             return item.first == IDSelected;
             });
 
-        if (selectedItem != inventory.end()) {
+        if (selectedItem != selectableLoot.end()) {
 
-            return *selectedItem;;
+            return selectedItem->second;
         }
         else {
             gameText.WriteLine("Not sure you are being rational! Please save all the cans of beans for the charity this spring");
@@ -627,21 +623,29 @@ void UI::CannotUseItem() {
 void UI::EquiptmentItemMenu(std::shared_ptr<LootItem> item, std::shared_ptr<PlayerCharacter> playerCharacter) {
 
     while (true) {
-        gameText.WriteLine("What would you like to do with this item?");
+        system("cls");
+        gameText.WriteLine("\nWhat would you like to do with the " + item->GetName() + item->GetInfo() + "?");
 
         gameText.WriteLine("1)  Equipt");
-        gameText.WriteLine("2)  Drop");
-        gameText.WriteLine("3)  Cancel");
+        gameText.WriteLine("2)  Get Description");
+        gameText.WriteLine("3)  Drop");
+        gameText.WriteLine("4)  Cancel");
 
         std::string playerChoice = input.PlayerChoice(std::vector<int> {1,2,3});
         if (playerChoice != "") {
             if (playerChoice == "1") {
                 playerCharacter->SetEquiptItems(item);
+                return;
             }
             else if (playerChoice == "2") {
-                playerCharacter->RemoveFromInventory(item);
+                gameText.WriteLine(item->GetDescription()); /**/ _getch();
+                return;
             }
             else if (playerChoice == "3") {
+                playerCharacter->RemoveFromInventory(item);
+                return;
+            }
+            else if (playerChoice == "4") {
                 system("cls");
                 return;
             }
@@ -656,25 +660,60 @@ void UI::EquiptmentItemMenu(std::shared_ptr<LootItem> item, std::shared_ptr<Play
     _getch();
 }
 
-bool UI::OpenInventoryInquiry() {
+std::string UI::Inquiry() {
 
     while (true) {
 
-        gameText.WriteLine("Would you like to view your inventory view your goods?");
-        gameText.WriteLine("i)  Inventory");
-        gameText.WriteLine("n)  venture forth");
+        gameText.WriteLine("What would you like to do next?");
+        gameText.WriteLine("i)  View Inventory");
+        gameText.WriteLine("c)  View Character");
+        gameText.WriteLine("x)  venture forth");
 
         std::string playerChoice; /**/ std::cin >> playerChoice;
 
-        if (playerChoice == "i" || "y") {
-            return true;
+        if (playerChoice == "i" || playerChoice ==  "I") {
+            return "i";
         }
-        else if ("n") {
-            return false;
+        else if (playerChoice == "c" || playerChoice == "C") {
+            return "c";
+        }
+        else if (playerChoice == "x" || playerChoice == "X") {
+            system("cls");
+            return "x";
         }
         else {
             system("cls");
             gameText.WriteLine("wut UwU");
         }
     }
+}
+
+void UI::AlreadyEquiptItem() {
+    gameText.WriteLine("You already have this item equipt!");
+}
+
+void UI::OpenCharacterMenu(std::shared_ptr<PlayerCharacter> playerCharacter) {
+    system("cls");
+    gameText.WriteLine(playerCharacter->GetName() + " | Level: " + std::to_string(playerCharacter->GetLevel()));
+
+    gameText.WriteLine("Max health: " + std::to_string(playerCharacter->GetMaxHealth()) + " | Current health: " + std::to_string(playerCharacter->GetHealth()));
+    
+    gameText.WriteLine("Armour rating: " + std::to_string(playerCharacter->GetArmourRating()));
+    //gameText.WriteLine("Spell resistance: " + std::to_string(playerCharacter->GetSpellResistance()) + " | ");
+
+    std::string isSwift = playerCharacter->GetHasSwiftness() ? " (has swiftness)" : "";
+    gameText.WriteLine("Strength: " + std::to_string(playerCharacter->GetStrength())
+    + " | Dexterity: " + std::to_string(playerCharacter->GetDexterity()) + isSwift
+    + " | Intellegence: " + std::to_string(playerCharacter->GetIntelligence()));
+    gameText.WriteLine("xp: " + std::to_string(playerCharacter->GetXP()) + " | xp to next level: " + "tbd");
+
+    gameText.WriteLine("weapon: " + playerCharacter->GetWeapon()->GetName());
+
+    gameText.WriteLine("Skill 1: " + playerCharacter->GetWeapon()->GetPrimarySkillName()
+    + ": " + playerCharacter->GetWeapon()->GetPrimarySkillDescription() + " | Damage: " + std::to_string(playerCharacter->GetWeapon()->GetPrimarySkillDamageRange()[0]) + "-" + std::to_string(playerCharacter->GetWeapon()->GetPrimarySkillDamageRange()[1]));
+
+    gameText.WriteLine("Skill 2 (AOE): " + playerCharacter->GetWeapon()->GetSecondarySkillName()
+        + ": " + playerCharacter->GetWeapon()->GetSecondarySkillDescription() + " | Damage: " + std::to_string(playerCharacter->GetWeapon()->GetSecondarySkillDamageRange()[0]) + "-" + std::to_string(playerCharacter->GetWeapon()->GetSecondarySkillDamageRange()[1]));
+
+    _getch();
 }
