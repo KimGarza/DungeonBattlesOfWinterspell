@@ -196,3 +196,31 @@ private:
 	bool isDead;
 	UI ui;
 };
+
+// -------------------------------------------
+
+class Changeling : public IEnemy {
+public:
+	Changeling();
+
+	std::string GetName() override { return name; }
+	int GetHealth() override { return health; }
+	bool GetHasSwiftness() override { return hasSwiftness; }
+	std::string GetSkillName() override { return skillName; }
+	std::string GetSkillDescription() override { return skillDescription; }
+	int GetSkillDamage() override { return skillDamage; }
+	bool GetIsDead() override { return isDead; }
+	void TakeDamage(int hitPoints) override;
+	int AttackPlayer() override;
+
+
+private:
+	std::string name;
+	int health;
+	bool hasSwiftness;
+	std::string skillName;
+	std::string skillDescription;
+	int skillDamage;
+	bool isDead;
+	UI ui;
+};

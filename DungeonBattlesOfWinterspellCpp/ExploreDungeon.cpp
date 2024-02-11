@@ -1,6 +1,8 @@
 #include "ExploreDungeon.h"
 #include "PlayerCharacter.h"
+#include "Battle.h"
 #include "Inventory.h"
+#include "Story.h"
 #include <iostream>
 #include <vector>
 #include <cstdlib>   // For rand() and srand()
@@ -14,6 +16,35 @@ ExploreDungeon::ExploreDungeon(std::shared_ptr<DungeonRoom> currentRoom, std::sh
 /// If neither of those are true, the dungeon room will newly be described.
 /// </summary>
 void ExploreDungeon::EnterDungeonRoom() {
+
+	
+	if (currentRoom->GetIsLocked()) {
+		ui.RoomLocked();
+	}
+	else if (currentRoom->GetCompleted()) {
+		ui.NoEnemies();
+	}
+	else {
+		ui.DescribeDungeonRoom(currentRoom->GetDescription());
+	}
+	return;
+}
+
+bool ExploreDungeon::ChangelingEvent() {
+	ui.DescribeDungeonRoom(currentRoom->GetDescription());
+
+	Story story;
+	std::string playerChoice = story.Changeling();
+	if (playerChoice == "y") {
+		
+		return true;
+	}
+	else {
+		return false;
+	}
+}
+
+void ExploreDungeon::PlayerMenu() {
 
 	while (true) {
 		system("cls");
@@ -31,16 +62,6 @@ void ExploreDungeon::EnterDungeonRoom() {
 		}
 
 	}
-		if (currentRoom->GetIsLocked()) {
-			ui.RoomLocked();
-		}
-		else if (currentRoom->GetCompleted()) {
-			ui.NoEnemies();
-		}
-		else {
-			ui.DescribeDungeonRoom(currentRoom->GetDescription());
-		}
-	return;
 }
 
 bool ExploreDungeon::CheckForKey() {

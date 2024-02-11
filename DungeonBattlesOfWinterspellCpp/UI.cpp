@@ -260,6 +260,8 @@ std::string UI::DisplayMapMenu(std::vector<std::string> dungeonRooms, int indexS
             }
             else {
                 gameText.WriteText(dungeonRooms[i] + "\n");
+
+                selectableDungeons.emplace_back((i + 1), dungeonRooms[i]);
             }
         }
     }
@@ -341,8 +343,8 @@ void UI::DisplayTurnOrder(std::vector<std::string> creatureNames, std::string du
 }
 
 void UI::NoEnemies() {
-    gameText.WriteLine("The shallow wispers in the room are faint and dismal, this room has had blood spilled of your hand this night.");
-    gameText.WriteLine("Seems safe enough, no more you can gain from this hallowed hall..."); /**/ _getch();
+    gameText.WriteLine("The shallow wispers in the room are faint and dismal, this room has had blood spilled of your hand this night."); /**/ _getch();
+    gameText.WriteLine("Seems safe enough, nothing more you can gain from this hallowed hall..."); /**/ _getch();
 }
 
 bool UI::DescribePlayerOptions(std::shared_ptr<PlayerCharacter> player) {

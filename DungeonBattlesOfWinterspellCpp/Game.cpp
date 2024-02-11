@@ -86,6 +86,11 @@ void Game::CheckGameState() {
 
 		story.EnterDungeonRoom();
 
+		exploreDungeon.PlayerMenu();
+
+		if (currentRoom->GetName() == "Forgotten Catacombs" && exploreDungeon.ChangelingEvent()) {
+			ChangeGameState(GameState::BattleChangeling);
+		}
 		exploreDungeon.EnterDungeonRoom();
 
 		if (!currentRoom->GetCompleted() && !currentRoom->GetIsLocked()) {
@@ -97,6 +102,7 @@ void Game::CheckGameState() {
 
 			if (exploreDungeon.CheckForKey()) {
 
+				std::vector<std::shared_ptr<ICreature>> turnOrder = exploreDungeon.GenerateTurnOrder();
 				ChangeGameState(GameState::Battle);
 			}
 			else {
@@ -123,6 +129,11 @@ void Game::CheckGameState() {
 		ChangeGameState(GameState::Loot);
 
 		break;
+	}
+	case GameState::BattleChangeling: {
+		Battle battle;
+		battle.ChangelingFight(playerCharacter)
+
 	}
 	case GameState::Loot: {
 

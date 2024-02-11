@@ -25,7 +25,7 @@ int Firespitter::AttackPlayer() {
 
 
 DungeonDweller::DungeonDweller() {
-	name = "DungeonDweller";
+	name = "Dungeon Dweller";
 	health = 8;
 	hasSwiftness = true;
 	skillName = "Stealth";
@@ -73,7 +73,7 @@ int Goblin::AttackPlayer() {
 
 
 HauntingSpirit::HauntingSpirit() {
-	name = "HauntingSpirit";
+	name = "Haunting Spirit";
 	health = 26;
 	hasSwiftness = false;
 	skillName = "Stealth";
@@ -145,7 +145,7 @@ int Skeleton::AttackPlayer() {
 
 
 UndeadWolf::UndeadWolf() {
-	name = "UndeadWolf";
+	name = "Undead Wolf";
 	health = 35;
 	hasSwiftness = true;
 	skillName = "Stealth";
@@ -162,5 +162,28 @@ void UndeadWolf::TakeDamage(int hitPoints) {
 }
 
 int UndeadWolf::AttackPlayer() {
+	return skillDamage;
+}
+
+// ---------------------------------------------
+
+Changeling::Changeling() {
+	name = "Changeling";
+	health = 40;
+	hasSwiftness = true;
+	skillName = "Gutting Slash";
+	skillDescription = "Slashes with needle like claws and a precise swipe to a foes area of most vunerabile.";
+	skillDamage = 14;
+	isDead = false;
+}
+
+void Changeling::TakeDamage(int hitPoints) {
+	health -= hitPoints;
+	if (health <= 0) {
+		isDead = true;
+	}
+}
+
+int Changeling::AttackPlayer() {
 	return skillDamage;
 }

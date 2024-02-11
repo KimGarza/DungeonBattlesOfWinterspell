@@ -19,5 +19,7 @@ public:
 
 	void LootDungeon();
 	bool CheckForKey();
+	void PlayerMenu();
+	bool ChangelingEvent();
 };
 

@@ -9,5 +9,7 @@ enum class GameState {
 	Loot,
 	Explore,
 	UpdateMap,
-	EndGame
+	EndGame,
+
+	BattleChangeling
 };
