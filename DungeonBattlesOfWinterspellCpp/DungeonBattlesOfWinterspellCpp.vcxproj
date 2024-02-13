@@ -108,6 +108,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>Winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -151,6 +152,7 @@
     <ClCompile Include="LootItem.cpp" />
     <ClCompile Include="LootRoom.cpp" />
     <ClCompile Include="Map.cpp" />
+    <ClCompile Include="MusicPlayer.cpp" />
     <ClCompile Include="PlayerCharacter.cpp" />
     <ClCompile Include="Story.cpp" />
     <ClCompile Include="UI.cpp" />
@@ -178,6 +180,7 @@
     <ClInclude Include="LootItem.h" />
     <ClInclude Include="LootRoom.h" />
     <ClInclude Include="Map.h" />
+    <ClInclude Include="MusicPlayer.h" />
     <ClInclude Include="PlayerCharacter.h" />
     <ClInclude Include="Story.h" />
     <ClInclude Include="UI.h" />

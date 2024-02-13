@@ -1,5 +1,2 @@
-﻿  UI.cpp
-G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.cpp(241,75): warning C4101: 'roomCount': unreferenced local variable
-G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.cpp(184): warning C4715: 'UI::AttributeAssignment': not all control paths return a value
-G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.cpp(459): warning C4715: 'UI::GetEnemyTargetForAttack': not all control paths return a value
+﻿  Battle.cpp
   DungeonBattlesOfWinterspellCpp.vcxproj -> G:\repos\DungeonBattlesOfWinterspellCpp\x64\Debug\DungeonBattlesOfWinterspellCpp.exe

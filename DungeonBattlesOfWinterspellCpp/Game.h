@@ -6,6 +6,7 @@
 #include "DungeonGenerator.h"
 #include "ExploreDungeon.h"
 #include "Map.h"
+#include "MusicPlayer.h";
 
 class Game {
 private:
@@ -17,6 +18,7 @@ private:
 	std::vector<std::shared_ptr<DungeonRoom>> dungeonRooms;
 	CharacterCreation characterCreation;
 	DungeonGenerator dungeonGenerator;
+	MusicPlayer music;
 
 public:
 

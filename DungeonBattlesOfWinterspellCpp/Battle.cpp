@@ -3,8 +3,10 @@
 #include "IEnemy.h"
 #include "ICharacter.h"
 #include "PlayerCharacter.h"
+#include "Enemies.h"
 
 Battle::Battle(std::vector<std::shared_ptr<ICreature>> turnOrder) : ui(ui), turnOrder(turnOrder) {}
+Battle::Battle() {}
 
 void Battle::RevealTurnOrder(std::vector<std::shared_ptr<ICreature>> turnOrder, std::string dungeonRoomName) {
 
@@ -84,37 +86,44 @@ void Battle::CommenceBattle(std::shared_ptr<PlayerCharacter> playerCharacter) {
 
 void Battle::ChangelingFight(std::shared_ptr<PlayerCharacter> playerCharacter) {
 
-    while (true) {
 
-        std::vector<ICreature> turnOrder; // unique pointer here?
-            std::shared_ptr<PlayerCharacter> player = std::dynamic_pointer_cast<PlayerCharacter>(creature); // down casting
+    std::shared_ptr<Changeling> changeling = std::make_shared<Changeling>();
+    std::shared_ptr<ICreature> player = playerCharacter;
+    std::shared_ptr<ICreature> enemy = changeling;
 
-            if (player) {
+    std::vector<std::shared_ptr <ICreature>> this_turnOrder;
+    this_turnOrder.push_back(changeling);
+    this_turnOrder.push_back(player);
 
-                // 'creature' is of type ICharacter, and 'character' is now a shared_ptr to it
-                bool isPlayerAttacking = ui.DescribePlayerOptions(player);
+        
+    for (const auto& creature : this_turnOrder) {
 
-                if (isPlayerAttacking) {
-                    std::shared_ptr<IEnemy> targetedEnemy = ui.GetEnemyTargetForAttack(player, turnOrder);
-                    bool isEnemyDead = ui.DescribePlayerAttackOptions(targetedEnemy, player->GetWeapon());
-                    if (isEnemyDead) {
-                        slaughteredEnemy = targetedEnemy;
-                        ui.KilledEnemy(targetedEnemy);
-                        break;
-                    }
+        std::shared_ptr<PlayerCharacter> player = std::dynamic_pointer_cast<PlayerCharacter>(creature); // down casting
+        std::shared_ptr<IEnemy> enemy = std::dynamic_pointer_cast<IEnemy>(creature); // down casting
+
+        if (player) {
+
+            bool isPlayerAttacking = ui.DescribePlayerOptions(player);
+
+            if (isPlayerAttacking) {
+                std::shared_ptr<IEnemy> targetedEnemy = ui.GetEnemyTargetForAttack(player, this_turnOrder);
+                bool isEnemyDead = ui.DescribePlayerAttackOptions(targetedEnemy, player->GetWeapon());
+                if (isEnemyDead) {
+                    ui.KilledEnemy(targetedEnemy);
+                    break;
                 }
+            }
+        }
+        else {
+            int attackDmg = enemy->AttackPlayer();
+            ui.DescribeEnemyAttack(enemy->GetName(), enemy->GetSkillName(), enemy->GetSkillDescription(), enemy->GetSkillDamage());
+            bool checkIfDead = playerCharacter->TakeDamage(attackDmg); // attack player returns the hit points int
+            if (checkIfDead) {
+                std::cout << "YOU DIED. GAME OVER.";
+                exit(0);
+            }
             else {
-                std::shared_ptr<IEnemy> enemy = std::dynamic_pointer_cast<IEnemy>(creature); // down casting
-                int attackDmg = enemy->AttackPlayer();
-                ui.DescribeEnemyAttack(enemy->GetName(), enemy->GetSkillName(), enemy->GetSkillDescription(), enemy->GetSkillDamage());
-                bool checkIfDead = playerCharacter->TakeDamage(attackDmg); // attack player returns the hit points int
-                if (checkIfDead) {
-                    std::cout << "YOU DIED. GAME OVER.";
-                    exit(0);
-                }
-                else {
-                    ui.HealthRemaining(playerCharacter->GetHealth());
-                }
+                ui.HealthRemaining(playerCharacter->GetHealth());
             }
         }
     }

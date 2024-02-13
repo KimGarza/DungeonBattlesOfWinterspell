@@ -14,6 +14,8 @@
 #include "ExploreDungeon.h"
 
 
+
+
 Game::Game() {
 	currentState = GameState::Begin;
 }
@@ -58,6 +60,9 @@ void Game::CheckGameState() {
 	switch (currentState) {
 
 	case GameState::Begin: { 
+
+		music.PlayMusic(L"slow-2021-08-17_-_8_Bit_Nostalgia_-_www.FesliyanStudios.com.wav");
+
 		ChangeConsoleDesign();
 		story.OpeningStory();
 
@@ -82,14 +87,20 @@ void Game::CheckGameState() {
 	}
 	case GameState::Explore: {
 
+
 		ExploreDungeon exploreDungeon(currentRoom, playerCharacter);
 
 		story.EnterDungeonRoom();
 
 		exploreDungeon.PlayerMenu();
 
-		if (currentRoom->GetName() == "Forgotten Catacombs" && exploreDungeon.ChangelingEvent()) {
-			ChangeGameState(GameState::BattleChangeling);
+		if (currentRoom->GetName() == "Forgotten Catacombs" && currentRoom->GetTimesExplored() == 0) {
+			
+			music.PlayMusic(L"8bit-chikadou.wav");
+			if (exploreDungeon.ChangelingEvent()) {
+				ChangeGameState(GameState::BattleChangeling);
+			}
+
 		}
 		exploreDungeon.EnterDungeonRoom();
 
@@ -120,6 +131,8 @@ void Game::CheckGameState() {
 	}
 	case GameState::Battle: {
 
+		music.PlayMusic(L"slow-2021-08-17_-_8_Bit_Nostalgia_-_www.FesliyanStudios.com.wav");
+
 		Battle battle(currentRoom->GetTurnOrder());
 
 		battle.RevealTurnOrder(currentRoom->GetTurnOrder(), currentRoom->GetName());
@@ -132,10 +145,12 @@ void Game::CheckGameState() {
 	}
 	case GameState::BattleChangeling: {
 		Battle battle;
-		battle.ChangelingFight(playerCharacter)
+		battle.ChangelingFight(playerCharacter);
 
 	}
 	case GameState::Loot: {
+
+		music.PlayMusic(L"slow-2021-08-17_-_8_Bit_Nostalgia_-_www.FesliyanStudios.com.wav");
 
 		LootRoom lootRoom;
 

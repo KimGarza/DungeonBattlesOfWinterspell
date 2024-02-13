@@ -530,6 +530,12 @@ void UI::HealthRemaining(int healthRemaining) {
 }
 
 void UI::KilledEnemy(std::shared_ptr<IEnemy> enemy) {
+    if (enemy->GetName() == "Changeling") {
+
+        gameText.WriteLine("You have slain the evil " + enemy->GetName()); /**/ _getch();
+        gameText.WriteLine("He was a dispicable devil. Good to be rid of him, knighted you should be, at the King's Palace! On the fourth night of Dune Riah."); /**/ _getch();
+        return;
+    }
     gameText.WriteLine("You have slain " + enemy->GetName()); /**/ _getch();
 }
 
