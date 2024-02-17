@@ -60,7 +60,7 @@ std::map<std::string, int> CharacterCreation::AllocateAttributes() {
 		{"strength", characterInGrogpress->GetStrength()}
 	};
 
-	int pointsRemaining = 10;
+	int pointsRemaining = 4;
 	while (pointsRemaining > 0) {
 
 		// For tracking player's selection with their desired attribute to modify

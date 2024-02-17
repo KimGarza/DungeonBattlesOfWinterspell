@@ -1,3 +1,6 @@
+#include <SFML/Graphics/RenderWindow.hpp>
+#include <SFML/Graphics/Texture.hpp>
+#include <SFML/Graphics/Sprite.hpp>
 #include <iostream>
 #include "Game.h"
 #include "GameState.h"
@@ -15,44 +18,8 @@
 
 
 
-
 Game::Game() {
 	currentState = GameState::Begin;
-}
-
-void Game::ChangeConsoleDesign() {
-	//HANDLE hConsoleOutput = GetStdHandle(STD_OUTPUT_HANDLE);
-	//HANDLE hConsoleInput = GetStdHandle(STD_INPUT_HANDLE);
-
-	//// Set screen buffer size
-	//COORD coordScreenBuffer = { 120, 9001 };
-	//SetConsoleScreenBufferSize(hConsoleOutput, coordScreenBuffer);
-
-	//// Set window size
-	//SMALL_RECT windowSize = { 0, 0, 119, 29 }; // Window size coordinates (right and bottom are inclusive)
-	//SetConsoleWindowInfo(hConsoleOutput, TRUE, &windowSize);
-
-	//// Set font size and style
-	//CONSOLE_FONT_INFOEX cfi;
-	//cfi.cbSize = sizeof(cfi);
-	//cfi.nFont = 0;
-	//cfi.dwFontSize.X = 0; // Width of each character in the font
-	//cfi.dwFontSize.Y = 20; // Height
-	//cfi.FontFamily = FF_DONTCARE;
-	//cfi.FontWeight = FW_NORMAL;
-	//wcscpy_s(cfi.FaceName, L"MS Gothic");
-	//SetCurrentConsoleFontEx(hConsoleOutput, FALSE, &cfi);
-
-	//// Set console text and background colors
-	//// Assuming the color settings you want are RGB(242, 242, 242) for text and RGB(12, 12, 12) for background
-	//// These RGB values must be converted to the appropriate console color attributes
-	//// This is a simplification and may not give you the exact RGB values due to console limitations
-	//WORD wAttributes = FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE | FOREGROUND_INTENSITY | // Light gray text
-	//	BACKGROUND_BLUE | BACKGROUND_GREEN | BACKGROUND_RED; // Dark green background
-	//SetConsoleTextAttribute(hConsoleOutput, wAttributes);
-
-	//// Rest of your application code
-	//std::cout << "Console settings have been applied." << std::endl;
 }
 
 void Game::CheckGameState() {
@@ -61,9 +28,27 @@ void Game::CheckGameState() {
 
 	case GameState::Begin: { 
 
+		//sf::RenderWindow window(sf::VideoMode(1200, 1000), "My Game", sf::Style::Default);
+		//window.setFramerateLimit(60); // Limit the framerate to 60 FPS
+
+		//sf::Texture texture;
+		//if (!texture.loadFromFile("../images/brickwall.png")) {
+		//	// Handle error here
+		//	// For example, you can print an error message or throw an exception
+		//}
+
+		//sf::Sprite sprite;
+		//sprite.setTexture(texture);
+
+		//// Inside the game loop
+		//window.clear();
+		//window.draw(sprite);
+		//window.display();
+
+
 		music.PlayMusic(L"slow-2021-08-17_-_8_Bit_Nostalgia_-_www.FesliyanStudios.com.wav");
 
-		ChangeConsoleDesign();
+
 		story.OpeningStory();
 
 		playerCharacter = characterCreation.CreateCharacter();
@@ -78,6 +63,7 @@ void Game::CheckGameState() {
 		break;
 	}
 	case GameState::Map: {
+
 
 		currentRoom = map->RevealMapMenu();
 
@@ -122,8 +108,6 @@ void Game::CheckGameState() {
 		}
 		else {
 
-			//exploreDungeon.ChangeInstnace();
-
 			ChangeGameState(GameState::Loot);
 		}
 
@@ -131,7 +115,7 @@ void Game::CheckGameState() {
 	}
 	case GameState::Battle: {
 
-		music.PlayMusic(L"slow-2021-08-17_-_8_Bit_Nostalgia_-_www.FesliyanStudios.com.wav");
+		music.PlayMusic(L"108 - Mouryou Senki Madara (VRC6) - Ma-Da-Ra.wav");
 
 		Battle battle(currentRoom->GetTurnOrder());
 

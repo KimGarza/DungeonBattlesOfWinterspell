@@ -2,6 +2,12 @@
 
 #include <iostream>
 #include "Game.h"
+#undef min
+#undef max
+#define NOMINMAX
+#include <SFML/Graphics.hpp>
+//#include <SFML/System.hpp>
+
 
 int main()
 {

@@ -2,31 +2,35 @@
 #include <conio.h>
 
 void Story::OpeningStory() {
-	//gameText.WriteLine("Hello traveler! The Town of Winterspell has been overtaken by the dark creatures of the North, Goblins, the Undying and Trolls... Among other foul creatures of the deep."); /**/ _getch();
-	//gameText.WriteLine("They mean to destroy our resources, harbinge our foes and swallow our townsfolk."); /**/ _getch();
-	//gameText.WriteLine("Winter is come. We yet have been able to scurge the unholy creatures....."); /**/ _getch();
+	gameText.WriteLineInput("Hail traveler!");
+	gameText.WriteLineInput("The Town of Winterspell has been overtaken by creatures of the dark, \nfrom the portals of the North Mountain they've squarbled hither. \nGoblins, the Undying and Trolls... Among other foul creatures of the deep.");
+	gameText.WriteLineInput("They mean to destroy our resources, harbinge our foes and swallow our townsfolk.");
+	gameText.WriteLineInput("Winter is come, yet we hath not prevailed in our right to scurge the unholy creatures!");
+	system("cls");
 
-	bool validResult = false;
-	while (!validResult) {
+	while (true) {
 
-
-		gameText.WriteLine("\n#%*		Will you help fight? And save the town of Winterspell?(y/n):		%#*");
-
-
+		std::cout << "#%*%#*%#*%#*%#*%#*%#*%#*%#*%#*%#*%#*%#*%#*%#*%#*%#*%#*%#*%#*%#*%#*%#*%#*%#*%#*%#*%#*%#%#*%#%\n";
+		gameText.WriteLine("\n#%*		Will you help fight? And save the town of Winterspell? (y/n):		%#*");
 
 		std::string result = input.PlayerChoiceYN();
 
 		if (result == "n") {
 			system("cls");
 
-			gameText.WriteLine("Cowardice! You truly detestable creature. Slither away you vile pestilance!");
-			gameText.WriteLine("You do not desire to help this lowley town?! Pfsttt! Go squander in the cellars with the pigs and the ugly children.");
+			gameText.WriteLineInput("Not but a beastly ogress in beachware I fair you, lewd cowardice! You truly detestable unworthy soul. Slither away you vile pestilance back to the magmatic forces of repentence!");
+			gameText.WriteLineInput("You do not desire to help this lowley town?! Pfsttt! Go squander in the cellars with the pigs and the ugly children.");
 			exit(0);
 		}
 		else if (result == "y") {
-			validResult = true;
-			gameText.WriteLine("Wonderful! I shall meet you at the Iron Gates! Be weary of ice traveller."); /**/ _getch();
+			system("cls");
 
+			gameText.WriteLineInput("Wonderful! I shall meet you at the Iron Gates! They are NorthWest of the fortifying stone walls of Winterspell. \nPlease be weary of ice traveller.");
+			gameText.WriteLineInput("Oh! Forgive me Master, I have failed to do the customaries! \nI am Burtued, your spellbound guide! I am a great Mage of Winterspell!");
+			gameText.WriteLineInput("... Oh alright! Still learning by the dusty binds of old writings by all accounts I'm afraid.");
+			gameText.WriteLineInput("I shall provoke you with my psychomancy practices that yee shall fair more boldley with company on your hallowed journey. \nBut you can trust me not to turn you into a bobbling toad! By my troth, I can hold true to that me lord!");
+			gameText.WriteLineInput("Cross me heart! Hazah!");
+			return;
 		}
 		else {
 			system("cls");
@@ -34,26 +38,24 @@ void Story::OpeningStory() {
 		}
 	}
 	
+	system("cls");
+	
 }
 
 void Story::MapIntro() {
 
 	system("cls");
-	//gameText.WriteLine("Behold thine map. Oh prithee forgive its woefully tattered!"); /**/ _getch();
-	//gameText.WriteLine("That blotch? Surely sire that is merely the spill of mine evening brew, it marks no isle of mystery..."); /**/ _getch();
-	//gameText.WriteLine("Doth sort of resemble the likeness of a skull, dost it not?"); /**/ _getch();
-	//gameText.WriteLine("Pay it no mind me lord....");
-
-	_getch();
+	gameText.WriteLineInput("Behold your map!");
+	gameText.WriteLineInput("Oh prithee forgive me sire, it's old and tattered I know of it!");
+	gameText.WriteLineInput("That blotch? Surely sire that is merely the spill of mine morning brew, it marks no isle of mystery...");
+	gameText.WriteLineInput("Does sort of resemble the likeness of a skull, doesn't it.");
+	gameText.WriteLineInput("Pay it no mind me lord....");
 }
 
 void Story::EnterDungeonRoom() {
 	
 	system("cls");
-	gameText.WriteLine("Embarking through the cavernous and decrepid dungeon, \nyou search through each room for the ugly beasts!");
-	gameText.WriteLine("Entering the next room...");
-
-	_getch();
+	gameText.WriteLineInput("Embarking through the cavernous and decrepid dungeon, \nyou search for evil in the halls and into the next room...");
 }
 
 std::string Story::Changeling() {

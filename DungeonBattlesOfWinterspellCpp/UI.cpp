@@ -19,10 +19,9 @@
 std::shared_ptr<ICharacter> UI::ChooseClass() {
     system("cls");
 
-   bool selectionComplete = false;
-   while (!selectionComplete) {
+   while (true) {
 
-       gameText.WriteLine("Pray tell... Who are you?\n");
+       gameText.WriteLine("Pray tell... Who are you ?\n");
        gameText.WriteLine("1)  Woodelf \n2)  Dwarf \n3)  Enchantress\n");
 
        std::string playerChoice = input.PlayerChoice(std::vector<int> {1, 2, 3});
@@ -32,22 +31,22 @@ std::shared_ptr<ICharacter> UI::ChooseClass() {
            if (playerChoice == "1") {
                std::shared_ptr<ICharacter> woodElf = std::make_shared<WoodElf>(); // consider making these unique pointers after test
                
-               gameText.WriteLine("From the Halls of Miritar, you venture, where the ruins of Myth Drannor await your return."); /**/ _getch();
+               gameText.WriteLine("From the Halls of Miritar, you venture, where the ruins of Myth Drannor await your return.");
 
                return woodElf;
            }
            else if (playerChoice == "2") {
                std::shared_ptr<ICharacter> dwarf = std::make_shared<Dwarf>();
                
-               gameText.WriteLine("Aw, what an adoarable gnome!"); /**/ _getch();
-               gameText.WriteLine("Okay, okay calm down, I was only jesting!"); /**/ _getch();
+               gameText.WriteLineInput("Alas! An adoarable gnome with cheeks of rose fire!");
+               gameText.WriteLineInput("Yes, Yes chillith Master, I was only jesting!");
 
                return dwarf;
            }
            else if (playerChoice == "3") {
                std::shared_ptr<ICharacter> enchantress = std::make_shared<Enchantress>();
                
-               gameText.WriteLine("You posses the Thaumaturgy of the ancient world within you."); /**/ _getch();
+               gameText.WriteLine("You posses the Thaumaturgy of the ancient world within you.");
 
                return enchantress;
            }
@@ -58,14 +57,16 @@ std::shared_ptr<ICharacter> UI::ChooseClass() {
        }
    }
 
+
    return nullptr;
 }
 
 std::shared_ptr<IWeapon> UI::ChooseWeapon(std::shared_ptr<ICharacter> characterClass) {
 
     system("cls");
-    
-    gameText.WriteLine("Now, you can't go around fight gobgobs and the undead with just your bare hands..."); /**/ _getch();
+
+    gameText.WriteLine("Ah! Now then. Though cannot see trechors below and fight gobgobs with just thy bare mitts!");
+    gameText.WriteLineInput("Weapon of choice good sir ?");
 
     bool selectionComplete = false;
     std::shared_ptr<IWeapon> weapon;
@@ -125,8 +126,9 @@ std::shared_ptr<IWeapon> UI::ChooseWeapon(std::shared_ptr<ICharacter> characterC
 }
 
 void UI::DisplayWeaponOptions(std::shared_ptr<ICharacter> characterClass) {
+    system("cls");
 
-    gameText.WriteLine("These are the only weapons fit for you from the armoury, please make your choice.\n");
+    gameText.WriteLine("These are the only weapons fit for yee from the armoury, if it please thee, make your choice.\n");
 
     int weaponID = 1;
     for (std::string weapon : characterClass->GetWeaponOptions()) {
@@ -143,14 +145,13 @@ void UI::DisplayWeaponOptions(std::shared_ptr<ICharacter> characterClass) {
 }
 
 std::string UI::AttributeAssignment(int pointsRemaining, std::map<std::string, int> attributeJournal) {
-    
     system("cls");
 
     bool selectionComplete = false;
     while (!selectionComplete) {
 
         if (pointsRemaining == 10) {
-            gameText.WriteLine("Now let's asses your qualities...");
+            gameText.WriteLineInput("Now shall we asses thine qualities ?");
         }
         
         std::stringstream ssPrompt;
@@ -201,7 +202,7 @@ int UI::PointsAllocation(std::string chosenAttribute, std::map<std::string, std:
             // Checking that points do not reduce the naturally occuring 4 pts for users specialized attribute (ex: dwarf has 4 base strength)
             if (selectableAttributes[chosenAttribute] == specializedAttribute && (attributeJournal[selectableAttributes[chosenAttribute]] += pointsToAssign < 4)) {
                 
-                gameText.WriteLine("Don't certainly underestimate your natural abilities!");
+                gameText.WriteLine("Forswear not to underestimate your natural abilities!");
                 _getch();
 
                 system("cls");
@@ -215,7 +216,7 @@ int UI::PointsAllocation(std::string chosenAttribute, std::map<std::string, std:
             }
         }
         else {
-            gameText.WriteLine("Why don't we try to be reasonable and stay within the bounds of reality?");
+            gameText.WriteLine("Shan't we try to be reasonable, and stay thee within the bounds of reality?");
             _getch();
 
             system("cls");
@@ -227,16 +228,16 @@ int UI::PointsAllocation(std::string chosenAttribute, std::map<std::string, std:
         }
     }
 
+    system("cls");
     return 0;
 }
 
 
 // Map
-
 std::string UI::DisplayMapMenu(std::vector<std::string> dungeonRooms, int indexStop) {
 
-    system("cls");
-    gameText.WriteLine("You have made a discovery! Your next dungeon location is revealed before you...\n\n");
+    gameText.WriteLine("Map of Winterspell's Dungeon Cells");
+    std::cout << " ____________________________________\n\n";
 
     std::vector<std::pair<int, std::string>> selectableDungeons; /**/ int roomCount;
 
@@ -259,12 +260,14 @@ std::string UI::DisplayMapMenu(std::vector<std::string> dungeonRooms, int indexS
                 selectableDungeons.emplace_back((i + 1), dungeonRooms[i]); // creating a menu for the player to select a room to enter
             }
             else {
-                gameText.WriteText(dungeonRooms[i] + "\n");
+                gameText.WriteText(dungeonRooms[i]);
 
                 selectableDungeons.emplace_back((i + 1), dungeonRooms[i]);
             }
         }
     }
+
+    std::cout << "\n\n";
 
     return DisplayRoomSelect(selectableDungeons);
 
@@ -296,11 +299,9 @@ std::string UI::DisplayRoomSelect(std::vector<std::pair<int, std::string>> avail
             return room.second;
         }
         else {
-            gameText.WriteLine("Check your eyes buster");
-            _getch();
-
+            gameText.WriteLine("Check your eyes buster!");
             system("cls");
-            gameText.WriteLine("Please select a dungeon room...");
+            gameText.WriteLine("Please select a dungeon room");
         }
     }
 
@@ -359,25 +360,20 @@ bool UI::DescribePlayerOptions(std::shared_ptr<PlayerCharacter> player) {
     for (int i = 0; i < spaceBeforePanel; ++i) {
         std::cout << " "; // Print spaces before the panel starts
     }
-    std::cout << "| Health: " << "health" << " |\n";
-
-    for (int i = 0; i < spaceBeforePanel; ++i) {
-        std::cout << " ";
-    }
-    std::cout << "| Potions: " << "potionCount" << " |\n";
+    std::cout << "| Health: " << std::to_string(player->GetHealth()) << " |\n";
 
     // ... print other stats with the same spacing
 
     gameText.WriteLine("Now's your chance! What action will you do?!");
-    gameText.WriteLine("1)  Attack\n2)  Drink Health Potion (" + std::to_string(player->GetHealthPotions()) + " remaining)");
 
-    std::string playerChoice; /**/ std::cin >> playerChoice; 
 
     while (true) {
-        gameText.WriteLine("1)  Attack\n2)  Drink Health Potion (" + std::to_string(player->GetHealthPotions()) + " remaining)");
+        gameText.WriteLine("1)  Attack\n2)  Drink Health Potion (" + std::to_string(player->GetHealthPotions()) + ")");
+        std::string playerChoice; /**/ std::cin >> playerChoice;  // why not using input checker here
+
 
         if (playerChoice == "1") {
-            system("cls");
+
             return true;
         } 
         else if (playerChoice == "2") {
@@ -405,8 +401,7 @@ bool UI::DescribePlayerOptions(std::shared_ptr<PlayerCharacter> player) {
 
 std::shared_ptr<IEnemy> UI::GetEnemyTargetForAttack(std::shared_ptr<PlayerCharacter> player, std::vector<std::shared_ptr<ICreature>> turnOrder) {
 
-    bool targetChosen = false;
-    while (!targetChosen) {
+    while (true) {
         system("cls");
 
         int consoleWidth = 100; // This is an example width, you may get or set this programmatically
@@ -418,14 +413,9 @@ std::shared_ptr<IEnemy> UI::GetEnemyTargetForAttack(std::shared_ptr<PlayerCharac
         for (int i = 0; i < spaceBeforePanel; ++i) {
             std::cout << " "; // Print spaces before the panel starts
         }
-        std::cout << "| Health: " << "health" << " |\n";
+        std::cout << "| Health: " << std::to_string(player->GetHealth()) << " |\n";
 
-        for (int i = 0; i < spaceBeforePanel; ++i) {
-            std::cout << " ";
-        }
-        std::cout << "| Potions: " << "potionCount" << " |\n";
-
-        gameText.WriteLine("You have chosen to attack!\nChoose your target\n");
+        gameText.WriteLine("You have chosen to attack! \n***Choose your target***\n");
 
         std::map<std::string, std::shared_ptr<IEnemy>> enemyWithCounter; /**/ int counter = 1; // for display and selection ex: #) enemy name
 
@@ -460,112 +450,102 @@ std::shared_ptr<IEnemy> UI::GetEnemyTargetForAttack(std::shared_ptr<PlayerCharac
 
 void UI::DescribeEnemyAttack(std::string name, std::string skillName, std::string skillDescription, int attackDmg) {
 
-    gameText.WriteLine("\n" + name + " attacked you with " + skillName + ". " + skillDescription + " for " + std::to_string(attackDmg) + " hit points!\n");
-    _getch();
+    // maybe have enemies on side panel
+    system("cls");
+    gameText.WriteLineInput(name + " attacked you with " + skillName + ", " + skillDescription + " which hits for " + std::to_string(attackDmg) + " hit points!\n");
 }
 
 bool UI::DescribePlayerAttackOptions(std::shared_ptr<IEnemy> enemy, std::shared_ptr<IWeapon> weapon) {
     system("cls");
 
-    int consoleWidth = 100; // This is an example width, you may get or set this programmatically
-    int panelWidth = 20; // The fixed width of your stats panel
-
-    int spaceBeforePanel = consoleWidth - panelWidth;
-
-    // Print the stats panel with the correct spacing
-    for (int i = 0; i < spaceBeforePanel; ++i) {
-        std::cout << " "; // Print spaces before the panel starts
-    }
-    std::cout << "| Health: " << "health" << " |\n";
-
-    for (int i = 0; i < spaceBeforePanel; ++i) {
-        std::cout << " ";
-    }
-    std::cout << "| Potions: " << "potionCount" << " |\n";
-
-    gameText.WriteLine(std::string("Target is in sights, choose your next move...\n1)  ") + weapon->GetPrimarySkillName() + "\n2)   " + weapon->GetSecondarySkillName());
+    gameText.WriteLine(std::string("Target is in sights, choose your next move...\n\n1)  ") + weapon->GetPrimarySkillName() + "\n2)  " + weapon->GetSecondarySkillName());
 
     std::string playerChoice; /**/ std::cin >> playerChoice;
 
-    bool validChoice = false;
-    while (!validChoice) {
+    while (true) {
 
         if (playerChoice == "1") {
 
             system("cls");
-            gameText.WriteLine(std::string(enemy->GetName()) + " currently has " + std::to_string(enemy->GetHealth()) + " hp remaining");
-            gameText.WriteLine("You have chosen to use " + weapon->GetPrimarySkillName() + ", " + weapon->GetPrimarySkillDescription() + "...");
-            _getch();
+            gameText.WriteLine(std::string(enemy->GetName()) + " currently has " + std::to_string(enemy->GetHealth()) + " hp remaining TO BE REMOVED"); // ** TO BE REMOVED
+            gameText.WriteLine("You used " + weapon->GetPrimarySkillName() + ", " + weapon->GetPrimarySkillDescription() + "...\n");
+            
+            gameText.WriteLine("onamonapea that represents attack");
 
             int attackDmg = weapon->UseSkillPrimary(); /**/ enemy->TakeDamage(attackDmg);
-            gameText.WriteLine("You have inflicted " + std::to_string(attackDmg) + " onto " + enemy->GetName());
-            gameText.WriteLine(std::string(enemy->GetName()) + " now has " + std::to_string(enemy->GetHealth()) + " hp remaining");
+            //consider accuracy, chance to hit, evasion ratings
 
-            _getch();
+            gameText.WriteLineInput("You have inflicted " + std::to_string(attackDmg) + " onto " + enemy->GetName());
+            gameText.WriteLineInput(std::string(enemy->GetName()) + " now has " + std::to_string(enemy->GetHealth()) + " hp remaining TO BE REMOVED"); // ** TO BE REMOVED
+
             return enemy->GetIsDead();
         }
         else if (playerChoice == "2") {
 
             system("cls");
 
-            gameText.WriteLine(std::string(enemy->GetName()) + " currently has " + std::to_string(enemy->GetHealth()) + " hp remaining");
+            gameText.WriteLine(std::string(enemy->GetName()) + " currently has " + std::to_string(enemy->GetHealth()) + " hp remaining TO BE REMOVED"); // ** TO BE REMOVED
             gameText.WriteLine("You have chosen to use " + weapon->GetSecondarySkillName() + ", " + weapon->GetSecondarySkillDescription());
-            _getch();
 
-            int attackDmg = weapon->UseSkillSecondary(); /**/ enemy->TakeDamage(attackDmg);
-            gameText.WriteLine("You have inflicted " + std::to_string(attackDmg) + " onto " + enemy->GetName());
-            gameText.WriteLine(std::string(enemy->GetName()) + " now has " + std::to_string(enemy->GetHealth()) + " hp remaining");
+            gameText.WriteLine("onamonapea that represents attack");
 
-            _getch();
+            int attackDmg = weapon->UseSkillPrimary(); /**/ enemy->TakeDamage(attackDmg);
+            //consider accuracy, chance to hit, evasion ratings
+
+            gameText.WriteLineInput("You have inflicted " + std::to_string(attackDmg) + " onto " + enemy->GetName());
+            gameText.WriteLineInput(std::string(enemy->GetName()) + " now has " + std::to_string(enemy->GetHealth()) + " hp remaining TO BE REMOVED"); // ** TO BE REMOVED
+
             return enemy->GetIsDead();
         }
-        return false;
     }
+
     return false;
 
 }
 
 void UI::HealthRemaining(int healthRemaining) {
-    gameText.WriteLine("You have " + std::to_string(healthRemaining) + "remaining"); /**/ _getch();
+    gameText.WriteLine("You have " + std::to_string(healthRemaining) + "remaining TO BE REMOVED"); // ** TO BE REMOVED
+
 }
 
 void UI::KilledEnemy(std::shared_ptr<IEnemy> enemy) {
     if (enemy->GetName() == "Changeling") {
 
-        gameText.WriteLine("You have slain the evil " + enemy->GetName()); /**/ _getch();
-        gameText.WriteLine("He was a dispicable devil. Good to be rid of him, knighted you should be, at the King's Palace! On the fourth night of Dune Riah."); /**/ _getch();
+        gameText.WriteLineInput("You have slain the evil " + enemy->GetName());
+        gameText.WriteLineInput("He was a dispicable devil. Good to be rid of him, knighted you should be, at the King's Palace! On the fourth night of Dune Riah.");
         return;
     }
-    gameText.WriteLine("You have slain " + enemy->GetName()); /**/ _getch();
+    gameText.WriteLineInput("You have slain " + enemy->GetName());
 }
 
 void UI::SlainAllEnemies() {
-    gameText.WriteLine("You have slain all the scorbles that plague this room"); /**/ _getch();
+    gameText.WriteLineInput("You have slain all the scorbles that plague this room");
 }
 
 void UI::FoundKey(std::string dungeonName) {
     if (dungeonName == "Tenebrific Depths") {
-        gameText.WriteLine("You have filled your pockets with all the glitters of this Foul Tomb, but upon your leave, a strange twinkle catches your glance"); /**/ _getch();
-        gameText.WriteLine("A key! Tis metal and skeletal, an iron thing. You should pocket it for safe keeping, in case you will need it later on!"); /**/ _getch();
+        gameText.WriteLineInput("You have filled your pockets with all the glitters of this Foul Tomb, but upon your leave, a strange twinkle catches your glance");
+        gameText.WriteLineInput("Wait...");
+        gameText.WriteLineInput("A key! Tis metal and skeletal, an iron thing, sitting right upon a jagged stone, \n which is surrounded a stagnate black water puddle. \nYee should pockets it for keepsakes, 'case you'll find need of it by and by!");
     }
     else if (dungeonName == "Cursed Abyssal Sanctum") {
-        gameText.WriteLine("What's this??"); /**/ _getch();
-        gameText.WriteLine("How intriguing... You notice upon stepping upon a particular brick in the floor, that is one quite loose! As you remove it from it's place of settlement you see..."); /**/ _getch();
-        gameText.WriteLine("Another key!! But this one is rather unique..."); /**/ _getch();
-        gameText.WriteLine("It glimmers of fine iron and with an ornate hand made crest on the handle. A purple gem placed in the center surrounded by small black rustic unpolished rare gemstones.");
-        gameText.WriteLine("Surely this is dwarven-make. I would keep that if I were you sire, could open doors of great mytery."); /**/ _getch();
+        gameText.WriteLineInput("What's this??");
+        gameText.WriteLineInput("How intriguing... You notice upon stepping upon a particular brick in the floor, that is one quite loose! As you remove it from it's place of settlement you see...");
+        gameText.WriteLineInput("Another key!! But this one is rather unique...");
+        gameText.WriteLineInput("It glimmers of fine iron and with an ornate hand made crest on the handle. \nA purple gem placed in the center surrounded by small black rustic unpolished rare gemstones.");
+        gameText.WriteLineInput("Surely this is dwarven-make. I would keep that if I were you sire, could open doors of great mytery.");
     }
 }
 
 void UI::RoomLocked() {
-    gameText.WriteLine("The room is locked, you will need a key to enter."); /**/ _getch();
+    gameText.WriteLineInput("The room is locked, you will need a key to enter.");
 }
 
 void UI::LootBegin(std::vector<std::shared_ptr<LootItem>> loot) {
     system("cls");
-    gameText.WriteLine("You peer around, silence. The town of Winterspell inches closer to security by victory of your hand!"); /**/ _getch();
-    gameText.WriteLine("You wander through the empty dark decrepid room to fill your pockets, you greedy little thing."); /**/ _getch();
-    gameText.WriteLine("You find ");
+    gameText.WriteLineInput("You peer around, silence. The town of Winterspell inches closer to security by victory of your hand!");
+    gameText.WriteLineInput("You wander through the empty dark, damp, decrepit room to fill your pockets, you greedy little thing.");
+    gameText.WriteLine("You find...\n");
 
     for (const auto& item : loot) {
 
@@ -612,8 +592,8 @@ std::shared_ptr<LootItem> UI::DisplayInventoryMenu(std::vector<std::shared_ptr<L
             return selectedItem->second;
         }
         else {
-            gameText.WriteLine("Not sure you are being rational! Please save all the cans of beans for the charity this spring");
-            _getch();
+            gameText.WriteLineInput("Not sure you are being rational! Please save all the cans of beans for the charity this spring");
+            system("cls");
         }
     }
 
@@ -623,56 +603,59 @@ std::shared_ptr<LootItem> UI::DisplayInventoryMenu(std::vector<std::shared_ptr<L
 }
 
 void UI::CannotUseItem() {
-    gameText.WriteLine("Not sure what you can use that right now.");
-    _getch();
+    gameText.WriteLineInput("Not sure what you can use that right now.");
 }
 
 // maybe need to scope some out to inventory
-void UI::EquiptmentItemMenu(std::shared_ptr<LootItem> item, std::shared_ptr<PlayerCharacter> playerCharacter) {
+void UI::ItemMenu(std::shared_ptr<LootItem> item, std::shared_ptr<PlayerCharacter> playerCharacter) {
 
     while (true) {
         system("cls");
         gameText.WriteLine("\nWhat would you like to do with the " + item->GetName() + item->GetInfo() + "?");
 
-        gameText.WriteLine("1)  Equipt");
-        gameText.WriteLine("2)  Get Description");
-        gameText.WriteLine("3)  Drop");
-        gameText.WriteLine("4)  Cancel");
 
-        std::string playerChoice = input.PlayerChoice(std::vector<int> {1,2,3});
-        if (playerChoice != "") {
-            if (playerChoice == "1") {
-                playerCharacter->SetEquiptItems(item);
-                return;
-            }
-            else if (playerChoice == "2") {
-                gameText.WriteLine(item->GetDescription()); /**/ _getch();
-                return;
-            }
-            else if (playerChoice == "3") {
-                playerCharacter->RemoveFromInventory(item);
-                return;
-            }
-            else if (playerChoice == "4") {
-                system("cls");
-                return;
-            }
+        if (item->GetItemType() == ItemType::Equiptment) {
+            gameText.WriteLine("e)  Equipt");
+            gameText.WriteLine("t)  Get Description");
+            gameText.WriteLine("d)  Drop");
+            gameText.WriteLine("x)  Cancel");
+        }
+        else {
+            gameText.WriteLine("t)  Get Description");
+            gameText.WriteLine("d)  Drop");
+            gameText.WriteLine("x)  Cancel");
+        }
+
+        std::string playerChoice; /**/ std::cin >> playerChoice;
+        if (playerChoice == "e" && item->GetItemType() == ItemType::Equiptment) {
+            playerCharacter->SetEquiptItems(item);
+            return;
+        }
+        else if (playerChoice == "t") {
+            gameText.WriteLineInput(item->GetDescription());
+            return;
+        }
+        else if (playerChoice == "d") {
+            playerCharacter->RemoveFromInventory(item);
+            return;
+        }
+        else if (playerChoice == "") {
+            system("cls");
+            return;
         }
         else {
             system("cls");
 
             gameText.WriteLine("wut? UwU");
-            _getch();
         }
     }
-    _getch();
 }
 
 std::string UI::Inquiry() {
 
     while (true) {
 
-        gameText.WriteLine("What would you like to do next?");
+        gameText.WriteLine("What would you like to do next?\n");
         gameText.WriteLine("i)  View Inventory");
         gameText.WriteLine("c)  View Character");
         gameText.WriteLine("x)  venture forth");
@@ -702,25 +685,25 @@ void UI::AlreadyEquiptItem() {
 
 void UI::OpenCharacterMenu(std::shared_ptr<PlayerCharacter> playerCharacter) {
     system("cls");
-    gameText.WriteLine(playerCharacter->GetName() + " | Level: " + std::to_string(playerCharacter->GetLevel()));
+    gameText.WriteWithoutTyping(playerCharacter->GetName() + " | Level: " + std::to_string(playerCharacter->GetLevel()));
 
-    gameText.WriteLine("Max health: " + std::to_string(playerCharacter->GetMaxHealth()) + " | Current health: " + std::to_string(playerCharacter->GetHealth()));
+    gameText.WriteWithoutTyping("Max health: " + std::to_string(playerCharacter->GetMaxHealth()) + " | Current health: " + std::to_string(playerCharacter->GetHealth()));
     
-    gameText.WriteLine("Armour rating: " + std::to_string(playerCharacter->GetArmourRating()));
+    gameText.WriteWithoutTyping("Armour rating: " + std::to_string(playerCharacter->GetArmourRating()));
     //gameText.WriteLine("Spell resistance: " + std::to_string(playerCharacter->GetSpellResistance()) + " | ");
 
     std::string isSwift = playerCharacter->GetHasSwiftness() ? " (has swiftness)" : "";
-    gameText.WriteLine("Strength: " + std::to_string(playerCharacter->GetStrength())
+    gameText.WriteWithoutTyping("Strength: " + std::to_string(playerCharacter->GetStrength())
     + " | Dexterity: " + std::to_string(playerCharacter->GetDexterity()) + isSwift
     + " | Intellegence: " + std::to_string(playerCharacter->GetIntelligence()));
-    gameText.WriteLine("xp: " + std::to_string(playerCharacter->GetXP()) + " | xp to next level: " + "tbd");
+    gameText.WriteWithoutTyping("xp: " + std::to_string(playerCharacter->GetXP()) + " | xp to next level: " + "tbd");
 
-    gameText.WriteLine("weapon: " + playerCharacter->GetWeapon()->GetName());
+    gameText.WriteWithoutTyping("weapon: " + playerCharacter->GetWeapon()->GetName());
 
-    gameText.WriteLine("Skill 1: " + playerCharacter->GetWeapon()->GetPrimarySkillName()
+    gameText.WriteWithoutTyping("Skill 1: " + playerCharacter->GetWeapon()->GetPrimarySkillName()
     + ": " + playerCharacter->GetWeapon()->GetPrimarySkillDescription() + " | Damage: " + std::to_string(playerCharacter->GetWeapon()->GetPrimarySkillDamageRange()[0]) + "-" + std::to_string(playerCharacter->GetWeapon()->GetPrimarySkillDamageRange()[1]));
 
-    gameText.WriteLine("Skill 2 (AOE): " + playerCharacter->GetWeapon()->GetSecondarySkillName()
+    gameText.WriteWithoutTyping("Skill 2 (AOE): " + playerCharacter->GetWeapon()->GetSecondarySkillName()
         + ": " + playerCharacter->GetWeapon()->GetSecondarySkillDescription() + " | Damage: " + std::to_string(playerCharacter->GetWeapon()->GetSecondarySkillDamageRange()[0]) + "-" + std::to_string(playerCharacter->GetWeapon()->GetSecondarySkillDamageRange()[1]));
 
     _getch();

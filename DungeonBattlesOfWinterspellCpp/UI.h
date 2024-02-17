@@ -43,7 +43,7 @@ public:
 	std::shared_ptr<LootItem> DisplayInventoryMenu(std::vector<std::shared_ptr<LootItem>> playersLoot);
 	void CannotUseItem();
 	void PotionItemMenu();
-	void EquiptmentItemMenu(std::shared_ptr<LootItem> item, std::shared_ptr<PlayerCharacter> playerCharacter);
+	void ItemMenu(std::shared_ptr<LootItem> item, std::shared_ptr<PlayerCharacter> playerCharacter);
 	std::string Inquiry();
 	void AlreadyEquiptItem();
 	void OpenCharacterMenu(std::shared_ptr<PlayerCharacter> playerCharacter);

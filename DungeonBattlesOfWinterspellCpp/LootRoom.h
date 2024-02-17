@@ -1,5 +1,5 @@
 #pragma once
-#include "UI.h";
+#include "UI.h"
 #include "DungeonRoom.h"
 
 class LootRoom

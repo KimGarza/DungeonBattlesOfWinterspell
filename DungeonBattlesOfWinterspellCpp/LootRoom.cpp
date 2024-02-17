@@ -20,7 +20,5 @@ void LootRoom::Loot(std::shared_ptr<PlayerCharacter> playerCharacter, std::share
 		ui.LootBegin(currentRoom->GetLoot());
 		playerCharacter->AddToInventory(currentRoom->GetLoot());
 	}
-
-	_getch();
 }
 

@@ -20,6 +20,7 @@ void Map::PopulateDungeonMap() {
 /// </summary>
 std::shared_ptr<DungeonRoom> Map::RevealMapMenu() {
 
+	system("cls");
 	int indexStop = (dungeonRooms.size() - *roomsRemaining); // by subtracting the remaining rooms from all rooms, gets us to the current room by index we are on to know where the last dungeon to write out is
 	std::string playerSelectedRoom = ui.DisplayMapMenu(dungeonRoomNames, indexStop);
 
