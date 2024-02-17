@@ -46,7 +46,7 @@ void Story::MapIntro() {
 
 	system("cls");
 	gameText.WriteLineInput("Behold your map!");
-	gameText.WriteLineInput("Oh prithee forgive me sire, it's old and tattered I know of it!");
+	gameText.WriteLineInput("Oh forgive me sire, it's old and tattered I know of it!");
 	gameText.WriteLineInput("That blotch? Surely sire that is merely the spill of mine morning brew, it marks no isle of mystery...");
 	gameText.WriteLineInput("Does sort of resemble the likeness of a skull, doesn't it.");
 	gameText.WriteLineInput("Pay it no mind me lord....");
@@ -61,13 +61,13 @@ void Story::EnterDungeonRoom() {
 std::string Story::Changeling() {
 
 	system("cls");
-	gameText.WriteLine("Entering into the Forgotten Catacombs you feel an eerie tingle run down your spine.");
-	gameText.WriteLine("The air feels colder in her dost it not me lord?"); _getch();
-	gameText.WriteLine("*weeping*"); _getch();
-	gameText.WriteLine("*man crying*"); _getch();
-	gameText.WriteLine("....."); _getch();
-	gameText.WriteLine("Those be the cries of scared man sire, it's the same cries as I've heard many solcistes whence came, farther ago moonlight didn't sail into the old prison cells of the Old NOrth of th etown"); _getch();
-	gameText.WriteLine("That man sounds to be in a great lot of pain..."); _getch();
+	gameText.WriteLineInput("Entering into the Forgotten Catacombs you feel an eerie tingle run down your spine.");
+	gameText.WriteLineInput("The air feels of the winter chill Master.");
+	gameText.WriteLineInput("*weeping*");
+	gameText.WriteLineInput("*man crying*");
+	gameText.WriteLineInput(".....");
+	gameText.WriteLineInput("Cries of fear sire. Spark my mind of whence we kept prisoners in the old cells in the middle of the city, neith the cobble streets.");
+	gameText.WriteLineInput("Twas in the cold of the nights, the same cries of suffering....");
 	system("cls");
 
 	while (true) {
@@ -77,29 +77,44 @@ std::string Story::Changeling() {
 		std::string playerChoice; /**/ std::cin >> playerChoice;
 
 		if (playerChoice == "y") {
-			//gameText.WriteLine("The crying continues, you move toward the darker area of the room."); _getch();
-			//gameText.WriteLine("It feels colder now, such as if a lover could be sculpted of ice and embraces you as if to never see you again..."); _getch();
-			//gameText.WriteLine("The cry grows louder as you hug the left wall nearing the back of the dungeon room. It reeks of old and fresh death."); _getch();
-			//gameText.WriteLine("You see a man crying toward the wall in tattered dresses, looking pale and quite skinny and tall. Actually, long..."); _getch();
-			//gameText.WriteLine("You reach forward to touch the man's shoulder..."); _getch();
-			//gameText.WriteLine("The sound of the cry turns into a whale. It an agonizing sorrowful belch of torment."); _getch();
-			//gameText.WriteLine("The sound is piercing now, it sounds of black"); _getch();
+			system("cls");
+			gameText.WriteLineInput("The crying continues.");
+			gameText.WriteLineInput("You scrape your toes upon the ground, each step with hesitation as moonlight, \nnor torchlight bends the the whimb of the blackness here in the dark of the room.");
+			gameText.WriteLineInput("It feels much colder now, such as if a lover was sculpted of ice and would embrace \nyou with their longing for your warm touch of life");
+			gameText.WriteLineInput("The cry grows stronger, even the cold on your skin comforts you more than the sound of such sadness.");
+			gameText.WriteLineInput("You hug the left wall nearing the back of the dungeonous room. It reeks of old bones and of fresh blood.");
+			gameText.WriteLineInput("You see a old withering man crying, faced toward the wall.");
+			gameText.WriteLineInput("In tattered dresses, looking pale and quite skinny and tall.");
+			gameText.WriteLineInput("Actually...");
+			gameText.WriteLineInput("Long.");
+			gameText.WriteLineInput("He's not tall... he is long.");
+			gameText.WriteLineInput("You reach forward to touch the man's shoulder...");
+			gameText.WriteLineInput("The sound of the cry turns into a whale. Tis an agonizing sorrowful belch of torment.");
+			gameText.WriteLineInput("The sound is piercing now, not of a pitch of describing sound, rather pitch of black...");
 
-			//gameText.WriteLine("The man starts to turn, but as he does he grows... longer... inhuman!"); _getch();
-			//gameText.WriteLine("*foul deep raspy voice* WRETCHED MAN! YOU ARE A FOOL TO COME HERE IN THE TOMB OF THE DAMNED !");
-			//gameText.WriteLine("LET ME TASTE YOUR HEART TO KNOW IF IT IS TAINTED WITH HARAZITH'S COMPLIANCE OR IF YOU ARE NOT WELCOME !!!"); _getch();
-			//// more visual description
+			gameText.WriteLineInput("The man starts to turn, but as he does he grows... longer.");
+			gameText.WriteLineInput("*foul deep raspy voice* WRETCHED MAN! YOU ARE A FOOL TO COME HERE IN THE TOMB OF THE DAMNED !");
+			gameText.WriteLineInput("Echoing on every surface, the sound reverberates almost echoing off of it's own echo.");
+			gameText.WriteLineInput("LET ME TASTE YOUR HEART TO KNOW IF IT IS TAINTED WITH HARAZITH'S COMPLIANCE OR IF YOU'RE DEATH HATH BEEN SEELED!!!");
+			// more visual description
 
-			//gameText.WriteLine("Sire! This tomb tis not forsaken, the man that's soul lyith here is that of the Old King Arifell!"); _getch();
-			//gameText.WriteLine("His soul remains pure, this tomb is foul and ridden with stink of the dark fae, rid Good King Arifel of this grusom evil!"); _getch();
+			gameText.WriteLineInput("Sire! This tomb is not forsaken!");
+			gameText.WriteLineInput("The man that's soul lyith here is that of the Old King Arifell! \nA good mark of Winterspell's historic rule!");
+			gameText.WriteLineInput("His soul remains pure, yet this tomb is foul and ridden with stink of the dark fae, rid Good King Arifel of this grusom pestilence!");
+			system("cls");
+
 
 			return "y";
-
 		}
 		else if (playerChoice == "n") {
-			/*gameText.WriteLine("The sound of the cry turns into a whale. It an agonizing sorrowful belch of torment."); _getch();
-			gameText.WriteLine("The sound is piercing now, it sounds of black... but it fades as you near the right side of the room, near the torch light."); _getch();
-			gameText.WriteLine("You venture forth from the mystery of it."); _getch();*/
+			system("cls");
+
+			gameText.WriteLineInput("The sound of the cry turns into a whale, yet dampens in sound as you scuffle along the rightmost wall.");
+			gameText.WriteLineInput("The sound is piercing now, it sounds of black... but it fades as you near the right side of the room, near the torch light.");
+			gameText.WriteLineInput("You venture forth from the mystery of it.");
+			gameText.WriteLineInput("Master, I would be thy scout, tredging ahead to unveil the mysteries of the sadness that plagues this room... for it not be that I am in the library near in the breadth of the town.");
+			gameText.WriteLineInput("But I totally would if I weren't... definitely, yea...");
+			system("cls");
 
 			return "n";
 		}

@@ -95,35 +95,36 @@ void Battle::ChangelingFight(std::shared_ptr<PlayerCharacter> playerCharacter) {
     this_turnOrder.push_back(changeling);
     this_turnOrder.push_back(player);
 
-        
-    for (const auto& creature : this_turnOrder) {
+    while (true) {
+        for (const auto& creature : this_turnOrder) {
 
-        std::shared_ptr<PlayerCharacter> player = std::dynamic_pointer_cast<PlayerCharacter>(creature); // down casting
-        std::shared_ptr<IEnemy> enemy = std::dynamic_pointer_cast<IEnemy>(creature); // down casting
+            std::shared_ptr<PlayerCharacter> player = std::dynamic_pointer_cast<PlayerCharacter>(creature); // down casting
+            std::shared_ptr<IEnemy> enemy = std::dynamic_pointer_cast<IEnemy>(creature); // down casting
 
-        if (player) {
+            if (player) {
 
-            bool isPlayerAttacking = ui.DescribePlayerOptions(player);
+                bool isPlayerAttacking = ui.DescribePlayerOptions(player);
 
-            if (isPlayerAttacking) {
-                std::shared_ptr<IEnemy> targetedEnemy = ui.GetEnemyTargetForAttack(player, this_turnOrder);
-                bool isEnemyDead = ui.DescribePlayerAttackOptions(targetedEnemy, player->GetWeapon());
-                if (isEnemyDead) {
-                    ui.KilledEnemy(targetedEnemy);
-                    break;
+                if (isPlayerAttacking) {
+                    std::shared_ptr<IEnemy> targetedEnemy = ui.GetEnemyTargetForAttack(player, this_turnOrder);
+                    bool isEnemyDead = ui.DescribePlayerAttackOptions(targetedEnemy, player->GetWeapon());
+                    if (isEnemyDead) {
+                        ui.KilledEnemy(targetedEnemy);
+                        break;
+                    }
                 }
             }
-        }
-        else {
-            int attackDmg = enemy->AttackPlayer();
-            ui.DescribeEnemyAttack(enemy->GetName(), enemy->GetSkillName(), enemy->GetSkillDescription(), enemy->GetSkillDamage());
-            bool checkIfDead = playerCharacter->TakeDamage(attackDmg); // attack player returns the hit points int
-            if (checkIfDead) {
-                std::cout << "YOU DIED. GAME OVER.";
-                exit(0);
-            }
             else {
-                ui.HealthRemaining(playerCharacter->GetHealth());
+                int attackDmg = enemy->AttackPlayer();
+                ui.DescribeEnemyAttack(enemy->GetName(), enemy->GetSkillName(), enemy->GetSkillDescription(), enemy->GetSkillDamage());
+                bool checkIfDead = playerCharacter->TakeDamage(attackDmg); // attack player returns the hit points int
+                if (checkIfDead) {
+                    std::cout << "YOU DIED. GAME OVER.";
+                    exit(0);
+                }
+                else {
+                    ui.HealthRemaining(playerCharacter->GetHealth());
+                }
             }
         }
     }
