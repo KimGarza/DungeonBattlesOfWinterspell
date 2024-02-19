@@ -47,7 +47,7 @@ std::shared_ptr<PlayerCharacter> CharacterCreation::GeneratePlayerCharacter() {
 		attributeJournal["intellegence"], attributeJournal["dexterity"], attributeJournal["strength"],
 		characterInGrogpress->GetHealth(),
 		characterInGrogpress->GetHasSwiftness(),
-		characterInGrogpress->GetArmourRating(),
+		characterInGrogpress->GetArmourRating(), 0,
 		weapon
 	);
 }

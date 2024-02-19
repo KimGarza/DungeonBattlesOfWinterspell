@@ -2,7 +2,9 @@
 #include <vector>
 #include <memory>
 #include "Abalask.h"
+#include "LootItem.h"
 #include "AbalaskUI.h"
+#include "PlayerCharacter.h"
 
 class AbalaskTrader
 {

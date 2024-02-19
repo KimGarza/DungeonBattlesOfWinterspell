@@ -15,16 +15,18 @@ PlayerCharacter::PlayerCharacter(
 	int maxHealth,
 	bool hasSwiftness,
 	int armourRating,
+	int evasionRating,
 	std::shared_ptr<IWeapon> inWeapon
 	// 2. Assigning the priv member variables we declared in header as the in[argValue] and assigning manual initial values to level, xp, etc...
 	// In the constructor source, the colon : is used to initiate a member initializer list. It's used to initialize the member variables of a class with values provided to the constructor.
 	// After the : is the assignment secition
 ) : name(inName), health(inHealth), intelligence(inIntelligence), dexterity(inDexterity), strength(inStrength), maxHealth(maxHealth),
-hasSwiftness(hasSwiftness), armourRating(armourRating), weapon(inWeapon), xp(0), level(1), isDead(false), healthPotions(2), gold(0) {}
+hasSwiftness(hasSwiftness), armourRating(armourRating), evasionRating(evasionRating), weapon(inWeapon), xp(0), level(1), isDead(false), healthPotions(2), gold(0) {}
 
+// don't remember writing this but perhaps related to default values somewhere??
 PlayerCharacter::PlayerCharacter(const PlayerCharacter& other) : name(other.name), health(other.health), intelligence(other.intelligence),
 dexterity(other.dexterity), strength(other.strength), weapon(other.weapon),
-xp(0), level(1), hasSwiftness(other.hasSwiftness), isDead(false) {}
+xp(0), level(1), hasSwiftness(other.hasSwiftness), armourRating(armourRating), evasionRating(evasionRating), isDead(false) {}
 	// Copy or clone other members if needed
 
 bool PlayerCharacter::TakeDamage(int damageTaken) {

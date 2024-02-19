@@ -20,6 +20,7 @@ bool AbalaskUI::AbalaskTradeInquiry() {
             gameText.WriteLine("Please make your choice known mortal squashable human.");
         }
     }
+    return false;
 }
 
 std::string AbalaskUI::AbalaskTradeSelectMenu(std::shared_ptr<PlayerCharacter> player) {
