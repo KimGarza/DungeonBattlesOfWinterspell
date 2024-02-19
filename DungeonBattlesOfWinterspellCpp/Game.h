@@ -1,13 +1,17 @@
 #pragma once
 #include "GameState.h"
+#include "Abalask.h"
+#include <memory>
 #include "Story.h"
 #include "PlayerCharacter.h"
+#include "DungeonRoom.h"
 #include "CharacterCreation.h"
 #include "Abalask.h"
 #include "DungeonGenerator.h"
 #include "ExploreDungeon.h"
 #include "Map.h"
 #include "MusicPlayer.h";
+#include "Character.h";
 
 class Game {
 private:
@@ -21,6 +25,7 @@ private:
 	DungeonGenerator dungeonGenerator;
 	MusicPlayer music;
 	std::shared_ptr<Abalask> abalask;
+	std::vector<Character> characterOptions;
 
 public:
 

@@ -7,7 +7,7 @@
 #include "IEnemy.h"
 #include "Input.h"
 #include "LootItem.h"
-#include "ICharacter.h"
+#include "Character.h"
 #include "GameText.h"
 
 class UI
@@ -17,9 +17,14 @@ private:
 	Input input;
 
 public:
-	std::shared_ptr<ICharacter> ChooseClass();
-	void DisplayWeaponOptions(std::shared_ptr<ICharacter> characterClass);
-	std::shared_ptr<IWeapon> ChooseWeapon(std::shared_ptr<ICharacter> characterClass);
+	std::string ChooseClass();
+
+	void DisplayWeaponOptions(std::shared_ptr<Character> characterClass);
+	void CharacterSelected(std::shared_ptr<Character> characterClass);
+
+	std::string ChooseWeapon(std::shared_ptr<Character> characterClass);
+	std::string WeaponSelected(std::string weaponName) {
+
 	std::string AttributeAssignment(int pointsRemaining, std::map<std::string, int> attributeJournal);
 	int PointsAllocation(std::string chosenAttribute, std::map<std::string, std::string> selectableAttributes, int pointsRemaining, std::string specializedAttribute, std::map<std::string, int> attributeJournal);
 

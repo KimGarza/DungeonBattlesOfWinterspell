@@ -1,4 +1,633 @@
-﻿  Game.cpp
+﻿  Abalask.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\xutility(275,77): warning C4244: 'argument': conversion from '_Ty' to 'int', possible loss of data
+          with
+          [
+              _Ty=double
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\memory(1983): message : see reference to function template instantiation 'void std::_Construct_in_place<_Ty,std::basic_string<char,std::char_traits<char>,std::allocator<char>>,ItemType,std::basic_string<char,std::char_traits<char>,std::allocator<char>>,double,int,int,int,int,int,int,int>(_Ty &,std::basic_string<char,std::char_traits<char>,std::allocator<char>> &&,ItemType &&,std::basic_string<char,std::char_traits<char>,std::allocator<char>> &&,double &&,int &&,int &&,int &&,int &&,int &&,int &&,int &&) noexcept(false)' being compiled
+          with
+          [
+              _Ty=LootItem
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\memory(2663): message : see reference to function template instantiation 'std::_Ref_count_obj2<LootItem>::_Ref_count_obj2<_Ty,ItemType,_Ty,double,int,int,int,int,int,int,int>(_Ty &&,ItemType &&,_Ty &&,double &&,int &&,int &&,int &&,int &&,int &&,int &&,int &&)' being compiled
+          with
+          [
+              _Ty=std::string
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\memory(2664,20): message : see reference to function template instantiation 'std::_Ref_count_obj2<LootItem>::_Ref_count_obj2<_Ty,ItemType,_Ty,double,int,int,int,int,int,int,int>(_Ty &&,ItemType &&,_Ty &&,double &&,int &&,int &&,int &&,int &&,int &&,int &&,int &&)' being compiled
+          with
+          [
+              _Ty=std::string
+          ]
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Abalask.cpp(25,102): message : see reference to function template instantiation 'std::shared_ptr<LootItem> std::make_shared<LootItem,std::string,ItemType,std::string,double,int,int,int,int,int,int,int>(std::string &&,ItemType &&,std::string &&,double &&,int &&,int &&,int &&,int &&,int &&,int &&,int &&)' being compiled
+  AbalaskTrader.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\xutility(275,77): warning C4244: 'argument': conversion from '_Ty' to 'int', possible loss of data
+          with
+          [
+              _Ty=double
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\memory(1983): message : see reference to function template instantiation 'void std::_Construct_in_place<_Ty,const char(&)[11],ItemType,const char(&)[15],double,int,int>(_Ty &,const char (&)[11],ItemType &&,const char (&)[15],double &&,int &&,int &&) noexcept(false)' being compiled
+          with
+          [
+              _Ty=LootItem
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\memory(2663): message : see reference to function template instantiation 'std::_Ref_count_obj2<LootItem>::_Ref_count_obj2<const char(&)[11],_Ty,const char(&)[15],double,int,int>(const char (&)[11],_Ty &&,const char (&)[15],double &&,int &&,int &&)' being compiled
+          with
+          [
+              _Ty=ItemType
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\memory(2664,20): message : see reference to function template instantiation 'std::_Ref_count_obj2<LootItem>::_Ref_count_obj2<const char(&)[11],_Ty,const char(&)[15],double,int,int>(const char (&)[11],_Ty &&,const char (&)[15],double &&,int &&,int &&)' being compiled
+          with
+          [
+              _Ty=ItemType
+          ]
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\AbalaskTrader.cpp(17,107): message : see reference to function template instantiation 'std::shared_ptr<LootItem> std::make_shared<LootItem,const char(&)[11],ItemType,const char(&)[15],double,int,int>(const char (&)[11],ItemType &&,const char (&)[15],double &&,int &&,int &&)' being compiled
+  AbalaskUI.cpp
+  AbalaskUI.h
+  Battle.cpp
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Battle.h(11,5): error C2079: 'UI::Battle::ui' uses undefined class 'UI'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Battle.cpp(4,10): fatal  error C1083: Cannot open include file: 'ICharacter.h': No such file or directory
+  Character.cpp
+  Character.h
+  CharacterFactory.cpp
+  ExploreDungeon.cpp
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\ExploreDungeon.h(12,5): error C2079: 'UI::ExploreDungeon::ui' uses undefined class 'UI'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\sstream(20,1): error C2059: syntax error: 'namespace'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\sstream(20,1): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Battle.h(11,5): error C2079: 'UI::Battle::ui' uses undefined class 'UI'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Inventory.h(8,5): error C2079: 'UI::Inventory::ui' uses undefined class 'UI'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\ExploreDungeon.cpp(14,17): error C3254: 'UI': class contains explicit override '{ctor}' but does not derive from an interface that contains the function declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\ExploreDungeon.cpp(14,17): error C2838: '{ctor}': illegal qualified name in member declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\ExploreDungeon.cpp(21,22): error C3254: 'UI': class contains explicit override 'EnterDungeonRoom' but does not derive from an interface that contains the function declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\ExploreDungeon.cpp(21,22): error C2838: 'EnterDungeonRoom': illegal qualified name in member declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\ExploreDungeon.cpp(36,22): error C3254: 'UI': class contains explicit override 'ChangelingEvent' but does not derive from an interface that contains the function declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\ExploreDungeon.cpp(36,22): error C2838: 'ChangelingEvent': illegal qualified name in member declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\ExploreDungeon.cpp(52,22): error C3254: 'UI': class contains explicit override 'PlayerMenu' but does not derive from an interface that contains the function declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\ExploreDungeon.cpp(52,22): error C2838: 'PlayerMenu': illegal qualified name in member declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\ExploreDungeon.cpp(71,22): error C3254: 'UI': class contains explicit override 'CheckForKey' but does not derive from an interface that contains the function declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\ExploreDungeon.cpp(71,22): error C2838: 'CheckForKey': illegal qualified name in member declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\ExploreDungeon.cpp(97,57): error C3254: 'UI': class contains explicit override 'GenerateTurnOrder' but does not derive from an interface that contains the function declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\ExploreDungeon.cpp(97,57): error C2838: 'GenerateTurnOrder': illegal qualified name in member declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.h(14): fatal  error C1075: '{': no matching token found
+  CharacterCreation.cpp
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterCreation.h(12,5): error C2079: 'UI::CharacterCreation::ui' uses undefined class 'UI'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\sstream(20,1): error C2059: syntax error: 'namespace'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\sstream(20,1): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterCreation.cpp(21,53): error C3254: 'UI': class contains explicit override 'CreateCharacter' but does not derive from an interface that contains the function declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterCreation.cpp(21,53): error C2838: 'CreateCharacter': illegal qualified name in member declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterCreation.cpp(35,25): error C3254: 'UI': class contains explicit override 'ChooseClass' but does not derive from an interface that contains the function declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterCreation.cpp(35,25): error C2838: 'ChooseClass': illegal qualified name in member declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterCreation.cpp(35,39): error C2556: 'void UI::ChooseClass(void)': overloaded function differs only by return type from 'std::string UI::ChooseClass(void)'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.h(20,14): message : see declaration of 'UI::ChooseClass'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterCreation.cpp(35,25): error C2371: 'UI::ChooseClass': redefinition; different basic types
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.h(20,14): message : see declaration of 'UI::ChooseClass'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterCreation.cpp(41,2): error C2059: syntax error: 'if'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterCreation.cpp(41,27): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterCreation.cpp(51,2): error C2059: syntax error: 'else'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterCreation.cpp(51,32): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterCreation.cpp(61,2): error C2059: syntax error: 'else'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterCreation.cpp(61,32): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterCreation.cpp(72,2): error C3927: '->': trailing return type is not allowed after a non-function declarator
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterCreation.cpp(72,4): error C3484: syntax error: expected '->' before the return type
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterCreation.cpp(72,5): error C3613: missing return type after '->' ('int' assumed)
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterCreation.cpp(72,5): error C3646: 'CharacterSelected': unknown override specifier
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterCreation.cpp(72,22): error C2059: syntax error: '('
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterCreation.cpp(72,44): error C2238: unexpected token(s) preceding ';'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterCreation.cpp(76,1): error C2628: 'UI' followed by 'void' is illegal (did you forget a ';'?)
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterCreation.cpp(76,6): error C2653: 'CharacterCreation': is not a class or namespace name
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterCreation.cpp(78,29): error C2065: 'ui': undeclared identifier
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterCreation.cpp(78,45): error C2065: 'characterInGrogpress': undeclared identifier
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterCreation.cpp(80,6): error C2065: 'characterInGrogpress': undeclared identifier
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterCreation.cpp(82,4): error C2065: 'weapon': undeclared identifier
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterCreation.cpp(82,30): error C2065: 'ElvenLongsword': undeclared identifier
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterCreation.cpp(82,18): error C2672: 'std::make_shared': no matching overloaded function found
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\memory(2663,5): message : could be 'std::shared_ptr<_Ty> std::make_shared(_Types &&...)'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterCreation.cpp(82,30): message : 'std::make_shared': invalid template argument for '_Ty', type expected
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterCreation.cpp(85,4): error C2065: 'weapon': undeclared identifier
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterCreation.cpp(85,30): error C2065: 'IvoryLongBowAndQuiver': undeclared identifier
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterCreation.cpp(85,18): error C2672: 'std::make_shared': no matching overloaded function found
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\memory(2663,5): message : could be 'std::shared_ptr<_Ty> std::make_shared(_Types &&...)'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterCreation.cpp(85,30): message : 'std::make_shared': invalid template argument for '_Ty', type expected
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterCreation.cpp(88,4): error C2065: 'weapon': undeclared identifier
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterCreation.cpp(88,30): error C2065: 'ShortErnestBowAndQuiver': undeclared identifier
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterCreation.cpp(88,18): error C2672: 'std::make_shared': no matching overloaded function found
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\memory(2663,5): message : could be 'std::shared_ptr<_Ty> std::make_shared(_Types &&...)'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterCreation.cpp(88,30): message : 'std::make_shared': invalid template argument for '_Ty', type expected
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterCreation.cpp(91,11): error C2065: 'characterInGrogpress': undeclared identifier
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterCreation.cpp(93,4): error C2065: 'weapon': undeclared identifier
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterCreation.cpp(93,30): error C2065: 'DoubleBladedAxe': undeclared identifier
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterCreation.cpp(93,18): error C2672: 'std::make_shared': no matching overloaded function found
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\memory(2663,5): message : could be 'std::shared_ptr<_Ty> std::make_shared(_Types &&...)'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterCreation.cpp(93,30): message : 'std::make_shared': invalid template argument for '_Ty', type expected
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterCreation.cpp(96,4): error C2065: 'weapon': undeclared identifier
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterCreation.cpp(96,30): error C2065: 'OrnateShortSword': undeclared identifier
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterCreation.cpp(96,18): error C2672: 'std::make_shared': no matching overloaded function found
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\memory(2663,5): message : could be 'std::shared_ptr<_Ty> std::make_shared(_Types &&...)'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterCreation.cpp(96,30): message : 'std::make_shared': invalid template argument for '_Ty', type expected
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterCreation.cpp(99,4): error C2065: 'weapon': undeclared identifier
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterCreation.cpp(99,30): error C2065: 'SteelSplitHammer': undeclared identifier
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterCreation.cpp(99,18): error C2672: 'std::make_shared': no matching overloaded function found
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\memory(2663,5): message : could be 'std::shared_ptr<_Ty> std::make_shared(_Types &&...)'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterCreation.cpp(99,30): message : 'std::make_shared': invalid template argument for '_Ty', type expected
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterCreation.cpp(102,11): error C2065: 'characterInGrogpress': undeclared identifier
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterCreation.cpp(104,4): error C2065: 'weapon': undeclared identifier
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterCreation.cpp(104,30): error C2065: 'DualEtherealDaggers': undeclared identifier
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterCreation.cpp(104,18): error C2672: 'std::make_shared': no matching overloaded function found
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\memory(2663,5): message : could be 'std::shared_ptr<_Ty> std::make_shared(_Types &&...)'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterCreation.cpp(104,30): message : 'std::make_shared': invalid template argument for '_Ty', type expected
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterCreation.cpp(107,4): error C2065: 'weapon': undeclared identifier
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterCreation.cpp(107,30): error C2065: 'GnarledBranchStaff': undeclared identifier
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterCreation.cpp(107,18): error C2672: 'std::make_shared': no matching overloaded function found
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\memory(2663,5): message : could be 'std::shared_ptr<_Ty> std::make_shared(_Types &&...)'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterCreation.cpp(107,30): message : 'std::make_shared': invalid template argument for '_Ty', type expected
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterCreation.cpp(110,4): error C2065: 'weapon': undeclared identifier
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterCreation.cpp(110,30): error C2065: 'OakCarvedWand': undeclared identifier
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterCreation.cpp(110,18): error C2672: 'std::make_shared': no matching overloaded function found
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\memory(2663,5): message : could be 'std::shared_ptr<_Ty> std::make_shared(_Types &&...)'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterCreation.cpp(110,30): message : 'std::make_shared': invalid template argument for '_Ty', type expected
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterCreation.cpp(114,2): error C2065: 'ui': undeclared identifier
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterCreation.cpp(114,20): error C2065: 'weapon': undeclared identifier
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterCreation.cpp(115,2): error C2065: 'gameText': undeclared identifier
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterCreation.cpp(115,30): error C2065: 'weaponName': undeclared identifier
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterCreation.cpp(115,72): error C3861: '_getch': identifier not found
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterCreation.cpp(116,9): error C2065: 'weapon': undeclared identifier
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterCreation.cpp(23,2): error C2065: 'ChooseClass': undeclared identifier
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterCreation.cpp(24,2): error C2660: 'UI::ChooseWeapon': function does not take 0 arguments
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.h(25,14): message : see declaration of 'UI::ChooseWeapon'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterCreation.cpp(24,2): message : while trying to match the argument list '()'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterCreation.cpp(26,2): error C2065: 'attributeJournal': undeclared identifier
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterCreation.cpp(26,21): error C3861: 'AllocateAttributes': identifier not found
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterCreation.cpp(28,53): error C3861: 'GeneratePlayerCharacter': identifier not found
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterCreation.cpp(30,2): error C3861: 'Deallocation': identifier not found
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterCreation.cpp(119,34): error C2653: 'CharacterCreation': is not a class or namespace name
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterCreation.cpp(122,3): error C2065: 'characterInGrogpress': undeclared identifier
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterCreation.cpp(123,3): error C2065: 'characterInGrogpress': undeclared identifier
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterCreation.cpp(124,3): error C2065: 'attributeJournal': undeclared identifier
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterCreation.cpp(124,37): error C2065: 'attributeJournal': undeclared identifier
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterCreation.cpp(124,68): error C2065: 'attributeJournal': undeclared identifier
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterCreation.cpp(125,3): error C2065: 'characterInGrogpress': undeclared identifier
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterCreation.cpp(126,3): error C2065: 'characterInGrogpress': undeclared identifier
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterCreation.cpp(127,3): error C2065: 'characterInGrogpress': undeclared identifier
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterCreation.cpp(128,3): error C2065: 'weapon': undeclared identifier
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterCreation.cpp(121,14): error C2672: 'std::make_shared': no matching overloaded function found
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\memory(2663,5): message : could be 'std::shared_ptr<_Ty> std::make_shared(_Types &&...)'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterCreation.cpp(132,28): error C2653: 'CharacterCreation': is not a class or namespace name
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterCreation.cpp(135,20): error C2065: 'characterInGrogpress': undeclared identifier
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterCreation.cpp(136,17): error C2065: 'characterInGrogpress': undeclared identifier
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterCreation.cpp(137,16): error C2065: 'characterInGrogpress': undeclared identifier
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterCreation.cpp(134,48): error C2440: 'initializing': cannot convert from 'initializer list' to 'std::map<std::string,int,std::less<std::string>,std::allocator<std::pair<const std::string,int>>>'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterCreation.cpp(134,48): message : No constructor could take the source type, or constructor overload resolution was ambiguous
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterCreation.cpp(150,33): error C2065: 'ui': undeclared identifier
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterCreation.cpp(155,22): error C3861: 'AllocatePoints': identifier not found
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterCreation.cpp(164,2): error C3861: 'CheckForSwiftness': identifier not found
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterCreation.cpp(170,5): error C2653: 'CharacterCreation': is not a class or namespace name
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterCreation.cpp(172,23): error C2065: 'ui': undeclared identifier
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterCreation.cpp(172,99): error C2065: 'specializedAttribute': undeclared identifier
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterCreation.cpp(172,121): error C2065: 'attributeJournal': undeclared identifier
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterCreation.cpp(174,2): error C2065: 'attributeJournal': undeclared identifier
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterCreation.cpp(179,6): error C2653: 'CharacterCreation': is not a class or namespace name
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterCreation.cpp(181,6): error C2065: 'characterInGrogpress': undeclared identifier
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterCreation.cpp(182,3): error C2065: 'characterInGrogpress': undeclared identifier
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterCreation.cpp(186,6): error C2653: 'CharacterCreation': is not a class or namespace name
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterCreation.cpp(187,2): error C2065: 'characterInGrogpress': undeclared identifier
+  DungeonRoom.cpp
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\DungeonRoom.cpp(3,14): error C3254: 'UI': class contains explicit override '{ctor}' but does not derive from an interface that contains the function declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\DungeonRoom.cpp(3,14): error C2838: '{ctor}': illegal qualified name in member declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\DungeonRoom.cpp(11,19): error C3254: 'UI': class contains explicit override 'SetCompleted' but does not derive from an interface that contains the function declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\DungeonRoom.cpp(11,19): error C2838: 'SetCompleted': illegal qualified name in member declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\DungeonRoom.cpp(15,19): error C3254: 'UI': class contains explicit override 'SetTimesExplored' but does not derive from an interface that contains the function declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\DungeonRoom.cpp(15,19): error C2838: 'SetTimesExplored': illegal qualified name in member declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\DungeonRoom.cpp(18,19): error C3254: 'UI': class contains explicit override 'SetIsLocked' but does not derive from an interface that contains the function declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\DungeonRoom.cpp(18,19): error C2838: 'SetIsLocked': illegal qualified name in member declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.h(14): fatal  error C1075: '{': no matching token found
+  DungeonGenerator.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\setjmp.h(24,1): error C2059: syntax error: 'string'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\setjmp.h(24,1): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\mmintrin.h(29,8): error C2059: syntax error: 'string'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\mmintrin.h(29,12): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\xmmintrin.h(188,8): error C2059: syntax error: 'string'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\xmmintrin.h(188,12): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\emmintrin.h(65,8): error C2059: syntax error: 'string'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\emmintrin.h(65,12): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\pmmintrin.h(58,8): error C2059: syntax error: 'string'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\pmmintrin.h(58,12): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\tmmintrin.h(35,8): error C2059: syntax error: 'string'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\tmmintrin.h(35,12): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\smmintrin.h(83,8): error C2059: syntax error: 'string'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\smmintrin.h(83,12): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\nmmintrin.h(36,8): error C2059: syntax error: 'string'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\nmmintrin.h(36,12): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\wmmintrin.h(35,8): error C2059: syntax error: 'string'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\wmmintrin.h(35,12): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\immintrin.h(33,8): error C2059: syntax error: 'string'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\immintrin.h(33,12): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\zmmintrin.h(68,8): error C2059: syntax error: 'string'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\zmmintrin.h(68,12): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\ammintrin.h(51,8): error C2059: syntax error: 'string'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\ammintrin.h(51,12): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\intrin.h(55,8): error C2059: syntax error: 'string'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\intrin.h(55,12): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\__msvc_int128.hpp(40,1): error C2059: syntax error: 'namespace'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\__msvc_int128.hpp(40,1): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\algorithm(26,1): error C2059: syntax error: 'string'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\algorithm(26,1): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\algorithm(76,1): error C2059: syntax error: 'namespace'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\algorithm(76,1): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\xbit_ops.h(22,1): error C2059: syntax error: 'namespace'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\xbit_ops.h(22,1): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\random(34,1): error C2059: syntax error: 'namespace'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\random(34,1): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Enemies.h(28,5): error C2079: 'UI::Firespitter::ui' uses undefined class 'UI'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Enemies.h(56,5): error C2079: 'UI::DungeonDweller::ui' uses undefined class 'UI'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Enemies.h(84,5): error C2079: 'UI::Goblin::ui' uses undefined class 'UI'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Enemies.h(112,5): error C2079: 'UI::HauntingSpirit::ui' uses undefined class 'UI'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Enemies.h(140,5): error C2079: 'UI::Troll::ui' uses undefined class 'UI'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Enemies.h(168,5): error C2079: 'UI::Skeleton::ui' uses undefined class 'UI'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Enemies.h(197,5): error C2079: 'UI::UndeadWolf::ui' uses undefined class 'UI'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Enemies.h(225,5): error C2079: 'UI::Changeling::ui' uses undefined class 'UI'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\DungeonGenerator.cpp(21,63): error C3254: 'UI': class contains explicit override 'GenerateDungeons' but does not derive from an interface that contains the function declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\DungeonGenerator.cpp(21,63): error C2838: 'GenerateDungeons': illegal qualified name in member declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\DungeonGenerator.cpp(54,56): error C3254: 'UI': class contains explicit override 'GenerateEnemies' but does not derive from an interface that contains the function declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\DungeonGenerator.cpp(54,56): error C2838: 'GenerateEnemies': illegal qualified name in member declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\DungeonGenerator.cpp(111,58): error C3254: 'UI': class contains explicit override 'GenerateLoot' but does not derive from an interface that contains the function declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\DungeonGenerator.cpp(111,58): error C2838: 'GenerateLoot': illegal qualified name in member declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.h(14): fatal  error C1075: '{': no matching token found
+  Enemies.cpp
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Enemies.h(28,5): error C2079: 'UI::Firespitter::ui' uses undefined class 'UI'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Enemies.h(56,5): error C2079: 'UI::DungeonDweller::ui' uses undefined class 'UI'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Enemies.h(84,5): error C2079: 'UI::Goblin::ui' uses undefined class 'UI'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Enemies.h(112,5): error C2079: 'UI::HauntingSpirit::ui' uses undefined class 'UI'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Enemies.h(140,5): error C2079: 'UI::Troll::ui' uses undefined class 'UI'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Enemies.h(168,5): error C2079: 'UI::Skeleton::ui' uses undefined class 'UI'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Enemies.h(197,5): error C2079: 'UI::UndeadWolf::ui' uses undefined class 'UI'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Enemies.h(225,5): error C2079: 'UI::Changeling::ui' uses undefined class 'UI'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Enemies.cpp(3,14): error C3254: 'UI': class contains explicit override '{ctor}' but does not derive from an interface that contains the function declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Enemies.cpp(3,14): error C2838: '{ctor}': illegal qualified name in member declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Enemies.cpp(13,19): error C3254: 'UI': class contains explicit override 'TakeDamage' but does not derive from an interface that contains the function declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Enemies.cpp(13,19): error C2838: 'TakeDamage': illegal qualified name in member declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Enemies.cpp(20,18): error C3254: 'UI': class contains explicit override 'AttackPlayer' but does not derive from an interface that contains the function declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Enemies.cpp(20,18): error C2838: 'AttackPlayer': illegal qualified name in member declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Enemies.cpp(27,17): error C3254: 'UI': class contains explicit override '{ctor}' but does not derive from an interface that contains the function declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Enemies.cpp(27,17): error C2838: '{ctor}': illegal qualified name in member declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Enemies.cpp(27,17): error C2535: 'UI::UI(void)': member function already defined or declared
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Enemies.cpp(3,14): message : see declaration of 'UI::UI'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Enemies.cpp(37,22): error C3254: 'UI': class contains explicit override 'TakeDamage' but does not derive from an interface that contains the function declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Enemies.cpp(37,22): error C2838: 'TakeDamage': illegal qualified name in member declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Enemies.cpp(37,22): error C2535: 'void UI::TakeDamage(int)': member function already defined or declared
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Enemies.cpp(13,19): message : see declaration of 'UI::TakeDamage'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Enemies.cpp(44,21): error C3254: 'UI': class contains explicit override 'AttackPlayer' but does not derive from an interface that contains the function declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Enemies.cpp(44,21): error C2838: 'AttackPlayer': illegal qualified name in member declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Enemies.cpp(44,21): error C2535: 'int UI::AttackPlayer(void)': member function already defined or declared
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Enemies.cpp(20,18): message : see declaration of 'UI::AttackPlayer'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Enemies.cpp(51,9): error C3254: 'UI': class contains explicit override '{ctor}' but does not derive from an interface that contains the function declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Enemies.cpp(51,9): error C2838: '{ctor}': illegal qualified name in member declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Enemies.cpp(51,9): error C2535: 'UI::UI(void)': member function already defined or declared
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Enemies.cpp(3,14): message : see declaration of 'UI::UI'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Enemies.cpp(61,14): error C3254: 'UI': class contains explicit override 'TakeDamage' but does not derive from an interface that contains the function declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Enemies.cpp(61,14): error C2838: 'TakeDamage': illegal qualified name in member declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Enemies.cpp(61,14): error C2535: 'void UI::TakeDamage(int)': member function already defined or declared
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Enemies.cpp(13,19): message : see declaration of 'UI::TakeDamage'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Enemies.cpp(68,13): error C3254: 'UI': class contains explicit override 'AttackPlayer' but does not derive from an interface that contains the function declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Enemies.cpp(68,13): error C2838: 'AttackPlayer': illegal qualified name in member declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Enemies.cpp(68,13): error C2535: 'int UI::AttackPlayer(void)': member function already defined or declared
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Enemies.cpp(20,18): message : see declaration of 'UI::AttackPlayer'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Enemies.cpp(75,17): error C3254: 'UI': class contains explicit override '{ctor}' but does not derive from an interface that contains the function declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Enemies.cpp(75,17): error C2838: '{ctor}': illegal qualified name in member declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Enemies.cpp(75,17): error C2535: 'UI::UI(void)': member function already defined or declared
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Enemies.cpp(3,14): message : see declaration of 'UI::UI'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Enemies.cpp(85,22): error C3254: 'UI': class contains explicit override 'TakeDamage' but does not derive from an interface that contains the function declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Enemies.cpp(85,22): error C2838: 'TakeDamage': illegal qualified name in member declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Enemies.cpp(85,22): error C2535: 'void UI::TakeDamage(int)': member function already defined or declared
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Enemies.cpp(13,19): message : see declaration of 'UI::TakeDamage'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Enemies.cpp(92,21): error C3254: 'UI': class contains explicit override 'AttackPlayer' but does not derive from an interface that contains the function declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Enemies.cpp(92,21): error C2838: 'AttackPlayer': illegal qualified name in member declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Enemies.cpp(92,21): error C2535: 'int UI::AttackPlayer(void)': member function already defined or declared
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Enemies.cpp(20,18): message : see declaration of 'UI::AttackPlayer'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Enemies.cpp(99,8): error C3254: 'UI': class contains explicit override '{ctor}' but does not derive from an interface that contains the function declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Enemies.cpp(99,8): error C2838: '{ctor}': illegal qualified name in member declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Enemies.cpp(99,8): error C2535: 'UI::UI(void)': member function already defined or declared
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Enemies.cpp(3,14): message : see declaration of 'UI::UI'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Enemies.cpp(109,13): error C3254: 'UI': class contains explicit override 'TakeDamage' but does not derive from an interface that contains the function declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Enemies.cpp(109,13): error C2838: 'TakeDamage': illegal qualified name in member declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Enemies.cpp(109,13): error C2535: 'void UI::TakeDamage(int)': member function already defined or declared
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Enemies.cpp(13,19): message : see declaration of 'UI::TakeDamage'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Enemies.cpp(116,12): error C3254: 'UI': class contains explicit override 'AttackPlayer' but does not derive from an interface that contains the function declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Enemies.cpp(116,12): error C2838: 'AttackPlayer': illegal qualified name in member declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Enemies.cpp(116,12): error C2535: 'int UI::AttackPlayer(void)': member function already defined or declared
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Enemies.cpp(20,18): message : see declaration of 'UI::AttackPlayer'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Enemies.cpp(123,11): error C3254: 'UI': class contains explicit override '{ctor}' but does not derive from an interface that contains the function declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Enemies.cpp(123,11): error C2838: '{ctor}': illegal qualified name in member declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Enemies.cpp(123,11): error C2535: 'UI::UI(void)': member function already defined or declared
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Enemies.cpp(3,14): message : see declaration of 'UI::UI'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Enemies.cpp(133,16): error C3254: 'UI': class contains explicit override 'TakeDamage' but does not derive from an interface that contains the function declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Enemies.cpp(133,16): error C2838: 'TakeDamage': illegal qualified name in member declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Enemies.cpp(133,16): error C2535: 'void UI::TakeDamage(int)': member function already defined or declared
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Enemies.cpp(13,19): message : see declaration of 'UI::TakeDamage'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Enemies.cpp(140,15): error C3254: 'UI': class contains explicit override 'AttackPlayer' but does not derive from an interface that contains the function declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Enemies.cpp(140,15): error C2838: 'AttackPlayer': illegal qualified name in member declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Enemies.cpp(140,15): error C2535: 'int UI::AttackPlayer(void)': member function already defined or declared
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Enemies.cpp(20,18): message : see declaration of 'UI::AttackPlayer'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Enemies.cpp(147,13): error C3254: 'UI': class contains explicit override '{ctor}' but does not derive from an interface that contains the function declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Enemies.cpp(147,13): error C2838: '{ctor}': illegal qualified name in member declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Enemies.cpp(147,13): error C2535: 'UI::UI(void)': member function already defined or declared
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Enemies.cpp(3,14): message : see declaration of 'UI::UI'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Enemies.cpp(157,18): error C3254: 'UI': class contains explicit override 'TakeDamage' but does not derive from an interface that contains the function declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Enemies.cpp(157,18): error C2838: 'TakeDamage': illegal qualified name in member declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Enemies.cpp(157,18): error C2535: 'void UI::TakeDamage(int)': member function already defined or declared
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Enemies.cpp(13,19): message : see declaration of 'UI::TakeDamage'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Enemies.cpp(164,17): error C3254: 'UI': class contains explicit override 'AttackPlayer' but does not derive from an interface that contains the function declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Enemies.cpp(164,17): error C2838: 'AttackPlayer': illegal qualified name in member declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Enemies.cpp(164,17): error C2535: 'int UI::AttackPlayer(void)': member function already defined or declared
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Enemies.cpp(20,18): message : see declaration of 'UI::AttackPlayer'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Enemies.cpp(170,13): error C3254: 'UI': class contains explicit override '{ctor}' but does not derive from an interface that contains the function declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Enemies.cpp(170,13): error C2838: '{ctor}': illegal qualified name in member declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Enemies.cpp(170,13): error C2535: 'UI::UI(void)': member function already defined or declared
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Enemies.cpp(3,14): message : see declaration of 'UI::UI'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Enemies.cpp(180,18): error C3254: 'UI': class contains explicit override 'TakeDamage' but does not derive from an interface that contains the function declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Enemies.cpp(180,18): error C2838: 'TakeDamage': illegal qualified name in member declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Enemies.cpp(180,18): error C2535: 'void UI::TakeDamage(int)': member function already defined or declared
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Enemies.cpp(13,19): message : see declaration of 'UI::TakeDamage'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Enemies.cpp(187,17): error C3254: 'UI': class contains explicit override 'AttackPlayer' but does not derive from an interface that contains the function declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Enemies.cpp(187,17): error C2838: 'AttackPlayer': illegal qualified name in member declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Enemies.cpp(187,17): error C2535: 'int UI::AttackPlayer(void)': member function already defined or declared
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Enemies.cpp(20,18): message : see declaration of 'UI::AttackPlayer'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.h(14): fatal  error C1075: '{': no matching token found
+  Game.cpp
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterCreation.h(12,5): error C2079: 'UI::CharacterCreation::ui' uses undefined class 'UI'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\sstream(20,1): error C2059: syntax error: 'namespace'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\sstream(20,1): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\ExploreDungeon.h(12,5): error C2079: 'UI::ExploreDungeon::ui' uses undefined class 'UI'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Map.h(14,8): error C2079: 'UI::Map::ui' uses undefined class 'UI'
 G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Game.h(10,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-x64\Debug\AbalaskUI.obj : warning LNK4042: object specified more than once; extras ignored
-  DungeonBattlesOfWinterspellCpp.vcxproj -> G:\repos\DungeonBattlesOfWinterspellCpp\x64\Debug\DungeonBattlesOfWinterspellCpp.exe
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\excpt.h(17,1): error C2059: syntax error: 'string'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\excpt.h(17,1): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\stdarg.h(16,1): error C2059: syntax error: 'string'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\stdarg.h(16,1): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\shared\windef.h(17,8): error C2059: syntax error: 'string'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\shared\windef.h(17,12): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\winnt.h(2871,9): warning C4164: '_bittestandcomplement': intrinsic function not declared
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\winnt.h(2872,9): warning C4164: '_bittestandset': intrinsic function not declared
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\winnt.h(2873,9): warning C4164: '_bittestandreset': intrinsic function not declared
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\winnt.h(2876,9): warning C4164: '_interlockedbittestandset': intrinsic function not declared
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\winnt.h(2877,9): warning C4164: '_interlockedbittestandreset': intrinsic function not declared
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\winnt.h(2880,9): warning C4164: '_bittest64': intrinsic function not declared
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\winnt.h(2881,9): warning C4164: '_bittestandcomplement64': intrinsic function not declared
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\winnt.h(2882,9): warning C4164: '_bittestandset64': intrinsic function not declared
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\winnt.h(2883,9): warning C4164: '_bittestandreset64': intrinsic function not declared
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\winnt.h(2886,9): warning C4164: '_interlockedbittestandset64': intrinsic function not declared
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\winnt.h(2887,9): warning C4164: '_interlockedbittestandreset64': intrinsic function not declared
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\winnt.h(3260,9): warning C4164: '_InterlockedExchangePointer': intrinsic function not declared
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\winnt.h(3261,9): warning C4164: '_InterlockedCompareExchangePointer': intrinsic function not declared
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\winnt.h(3394,9): warning C4164: '__cpuidex': intrinsic function not declared
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\winnt.h(3455,9): warning C4164: '_mm_clflush': intrinsic function not declared
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\winnt.h(3559,9): warning C4164: '__faststorefence': intrinsic function not declared
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\winnt.h(3570,9): warning C4164: '_mm_prefetch': intrinsic function not declared
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\winnt.h(3571,9): warning C4164: '_mm_lfence': intrinsic function not declared
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\winnt.h(3572,9): warning C4164: '_mm_mfence': intrinsic function not declared
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\winnt.h(3573,9): warning C4164: '_mm_sfence': intrinsic function not declared
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\winnt.h(3574,9): warning C4164: '_m_prefetchw': intrinsic function not declared
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\winnt.h(3616,9): warning C4164: '_mm_getcsr': intrinsic function not declared
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\winnt.h(3617,9): warning C4164: '_mm_setcsr': intrinsic function not declared
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\winnt.h(3634,9): warning C4164: '__getcallerseflags': intrinsic function not declared
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\winnt.h(3647,9): warning C4164: '__segmentlimit': intrinsic function not declared
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\winnt.h(3660,9): warning C4164: '__readpmc': intrinsic function not declared
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\winnt.h(3673,9): warning C4164: '__rdtsc': intrinsic function not declared
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\winnt.h(3707,9): warning C4164: '__movsb': intrinsic function not declared
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\winnt.h(3708,9): warning C4164: '__movsw': intrinsic function not declared
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\winnt.h(3709,9): warning C4164: '__movsd': intrinsic function not declared
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\winnt.h(3710,9): warning C4164: '__movsq': intrinsic function not declared
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\winnt.h(3744,9): warning C4164: '__stosb': intrinsic function not declared
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\winnt.h(3745,9): warning C4164: '__stosw': intrinsic function not declared
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\winnt.h(3746,9): warning C4164: '__stosd': intrinsic function not declared
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\winnt.h(3747,9): warning C4164: '__stosq': intrinsic function not declared
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\winnt.h(3768,9): warning C4164: '__mulh': intrinsic function not declared
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\winnt.h(3769,9): warning C4164: '__umulh': intrinsic function not declared
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\winnt.h(3862,9): warning C4164: '_mul128': intrinsic function not declared
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\winnt.h(4015,9): warning C4164: '__readgsbyte': intrinsic function not declared
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\winnt.h(4016,9): warning C4164: '__readgsword': intrinsic function not declared
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\winnt.h(4017,9): warning C4164: '__readgsdword': intrinsic function not declared
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\winnt.h(4018,9): warning C4164: '__readgsqword': intrinsic function not declared
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\winnt.h(4019,9): warning C4164: '__writegsbyte': intrinsic function not declared
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\winnt.h(4020,9): warning C4164: '__writegsword': intrinsic function not declared
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\winnt.h(4021,9): warning C4164: '__writegsdword': intrinsic function not declared
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\winnt.h(4022,9): warning C4164: '__writegsqword': intrinsic function not declared
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\winnt.h(6988,9): warning C4164: '__int2c': intrinsic function not declared
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\winnt.h(21307,9): warning C4164: '__fastfail': intrinsic function not declared
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\minwinbase.h(30,8): error C2059: syntax error: 'string'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\minwinbase.h(30,12): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\apiquery2.h(28,8): error C2059: syntax error: 'string'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\apiquery2.h(28,12): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\processenv.h(22,8): error C2059: syntax error: 'string'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\processenv.h(22,12): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\fileapi.h(22,8): error C2059: syntax error: 'string'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\fileapi.h(22,12): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\fileapifromapp.h(23,8): error C2059: syntax error: 'string'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\fileapifromapp.h(23,12): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\debugapi.h(22,8): error C2059: syntax error: 'string'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\debugapi.h(22,12): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\utilapiset.h(21,8): error C2059: syntax error: 'string'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\utilapiset.h(21,12): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\handleapi.h(21,8): error C2059: syntax error: 'string'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\handleapi.h(21,12): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\errhandlingapi.h(21,8): error C2059: syntax error: 'string'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\errhandlingapi.h(21,12): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\fibersapi.h(21,8): error C2059: syntax error: 'string'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\fibersapi.h(21,12): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\namedpipeapi.h(22,8): error C2059: syntax error: 'string'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\namedpipeapi.h(22,12): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\profileapi.h(21,8): error C2059: syntax error: 'string'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\profileapi.h(21,12): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\heapapi.h(28,8): error C2059: syntax error: 'string'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\heapapi.h(28,12): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\ioapiset.h(22,8): error C2059: syntax error: 'string'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\ioapiset.h(22,12): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\synchapi.h(22,8): error C2059: syntax error: 'string'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\synchapi.h(22,12): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\interlockedapi.h(21,8): error C2059: syntax error: 'string'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\interlockedapi.h(21,12): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\processthreadsapi.h(22,8): error C2059: syntax error: 'string'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\processthreadsapi.h(22,12): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\sysinfoapi.h(41,8): error C2059: syntax error: 'string'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\sysinfoapi.h(41,12): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\memoryapi.h(22,8): error C2059: syntax error: 'string'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\memoryapi.h(22,12): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\enclaveapi.h(22,8): error C2059: syntax error: 'string'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\enclaveapi.h(22,12): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\threadpoollegacyapiset.h(22,8): error C2059: syntax error: 'string'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\threadpoollegacyapiset.h(22,12): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\threadpoolapiset.h(22,8): error C2059: syntax error: 'string'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\threadpoolapiset.h(22,12): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\jobapi.h(22,8): error C2059: syntax error: 'string'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\jobapi.h(22,12): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\jobapi2.h(19,8): error C2059: syntax error: 'string'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\jobapi2.h(19,12): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\wow64apiset.h(22,8): error C2059: syntax error: 'string'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\wow64apiset.h(22,12): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\libloaderapi.h(22,8): error C2059: syntax error: 'string'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\libloaderapi.h(22,12): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\securitybaseapi.h(22,8): error C2059: syntax error: 'string'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\securitybaseapi.h(22,12): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\namespaceapi.h(22,8): error C2059: syntax error: 'string'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\namespaceapi.h(22,12): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\systemtopologyapi.h(22,8): error C2059: syntax error: 'string'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\systemtopologyapi.h(22,12): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\processtopologyapi.h(22,8): error C2059: syntax error: 'string'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\processtopologyapi.h(22,12): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\securityappcontainer.h(26,8): error C2059: syntax error: 'string'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\securityappcontainer.h(26,12): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\realtimeapiset.h(21,8): error C2059: syntax error: 'string'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\realtimeapiset.h(21,12): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\winbase.h(73,8): error C2059: syntax error: 'string'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\winbase.h(73,12): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\winbase.h(9615,8): error C2059: syntax error: 'string'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\winbase.h(9615,14): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\wingdi.h(52,8): error C2059: syntax error: 'string'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\wingdi.h(52,12): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\winuser.h(44,8): error C2059: syntax error: 'string'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\winuser.h(44,12): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\winnls.h(24,8): error C2059: syntax error: 'string'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\winnls.h(24,12): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\wincon.h(30,8): error C2059: syntax error: 'string'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\wincon.h(30,12): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\verrsrc.h(133,8): error C2059: syntax error: 'string'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\verrsrc.h(133,12): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\winver.h(23,8): error C2059: syntax error: 'string'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\winver.h(23,12): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\winreg.h(31,8): error C2059: syntax error: 'string'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\winreg.h(31,12): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\winnetwk.h(33,8): error C2059: syntax error: 'string'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\winnetwk.h(33,12): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\dde.h(27,8): error C2059: syntax error: 'string'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\dde.h(27,12): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\ddeml.h(26,8): error C2059: syntax error: 'string'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\ddeml.h(26,12): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\dlgs.h(266,13): error C3646: 'bRed': unknown override specifier
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\dlgs.h(266,17): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\dlgs.h(267,13): error C3646: 'bGreen': unknown override specifier
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\dlgs.h(267,19): fatal  error C1003: error count exceeds 100; stopping compilation
+  GameState.h
+  GameText.cpp
+  ICreature.cpp
+  IEnemy.cpp
+  Input.cpp
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Input.cpp(2,10): fatal  error C1083: Cannot open include file: 'ICharacter.h': No such file or directory
+  InputManager.cpp
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\InputManager.cpp(17,39): warning C4101: 'e': unreferenced local variable
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\InputManager.cpp(37,38): warning C4101: 'e': unreferenced local variable
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\InputManager.cpp(62,38): warning C4101: 'e': unreferenced local variable
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\InputManager.cpp(83,38): warning C4101: 'e': unreferenced local variable
+  Generating Code...
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\InputManager.cpp(22): warning C4715: 'InputManager::ValidatePlayerInput': not all control paths return a value
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterFactory.cpp(27): error C4716: 'CharacterFactory::GenerateWoodElf': must return a value
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterFactory.cpp(19): error C4716: 'CharacterFactory::ListAllCharacterOptions': must return a value
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterFactory.cpp(43): error C4716: 'CharacterFactory::GenerateEnchantress': must return a value
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterFactory.cpp(35): error C4716: 'CharacterFactory::GenerateDwarf': must return a value
+  Compiling...
+  Inventory.cpp
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Inventory.h(8,5): error C2079: 'UI::Inventory::ui' uses undefined class 'UI'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\ucrt\conio.h(19,1): error C2059: syntax error: 'string'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\ucrt\conio.h(19,1): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Inventory.cpp(4,17): error C3254: 'UI': class contains explicit override 'OpenInventory' but does not derive from an interface that contains the function declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Inventory.cpp(4,17): error C2838: 'OpenInventory': illegal qualified name in member declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.h(14): fatal  error C1075: '{': no matching token found
+  InvItem.cpp
+  IWeapon.cpp
+  LootItem.cpp
+  LootRoom.cpp
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\LootRoom.h(8,5): error C2079: 'UI::LootRoom::ui' uses undefined class 'UI'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\ucrt\conio.h(19,1): error C2059: syntax error: 'string'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\ucrt\conio.h(19,1): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\LootRoom.cpp(6,16): error C3254: 'UI': class contains explicit override 'Loot' but does not derive from an interface that contains the function declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\LootRoom.cpp(6,16): error C2838: 'Loot': illegal qualified name in member declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.h(14): fatal  error C1075: '{': no matching token found
+  Map.cpp
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Map.h(14,8): error C2079: 'UI::Map::ui' uses undefined class 'UI'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Map.cpp(7,6): error C3254: 'UI': class contains explicit override '{ctor}' but does not derive from an interface that contains the function declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Map.cpp(7,6): error C2838: '{ctor}': illegal qualified name in member declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Map.cpp(9,11): error C3254: 'UI': class contains explicit override 'PopulateDungeonMap' but does not derive from an interface that contains the function declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Map.cpp(9,11): error C2838: 'PopulateDungeonMap': illegal qualified name in member declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Map.cpp(21,35): error C3254: 'UI': class contains explicit override 'RevealMapMenu' but does not derive from an interface that contains the function declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Map.cpp(21,35): error C2838: 'RevealMapMenu': illegal qualified name in member declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Map.cpp(39,35): error C3254: 'UI': class contains explicit override 'GetCurrentRoom' but does not derive from an interface that contains the function declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Map.cpp(39,35): error C2838: 'GetCurrentRoom': illegal qualified name in member declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Map.cpp(46,11): error C3254: 'UI': class contains explicit override 'UpdateMap' but does not derive from an interface that contains the function declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Map.cpp(46,11): error C2838: 'UpdateMap': illegal qualified name in member declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.h(14): fatal  error C1075: '{': no matching token found
+  MusicPlayer.cpp
+  PlayerCharacter.cpp
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\PlayerCharacter.cpp(7,18): error C3254: 'UI': class contains explicit override '{ctor}' but does not derive from an interface that contains the function declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\PlayerCharacter.cpp(7,18): error C2838: '{ctor}': illegal qualified name in member declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\PlayerCharacter.cpp(9,18): error C3254: 'UI': class contains explicit override '{ctor}' but does not derive from an interface that contains the function declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\PlayerCharacter.cpp(9,18): error C2838: '{ctor}': illegal qualified name in member declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\PlayerCharacter.cpp(25,18): error C3254: 'UI': class contains explicit override '{ctor}' but does not derive from an interface that contains the function declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\PlayerCharacter.cpp(25,18): error C2838: '{ctor}': illegal qualified name in member declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\PlayerCharacter.cpp(30,23): error C3254: 'UI': class contains explicit override 'TakeDamage' but does not derive from an interface that contains the function declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\PlayerCharacter.cpp(30,23): error C2838: 'TakeDamage': illegal qualified name in member declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\PlayerCharacter.cpp(38,23): error C3254: 'UI': class contains explicit override 'CheckIfDead' but does not derive from an interface that contains the function declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\PlayerCharacter.cpp(38,23): error C2838: 'CheckIfDead': illegal qualified name in member declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\PlayerCharacter.cpp(47,23): error C3254: 'UI': class contains explicit override 'DrinkHealthPotion' but does not derive from an interface that contains the function declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\PlayerCharacter.cpp(47,23): error C2838: 'DrinkHealthPotion': illegal qualified name in member declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\PlayerCharacter.cpp(59,23): error C3254: 'UI': class contains explicit override 'AddToInventory' but does not derive from an interface that contains the function declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\PlayerCharacter.cpp(59,23): error C2838: 'AddToInventory': illegal qualified name in member declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\PlayerCharacter.cpp(74,23): error C3254: 'UI': class contains explicit override 'AddToInventory' but does not derive from an interface that contains the function declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\PlayerCharacter.cpp(74,23): error C2838: 'AddToInventory': illegal qualified name in member declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\PlayerCharacter.cpp(84,23): error C3254: 'UI': class contains explicit override 'RemoveFromInventory' but does not derive from an interface that contains the function declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\PlayerCharacter.cpp(84,23): error C2838: 'RemoveFromInventory': illegal qualified name in member declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\PlayerCharacter.cpp(104,23): error C3254: 'UI': class contains explicit override 'SetHealthPotions' but does not derive from an interface that contains the function declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\PlayerCharacter.cpp(104,23): error C2838: 'SetHealthPotions': illegal qualified name in member declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\PlayerCharacter.cpp(114,23): error C3254: 'UI': class contains explicit override 'SetEquiptItems' but does not derive from an interface that contains the function declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\PlayerCharacter.cpp(114,23): error C2838: 'SetEquiptItems': illegal qualified name in member declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\PlayerCharacter.cpp(155,24): error C3254: 'UI': class contains explicit override 'CheckDamageReduction' but does not derive from an interface that contains the function declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\PlayerCharacter.cpp(155,24): error C2838: 'CheckDamageReduction': illegal qualified name in member declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\PlayerCharacter.cpp(160,23): error C3254: 'UI': class contains explicit override 'SetGold' but does not derive from an interface that contains the function declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\PlayerCharacter.cpp(160,23): error C2838: 'SetGold': illegal qualified name in member declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.h(14): fatal  error C1075: '{': no matching token found
+  Story.cpp
+  UI.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\sstream(20,1): error C2059: syntax error: 'namespace'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\sstream(20,1): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\ucrt\conio.h(19,1): error C2059: syntax error: 'string'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\ucrt\conio.h(19,1): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\numeric(23,1): error C2059: syntax error: 'namespace'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\numeric(23,1): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.cpp(20,17): error C4596: 'ChooseClass': illegal qualified name in member declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.cpp(20,17): error C2535: 'std::string UI::ChooseClass(void)': member function already defined or declared
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.h(20,14): message : see declaration of 'UI::ChooseClass'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.cpp(44,10): error C4596: 'CharacterSelected': illegal qualified name in member declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.cpp(44,10): error C2535: 'void UI::CharacterSelected(std::shared_ptr<Character>)': member function already defined or declared
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.h(23,7): message : see declaration of 'UI::CharacterSelected'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.cpp(59,17): error C4596: 'ChooseWeapon': illegal qualified name in member declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.cpp(59,17): error C2535: 'std::string UI::ChooseWeapon(std::shared_ptr<Character>)': member function already defined or declared
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.h(25,14): message : see declaration of 'UI::ChooseWeapon'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.cpp(82,10): error C4596: 'DisplayWeaponOptions': illegal qualified name in member declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.cpp(82,10): error C2535: 'void UI::DisplayWeaponOptions(std::shared_ptr<Character>)': member function already defined or declared
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.h(22,7): message : see declaration of 'UI::DisplayWeaponOptions'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.cpp(97,17): error C4596: 'WeaponSelected': illegal qualified name in member declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.cpp(97,17): error C2535: 'std::string UI::WeaponSelected(std::string)': member function already defined or declared
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.h(26,14): message : see declaration of 'UI::WeaponSelected'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.cpp(104,36): error C4596: 'AttributeAssignment': illegal qualified name in member declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.cpp(144,25): error C4596: 'PointsAllocation': illegal qualified name in member declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.cpp(194,31): error C4596: 'DisplayMapMenu': illegal qualified name in member declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.cpp(235,34): error C4596: 'DisplayRoomSelect': illegal qualified name in member declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.cpp(268,29): error C4596: 'DescribeDungeonRoom': illegal qualified name in member declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.cpp(278,26): error C4596: 'DisplayTurnOrder': illegal qualified name in member declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.cpp(306,19): error C4596: 'NoEnemies': illegal qualified name in member declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.cpp(311,31): error C4596: 'DescribePlayerOptions': illegal qualified name in member declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.cpp(362,52): error C4596: 'GetEnemyTargetForAttack': illegal qualified name in member declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.cpp(411,29): error C4596: 'DescribeEnemyAttack': illegal qualified name in member declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.cpp(418,37): error C4596: 'DescribePlayerAttackOptions': illegal qualified name in member declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.cpp(466,25): error C4596: 'HealthRemaining': illegal qualified name in member declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.cpp(471,21): error C4596: 'KilledEnemy': illegal qualified name in member declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.cpp(481,25): error C4596: 'SlainAllEnemies': illegal qualified name in member declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.cpp(485,18): error C4596: 'FoundKey': illegal qualified name in member declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.cpp(500,20): error C4596: 'RoomLocked': illegal qualified name in member declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.cpp(504,19): error C4596: 'LootBegin': illegal qualified name in member declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.cpp(518,51): error C4596: 'DisplayInventoryMenu': illegal qualified name in member declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.cpp(565,23): error C4596: 'CannotUseItem': illegal qualified name in member declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.cpp(570,18): error C4596: 'ItemMenu': illegal qualified name in member declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.cpp(614,24): error C4596: 'Inquiry': illegal qualified name in member declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.cpp(642,27): error C4596: 'AlreadyEquiptItem': illegal qualified name in member declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.cpp(646,27): error C4596: 'OpenCharacterMenu': illegal qualified name in member declaration
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.h(14): fatal  error C1075: '{': no matching token found
+  Weapons.cpp
+  Generating Code...

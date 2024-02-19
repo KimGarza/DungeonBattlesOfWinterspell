@@ -8,6 +8,7 @@
 #include "LootRoom.h"
 #include "CharacterCreation.h"
 #include "DungeonGenerator.h"
+#include "CharacterFactory.h"
 #include "PlayerCharacter.h"
 #include "GameText.h"
 #include "windows.h"
@@ -29,28 +30,28 @@ void Game::CheckGameState() {
 
 	case GameState::Begin: { 
 
-		sf::RenderWindow window(sf::VideoMode(1200, 1000), "My Game", sf::Style::Default);
-		window.setFramerateLimit(60); // Limit the framerate to 60 FPS
+		//sf::RenderWindow window(sf::VideoMode(1200, 1000), "My Game", sf::Style::Default);
+		//window.setFramerateLimit(60); // Limit the framerate to 60 FPS
 
-		sf::Texture texture;
-		if (!texture.loadFromFile("../images/brickwall.png")) {
-			// Handle error here
-			// For example, you can print an error message or throw an exception
-		}
+		//sf::Texture texture;
+		//if (!texture.loadFromFile("../images/brickwall.png")) {
+		//	// Handle error here
+		//	// For example, you can print an error message or throw an exception
+		//}
 
-		sf::Sprite sprite;
-		sprite.setTexture(texture);
+		//sf::Sprite sprite;
+		//sprite.setTexture(texture);
 
-		// Inside the game loop
-		window.clear();
-		window.draw(sprite);
-		window.display();
+		//// Inside the game loop
+		//window.clear();
+		//window.draw(sprite);
+		//window.display();
 
 
 		music.PlayMusic(L"slow-2021-08-17_-_8_Bit_Nostalgia_-_www.FesliyanStudios.com.wav");
 
-
 		story.OpeningStory();
+
 
 		playerCharacter = characterCreation.CreateCharacter();
 		dungeonRooms = dungeonGenerator.GenerateDungeons();

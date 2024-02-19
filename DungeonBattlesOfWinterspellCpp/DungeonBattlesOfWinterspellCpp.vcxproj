@@ -144,8 +144,10 @@
     <ClCompile Include="AbalaskUI.cpp" />
     <ClCompile Include="AbalaskUI.h" />
     <ClCompile Include="Battle.cpp" />
+    <ClCompile Include="Character.cpp" />
+    <ClCompile Include="Character.h" />
+    <ClCompile Include="CharacterFactory.cpp" />
     <ClCompile Include="ExploreDungeon.cpp" />
-    <ClCompile Include="Characters.cpp" />
     <ClCompile Include="CharacterCreation.cpp" />
     <ClCompile Include="DungeonRoom.cpp" />
     <ClCompile Include="DungeonBattlesOfWinterspellCpp.cpp">
@@ -156,7 +158,6 @@
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameState.h" />
     <ClCompile Include="GameText.cpp" />
-    <ClCompile Include="ICharacter.cpp" />
     <ClCompile Include="ICreature.cpp" />
     <ClCompile Include="IEnemy.cpp" />
     <ClCompile Include="Input.cpp" />
@@ -177,15 +178,14 @@
     <ClInclude Include="Abalask.h" />
     <ClInclude Include="AbalaskTrader.h" />
     <ClInclude Include="Battle.h" />
+    <ClInclude Include="CharacterFactory.h" />
     <ClInclude Include="ExploreDungeon.h" />
-    <ClInclude Include="Characters.h" />
     <ClInclude Include="CharacterCreation.h" />
     <ClInclude Include="DungeonRoom.h" />
     <ClInclude Include="DungeonGenerator.h" />
     <ClInclude Include="Enemies.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameText.h" />
-    <ClInclude Include="ICharacter.h" />
     <ClInclude Include="ICreature.h" />
     <ClInclude Include="IEnemy.h" />
     <ClInclude Include="Input.h" />

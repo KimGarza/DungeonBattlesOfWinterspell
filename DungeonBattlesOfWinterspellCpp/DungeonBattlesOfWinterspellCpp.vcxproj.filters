@@ -73,13 +73,16 @@
     <Filter Include="Source Files\GameStates\Abalask">
       <UniqueIdentifier>{f6d1eb4d-a302-4752-823a-081dcf55c561}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Factories">
+      <UniqueIdentifier>{34ca4cf9-ae9c-4c56-95c0-333941da09c0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Factories">
+      <UniqueIdentifier>{9dd70ec4-342f-4a07-a307-38e2363ca7eb}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DungeonBattlesOfWinterspellCpp.cpp">
       <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="ICharacter.cpp">
-      <Filter>Source Files\Actors</Filter>
     </ClCompile>
     <ClCompile Include="PlayerCharacter.cpp">
       <Filter>Source Files\Actors</Filter>
@@ -107,9 +110,6 @@
     </ClCompile>
     <ClCompile Include="GameState.h">
       <Filter>Header Files\Game</Filter>
-    </ClCompile>
-    <ClCompile Include="Characters.cpp">
-      <Filter>Source Files\Actors</Filter>
     </ClCompile>
     <ClCompile Include="Enemies.cpp">
       <Filter>Source Files\Actors</Filter>
@@ -168,6 +168,15 @@
     <ClCompile Include="AbalaskUI.cpp">
       <Filter>Source Files\GameStates\Abalask</Filter>
     </ClCompile>
+    <ClCompile Include="CharacterFactory.cpp">
+      <Filter>Source Files\Factories</Filter>
+    </ClCompile>
+    <ClCompile Include="Character.h">
+      <Filter>Header Files\Actors</Filter>
+    </ClCompile>
+    <ClCompile Include="Character.cpp">
+      <Filter>Source Files\Actors</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -182,9 +191,6 @@
     <ClInclude Include="PlayerCharacter.h">
       <Filter>Header Files\Actors</Filter>
     </ClInclude>
-    <ClInclude Include="ICharacter.h">
-      <Filter>Header Files\Actors</Filter>
-    </ClInclude>
     <ClInclude Include="IEnemy.h">
       <Filter>Header Files\Actors</Filter>
     </ClInclude>
@@ -196,9 +202,6 @@
     </ClInclude>
     <ClInclude Include="GameText.h">
       <Filter>Header Files\Helper</Filter>
-    </ClInclude>
-    <ClInclude Include="Characters.h">
-      <Filter>Header Files\Actors</Filter>
     </ClInclude>
     <ClInclude Include="Enemies.h">
       <Filter>Header Files\Actors</Filter>
@@ -253,6 +256,9 @@
     </ClInclude>
     <ClInclude Include="AbalaskTrader.h">
       <Filter>Header Files\GameStates\Abalask</Filter>
+    </ClInclude>
+    <ClInclude Include="CharacterFactory.h">
+      <Filter>Header Files\Factories</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
