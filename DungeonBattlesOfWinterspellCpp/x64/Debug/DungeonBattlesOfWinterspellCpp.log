@@ -45,6 +45,7 @@ G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\AbalaskTr
   AbalaskUI.cpp
   AbalaskUI.h
   Battle.cpp
+  Character.cpp
   ExploreDungeon.cpp
   Characters.cpp
   CharacterCreation.cpp
@@ -71,10 +72,10 @@ G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\InputMana
 G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\InputManager.cpp(37,38): warning C4101: 'e': unreferenced local variable
 G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\InputManager.cpp(62,38): warning C4101: 'e': unreferenced local variable
 G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\InputManager.cpp(83,38): warning C4101: 'e': unreferenced local variable
-  Inventory.cpp
   Generating Code...
 G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\InputManager.cpp(22): warning C4715: 'InputManager::ValidatePlayerInput': not all control paths return a value
   Compiling...
+  Inventory.cpp
   InvItem.cpp
   IWeapon.cpp
   LootItem.cpp
@@ -105,7 +106,7 @@ G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Map.cpp(7
   MusicPlayer.cpp
   PlayerCharacter.cpp
 G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\PlayerCharacter.cpp(35,25): warning C4244: '-=': conversion from 'float' to 'int', possible loss of data
-G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\PlayerCharacter.cpp(159,22): warning C4244: 'return': conversion from 'int' to 'float', possible loss of data
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\PlayerCharacter.cpp(160,22): warning C4244: 'return': conversion from 'int' to 'float', possible loss of data
   Story.cpp
   UI.cpp
 G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.cpp(242,75): warning C4101: 'roomCount': unreferenced local variable

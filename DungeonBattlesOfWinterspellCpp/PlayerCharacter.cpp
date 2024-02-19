@@ -141,6 +141,7 @@ void PlayerCharacter::SetEquiptItems(std::shared_ptr<LootItem> item) {
 	else {
 		equiptItems.push_back(item);
 		armourRating += item->GetArmourRating();
+		evasionRating += item->GetEvasionRating();
 		
 		if (item->GetName() == "Boots of Swiftness") {
 			dexterity += 4; // rather than setting has swiftness to true in case player would have it even without boots
