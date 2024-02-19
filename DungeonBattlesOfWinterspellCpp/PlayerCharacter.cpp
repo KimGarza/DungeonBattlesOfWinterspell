@@ -20,7 +20,7 @@ PlayerCharacter::PlayerCharacter(
 	// In the constructor source, the colon : is used to initiate a member initializer list. It's used to initialize the member variables of a class with values provided to the constructor.
 	// After the : is the assignment secition
 ) : name(inName), health(inHealth), intelligence(inIntelligence), dexterity(inDexterity), strength(inStrength), maxHealth(maxHealth),
-hasSwiftness(hasSwiftness), armourRating(armourRating), weapon(inWeapon), xp(0), level(1), isDead(false), healthPotions(2) {}
+hasSwiftness(hasSwiftness), armourRating(armourRating), weapon(inWeapon), xp(0), level(1), isDead(false), healthPotions(2), gold(0) {}
 
 PlayerCharacter::PlayerCharacter(const PlayerCharacter& other) : name(other.name), health(other.health), intelligence(other.intelligence),
 dexterity(other.dexterity), strength(other.strength), weapon(other.weapon),
@@ -61,6 +61,9 @@ void PlayerCharacter::AddToInventory(std::vector<std::shared_ptr<LootItem>> newI
 	for (const auto& item : newItems) {
 		if (item->GetItemType() != ItemType::HealthPotion) {
 			loot.push_back(item);
+		}
+		else if (item->GetName() == "Gold Coin") {
+			gold += 1;
 		}
 		else {
 			healthPotions += 1;
@@ -152,4 +155,8 @@ void PlayerCharacter::SetEquiptItems(std::shared_ptr<LootItem> item) {
 float PlayerCharacter::CheckDamageReduction(int incomingDmg) {
 	
 	return armourRating / ((100 * incomingDmg) + armourRating);
+}
+
+void PlayerCharacter::SetGold(int inGold) {
+	gold += inGold;
 }

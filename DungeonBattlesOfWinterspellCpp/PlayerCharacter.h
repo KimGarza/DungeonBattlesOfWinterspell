@@ -25,6 +25,7 @@ private:
 	std::vector<std::shared_ptr<LootItem>> loot;
 	std::vector<std::shared_ptr<LootItem>> equiptItems;
 	int armourRating;
+	int gold;
 
 // 2. Preparing all values that will come through constructor ( we want xp, level, swift and dead to not be passed in we already know what these will be to start)
 public:
@@ -63,6 +64,7 @@ public:
 	std::vector<std::shared_ptr<LootItem>> GetEquiptItems() { return equiptItems; }
 	void AddToInventory(std::shared_ptr<LootItem> newItem);
 	int GetArmourRating() { return armourRating; }
+	int GetGold() { return gold; }
 
 	float CheckDamageReduction(int incomingDmg);
 	bool TakeDamage(int damageTaken);
@@ -72,4 +74,5 @@ public:
 	void AddToInventory(std::vector<std::shared_ptr<LootItem>> newItems);
 	void SetEquiptItems(std::shared_ptr<LootItem> item);
 	void RemoveFromInventory(std::shared_ptr<LootItem> item);
+	void SetGold(int gold);
 };

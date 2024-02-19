@@ -1,5 +1,8 @@
 #include "ExploreDungeon.h"
+#include "DungeonGenerator.h"
 #include "PlayerCharacter.h"
+#include "AbalaskUI.h"
+#include "AbalaskTrader.h"
 #include "Battle.h"
 #include "Inventory.h"
 #include "Story.h"
@@ -17,7 +20,6 @@ ExploreDungeon::ExploreDungeon(std::shared_ptr<DungeonRoom> currentRoom, std::sh
 /// </summary>
 void ExploreDungeon::EnterDungeonRoom() {
 
-	
 	if (currentRoom->GetIsLocked()) {
 		ui.RoomLocked();
 	}
@@ -29,6 +31,7 @@ void ExploreDungeon::EnterDungeonRoom() {
 	}
 	return;
 }
+
 
 bool ExploreDungeon::ChangelingEvent() {
 	ui.DescribeDungeonRoom(currentRoom->GetDescription());
@@ -43,6 +46,8 @@ bool ExploreDungeon::ChangelingEvent() {
 		return false;
 	}
 }
+
+
 
 void ExploreDungeon::PlayerMenu() {
 
@@ -60,7 +65,6 @@ void ExploreDungeon::PlayerMenu() {
 		else {
 			break;
 		}
-
 	}
 }
 

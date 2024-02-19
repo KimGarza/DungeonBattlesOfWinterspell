@@ -9,8 +9,21 @@ LootItem::LootItem(std::string name,
 	ItemType itemType,
 	std::string description,
 	int worthInGold,
-	int armourRating) : name(name), itemType(itemType), description(description), info(""), worthInGold(worthInGold), armourRating(armourRating) {}
+	int armourRating,
+	int evasionRating) : name(name), itemType(itemType), description(description), info(""), worthInGold(worthInGold), armourRating(armourRating) {}
 
+LootItem::LootItem(std::string name,
+	ItemType itemType,
+	std::string description,
+	int worthInGold,
+	int armourRating,
+	int evasionRating,
+	int addedDex,
+	int addedStr,
+	int addedInt,
+	int spellDamage,
+	int physDamage) : name(name), itemType(itemType), description(description), info(""), worthInGold(worthInGold), armourRating(armourRating), evasionRating(evasionRating),
+	addedDex(addedDex), addedStr(addedStr), addedInt(addedInt), spellDamage(spellDamage), physDamage(physDamage) {}
 
 void LootItem::SetArmourRating(int armourAdded) {
 	armourRating += armourAdded;
@@ -24,3 +37,4 @@ void LootItem::SetInfo() {
 		info = "";
 	}
 }
+

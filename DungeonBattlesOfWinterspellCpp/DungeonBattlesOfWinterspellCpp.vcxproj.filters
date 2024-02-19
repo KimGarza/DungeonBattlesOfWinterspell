@@ -67,6 +67,12 @@
     <Filter Include="Source Files\GameStates\Loot">
       <UniqueIdentifier>{b990ec16-4fbe-45b5-b182-90ca605d5b01}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\GameStates\Abalask">
+      <UniqueIdentifier>{87013d70-91a9-4142-a63e-36ba5d9424d2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GameStates\Abalask">
+      <UniqueIdentifier>{f6d1eb4d-a302-4752-823a-081dcf55c561}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DungeonBattlesOfWinterspellCpp.cpp">
@@ -150,6 +156,18 @@
     <ClCompile Include="MusicPlayer.cpp">
       <Filter>Source Files\Game</Filter>
     </ClCompile>
+    <ClCompile Include="Abalask.cpp">
+      <Filter>Source Files\Actors</Filter>
+    </ClCompile>
+    <ClCompile Include="AbalaskTrader.cpp">
+      <Filter>Source Files\GameStates\Abalask</Filter>
+    </ClCompile>
+    <ClCompile Include="AbalaskUI.h">
+      <Filter>Header Files\GameStates\Abalask</Filter>
+    </ClCompile>
+    <ClCompile Include="AbalaskUI.cpp">
+      <Filter>Source Files\GameStates\Abalask</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -229,6 +247,12 @@
     </ClInclude>
     <ClInclude Include="MusicPlayer.h">
       <Filter>Header Files\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Abalask.h">
+      <Filter>Header Files\Actors</Filter>
+    </ClInclude>
+    <ClInclude Include="AbalaskTrader.h">
+      <Filter>Header Files\GameStates\Abalask</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

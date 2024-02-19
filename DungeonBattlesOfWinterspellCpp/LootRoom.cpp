@@ -18,7 +18,13 @@ void LootRoom::Loot(std::shared_ptr<PlayerCharacter> playerCharacter, std::share
 	}
 	else if (currentRoom->GetTimesExplored() == 1) {
 		ui.LootBegin(currentRoom->GetLoot());
-		playerCharacter->AddToInventory(currentRoom->GetLoot());
+
+		for (const auto& item : currentRoom->GetLoot()) {
+			
+			if (item->GetName() != "Gold Coin") {
+				playerCharacter->AddToInventory(item);
+			}
+		}
 	}
 }
 

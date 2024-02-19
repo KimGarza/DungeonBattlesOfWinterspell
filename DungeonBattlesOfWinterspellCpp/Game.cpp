@@ -14,6 +14,7 @@
 #include "DungeonRoom.h"
 #include "DungeonGenerator.h"
 #include "Map.h"
+#include "AbalaskTrader.h"
 #include "ExploreDungeon.h"
 
 
@@ -28,22 +29,22 @@ void Game::CheckGameState() {
 
 	case GameState::Begin: { 
 
-		//sf::RenderWindow window(sf::VideoMode(1200, 1000), "My Game", sf::Style::Default);
-		//window.setFramerateLimit(60); // Limit the framerate to 60 FPS
+		sf::RenderWindow window(sf::VideoMode(1200, 1000), "My Game", sf::Style::Default);
+		window.setFramerateLimit(60); // Limit the framerate to 60 FPS
 
-		//sf::Texture texture;
-		//if (!texture.loadFromFile("../images/brickwall.png")) {
-		//	// Handle error here
-		//	// For example, you can print an error message or throw an exception
-		//}
+		sf::Texture texture;
+		if (!texture.loadFromFile("../images/brickwall.png")) {
+			// Handle error here
+			// For example, you can print an error message or throw an exception
+		}
 
-		//sf::Sprite sprite;
-		//sprite.setTexture(texture);
+		sf::Sprite sprite;
+		sprite.setTexture(texture);
 
-		//// Inside the game loop
-		//window.clear();
-		//window.draw(sprite);
-		//window.display();
+		// Inside the game loop
+		window.clear();
+		window.draw(sprite);
+		window.display();
 
 
 		music.PlayMusic(L"slow-2021-08-17_-_8_Bit_Nostalgia_-_www.FesliyanStudios.com.wav");
@@ -88,6 +89,13 @@ void Game::CheckGameState() {
 			}
 
 		}
+
+
+
+		else if (currentRoom->GetName() == "Room of Moonlight" && currentRoom->GetTimesExplored() > 0) {
+			ChangeGameState(GameState::AbalaskTrader);
+		}
+		// consider else or will it store on the stack to assume return to this method
 		exploreDungeon.EnterDungeonRoom();
 
 		if (!currentRoom->GetCompleted() && !currentRoom->GetIsLocked()) {
@@ -130,6 +138,19 @@ void Game::CheckGameState() {
 	case GameState::BattleChangeling: {
 		Battle battle;
 		battle.ChangelingFight(playerCharacter);
+
+	}
+	case GameState::AbalaskTrader: {
+
+		if (currentRoom->GetTimesExplored() == 1) {
+
+			story.AbalaskTraderIntroduction();
+		}
+
+		AbalaskTrader abalaskTrader;
+		abalask = abalaskTrader.GenerateAbalask();
+
+		abalaskTrader.BeginTrading(playerCharacter);
 
 	}
 	case GameState::Loot: {

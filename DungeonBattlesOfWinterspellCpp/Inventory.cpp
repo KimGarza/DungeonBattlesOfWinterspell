@@ -3,10 +3,12 @@
 
 void Inventory::OpenInventory(std::shared_ptr<PlayerCharacter> playerCharacter) {
 
-	while (true) {
-
-		system("cls");
-		std::shared_ptr<LootItem> selectedItem = ui.DisplayInventoryMenu(playerCharacter->GetLoot());
-		ui.ItemMenu(selectedItem, playerCharacter);
+	system("cls");
+	std::shared_ptr<LootItem> selectedItem = ui.DisplayInventoryMenu(playerCharacter->GetLoot());
+		
+	if (selectedItem) {
+		ui.ItemMenu(selectedItem, playerCharacter); 
 	}
+
+	return;
 }

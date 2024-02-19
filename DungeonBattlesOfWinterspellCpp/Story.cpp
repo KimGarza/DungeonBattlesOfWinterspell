@@ -130,3 +130,41 @@ std::string Story::Changeling() {
 
 	_getch();
 }
+
+void Story::AbalaskTraderIntroduction() {
+	system("cls");
+
+	gameText.WriteLineInput("Empty and quiet fills the room, but a slight sound of nervous breathing catches your ear.");
+	gameText.WriteLineInput("Good Knight! Sire look! Behold a gigantis bat!");
+
+	gameText.WriteLine("Ar-aRE th-THeY GoN-nE?");
+	gameText.WriteLine("PrAy teLL! Ar-aRE th-THeY!?\n");
+
+	while (true) {
+		gameText.WriteLine("y)  Nod\nn)  Shake your head");
+
+		std::string playerChoice; /**/ std::cin >> playerChoice;
+
+		if (playerChoice == "y" || playerChoice == "n") {
+
+			if (playerChoice == "n") {
+				system("cls");
+				gameText.WriteLineInput("The gigantis bat scuffles and flutters awkwardly in a panic to the extrodinarily large \nstilagmite hanging further up and back in the cavern.");
+				gameText.WriteLineInput("You hear the sound of loose coin and metal items trinkling out of his furry pockets.");
+				gameText.WriteLineInput("Pray! Donot touchith my properties!");
+			}
+
+			system("cls");
+			gameText.WriteLineInput("A round whisp of air encompases the cavern, so quickly whence it came, it hath past just the same.");
+			gameText.WriteLineInput("The gigantis bat carefully stumbles and glides down before you.");
+			gameText.WriteLineInput("A great dark gray beast of soft smooth and furry skin, yet strong and truly gigiantis stands over you, \nrendering you nothing but shadow in his own.");
+			gameText.WriteLineInput("I sense the monstrosities of the deep lye still. You have saved my home, thank you small squashable human!");
+			gameText.WriteLineInput("Perhaps you would fancy to engage in a barter of sorts with the like of me. \n....Though I do not typically associate with plebeans of the surface world!");
+			return;
+		}
+		else {
+			gameText.WriteLineInput("YoUr sPeAk sOunDs Of tHe JiBBerWahkIe!");
+			system("cls");
+		}
+	}
+}

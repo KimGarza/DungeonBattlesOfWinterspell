@@ -315,6 +315,9 @@ void UI::DescribeDungeonRoom(std::string description) {
     return;
 }
 
+
+
+
 void UI::DisplayTurnOrder(std::vector<std::string> creatureNames, std::string dungeonRoomName) {
 
     system("cls");
@@ -413,7 +416,7 @@ std::shared_ptr<IEnemy> UI::GetEnemyTargetForAttack(std::shared_ptr<PlayerCharac
         for (int i = 0; i < spaceBeforePanel; ++i) {
             std::cout << " "; // Print spaces before the panel starts
         }
-        std::cout << "| Health: " << std::to_string(player->GetHealth()) << " |\n";
+        std::cout << "Health: " << std::to_string(player->GetHealth());
 
         gameText.WriteLine("You have chosen to attack! \n***Choose your target***\n");
 

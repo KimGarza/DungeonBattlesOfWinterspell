@@ -14,4 +14,6 @@ public:
     void MapIntro();
     void EnterDungeonRoom();
     std::string Changeling();
+    void AbalaskTraderIntroduction();
+
 };

@@ -7,9 +7,12 @@ void GameText::WriteLineInput(std::string text) {
 	//for (char character : text) {
 	//	std::cout << character;
 	//	std::cout.flush(); // Flush the output to ensure immediate display
-	//	std::this_thread::sleep_for(std::chrono::milliseconds()); // chrono lib for time duration
+	//	std::this_thread::sleep_for(std::chrono::milliseconds(1)); // chrono lib for time duration
 	//}
 	//std::cout << '\n';
+
+	//_getch();
+	//system("cls");
 
 	std::cout << text << std::endl;
 	_getch();

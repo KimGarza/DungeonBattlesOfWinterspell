@@ -47,5 +47,7 @@ public:
 	std::string Inquiry();
 	void AlreadyEquiptItem();
 	void OpenCharacterMenu(std::shared_ptr<PlayerCharacter> playerCharacter);
+
+
 };
 

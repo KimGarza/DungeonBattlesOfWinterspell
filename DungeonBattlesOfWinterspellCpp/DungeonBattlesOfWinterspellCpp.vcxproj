@@ -139,6 +139,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Abalask.cpp" />
+    <ClCompile Include="AbalaskTrader.cpp" />
+    <ClCompile Include="AbalaskUI.cpp" />
+    <ClCompile Include="AbalaskUI.h" />
     <ClCompile Include="Battle.cpp" />
     <ClCompile Include="ExploreDungeon.cpp" />
     <ClCompile Include="Characters.cpp" />
@@ -170,6 +174,8 @@
     <ClCompile Include="Weapons.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Abalask.h" />
+    <ClInclude Include="AbalaskTrader.h" />
     <ClInclude Include="Battle.h" />
     <ClInclude Include="ExploreDungeon.h" />
     <ClInclude Include="Characters.h" />

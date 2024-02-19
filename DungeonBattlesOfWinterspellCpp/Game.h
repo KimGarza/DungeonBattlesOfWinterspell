@@ -3,6 +3,7 @@
 #include "Story.h"
 #include "PlayerCharacter.h"
 #include "CharacterCreation.h"
+#include "Abalask.h"
 #include "DungeonGenerator.h"
 #include "ExploreDungeon.h"
 #include "Map.h"
@@ -19,6 +20,7 @@ private:
 	CharacterCreation characterCreation;
 	DungeonGenerator dungeonGenerator;
 	MusicPlayer music;
+	std::shared_ptr<Abalask> abalask;
 
 public:
 

@@ -11,5 +11,6 @@ enum class GameState {
 	UpdateMap,
 	EndGame,
 
-	BattleChangeling
+	BattleChangeling,
+	AbalaskTrader
 };
