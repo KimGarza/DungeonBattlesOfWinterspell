@@ -2,8 +2,8 @@
 #include "DungeonRoom.h"
 #include <string>
 #include <iostream>
-#include "IEnemy.h"
-#include "Characters.h"
+#include "Enemy.h"
+#include "Character.h"
 #include "IWeapon.h"
 #include "Weapons.h"
 #include <sstream>
@@ -13,225 +13,6 @@
 #include <iostream>
 #include <cctype>
 #include <map>
-
-
-// Player Creation
-std::shared_ptr<ICharacter> UI::ChooseClass() {
-    system("cls");
-
-   while (true) {
-
-       gameText.WriteLine("Pray tell... Who are you ?\n");
-       gameText.WriteLine("1)  Woodelf \n2)  Dwarf \n3)  Enchantress\n");
-
-       std::string playerChoice = input.PlayerChoice(std::vector<int> {1, 2, 3});
-
-       if (playerChoice != "") {
-           
-           if (playerChoice == "1") {
-               std::shared_ptr<ICharacter> woodElf = std::make_shared<WoodElf>(); // consider making these unique pointers after test
-               
-               gameText.WriteLine("From the Halls of Miritar, you venture, where the ruins of Myth Drannor await your return.");
-
-               return woodElf;
-           }
-           else if (playerChoice == "2") {
-               std::shared_ptr<ICharacter> dwarf = std::make_shared<Dwarf>();
-               
-               gameText.WriteLineInput("Alas! An adoarable gnome with cheeks of rose fire!");
-               gameText.WriteLineInput("Yes, Yes chillith Master, I was only jesting!");
-
-               return dwarf;
-           }
-           else if (playerChoice == "3") {
-               std::shared_ptr<ICharacter> enchantress = std::make_shared<Enchantress>();
-               
-               gameText.WriteLine("You posses the Thaumaturgy of the ancient world within you.");
-
-               return enchantress;
-           }
-       }
-       else {
-           system("cls");
-           gameText.WriteLine("Indeed you are a cheeky one aren't you? Please tell me true now, who art thou?");
-       }
-   }
-
-
-   return nullptr;
-}
-
-std::shared_ptr<IWeapon> UI::ChooseWeapon(std::shared_ptr<ICharacter> characterClass) {
-
-    system("cls");
-
-    gameText.WriteLine("Ah! Now then. Though cannot see trechors below and fight gobgobs with just thy bare mitts!");
-    gameText.WriteLineInput("Weapon of choice good sir ?");
-
-    bool selectionComplete = false;
-    std::shared_ptr<IWeapon> weapon;
-
-    while (!selectionComplete) {
-
-        DisplayWeaponOptions(characterClass);
-
-        std::string playerChoice = input.PlayerChoice(std::vector<int> {1, 2, 3});
-
-        if (playerChoice != "") {
-            
-            if (std::shared_ptr<WoodElf> woodElf = std::dynamic_pointer_cast<WoodElf>(characterClass)) {
-                if (playerChoice == "1") {
-                    weapon = std::make_shared<ElvenLongsword>();
-                }
-                else if (playerChoice == "2") {
-                    weapon = std::make_shared<IvoryLongBowAndQuiver>();
-                }
-                else if (playerChoice == "3") {
-                    weapon = std::make_shared<ShortErnestBowAndQuiver>();
-                }
-            }
-            else if (std::shared_ptr<Dwarf> dwarf = std::dynamic_pointer_cast<Dwarf>(characterClass)) {
-                if (playerChoice == "1") {
-                    weapon = std::make_shared<DoubleBladedAxe>();
-                }
-                else if (playerChoice == "2") {
-                    weapon = std::make_shared<OrnateShortSword>();
-                }
-                else if (playerChoice == "3") {
-                    weapon = std::make_shared<SteelSplitHammer>();
-                }
-            }
-            else if (std::shared_ptr<Enchantress> enchantress = std::dynamic_pointer_cast<Enchantress>(characterClass)) {
-                if (playerChoice == "1") {
-                    weapon = std::make_shared<DualEtherealDaggers>();
-                }
-                else if (playerChoice == "2") {
-                    weapon = std::make_shared<GnarledBranchStaff>();
-                }
-                else if (playerChoice == "3") {
-                    weapon = std::make_shared<OakCarvedWand>();
-                }
-            }
-            std::string weaponName = weapon->GetName();
-            gameText.WriteLine("The " + weaponName + ", an ardent choice!"); /**/ _getch();
-            return weapon;
-        }
-        else {
-            system("cls");
-            gameText.WriteLine("Indeed you are a cheeky one aren't you? Please tell me true now, which weapon is of choice?");
-        }
-    }
-
-    return nullptr;
-}
-
-void UI::DisplayWeaponOptions(std::shared_ptr<ICharacter> characterClass) {
-    system("cls");
-
-    gameText.WriteLine("These are the only weapons fit for yee from the armoury, if it please thee, make your choice.\n");
-
-    int weaponID = 1;
-    for (std::string weapon : characterClass->GetWeaponOptions()) {
-        
-        std::stringstream ss;
-        ss << weaponID << ")    " << weapon;
-        std::string weaponOption = ss.str();
-        weaponID++;
-
-        gameText.WriteLine(weaponOption);
-    }
-
-    std::cout << "\n";
-}
-
-std::string UI::AttributeAssignment(int pointsRemaining, std::map<std::string, int> attributeJournal) {
-    system("cls");
-
-    bool selectionComplete = false;
-    while (!selectionComplete) {
-
-        if (pointsRemaining == 10) {
-            gameText.WriteLineInput("Now shall we asses thine qualities ?");
-        }
-        
-        std::stringstream ssPrompt;
-        ssPrompt << "You have " << pointsRemaining << " points left to allocate into each attribute, please assign your skill points";
-        gameText.WriteLine(ssPrompt.str());
-
-        std::stringstream ssAttributes;
-        ssAttributes << "1) Intelligence: " << attributeJournal["intellegence"] << "		2) Dexterity: " << attributeJournal["dexterity"] << "		3) Strength: " << attributeJournal["strength"] << "\n";
-        gameText.WriteLine(ssAttributes.str());
-
-        gameText.WriteLine("Which attribute would you like to assign points to ?");
-
-        // acts as a guide for correlating user selection dynamically with the attribute related
-        std::map<std::string, std::string> selectableAttributes = {
-            {"1", "intellegence"},
-            {"2", "dexterity"},
-            {"3", "strength"}
-        };
-
-        std::string playerChoice = input.PlayerChoice(std::vector<int>{ 1, 2, 3 });
-
-        if (playerChoice != "") {
-            return playerChoice;
-        }
-        else {
-            system("cls");
-            gameText.WriteLine("Please select from available attributes...");
-        }
-    }
-    
-}
-
-int UI::PointsAllocation(std::string chosenAttribute, std::map<std::string, std::string> selectableAttributes, int pointsRemaining, std::string specializedAttribute, std::map<std::string, int> attributeJournal) {
-
-    system("cls");
-
-    bool playerDeciding = true;
-    while (playerDeciding) {
-
-        std::stringstream ssPrompt; ssPrompt << "How many points would you like to spec to " << selectableAttributes[chosenAttribute] << "?\n";
-        gameText.WriteLine(ssPrompt.str());
-
-        std::string pointsToAssignStr = input.AttributePoints(pointsRemaining);
-        int pointsToAssign = std::stoi(pointsToAssignStr);
-
-        if (pointsToAssignStr != "") {
-
-            // Checking that points do not reduce the naturally occuring 4 pts for users specialized attribute (ex: dwarf has 4 base strength)
-            if (selectableAttributes[chosenAttribute] == specializedAttribute && (attributeJournal[selectableAttributes[chosenAttribute]] += pointsToAssign < 4)) {
-                
-                gameText.WriteLine("Forswear not to underestimate your natural abilities!");
-                _getch();
-
-                system("cls");
-                gameText.WriteLine("So again...");
-                std::stringstream ssPrompt;
-                ssPrompt << "You have " << pointsRemaining << " points left to allocate into each attribute, please assign your skill points";
-                gameText.WriteLine(ssPrompt.str());
-            }
-            else {
-                return pointsToAssign;
-            }
-        }
-        else {
-            gameText.WriteLine("Shan't we try to be reasonable, and stay thee within the bounds of reality?");
-            _getch();
-
-            system("cls");
-            gameText.WriteLine("So again...");
-            std::stringstream ssPrompt;
-            ssPrompt << "You have " << pointsRemaining << " points left to allocate into each attribute, please assign your skill points";
-            gameText.WriteLine(ssPrompt.str());
-
-        }
-    }
-
-    system("cls");
-    return 0;
-}
-
 
 // Map
 std::string UI::DisplayMapMenu(std::vector<std::string> dungeonRooms, int indexStop) {
@@ -346,7 +127,7 @@ void UI::DisplayTurnOrder(std::vector<std::string> creatureNames, std::string du
     return;
 }
 
-void UI::NoEnemies() {
+void UI::NoEnemy() {
     gameText.WriteLine("The shallow wispers in the room are faint and dismal, this room has had blood spilled of your hand this night."); /**/ _getch();
     gameText.WriteLine("Seems safe enough, nothing more you can gain from this hallowed hall..."); /**/ _getch();
 }
@@ -402,7 +183,7 @@ bool UI::DescribePlayerOptions(std::shared_ptr<PlayerCharacter> player) {
     return false;
 }
 
-std::shared_ptr<IEnemy> UI::GetEnemyTargetForAttack(std::shared_ptr<PlayerCharacter> player, std::vector<std::shared_ptr<ICreature>> turnOrder) {
+std::shared_ptr<Enemy> UI::GetEnemyTargetForAttack(std::shared_ptr<PlayerCharacter> player, std::vector<std::shared_ptr<ICreature>> turnOrder) {
 
     while (true) {
         system("cls");
@@ -420,11 +201,11 @@ std::shared_ptr<IEnemy> UI::GetEnemyTargetForAttack(std::shared_ptr<PlayerCharac
 
         gameText.WriteLine("You have chosen to attack! \n***Choose your target***\n");
 
-        std::map<std::string, std::shared_ptr<IEnemy>> enemyWithCounter; /**/ int counter = 1; // for display and selection ex: #) enemy name
+        std::map<std::string, std::shared_ptr<Enemy>> enemyWithCounter; /**/ int counter = 1; // for display and selection ex: #) enemy name
 
         for (const auto& creature : turnOrder) {
 
-            std::shared_ptr<IEnemy> enemy = std::dynamic_pointer_cast<IEnemy>(creature); // downcasting
+            std::shared_ptr<Enemy> enemy = std::dynamic_pointer_cast<Enemy>(creature); // downcasting
             if (enemy) { // check turn order list for enemies only to print each enemy in a dictionary along side the key of a counter so that when the player chooses which enemy to attack, it is known
 
                 gameText.WriteLine(std::to_string(counter) + ")   " + enemy->GetName());
@@ -441,7 +222,7 @@ std::shared_ptr<IEnemy> UI::GetEnemyTargetForAttack(std::shared_ptr<PlayerCharac
 
             std::shared_ptr<IWeapon> weapon = player->GetWeapon();
 
-            std::shared_ptr<IEnemy> value = selectedEnemy->second;
+            std::shared_ptr<Enemy> value = selectedEnemy->second;
 
             return value;
         }
@@ -458,7 +239,7 @@ void UI::DescribeEnemyAttack(std::string name, std::string skillName, std::strin
     gameText.WriteLineInput(name + " attacked you with " + skillName + ", " + skillDescription + " which hits for " + std::to_string(attackDmg) + " hit points!\n");
 }
 
-bool UI::DescribePlayerAttackOptions(std::shared_ptr<IEnemy> enemy, std::shared_ptr<IWeapon> weapon) {
+bool UI::DescribePlayerAttackOptions(std::shared_ptr<Enemy> enemy, std::shared_ptr<IWeapon> weapon) {
     system("cls");
 
     gameText.WriteLine(std::string("Target is in sights, choose your next move...\n\n1)  ") + weapon->GetPrimarySkillName() + "\n2)  " + weapon->GetSecondarySkillName());
@@ -511,7 +292,7 @@ void UI::HealthRemaining(int healthRemaining) {
 
 }
 
-void UI::KilledEnemy(std::shared_ptr<IEnemy> enemy) {
+void UI::KilledEnemy(std::shared_ptr<Enemy> enemy) {
     if (enemy->GetName() == "Changeling") {
 
         gameText.WriteLineInput("You have slain the evil " + enemy->GetName());
@@ -521,7 +302,7 @@ void UI::KilledEnemy(std::shared_ptr<IEnemy> enemy) {
     gameText.WriteLineInput("You have slain " + enemy->GetName());
 }
 
-void UI::SlainAllEnemies() {
+void UI::SlainAllEnemy() {
     gameText.WriteLineInput("You have slain all the scorbles that plague this room");
 }
 

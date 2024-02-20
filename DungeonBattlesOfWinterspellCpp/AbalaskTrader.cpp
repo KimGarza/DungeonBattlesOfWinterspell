@@ -33,7 +33,6 @@ void AbalaskTrader::BeginTrading(std::shared_ptr<PlayerCharacter> player) {
 
     if (abalaskUI.AbalaskTradeInquiry()) { // bool of is player trading
 
-
         while (true) {
 
             std::string buySellCancel = abalaskUI.AbalaskTradeSelectMenu(player);

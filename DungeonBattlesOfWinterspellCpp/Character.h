@@ -1,5 +1,6 @@
 #pragma once
 #include <vector>
+#include <string>
 #include "IWeapon.h"
 #include "ICreature.h"
 
@@ -28,4 +29,6 @@ public:
 	int GetArmourRating() { return armourRating; }
 	int GetEvasionRating() { return evasionRating; }
 	std::vector<std::string> GetWeaponOptions() { return weaponOptions; }
+
+	void SetHasSwiftness(bool isSwift) { hasSwiftness = isSwift; }
 };

@@ -78,13 +78,7 @@
     <ClCompile Include="DungeonBattlesOfWinterspellCpp.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ICharacter.cpp">
-      <Filter>Source Files\Actors</Filter>
-    </ClCompile>
     <ClCompile Include="PlayerCharacter.cpp">
-      <Filter>Source Files\Actors</Filter>
-    </ClCompile>
-    <ClCompile Include="IEnemy.cpp">
       <Filter>Source Files\Actors</Filter>
     </ClCompile>
     <ClCompile Include="Game.cpp">
@@ -108,16 +102,7 @@
     <ClCompile Include="GameState.h">
       <Filter>Header Files\Game</Filter>
     </ClCompile>
-    <ClCompile Include="Characters.cpp">
-      <Filter>Source Files\Actors</Filter>
-    </ClCompile>
-    <ClCompile Include="Enemies.cpp">
-      <Filter>Source Files\Actors</Filter>
-    </ClCompile>
     <ClCompile Include="Weapons.cpp">
-      <Filter>Source Files\Actors</Filter>
-    </ClCompile>
-    <ClCompile Include="ICreature.cpp">
       <Filter>Source Files\Actors</Filter>
     </ClCompile>
     <ClCompile Include="CharacterCreation.cpp">
@@ -171,6 +156,12 @@
     <ClCompile Include="Character.cpp">
       <Filter>Source Files\Actors</Filter>
     </ClCompile>
+    <ClCompile Include="CharCreatUI.cpp">
+      <Filter>Source Files\GameStates\Begin</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemy.cpp">
+      <Filter>Source Files\Actors</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -185,12 +176,6 @@
     <ClInclude Include="PlayerCharacter.h">
       <Filter>Header Files\Actors</Filter>
     </ClInclude>
-    <ClInclude Include="ICharacter.h">
-      <Filter>Header Files\Actors</Filter>
-    </ClInclude>
-    <ClInclude Include="IEnemy.h">
-      <Filter>Header Files\Actors</Filter>
-    </ClInclude>
     <ClInclude Include="IWeapon.h">
       <Filter>Header Files\Actors</Filter>
     </ClInclude>
@@ -199,12 +184,6 @@
     </ClInclude>
     <ClInclude Include="GameText.h">
       <Filter>Header Files\Helper</Filter>
-    </ClInclude>
-    <ClInclude Include="Characters.h">
-      <Filter>Header Files\Actors</Filter>
-    </ClInclude>
-    <ClInclude Include="Enemies.h">
-      <Filter>Header Files\Actors</Filter>
     </ClInclude>
     <ClInclude Include="Weapons.h">
       <Filter>Header Files\Actors</Filter>
@@ -258,6 +237,12 @@
       <Filter>Header Files\GameStates\Abalask</Filter>
     </ClInclude>
     <ClInclude Include="Character.h">
+      <Filter>Header Files\Actors</Filter>
+    </ClInclude>
+    <ClInclude Include="CharCreatUI.h">
+      <Filter>Header Files\GameStates\Begin</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy.h">
       <Filter>Header Files\Actors</Filter>
     </ClInclude>
   </ItemGroup>

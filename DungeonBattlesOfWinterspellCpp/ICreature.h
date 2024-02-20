@@ -4,9 +4,7 @@ private:
 	int name;
 
 public:
-	int GetName() {
-		return name;
-	}
+	int GetName() { return name; }
 
 	virtual ~ICreature() = default;
 };

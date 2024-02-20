@@ -40,6 +40,7 @@ std::string AbalaskUI::AbalaskTradeSelectMenu(std::shared_ptr<PlayerCharacter> p
         }
     }
 
+    return "";
 }
 
 std::shared_ptr<LootItem> AbalaskUI::DisplaySellMenu(std::shared_ptr<PlayerCharacter> player) {

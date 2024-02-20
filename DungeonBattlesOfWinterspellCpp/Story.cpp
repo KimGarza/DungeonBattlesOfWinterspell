@@ -18,8 +18,8 @@ void Story::OpeningStory() {
 		if (result == "n") {
 			system("cls");
 
-			gameText.WriteLineInput("Not but a beastly ogress in beachware I fair you, lewd cowardice! You truly detestable unworthy soul. Slither away you vile pestilance back to the magmatic forces of repentence!");
-			gameText.WriteLineInput("You do not desire to help this lowley town?! Pfsttt! Go squander in the cellars with the pigs and the ugly children.");
+			gameText.WriteLineInput("Not but a beastly ogress in beachware I fair you, lewd cowardice! You truly detestable unworthy soul.\nSlither away you vile pestilance back to the magmatic forces of repentence!");
+			gameText.WriteLineInput("You do not desire to help this lowley town?! Pfsttt!\nGo squander in the cellars with the pigs and the ugly children.");
 			exit(0);
 		}
 		else if (result == "y") {
@@ -28,7 +28,7 @@ void Story::OpeningStory() {
 			gameText.WriteLineInput("Wonderful! I shall meet you at the Iron Gates! They are NorthWest of the fortifying stone walls of Winterspell. \nPlease be weary of ice traveller.");
 			gameText.WriteLineInput("Oh! Forgive me Master, I have failed to do the customaries! \nI am Burtued, your spellbound guide! I am a great Mage of Winterspell!");
 			gameText.WriteLineInput("... Oh alright! Still learning by the dusty binds of old writings by all accounts I'm afraid.");
-			gameText.WriteLineInput("I shall provoke you with my psychomancy practices that yee shall fair more boldley with company on your hallowed journey. \nBut you can trust me not to turn you into a bobbling toad! By my troth, I can hold true to that me lord!");
+			gameText.WriteLineInput("I shall provoke you with my psychomancy practices that yee shall fair more boldley with company \non your hallowed journey. \nBut you can trust me not to turn you into a bobbling toad! By my troth, I can hold true to that me lord!");
 			gameText.WriteLineInput("Cross me heart! Hazah!");
 			return;
 		}

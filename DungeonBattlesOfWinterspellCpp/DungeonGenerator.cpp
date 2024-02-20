@@ -8,9 +8,9 @@
 #include <memory>
 #include <cstdlib>
 #include <ctime>
-#include "Enemies.h"
+#include "Enemy.h"
 #include "ItemTypes.h"
-#include "IEnemy.h"
+#include "Enemy.h"
 
 
 /// <summary>
@@ -26,7 +26,7 @@ std::vector < std::shared_ptr<DungeonRoom>> DungeonGenerator::GenerateDungeons()
 
     for (const auto& dungeon : dungeonList) {
 
-        std::vector<std::shared_ptr<IEnemy>> enemyList = GenerateEnemies(roomLevel);
+        std::vector<std::shared_ptr<Enemy>> enemyList = GenerateEnemy(roomLevel);
         std::vector<std::shared_ptr<LootItem>> loot = GenerateLoot();
 
         if (dungeon.first == "Hozwardian Keep" || dungeon.first == "Room of Offerings") { // lock these two rooms
@@ -51,17 +51,69 @@ std::vector < std::shared_ptr<DungeonRoom>> DungeonGenerator::GenerateDungeons()
 /// </summary>
 /// <param name="roomLevel"></param>
 /// <returns></returns>
-std::vector<std::shared_ptr<IEnemy>> DungeonGenerator::GenerateEnemies(int roomLevel) {
+std::vector<std::shared_ptr<Enemy>> DungeonGenerator::GenerateEnemy(int roomLevel) {
 
-    std::vector<std::shared_ptr<IEnemy>> enemies;
-    enemies.push_back(std::make_shared<Firespitter>());
-    enemies.push_back(std::make_shared<DungeonDweller>());
-    enemies.push_back(std::make_shared<Goblin>());
-    enemies.push_back(std::make_shared<HauntingSpirit>());
-    enemies.push_back(std::make_shared<Troll>());
-    enemies.push_back(std::make_shared<Skeleton>());
-    enemies.push_back(std::make_shared<UndeadWolf>());
+    std::vector<std::shared_ptr<Enemy>> enemies;
+    enemies.push_back(std::make_shared<Enemy>("Firespitter",
+        5, true, "Stealth", "Sneak through the shadows.", 2));
 
+    enemies.push_back(std::make_shared<Enemy>("Dungeon Dweller",
+        8, true, "Stealth", "Sneak through the shadows.", 4));
+
+    enemies.push_back(std::make_shared<Enemy>("Goblin",
+        5, true, "Stealth", "Sneak through the shadows.", 3));
+
+    enemies.push_back(std::make_shared<Enemy>("HauntingSpirit",
+        12, true, "Stealth", "Sneak through the shadows.", 7));
+
+    enemies.push_back(std::make_shared<Enemy>("Troll",
+        45, true, "Stealth", "Sneak through the shadows.", 19));
+
+    enemies.push_back(std::make_shared<Enemy>("Skeleton",
+        11, true, "Stealth", "Sneak through the shadows.", 5));
+
+    enemies.push_back(std::make_shared<Enemy>("Undead Wolf",
+        24, true, "Stealth", "Sneak through the shadows.", 12));
+
+    //Changeling::Changeling() {
+    //    name = "Changeling";
+    //    health = 40;
+    //    hasSwiftness = true;
+    //    skillName = "Gutting Slash";
+    //    skillDescription = "Slashes with needle like claws and a precise swipe to a foes area of most vunerabile.";
+    //    skillDamage = 14;
+    //    isDead = false;
+    //}
+
+    /*void Changeling::TakeDamage(int hitPoints) {
+        health -= hitPoints;
+        if (health <= 0) {
+            isDead = true;
+        }
+    }
+
+    int Changeling::AttackPlayer() {
+        return skillDamage;
+    }Changeling::Changeling() {
+        name = "Changeling";
+        health = 40;
+        hasSwiftness = true;
+        skillName = "Gutting Slash";
+        skillDescription = "Slashes with needle like claws and a precise swipe to a foes area of most vunerabile.";
+        skillDamage = 14;
+        isDead = false;
+    }
+
+    void Changeling::TakeDamage(int hitPoints) {
+        health -= hitPoints;
+        if (health <= 0) {
+            isDead = true;
+        }
+    }
+
+    int Changeling::AttackPlayer() {
+        return skillDamage;
+    }*/
     // Gets random number between the min/max which are decided based upon what the room levels are. Represents how many enemies can spawn per room. (Maximum & minimum values inclusive).
     std::random_device rand; /**/ std::mt19937 gen(rand()); /**/ int min_value = 0; /**/ int max_value = 0;
 
@@ -83,7 +135,7 @@ std::vector<std::shared_ptr<IEnemy>> DungeonGenerator::GenerateEnemies(int roomL
     int random_number = distribution(gen); // random_number is how many enemies can spawn per room
 
 
-    std::vector<std::shared_ptr<IEnemy>> enemiesInRoom; /**/ int randomIndex = 0;
+    std::vector<std::shared_ptr<Enemy>> enemiesInRoom; /**/ int randomIndex = 0;
 
     for (int i = 0; i < random_number; i++) {
 
@@ -100,7 +152,7 @@ std::vector<std::shared_ptr<IEnemy>> DungeonGenerator::GenerateEnemies(int roomL
         //    randomIndex = std::rand() % enemies.size();
         //}
 
-        std::shared_ptr<IEnemy> randomEnemy = enemies[randomIndex];
+        std::shared_ptr<Enemy> randomEnemy = enemies[randomIndex];
 
         enemiesInRoom.push_back(randomEnemy);
     }

@@ -25,6 +25,6 @@ private:
 
 public:
     std::vector < std::shared_ptr<DungeonRoom>> GenerateDungeons();
-    std::vector<std::shared_ptr<IEnemy>> GenerateEnemies(int roomLevel);
+    std::vector<std::shared_ptr<Enemy>> GenerateEnemy(int roomLevel);
     std::vector<std::shared_ptr<LootItem>> GenerateLoot();
 };
