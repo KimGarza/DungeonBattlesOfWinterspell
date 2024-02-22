@@ -1,10 +1,10 @@
 #pragma once
 class ICreature {
 private:
-	int name;
+	int name_;
 
 public:
-	int GetName() { return name; }
+	int GetName() { return name_; }
 
 	virtual ~ICreature() = default;
 };

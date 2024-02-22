@@ -3,14 +3,16 @@
 LootItem::LootItem(std::string name, 
 	ItemType itemType,
 	std::string description, 
-	int worthInGold) : name(name), itemType(itemType), description(description), info(""), worthInGold(worthInGold), armourRating(0) {}
+	int worthInGold) : name_(name), itemType_(itemType), description_(description), info_(""), 
+	worthInGold_(worthInGold) {}
 
 LootItem::LootItem(std::string name,
 	ItemType itemType,
 	std::string description,
 	int worthInGold,
 	int armourRating,
-	int evasionRating) : name(name), itemType(itemType), description(description), info(""), worthInGold(worthInGold), armourRating(armourRating), evasionRating(evasionRating) {}
+	int evasionRating) : name_(name), itemType_(itemType), description_(description), info_(""),
+	worthInGold_(worthInGold), armourRating_(0), evasionRating_(evasionRating) {}
 
 LootItem::LootItem(std::string name,
 	ItemType itemType,
@@ -23,19 +25,21 @@ LootItem::LootItem(std::string name,
 	int addedInt,
 	int spellDamage,
 	int physDamage,
-	int spellResistance) : name(name), itemType(itemType), description(description), info(""), worthInGold(worthInGold), armourRating(armourRating), evasionRating(evasionRating), 
-	addedDex(addedDex), addedStr(addedStr), addedInt(addedInt), spellDamage(spellDamage), physDamage(physDamage), spellResistance(spellResistance) {}
+	int spellResistance) : name_(name), itemType_(itemType), description_(description), info_(""),
+	worthInGold_(worthInGold), armourRating_(0), evasionRating_(evasionRating),
+	addedDex_(addedDex), addedStr_(addedStr), addedInt_(addedInt), spellDamage_(spellDamage), 
+	physDamage_(physDamage), spellResistance_(spellResistance) {}
 
 void LootItem::SetArmourRating(int armourAdded) {
-	armourRating += armourAdded;
+	armourRating_ += armourAdded;
 }
 
 void LootItem::SetInfo() {
-	if (info == "") {
-		info = "(Equipt)";
+	if (info_ == "") {
+		info_ = "(Equipt)";
 	}
 	else {
-		info = "";
+		info_ = "";
 	}
 }
 

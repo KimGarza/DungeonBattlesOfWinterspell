@@ -92,8 +92,9 @@ void Battle::CommenceBattle(std::shared_ptr<PlayerCharacter> playerCharacter) {
 
 void Battle::ChangelingFight(std::shared_ptr<PlayerCharacter> playerCharacter) {
 
+
     std::shared_ptr<Enemy> newChangeling = std::make_shared<Enemy>("Changeling",
-        40, true, "Gutting Slash", 
+        40, true, 14, 65, 13, "Gutting Slash", 
         "Slashes with needle like claws and a precise swipe to a foes area of most vunerabile.", 14);
 
     std::shared_ptr<ICreature> player = playerCharacter;

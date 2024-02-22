@@ -13,6 +13,7 @@
 #include <cctype>
 #include <map>
 
+
 // Map
 std::string UI::DisplayMapMenu(std::vector<std::string> dungeonRooms, int indexStop) {
 
@@ -20,7 +21,7 @@ std::string UI::DisplayMapMenu(std::vector<std::string> dungeonRooms, int indexS
         gameText.WriteLine("Map of Winterspell's Dungeon Cells");
         std::cout << " ____________________________________\n\n";
 
-        std::vector<std::pair<int, std::string>> selectableDungeons; /**/ int roomCount;
+        std::vector<std::pair<int, std::string>> selectableDungeons;
 
         for (int i = 0; i < dungeonRooms.size(); i++) {
             if (i == 4 || i == 8) {
@@ -104,9 +105,6 @@ void UI::DescribeDungeonRoom(std::string description) {
     _getch();
     return;
 }
-
-
-
 
 void UI::DisplayTurnOrder(std::vector<std::string> creatureNames, std::string dungeonRoomName) {
 
@@ -400,7 +398,6 @@ void UI::CannotUseItem() {
     gameText.WriteLineInput("Not sure what you can use that right now.");
 }
 
-// maybe need to scope some out to inventory
 void UI::ItemMenu(std::shared_ptr<LootItem> item, std::shared_ptr<PlayerCharacter> playerCharacter) {
 
     while (true) {

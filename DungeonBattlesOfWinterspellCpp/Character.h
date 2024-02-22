@@ -6,29 +6,22 @@
 
 class Character : ICreature {
 private:
-	std::string name;
-	int health;
-	int intelligence;
-	int dexterity;
-	int strength;
-	bool hasSwiftness;
-	int armourRating;
-	int evasionRating;
-	std::vector<std::string> weaponOptions;
+	std::string name_;
+	int health_;
+	int intelligence_;
+	int dexterity_;
+	int strength_;
+	std::vector<std::string> weaponOptions_;
 
 public:
 	Character(std::string name, int health, int intelligence, int dexterity,
-		int strength, int armourRating, int evasionRating, std::vector<std::string> weaponOptions);
+		int strength, std::vector<std::string> weaponOptions);
 
-	std::string GetName() { return name; }
-	int GetHealth() { return health; }
-	int GetIntelligence() { return intelligence; }
-	int GetDexterity() { return dexterity; }
-	int GetStrength() { return strength; }
-	bool GetHasSwiftness() { return hasSwiftness; }
-	int GetArmourRating() { return armourRating; }
-	int GetEvasionRating() { return evasionRating; }
-	std::vector<std::string> GetWeaponOptions() { return weaponOptions; }
+	std::string GetName() { return name_; }
+	int GetHealth() { return health_; }
+	int GetIntelligence() { return intelligence_; }
+	int GetDexterity() { return dexterity_; }
+	int GetStrength() { return strength_; }
+	std::vector<std::string> GetWeaponOptions() { return weaponOptions_; }
 
-	void SetHasSwiftness(bool isSwift) { hasSwiftness = isSwift; }
 };

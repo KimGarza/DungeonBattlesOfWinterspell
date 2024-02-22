@@ -161,7 +161,6 @@
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="InputManager.cpp" />
     <ClCompile Include="Inventory.cpp" />
-    <ClCompile Include="InvItem.cpp" />
     <ClCompile Include="LootItem.cpp" />
     <ClCompile Include="LootRoom.cpp" />
     <ClCompile Include="Map.cpp" />
@@ -189,7 +188,6 @@
     <ClInclude Include="Input.h" />
     <ClInclude Include="InputManager.h" />
     <ClInclude Include="Inventory.h" />
-    <ClInclude Include="InvItem.h" />
     <ClInclude Include="ItemTypes.h" />
     <ClInclude Include="LootItem.h" />
     <ClInclude Include="LootRoom.h" />

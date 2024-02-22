@@ -19,43 +19,136 @@ C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.3221
           [
               _Ty=std::string
           ]
-G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Abalask.cpp(25,106): message : see reference to function template instantiation 'std::shared_ptr<LootItem> std::make_shared<LootItem,std::string,ItemType,std::string,double,int,int,int,int,int,int,int,int>(std::string &&,ItemType &&,std::string &&,double &&,int &&,int &&,int &&,int &&,int &&,int &&,int &&,int &&)' being compiled
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Abalask.cpp(24,106): message : see reference to function template instantiation 'std::shared_ptr<LootItem> std::make_shared<LootItem,std::string,ItemType,std::string,double,int,int,int,int,int,int,int,int>(std::string &&,ItemType &&,std::string &&,double &&,int &&,int &&,int &&,int &&,int &&,int &&,int &&,int &&)' being compiled
   AbalaskTrader.cpp
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\xutility(275,77): warning C4244: 'argument': conversion from '_Ty' to 'int', possible loss of data
-          with
-          [
-              _Ty=double
-          ]
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\memory(1983): message : see reference to function template instantiation 'void std::_Construct_in_place<_Ty,const char(&)[11],ItemType,const char(&)[15],double,int,int>(_Ty &,const char (&)[11],ItemType &&,const char (&)[15],double &&,int &&,int &&) noexcept(false)' being compiled
-          with
-          [
-              _Ty=LootItem
-          ]
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\memory(2663): message : see reference to function template instantiation 'std::_Ref_count_obj2<LootItem>::_Ref_count_obj2<const char(&)[11],_Ty,const char(&)[15],double,int,int>(const char (&)[11],_Ty &&,const char (&)[15],double &&,int &&,int &&)' being compiled
-          with
-          [
-              _Ty=ItemType
-          ]
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\memory(2664,20): message : see reference to function template instantiation 'std::_Ref_count_obj2<LootItem>::_Ref_count_obj2<const char(&)[11],_Ty,const char(&)[15],double,int,int>(const char (&)[11],_Ty &&,const char (&)[15],double &&,int &&,int &&)' being compiled
-          with
-          [
-              _Ty=ItemType
-          ]
-G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\AbalaskTrader.cpp(18,107): message : see reference to function template instantiation 'std::shared_ptr<LootItem> std::make_shared<LootItem,const char(&)[11],ItemType,const char(&)[15],double,int,int>(const char (&)[11],ItemType &&,const char (&)[15],double &&,int &&,int &&)' being compiled
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.h(25,45): error C2065: 'PlayerCharacter': undeclared identifier
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.h(25,34): error C2923: 'std::shared_ptr': 'PlayerCharacter' is not a valid template type argument for parameter '_Ty'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.h(25,45): message : see declaration of 'PlayerCharacter'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.h(28,65): error C2065: 'PlayerCharacter': undeclared identifier
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.h(28,54): error C2923: 'std::shared_ptr': 'PlayerCharacter' is not a valid template type argument for parameter '_Ty'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.h(28,65): message : see declaration of 'PlayerCharacter'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.h(37,64): error C2065: 'PlayerCharacter': undeclared identifier
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.h(37,53): error C2923: 'std::shared_ptr': 'PlayerCharacter' is not a valid template type argument for parameter '_Ty'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.h(37,64): message : see declaration of 'PlayerCharacter'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.h(40,41): error C2065: 'PlayerCharacter': undeclared identifier
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.h(40,30): error C2923: 'std::shared_ptr': 'PlayerCharacter' is not a valid template type argument for parameter '_Ty'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.h(40,41): message : see declaration of 'PlayerCharacter'
   AbalaskUI.cpp
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.h(25,45): error C2065: 'PlayerCharacter': undeclared identifier
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.h(25,34): error C2923: 'std::shared_ptr': 'PlayerCharacter' is not a valid template type argument for parameter '_Ty'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.h(25,45): message : see declaration of 'PlayerCharacter'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.h(28,65): error C2065: 'PlayerCharacter': undeclared identifier
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.h(28,54): error C2923: 'std::shared_ptr': 'PlayerCharacter' is not a valid template type argument for parameter '_Ty'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.h(28,65): message : see declaration of 'PlayerCharacter'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.h(37,64): error C2065: 'PlayerCharacter': undeclared identifier
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.h(37,53): error C2923: 'std::shared_ptr': 'PlayerCharacter' is not a valid template type argument for parameter '_Ty'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.h(37,64): message : see declaration of 'PlayerCharacter'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.h(40,41): error C2065: 'PlayerCharacter': undeclared identifier
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.h(40,30): error C2923: 'std::shared_ptr': 'PlayerCharacter' is not a valid template type argument for parameter '_Ty'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.h(40,41): message : see declaration of 'PlayerCharacter'
   AbalaskUI.h
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.h(25,45): error C2065: 'PlayerCharacter': undeclared identifier
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.h(25,34): error C2923: 'std::shared_ptr': 'PlayerCharacter' is not a valid template type argument for parameter '_Ty'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.h(25,45): message : see declaration of 'PlayerCharacter'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.h(28,65): error C2065: 'PlayerCharacter': undeclared identifier
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.h(28,54): error C2923: 'std::shared_ptr': 'PlayerCharacter' is not a valid template type argument for parameter '_Ty'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.h(28,65): message : see declaration of 'PlayerCharacter'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.h(37,64): error C2065: 'PlayerCharacter': undeclared identifier
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.h(37,53): error C2923: 'std::shared_ptr': 'PlayerCharacter' is not a valid template type argument for parameter '_Ty'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.h(37,64): message : see declaration of 'PlayerCharacter'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.h(40,41): error C2065: 'PlayerCharacter': undeclared identifier
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.h(40,30): error C2923: 'std::shared_ptr': 'PlayerCharacter' is not a valid template type argument for parameter '_Ty'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.h(40,41): message : see declaration of 'PlayerCharacter'
+  Battle.cpp
   BeginState.cpp
-  CharCreatUI.cpp
   Character.cpp
+  CharCreatUI.cpp
   Enemy.cpp
+  ExploreDungeon.cpp
+  CharacterCreation.cpp
+  DungeonRoom.cpp
+  DungeonGenerator.cpp
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\DungeonGenerator.cpp(104,52): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\DungeonGenerator.cpp(153,70): warning C4267: 'argument': conversion from 'size_t' to '_Ty', possible loss of data
+          with
+          [
+              _Ty=int
+          ]
+  Game.cpp
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Game.h(12,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  GameState.h
+  GameText.cpp
   Input.cpp
+  InputManager.cpp
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\InputManager.cpp(17,39): warning C4101: 'e': unreferenced local variable
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\InputManager.cpp(37,38): warning C4101: 'e': unreferenced local variable
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\InputManager.cpp(61,38): warning C4101: 'e': unreferenced local variable
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\InputManager.cpp(82,38): warning C4101: 'e': unreferenced local variable
   Inventory.cpp
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.h(25,45): error C2065: 'PlayerCharacter': undeclared identifier
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.h(25,34): error C2923: 'std::shared_ptr': 'PlayerCharacter' is not a valid template type argument for parameter '_Ty'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.h(25,45): message : see declaration of 'PlayerCharacter'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.h(28,65): error C2065: 'PlayerCharacter': undeclared identifier
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.h(28,54): error C2923: 'std::shared_ptr': 'PlayerCharacter' is not a valid template type argument for parameter '_Ty'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.h(28,65): message : see declaration of 'PlayerCharacter'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.h(37,64): error C2065: 'PlayerCharacter': undeclared identifier
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.h(37,53): error C2923: 'std::shared_ptr': 'PlayerCharacter' is not a valid template type argument for parameter '_Ty'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.h(37,64): message : see declaration of 'PlayerCharacter'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.h(40,41): error C2065: 'PlayerCharacter': undeclared identifier
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.h(40,30): error C2923: 'std::shared_ptr': 'PlayerCharacter' is not a valid template type argument for parameter '_Ty'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.h(40,41): message : see declaration of 'PlayerCharacter'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Inventory.cpp(9,5): error C2664: 'void UI::ItemMenu(std::shared_ptr<LootItem>,std::shared_ptr)': cannot convert argument 2 from 'std::shared_ptr<PlayerCharacter>' to 'std::shared_ptr'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Inventory.cpp(9,29): message : No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.h(37,7): message : see declaration of 'UI::ItemMenu'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Inventory.cpp(9,5): message : while trying to match the argument list '(std::shared_ptr<LootItem>, std::shared_ptr<PlayerCharacter>)'
   LootItem.cpp
-G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\LootItem.cpp(27,127): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\LootItem.cpp(31,43): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+  Generating Code...
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\InputManager.cpp(22): warning C4715: 'InputManager::ValidatePlayerInput': not all control paths return a value
+  Compiling...
   LootRoom.cpp
+  Map.cpp
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Map.cpp(24,57): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\xutility(268): warning C4267: 'initializing': conversion from 'size_t' to '_Ty', possible loss of data
+          with
+          [
+              _Ty=int
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\memory(1983): message : see reference to function template instantiation 'void std::_Construct_in_place<_Ty,unsigned __int64>(_Ty &,unsigned __int64 &&) noexcept' being compiled
+          with
+          [
+              _Ty=int
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\memory(2663): message : see reference to function template instantiation 'std::_Ref_count_obj2<int>::_Ref_count_obj2<_Ty>(_Ty &&)' being compiled
+          with
+          [
+              _Ty=unsigned __int64
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\memory(2664,20): message : see reference to function template instantiation 'std::_Ref_count_obj2<int>::_Ref_count_obj2<_Ty>(_Ty &&)' being compiled
+          with
+          [
+              _Ty=unsigned __int64
+          ]
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Map.cpp(7,153): message : see reference to function template instantiation 'std::shared_ptr<int> std::make_shared<int,unsigned __int64>(unsigned __int64 &&)' being compiled
+  MusicPlayer.cpp
+  PlayerCharacter.cpp
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.h(25,45): error C2065: 'PlayerCharacter': undeclared identifier
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.h(25,34): error C2923: 'std::shared_ptr': 'PlayerCharacter' is not a valid template type argument for parameter '_Ty'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.h(25,45): message : see declaration of 'PlayerCharacter'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.h(28,65): error C2065: 'PlayerCharacter': undeclared identifier
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.h(28,54): error C2923: 'std::shared_ptr': 'PlayerCharacter' is not a valid template type argument for parameter '_Ty'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.h(28,65): message : see declaration of 'PlayerCharacter'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.h(37,64): error C2065: 'PlayerCharacter': undeclared identifier
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.h(37,53): error C2923: 'std::shared_ptr': 'PlayerCharacter' is not a valid template type argument for parameter '_Ty'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.h(37,64): message : see declaration of 'PlayerCharacter'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.h(40,41): error C2065: 'PlayerCharacter': undeclared identifier
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.h(40,30): error C2923: 'std::shared_ptr': 'PlayerCharacter' is not a valid template type argument for parameter '_Ty'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.h(40,41): message : see declaration of 'PlayerCharacter'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\PlayerCharacter.cpp(28,26): warning C4244: '-=': conversion from 'float' to 'int', possible loss of data
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\PlayerCharacter.cpp(146,47): warning C4244: '+=': conversion from 'float' to 'int', possible loss of data
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\PlayerCharacter.cpp(159,23): warning C4244: 'return': conversion from 'int' to 'float', possible loss of data
   Story.cpp
+  UI.cpp
   Weapon.cpp
   Generating Code...
-  LINK : G:\repos\DungeonBattlesOfWinterspellCpp\x64\Debug\DungeonBattlesOfWinterspellCpp.exe not found or not built by the last incremental link; performing full link
-x64\Debug\AbalaskUI.obj : warning LNK4042: object specified more than once; extras ignored
-  DungeonBattlesOfWinterspellCpp.vcxproj -> G:\repos\DungeonBattlesOfWinterspellCpp\x64\Debug\DungeonBattlesOfWinterspellCpp.exe
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Map.cpp(35): warning C4715: 'Map::RevealMapMenu': not all control paths return a value

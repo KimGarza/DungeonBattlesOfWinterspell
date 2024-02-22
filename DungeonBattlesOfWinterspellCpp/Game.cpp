@@ -4,7 +4,6 @@
 #include <iostream>
 #include "Game.h"
 #include "GameState.h"
-#include "Battle.h"
 #include "LootRoom.h"
 #include "CharacterCreation.h"
 #include "DungeonGenerator.h"
@@ -18,107 +17,93 @@
 #include "ExploreDungeon.h"
 
 
-/// <summary>
-/// This is the center of the spider's web. Game is the one stop shop everything flows in and out of.
-/// It starts with begin, and each game state passes the current game state to the next required task.
-/// All game state related functions live outside of the Game class but are invoked here so it is easy to identify the
-/// exact string of events and triggers of other events.
-/// Considering other ways to break it out, but due to the large program and local filtering, not sure if readability will be sacrificed for 
-/// the sake of abstraction to deeper and deeper levels.
-/// Additionally breaking it out would cause for the need to constantly be sending back and forth data between all functions, (of which there are many),
-/// and to the Game class so other functions lined up can recieve them. Even if pointers are being passed instead which is exclusively how the project is setup,
-/// it's okay but will get super messay and interconnected. Still considering a better approach and game coding patterns! :)
-/// 
-/// Implement state machine here
-/// 
-/// </summary>
+// Set's default state to Begin at start of game.
 Game::Game() {
-	currentState = GameState::Begin;
+	currentState_ = GameState::Begin;
 }
 
-void Game::CheckGameState() {
-	switch (currentState) {
 
-	case GameState::Begin: { 
-		Begin();
-		ChangeGameState(GameState::Map);
+/// <summary>
+/// Cycles on a game loop to execute current state tasks until end of game where it runs only once more.
+/// </summary>
+void Game::StateMachineCycler() {
 
-		break;
-	}
-	case GameState::Map: {
-		currentRoom = map->RevealMapMenu();
-		ChangeGameState(GameState::Explore);
+	while (true) {
 
-		break;
-	}
-	case GameState::Explore: {
-		Explore();
+		if (currentState_ == GameState::EndGame) {
 
-		break;
-	}
-	case GameState::Battle: {
-		ChangeGameState(GameState::Loot);
+			CheckGameState();
+			return;
+		}
 
-		break;
-	}
-	case GameState::BattleChangeling: {
-		Battle battle;
-		battle.ChangelingFight(playerCharacter);
-
-		break;
-	}
-	case GameState::AbalaskTrader: {
-		Trading();
-
-		break;
-	}
-	case GameState::Loot: {
-		Loot();
-
-		break;
-	}
-	case GameState::UpdateMap: {
-		UpdateMap();
-
-		break;
-	}
-	case GameState::EndGame: {
-		std::cout << "Congrats on finishing the game!";
-		exit(0);
-
-		break;
-	}
-	default:
-		currentState = GameState::None;
-		
-		break;
+		CheckGameState();
 	}
 }
 
 void Game::ChangeGameState(GameState newState) {
-	currentState = newState;
+	currentState_ = newState;
 	CheckGameState();
 }
 
-// remove all memory after building and returning
+
+/// <summary>
+/// Game State Machine - the switching of game states to perform the current state's actions, then returns to the cycler to repeat until game ends.
+/// </summary>
+void Game::CheckGameState() {
+	switch (currentState_) {
+
+	case GameState::Begin: { 
+		// each state is a class from IState?
+		// returns current state and sets that value upon return here.
+
+		Begin();
+
+		currentState_ = GameState::Map;
+		return;
+	}
+	case GameState::Map: {
+		currentRoom = map->RevealMapMenu();
+
+		currentState_ = GameState::Explore;
+		return;
+	}
+	case GameState::Explore: {
+		Explore();
+
+		currentState_ = GameState::Explore;
+		return;
+	}
+	case GameState::Battle: {
+		Battling();
+
+		currentState_ = GameState::Loot;
+		return;
+	}
+	case GameState::BattleChangeling: {
+		Battle battle; /**/ battle.ChangelingFight(playerCharacter);
+		return;
+	}
+	case GameState::AbalaskTrader: {
+		Trading();
+		return;
+	}
+	case GameState::Loot: {
+		Loot();
+		return;
+	}
+	case GameState::UpdateMap: {
+		UpdateMap();
+		return;
+	}
+	case GameState::EndGame: {
+		std::cout << "You've beat the game!!!";
+		exit(0);
+		return;
+	}
+	}
+}
 
 void Game::Begin() {
-	//sf::RenderWindow window(sf::VideoMode(1200, 1000), "My Game", sf::Style::Default);
-		//window.setFramerateLimit(60); // Limit the framerate to 60 FPS
-
-		//sf::Texture texture;
-		//if (!texture.loadFromFile("../images/brickwall.png")) {
-		//	// Handle error here
-		//	// For example, you can print an error message or throw an exception
-		//}
-
-		//sf::Sprite sprite;
-		//sprite.setTexture(texture);
-
-		//// Inside the game loop
-		//window.clear();
-		//window.draw(sprite);
-		//window.display();
 
 	music.PlayMusic(L"slow-2021-08-17_-_8_Bit_Nostalgia_-_www.FesliyanStudios.com.wav");
 
@@ -130,6 +115,23 @@ void Game::Begin() {
 	map->PopulateDungeonMap();
 
 	story.MapIntro();
+
+	//sf::RenderWindow window(sf::VideoMode(1200, 1000), "My Game", sf::Style::Default);
+	//window.setFramerateLimit(60); // Limit the framerate to 60 FPS
+
+	//sf::Texture texture;
+	//if (!texture.loadFromFile("../images/brickwall.png")) {
+	//	// Handle error here
+	//	// For example, you can print an error message or throw an exception
+	//}
+
+	//sf::Sprite sprite;
+	//sprite.setTexture(texture);
+
+	//// Inside the game loop
+	//window.clear();
+	//window.draw(sprite);
+	//window.display();
 
 }
 
@@ -144,12 +146,14 @@ void Game::Explore() {
 
 		music.PlayMusic(L"8bit-chikadou.wav");
 		if (exploreDungeon.ChangelingEvent()) {
-			ChangeGameState(GameState::BattleChangeling);
+
+			currentState_ = GameState::BattleChangeling;
 		}
 	}
 
 	else if (currentRoom->GetName() == "Room of Moonlight" && currentRoom->GetTimesExplored() > 0) {
-		ChangeGameState(GameState::AbalaskTrader);
+
+		currentState_ = GameState::AbalaskTrader;
 	}
 	// consider else or will it store on the stack to assume return to this method
 	exploreDungeon.EnterDungeonRoom();
@@ -157,22 +161,23 @@ void Game::Explore() {
 	if (!currentRoom->GetCompleted() && !currentRoom->GetIsLocked()) {
 		std::vector<std::shared_ptr<ICreature>> turnOrder = exploreDungeon.GenerateTurnOrder();
 
-		ChangeGameState(GameState::Battle);
+		currentState_ = GameState::Battle;
 	}
 	else if (currentRoom->GetIsLocked()) {
 
 		if (exploreDungeon.CheckForKey()) {
 
 			std::vector<std::shared_ptr<ICreature>> turnOrder = exploreDungeon.GenerateTurnOrder();
-			ChangeGameState(GameState::Battle);
+
+			currentState_ = GameState::Battle;
 		}
 		else {
-			ChangeGameState(GameState::Map);
+			currentState_ = GameState::Map;
 		}
 	}
 	else {
 
-		ChangeGameState(GameState::Loot);
+		currentState_ = GameState::Loot;
 	}
 }
 
@@ -182,7 +187,6 @@ void Game::Battling() {
 	Battle battle(currentRoom->GetTurnOrder());
 
 	battle.RevealTurnOrder(currentRoom->GetTurnOrder(), currentRoom->GetName());
-
 	battle.CommenceBattle(playerCharacter);
 }
 

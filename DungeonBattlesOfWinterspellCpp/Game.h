@@ -1,5 +1,7 @@
 #pragma once
 #include "GameState.h"
+#include "Battle.h"
+
 #include "Story.h"
 #include "PlayerCharacter.h"
 #include "CharacterCreation.h"
@@ -11,7 +13,8 @@
 
 class Game {
 private:
-	GameState currentState;
+	GameState currentState_;
+
 	std::shared_ptr<PlayerCharacter> playerCharacter;
 	std::shared_ptr<Map> map;
 	Story story;
@@ -27,6 +30,12 @@ public:
 	Game();
 
 	void CheckGameState();
+	void StateMachineCycler();
+
+
+	/// <summary>
+	/// ///
+	/// </summary>
 	void ChangeConsoleDesign();
 	void ChangeGameState(GameState newState);
 

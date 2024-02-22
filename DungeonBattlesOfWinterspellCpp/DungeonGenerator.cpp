@@ -55,65 +55,26 @@ std::vector<std::shared_ptr<Enemy>> DungeonGenerator::GenerateEnemy(int roomLeve
 
     std::vector<std::shared_ptr<Enemy>> enemies;
     enemies.push_back(std::make_shared<Enemy>("Firespitter",
-        5, true, "Stealth", "Sneak through the shadows.", 2));
+        5, true, 18, 2, 26, "Stealth", "Sneak through the shadows.", 2));
 
     enemies.push_back(std::make_shared<Enemy>("Dungeon Dweller",
-        8, true, "Stealth", "Sneak through the shadows.", 4));
+        8, true, 7, 26, 6, "Stealth", "Sneak through the shadows.", 4));
 
     enemies.push_back(std::make_shared<Enemy>("Goblin",
-        5, true, "Stealth", "Sneak through the shadows.", 3));
+        5, true, 5, 1, 0, "Stealth", "Sneak through the shadows.", 3));
 
     enemies.push_back(std::make_shared<Enemy>("HauntingSpirit",
-        12, true, "Stealth", "Sneak through the shadows.", 7));
+        12, true, 8, 0, 30, "Stealth", "Sneak through the shadows.", 7));
 
     enemies.push_back(std::make_shared<Enemy>("Troll",
-        45, true, "Stealth", "Sneak through the shadows.", 19));
+        45, true, 9, 105, 0, "Stealth", "Sneak through the shadows.", 19));
 
     enemies.push_back(std::make_shared<Enemy>("Skeleton",
-        11, true, "Stealth", "Sneak through the shadows.", 5));
+        11, true, 14, 4, 1, "Stealth", "Sneak through the shadows.", 5));
 
     enemies.push_back(std::make_shared<Enemy>("Undead Wolf",
-        24, true, "Stealth", "Sneak through the shadows.", 12));
+        24, true, 35, 20, 18, "Stealth", "Sneak through the shadows.", 12));
 
-    //Changeling::Changeling() {
-    //    name = "Changeling";
-    //    health = 40;
-    //    hasSwiftness = true;
-    //    skillName = "Gutting Slash";
-    //    skillDescription = "Slashes with needle like claws and a precise swipe to a foes area of most vunerabile.";
-    //    skillDamage = 14;
-    //    isDead = false;
-    //}
-
-    /*void Changeling::TakeDamage(int hitPoints) {
-        health -= hitPoints;
-        if (health <= 0) {
-            isDead = true;
-        }
-    }
-
-    int Changeling::AttackPlayer() {
-        return skillDamage;
-    }Changeling::Changeling() {
-        name = "Changeling";
-        health = 40;
-        hasSwiftness = true;
-        skillName = "Gutting Slash";
-        skillDescription = "Slashes with needle like claws and a precise swipe to a foes area of most vunerabile.";
-        skillDamage = 14;
-        isDead = false;
-    }
-
-    void Changeling::TakeDamage(int hitPoints) {
-        health -= hitPoints;
-        if (health <= 0) {
-            isDead = true;
-        }
-    }
-
-    int Changeling::AttackPlayer() {
-        return skillDamage;
-    }*/
     // Gets random number between the min/max which are decided based upon what the room levels are. Represents how many enemies can spawn per room. (Maximum & minimum values inclusive).
     std::random_device rand; /**/ std::mt19937 gen(rand()); /**/ int min_value = 0; /**/ int max_value = 0;
 

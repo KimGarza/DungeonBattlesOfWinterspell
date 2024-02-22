@@ -43,7 +43,7 @@ void CharacterCreation::ChooseClass() {
 	if (playerChoice == "1") {
 
 		std::shared_ptr<Character> woodElf = std::make_shared<Character>(
-			"Wood Elf", 400, 0, 4, 0, 0, 10,
+			"Wood Elf", 400, 0, 4, 0,
 			std::vector<std::string>{ "Elven Longsword", "Ivory Longbow and Quiver", "Short Ernest Bow and Quiver" });
 
 		characterInGrogpress = woodElf;
@@ -53,7 +53,7 @@ void CharacterCreation::ChooseClass() {
 	else if (playerChoice == "2") {
 
 		std::shared_ptr<Character> dwarf = std::make_shared<Character>(
-			"Dwarf", 650, 0, 0, 4, 25, 0,
+			"Dwarf", 650, 0, 0, 4,
 			std::vector<std::string>{ "Double Bladed Axe", "Ornate Short Sword", "Steel Split Hammer"});
 
 		characterInGrogpress = dwarf;
@@ -63,7 +63,7 @@ void CharacterCreation::ChooseClass() {
 	else if (playerChoice == "3") {
 
 		std::shared_ptr<Character> enchantress = std::make_shared<Character>(
-			"Enchantress", 350, 4, 0, 0, 2, 8,
+			"Enchantress", 350, 4, 0, 0,
 			std::vector<std::string>{ "Dual Ethereal Daggers", "Gnarled Branch Staff", "Oak Carved Wand" });
 
 		characterInGrogpress = enchantress;
@@ -196,8 +196,6 @@ std::shared_ptr<PlayerCharacter> CharacterCreation::GeneratePlayerCharacter() {
 		attributeJournal["intellegence"], attributeJournal["dexterity"], attributeJournal["strength"],
 		characterInGrogpress->GetHealth(),
 		isSwift,
-		characterInGrogpress->GetArmourRating(),
-		characterInGrogpress->GetEvasionRating(),
 		weapon
 	);
 }

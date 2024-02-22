@@ -1,6 +1,4 @@
 #include "PlayerCharacter.h"
-#include "UI.h"
-#include <memory>
 
 PlayerCharacter::PlayerCharacter() {}
 
@@ -10,35 +8,32 @@ PlayerCharacter::PlayerCharacter(
 	int inIntelligence,
 	int inDexterity,
 	int inStrength,
-	int maxHealth,
-	bool hasSwiftness,
-	int armourRating,
-	int evasionRating,
+	int maxHealth_,
+	bool hasSwiftness_,
 	std::shared_ptr<Weapon> inWeapon
-) : name(inName), health(inHealth), intelligence(inIntelligence), dexterity(inDexterity), strength(inStrength), maxHealth(maxHealth),
-hasSwiftness(hasSwiftness), armourRating(armourRating), evasionRating(evasionRating), weapon(inWeapon), xp(0), level(1), isDead(false), healthPotions(2), gold(0) {}
+) : name_(inName), health_(inHealth), intelligence_(inIntelligence), dexterity_(inDexterity), strength_(inStrength), maxHealth_(maxHealth_),
+hasSwiftness_(hasSwiftness_), armourRating_(0), evasionRating_(0), weapon_(inWeapon), xp_(0), level_(1), isDead_(false), healthPotions_(2), gold_(0) {}
 
 // don't remember writing this but perhaps related to default values somewhere??
-PlayerCharacter::PlayerCharacter(const PlayerCharacter& other) : name(other.name), health(other.health), intelligence(other.intelligence),
-dexterity(other.dexterity), strength(other.strength), weapon(other.weapon),
-xp(0), level(1), hasSwiftness(other.hasSwiftness), armourRating(armourRating), evasionRating(evasionRating), isDead(false) {}
-	// Copy or clone other members if needed
+PlayerCharacter::PlayerCharacter(const PlayerCharacter& other) : name_(other.name_), health_(other.health_), intelligence_(other.intelligence_),
+dexterity_(other.dexterity_), strength_(other.strength_), weapon_(other.weapon_),
+xp_(0), level_(1), hasSwiftness_(other.hasSwiftness_), armourRating_(0), evasionRating_(0), isDead_(false) {}
+// copy or clone other members if needed
 
 bool PlayerCharacter::TakeDamage(int damageTaken, int enemyAccuracy) {
 
 	bool evades = CheckEvadeChance(enemyAccuracy);
 
-
 	float dmgReduction = CheckDamageReduction(damageTaken);
-	health -= (damageTaken - (damageTaken * dmgReduction));
+	health_ -= (damageTaken - (damageTaken * dmgReduction));
 
 	return CheckIfDead();
 }
 
 bool PlayerCharacter::CheckIfDead() {
-	if (health < 1) {
-		health = 0;
-		isDead = true;
+	if (health_ < 1) {
+		health_ = 0;
+		isDead_ = true;
 		return true;
 	}
 	return false;
@@ -46,27 +41,27 @@ bool PlayerCharacter::CheckIfDead() {
 
 void PlayerCharacter::DrinkHealthPotion() {
 
-	if (health + 20 > maxHealth) {
-		health = maxHealth;
+	if (health_ + 20 > maxHealth_) {
+		health_ = maxHealth_;
 	}
 	else {
-		health += 20;
+		health_ += 20;
 	}
 
-	healthPotions -= 1;
+	healthPotions_ -= 1;
 }
 
 void PlayerCharacter::AddToInventory(std::vector<std::shared_ptr<LootItem>> newItems) {
 	
 	for (const auto& item : newItems) {
 		if (item->GetItemType() != ItemType::HealthPotion) {
-			loot.push_back(item);
+			loot_.push_back(item);
 		}
 		else if (item->GetName() == "Gold Coin") {
-			gold += 1;
+			gold_ += 1;
 		}
 		else {
-			healthPotions += 1;
+			healthPotions_ += 1;
 		}
 	}
 }
@@ -74,35 +69,35 @@ void PlayerCharacter::AddToInventory(std::vector<std::shared_ptr<LootItem>> newI
 void PlayerCharacter::AddToInventory(std::shared_ptr<LootItem> newItem) {
 
 	if (newItem->GetItemType() != ItemType::HealthPotion) {
-		loot.push_back(newItem);
+		loot_.push_back(newItem);
 	}
 	else {
-		healthPotions += 1;
+		healthPotions_ += 1;
 	}
 }
 
 void PlayerCharacter::RemoveFromInventory(std::shared_ptr<LootItem> item) {
 
 	// first check if it is equipped
-	auto checkEquipItem = std::find_if(equiptItems.begin(), equiptItems.end(), [item](const std::shared_ptr<LootItem>& invItem) {
+	auto checkEquipItem = std::find_if(equiptItems_.begin(), equiptItems_.end(), [item](const std::shared_ptr<LootItem>& invItem) {
 		return invItem == item;
 		});
 
-	if (checkEquipItem != equiptItems.end()) {
-		equiptItems.erase(checkEquipItem);
+	if (checkEquipItem != equiptItems_.end()) {
+		equiptItems_.erase(checkEquipItem);
 	}
 	// then delete regardless
-	auto checkInvItem = std::find_if(loot.begin(), loot.end(), [item](const std::shared_ptr<LootItem>& invItem) {
+	auto checkInvItem = std::find_if(loot_.begin(), loot_.end(), [item](const std::shared_ptr<LootItem>& invItem) {
 		return invItem == item;
 		});
 
-	if (checkInvItem != loot.end()) {
-		loot.erase(checkInvItem);
+	if (checkInvItem != loot_.end()) {
+		loot_.erase(checkInvItem);
 	}
 }
 
-void PlayerCharacter::SetHealthPotions(int healthPotion) {
-	healthPotions += healthPotion;
+void PlayerCharacter::SetHealthPotions(int health_Potion) {
+	healthPotions_ += health_Potion;
 }
 
 /// <summary>
@@ -110,50 +105,50 @@ void PlayerCharacter::SetHealthPotions(int healthPotion) {
 /// if so, it is equipt so player has chosen to unequipt i. Erase it from equiptItems, otherwise, equip it.
 /// Subtract or add armour rating if any
 /// </summary>
-/// <param name="item"></param>
+/// <param name_="item"></param>
 void PlayerCharacter::SetEquiptItems(std::shared_ptr<LootItem> item) {
 
 	// checking if exact item object is euipt, if yes, unequip it. Or else, equip it. Idk how to spell equipt.
-	auto checkSamePtrItem = std::find_if(equiptItems.begin(), equiptItems.end(), [item](const std::shared_ptr<LootItem>& invItem) { // specifically if this item in memory is equipt already
+	auto checkSamePtrItem = std::find_if(equiptItems_.begin(), equiptItems_.end(), [item](const std::shared_ptr<LootItem>& invItem) { // specifically if this item in memory is equipt already
 		return invItem == item;
 		});
 
-	auto checkIfSameItem = std::find_if(equiptItems.begin(), equiptItems.end(), [item](const std::shared_ptr<LootItem>& invItem) { // if this item isn't physically equipt but is a duplicate of one that is
+	auto checkIfSameItem = std::find_if(equiptItems_.begin(), equiptItems_.end(), [item](const std::shared_ptr<LootItem>& invItem) { // if this item isn't physically equipt but is a duplicate of one that is
 		return invItem->GetName() == item->GetName();
 		});
 
-	if (checkSamePtrItem != equiptItems.end()) {
-		armourRating -= item->GetArmourRating();
-		equiptItems.erase(checkSamePtrItem);
+	if (checkSamePtrItem != equiptItems_.end()) {
+		armourRating_ -= item->GetArmourRating();
+		equiptItems_.erase(checkSamePtrItem);
 
 		if (item->GetName() == "Boots of Swiftness") {
-			dexterity -= 4;
+			dexterity_ -= 4;
 			CheckHasSwiftness();
 		}
 
 		item->SetInfo();
 	}
-	else if (checkIfSameItem != equiptItems.end()) {
+	else if (checkIfSameItem != equiptItems_.end()) {
 		UI ui;
 		ui.AlreadyEquiptItem();
 	}
 	else {
-		equiptItems.push_back(item);
-		armourRating += item->GetArmourRating();
-		evasionRating += item->GetEvasionRating();
+		equiptItems_.push_back(item);
+		armourRating_ += item->GetArmourRating();
+		evasionRating_ += item->GetEvasionRating();
 		
 		if (item->GetName() == "Boots of Swiftness") {
-			dexterity += 4; // rather than setting has swiftness to true in case player would have it even without boots
-			hasSwiftness = true;
+			dexterity_ += 4; // rather than setting has swiftness to true in case player would have it even without boots
+			hasSwiftness_ = true;
 		}
 
 		item->SetInfo();
-		spellResistance += item->GetSpellResistance();
-		addedSpellDamage += item->GetSpellDamage();
-		addedPhysicalDamage += item->GetPhysicalDamage();
-		intelligence += item->GetAddedInt();
-		strength += item->GetAddedStr();
-		dexterity += item->GetAddedDex(); /**/ CheckHasSwiftness();
+		spellResistance_ += item->GetSpellResistance();
+		addedSpellDamage_ += item->GetSpellDamage();
+		addedPhysicalDamage_ += item->GetPhysicalDamage();
+		intelligence_ += item->GetAddedInt();
+		strength_ += item->GetAddedStr();
+		dexterity_ += item->GetAddedDex(); /**/ CheckHasSwiftness();
 	}
 }
 
@@ -161,12 +156,12 @@ void PlayerCharacter::SetEquiptItems(std::shared_ptr<LootItem> item) {
 // on reduction rating, this is so that armour reduction can never block 100% of damage
 float PlayerCharacter::CheckDamageReduction(int incomingDmg) {
 	
-	return armourRating / ((100 * incomingDmg) + armourRating);
+	return armourRating_ / ((100 * incomingDmg) + armourRating_);
 }
 
 bool PlayerCharacter::CheckEvadeChance(int attackersAccuracy) {
 	return false;
-	//float evasionChance = evasionRating + (attackersAccuracy * 4) / evasionRating;
+	//float evasionChance = evasionRating_ + (attackersAccuracy * 4) / evasionRating_;
 
 	//std::random_device rd; // Obtain a random number from hardware
 	//std::mt19937 eng(rd()); // Seed the generator
@@ -176,7 +171,7 @@ bool PlayerCharacter::CheckEvadeChance(int attackersAccuracy) {
 
 	//if (Random.value > evadeChance) { // Assuming Random.value returns a float between 0 and 1
 	//	float dmgReduction = CheckDamageReduction(damageTaken);
-	//	health -= (damageTaken - (damageTaken * dmgReduction));
+	//	health_ -= (damageTaken - (damageTaken * dmgReduction));
 	//}
 	//else {
 	//	// Attack was evaded, so no damage is taken
@@ -184,14 +179,14 @@ bool PlayerCharacter::CheckEvadeChance(int attackersAccuracy) {
 }
 
 void PlayerCharacter::SetGold(int inGold) {
-	gold += inGold;
+	gold_ += inGold;
 }
 
 void PlayerCharacter::CheckHasSwiftness() {
-	if (dexterity >= 4) {
-		hasSwiftness = true;
+	if (dexterity_ >= 4) {
+		hasSwiftness_ = true;
 	}
 	else {
-		hasSwiftness = false;
+		hasSwiftness_ = false;
 	}
 }

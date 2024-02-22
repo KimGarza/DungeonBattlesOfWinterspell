@@ -6,14 +6,15 @@ DungeonRoom::DungeonRoom(
 	int roomLevel,
 	bool isLocked,
 	std::vector<std::shared_ptr<Enemy>> enemyList,
-	std::vector<std::shared_ptr<LootItem>> loot) : name(name), description(description), roomLevel(roomLevel), isLocked(isLocked), timesExplored(0), enemyList(enemyList), loot(loot), completed(false) {}
+	std::vector<std::shared_ptr<LootItem>> loot) : name_(name), description_(description), roomLevel_(roomLevel),
+	isLocked_(isLocked), timesExplored_(0), enemyList_(enemyList), loot_(loot), completed_(false) {}
 
 void DungeonRoom::SetCompleted() {
-	completed = true;
+	completed_ = true;
 }
 
 void DungeonRoom::SetTimesExplored() {
-	timesExplored += 1;
+	timesExplored_ += 1;
 }
 void DungeonRoom::SetIsLocked(bool isLocked) {
 	isLocked = isLocked;
