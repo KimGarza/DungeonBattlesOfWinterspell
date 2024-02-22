@@ -12,7 +12,7 @@ private:
 	CharCreatUI charCreatUI;
 	std::shared_ptr<Character> characterInGrogpress;
 	std::string specializedAttribute;
-	std::shared_ptr<IWeapon> weapon;
+	std::shared_ptr<Weapon> weapon;
 	std::map<std::string, int> attributeJournal;
 
 public:

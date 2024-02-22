@@ -77,7 +77,7 @@ void Battle::CommenceBattle(std::shared_ptr<PlayerCharacter> playerCharacter) {
                 std::shared_ptr<Enemy> enemy = std::dynamic_pointer_cast<Enemy>(creature); // down casting
                 int attackDmg = enemy->AttackPlayer();
                 ui.DescribeEnemyAttack(enemy->GetName(), enemy->GetSkillName(), enemy->GetSkillDescription(), enemy->GetSkillDamage());
-                bool checkIfDead = playerCharacter->TakeDamage(attackDmg); // attack player returns the hit points int
+                bool checkIfDead = playerCharacter->TakeDamage(attackDmg, 3); // attack player returns the hit points int
                 if (checkIfDead) {
                     std::cout << "YOU DIED. GAME OVER.";
                     exit(0);
@@ -125,7 +125,7 @@ void Battle::ChangelingFight(std::shared_ptr<PlayerCharacter> playerCharacter) {
             else {
                 int attackDmg = enemy->AttackPlayer();
                 ui.DescribeEnemyAttack(enemy->GetName(), enemy->GetSkillName(), enemy->GetSkillDescription(), enemy->GetSkillDamage());
-                bool checkIfDead = playerCharacter->TakeDamage(attackDmg); // attack player returns the hit points int
+                bool checkIfDead = playerCharacter->TakeDamage(attackDmg, 3); // attack player returns the hit points int
                 if (checkIfDead) {
                     std::cout << "YOU DIED. GAME OVER.";
                     exit(0);

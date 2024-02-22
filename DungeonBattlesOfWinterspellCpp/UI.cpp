@@ -4,8 +4,7 @@
 #include <iostream>
 #include "Enemy.h"
 #include "Character.h"
-#include "IWeapon.h"
-#include "Weapons.h"
+#include "Weapon.h"
 #include <sstream>
 #include <conio.h>
 #include <memory>
@@ -17,40 +16,50 @@
 // Map
 std::string UI::DisplayMapMenu(std::vector<std::string> dungeonRooms, int indexStop) {
 
-    gameText.WriteLine("Map of Winterspell's Dungeon Cells");
-    std::cout << " ____________________________________\n\n";
+    while (true) {
+        gameText.WriteLine("Map of Winterspell's Dungeon Cells");
+        std::cout << " ____________________________________\n\n";
 
-    std::vector<std::pair<int, std::string>> selectableDungeons; /**/ int roomCount;
+        std::vector<std::pair<int, std::string>> selectableDungeons; /**/ int roomCount;
 
-    for (int i = 0; i < dungeonRooms.size(); i++) {
-        if (i == 4 || i == 8) {
-            std::cout << "\n\n"; // formatting
-        }
-        if (i > indexStop) {
-            if (i < dungeonRooms.size() - 1) {
-                gameText.WriteText("Undiscovered...    -->  ");
-            } else {
-                gameText.WriteText("Undiscovered");
+        for (int i = 0; i < dungeonRooms.size(); i++) {
+            if (i == 4 || i == 8) {
+                std::cout << "\n\n"; // formatting
             }
-        }
-        else {
-            if (i < dungeonRooms.size() - 1) {
-
-                gameText.WriteText(dungeonRooms[i] + "   -->  ");
-
-                selectableDungeons.emplace_back((i + 1), dungeonRooms[i]); // creating a menu for the player to select a room to enter
+            if (i > indexStop) {
+                if (i < dungeonRooms.size() - 1) {
+                    gameText.WriteText("Undiscovered...    -->  ");
+                }
+                else {
+                    gameText.WriteText("Undiscovered");
+                }
             }
             else {
-                gameText.WriteText(dungeonRooms[i]);
+                if (i < dungeonRooms.size() - 1) {
 
-                selectableDungeons.emplace_back((i + 1), dungeonRooms[i]);
+                    gameText.WriteText(dungeonRooms[i] + "   -->  ");
+
+                    selectableDungeons.emplace_back((i + 1), dungeonRooms[i]); // creating a menu for the player to select a room to enter
+                }
+                else {
+                    gameText.WriteText(dungeonRooms[i]);
+
+                    selectableDungeons.emplace_back((i + 1), dungeonRooms[i]);
+                }
             }
         }
+
+        std::cout << "\n\n";
+
+        std::string selectedRoom = DisplayRoomSelect(selectableDungeons);
+        if (selectedRoom != "") {
+            return selectedRoom;
+        }
+        else {
+            system("cls");
+            gameText.WriteLine("Those regions are uncharted.");
+        }
     }
-
-    std::cout << "\n\n";
-
-    return DisplayRoomSelect(selectableDungeons);
 
     _getch();
     system("cls");
@@ -65,24 +74,24 @@ std::string UI::DisplayRoomSelect(std::vector<std::pair<int, std::string>> avail
             gameText.WriteLine("\n" + std::to_string(room.first) + ")  " + room.second);
         }
 
-        std::string playerChoice = input.PlayerChoice(availableRooms.size());
+        std::string playerChoice = input.PlayerChoiceMap(availableRooms.size());
 
-        int roomNum = std::stoi(playerChoice);
+        if (playerChoice != "") {
+            int roomNum = std::stoi(playerChoice);
 
-        // std::find_if with a lambda to find the matching room
-        auto selectedRoomIt = std::find_if(availableRooms.begin(), availableRooms.end(), [roomNum](const std::pair<int, std::string>& room) {
-            return room.first == roomNum;
-        });
+            // std::find_if with a lambda to find the matching room
+            auto selectedRoomIt = std::find_if(availableRooms.begin(), availableRooms.end(), [roomNum](const std::pair<int, std::string>& room) {
+                return room.first == roomNum;
+                });
 
-        if (selectedRoomIt != availableRooms.end()) {
-            std::pair<int, std::string> room = *selectedRoomIt;
+            if (selectedRoomIt != availableRooms.end()) {
+                std::pair<int, std::string> room = *selectedRoomIt;
 
-            return room.second;
+                return room.second;
+            }
         }
         else {
-            gameText.WriteLine("Check your eyes buster!");
-            system("cls");
-            gameText.WriteLine("Please select a dungeon room");
+            return "";
         }
     }
 
@@ -152,7 +161,7 @@ bool UI::DescribePlayerOptions(std::shared_ptr<PlayerCharacter> player) {
 
 
     while (true) {
-        gameText.WriteLine("1)  Attack\n2)  Drink Health Potion (" + std::to_string(player->GetHealthPotions()) + ")");
+        gameText.WriteLine("1)  Attack\n2)  Drink Health Potion (" + std::to_string(player->GetHealthPotions()) + ")\n");
         std::string playerChoice; /**/ std::cin >> playerChoice;  // why not using input checker here
 
 
@@ -171,13 +180,12 @@ bool UI::DescribePlayerOptions(std::shared_ptr<PlayerCharacter> player) {
 
         }
         else {
-            gameText.WriteLine("That is beyond your capabilities, please estimate yourself!");
-            _getch();
+            gameText.WriteLineInput("\nNow's not the time for dobbling about!");
 
             system("cls");
-            gameText.WriteLine("Be hasty now!");
+            gameText.WriteLine("Be hasty now!\n");
+            gameText.WriteLine("What action will you do?!\n");
 
-            return false;
         }
     }
     return false;
@@ -199,7 +207,7 @@ std::shared_ptr<Enemy> UI::GetEnemyTargetForAttack(std::shared_ptr<PlayerCharact
         }
         std::cout << "Health: " << std::to_string(player->GetHealth());
 
-        gameText.WriteLine("You have chosen to attack! \n***Choose your target***\n");
+        gameText.WriteLine("\nYou have chosen to attack! \n***Choose your target***\n");
 
         std::map<std::string, std::shared_ptr<Enemy>> enemyWithCounter; /**/ int counter = 1; // for display and selection ex: #) enemy name
 
@@ -220,7 +228,7 @@ std::shared_ptr<Enemy> UI::GetEnemyTargetForAttack(std::shared_ptr<PlayerCharact
 
         if (selectedEnemy != enemyWithCounter.end()) {
 
-            std::shared_ptr<IWeapon> weapon = player->GetWeapon();
+            std::shared_ptr<Weapon> weapon = player->GetWeapon();
 
             std::shared_ptr<Enemy> value = selectedEnemy->second;
 
@@ -239,7 +247,7 @@ void UI::DescribeEnemyAttack(std::string name, std::string skillName, std::strin
     gameText.WriteLineInput(name + " attacked you with " + skillName + ", " + skillDescription + " which hits for " + std::to_string(attackDmg) + " hit points!\n");
 }
 
-bool UI::DescribePlayerAttackOptions(std::shared_ptr<Enemy> enemy, std::shared_ptr<IWeapon> weapon) {
+bool UI::DescribePlayerAttackOptions(std::shared_ptr<Enemy> enemy, std::shared_ptr<Weapon> weapon) {
     system("cls");
 
     gameText.WriteLine(std::string("Target is in sights, choose your next move...\n\n1)  ") + weapon->GetPrimarySkillName() + "\n2)  " + weapon->GetSecondarySkillName());
@@ -363,21 +371,23 @@ std::shared_ptr<LootItem> UI::DisplayInventoryMenu(std::vector<std::shared_ptr<L
 
             return nullptr;
         }
+        else if (playerChoice != "") {
 
-        int IDSelected = std::stoi(playerChoice);
+            int IDSelected = std::stoi(playerChoice);
 
-        // lambda function
-        auto selectedItem = std::find_if(selectableLoot.begin(), selectableLoot.end(), [IDSelected](const std::pair<int, std::shared_ptr<LootItem>>& item) {
-            return item.first == IDSelected;
-            });
+            // lambda function
+            auto selectedItem = std::find_if(selectableLoot.begin(), selectableLoot.end(), [IDSelected](const std::pair<int, std::shared_ptr<LootItem>>& item) {
+                return item.first == IDSelected;
+                });
 
-        if (selectedItem != selectableLoot.end()) {
+            if (selectedItem != selectableLoot.end()) {
 
-            return selectedItem->second;
+                return selectedItem->second;
+            }
         }
         else {
-            gameText.WriteLineInput("Not sure you are being rational! Please save all the cans of beans for the charity this spring");
             system("cls");
+            gameText.WriteLineInput("Please select an item from your inventory.");
         }
     }
 

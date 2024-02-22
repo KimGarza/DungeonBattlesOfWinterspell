@@ -29,4 +29,11 @@ public:
 	void CheckGameState();
 	void ChangeConsoleDesign();
 	void ChangeGameState(GameState newState);
+
+	void Begin();
+	void UpdateMap();
+	void Explore();
+	void Loot();
+	void Trading();
+	void Battling();
 };

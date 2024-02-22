@@ -1,8 +1,8 @@
 #include "CharacterCreation.h"
 #include "PlayerCharacter.h"
 #include "Character.h"
-#include "IWeapon.h"
-#include "Weapons.h"
+#include "Weapon.h"
+#include "Weapon.h"
 #include "GameText.h"
 #include "InputManager.h"
 #include <sstream>
@@ -83,35 +83,55 @@ void CharacterCreation::ChooseWeapon() {
 
 	if (characterInGrogpress->GetName() == "Wood Elf") {
 		if (playerChoice == "1") {
-			weapon = std::make_shared<ElvenLongsword>();
+			weapon = std::make_shared<Weapon>("Elven Longsword", false,
+			"Elegant Divide", "a highly precise and powerful slash to a single enemy target", std::vector<int>{ 30, 40 },
+			"Teachings of The Elders", "a practice of the lessons, taught by the elders of homeland", std::vector<int>{ 2, 4 });
 		}
 		else if (playerChoice == "2") {
-			weapon = std::make_shared<IvoryLongBowAndQuiver>();
+			weapon = std::make_shared<Weapon>("Ivory Longbow and Quiver", true,
+			"Double-Bladed Axe", "a highly precise shot to the head which never misses it's mark", std::vector<int>{ 1, 15 },
+			"Majestic Volley", "a majestic volley of arrows are shot up and rain down from above", std::vector<int>{ 0, 8 });
 		}
 		else if (playerChoice == "3") {
-			weapon = std::make_shared<ShortErnestBowAndQuiver>();
+			weapon = std::make_shared<Weapon>("Short Ernest Bow and Quiver", true,
+			"Piercing Arrow", "an arrow to peirce through the heart of the enemy", std::vector<int>{ 3, 12 },
+			"Fletchers Folley", "a powerful attack by the hand of the elf which effects surrounding enemies to the target", std::vector<int>{ 0, 6 });
 		}
 	}
 	else if (characterInGrogpress->GetName() == "Dwarf") {
 		if (playerChoice == "1") {
-			weapon = std::make_shared<DoubleBladedAxe>();
+			weapon = std::make_shared<Weapon>("Double-Bladed Axe", false,
+				"Aged, Sliced and Served", "fine wedge cuts to the targeted enemy, if the hit is critical, he may be served on a wooden board with Dom Pérignon",
+				std::vector<int>{ 3, 14 },
+				"Mighty Cleave", "a swipe of the axe horizontally to the surrounding enemies", std::vector<int>{ 3, 4 });
 		}
 		else if (playerChoice == "2") {
-			weapon = std::make_shared<OrnateShortSword>();
+			weapon = std::make_shared<Weapon>("Ornate Short Sword", true,
+				"Gut Wrencher", "a stab through the enemies ribs", std::vector<int>{ 3, 8 },
+				"Double Swing", "a swing of the sword twice, with the ability to attack twice in one attack", std::vector<int>{ 0, 6 });
 		}
 		else if (playerChoice == "3") {
-			weapon = std::make_shared<SteelSplitHammer>();
+			weapon = std::make_shared<Weapon>("Steel Split Hammer", true,
+				"Wounding Skull Cruncher", "a disturbing and heavy fall of his hammer, to the enemy's head, where, if it hits at it's mightiest", std::vector<int>{ 2, 8 },
+				"Strike of Thunder and Steel", "a powerful and mighty blow of a heavy steel to the ground infront of the enemy's feet. This attack is powerful enough to effect the target enemy and one surrounding enemy on either side",
+				std::vector<int>{ 1, 20 });
 		}
 	}
 	else if (characterInGrogpress->GetName() == "Enchantress") {
 		if (playerChoice == "1") {
-			weapon = std::make_shared<DualEtherealDaggers>();
+			weapon = std::make_shared<Weapon>("Dual Ethereal Daggers", false,
+				"Wind of Furry", "a highly precise and powerful slash to a single enemy target", std::vector<int>{ 3, 7 },
+				"Dual Stab", "a practice of the lessons, taught by the elders of homeland", std::vector<int>{ 1, 5 });
 		}
 		else if (playerChoice == "2") {
-			weapon = std::make_shared<GnarledBranchStaff>();
+			weapon = std::make_shared<Weapon>("Gnarled Branch Staff", true,
+				"Brewed Storm", "a highly precise and powerful slash to a single enemy target", std::vector<int>{ 3, 9 },
+				"Fire Beacon", "a practice of the lessons, taught by the elders of the homeland", std::vector<int>{ 1, 5 });
 		}
 		else if (playerChoice == "3") {
-			weapon = std::make_shared<OakCarvedWand>();
+			weapon = std::make_shared<Weapon>("Oak Carved Wand", true,
+				"Dark Charm", "a highly precise and powerful slash to a single enemy target", std::vector<int>{ 0, 13 },
+				"Ancient Incantation", "a practice of the lessons, taught by the elders of the homeland", std::vector<int>{ 0, 22 });
 		}
 	}
 

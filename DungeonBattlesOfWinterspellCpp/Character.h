@@ -1,7 +1,7 @@
 #pragma once
 #include <vector>
 #include <string>
-#include "IWeapon.h"
+#include "Weapon.h"
 #include "ICreature.h"
 
 class Character : ICreature {

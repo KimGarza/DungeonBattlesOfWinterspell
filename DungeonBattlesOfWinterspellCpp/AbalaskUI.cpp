@@ -2,6 +2,7 @@
 #include <conio.h>
 
 
+
 bool AbalaskUI::AbalaskTradeInquiry() {
     system("cls");
 

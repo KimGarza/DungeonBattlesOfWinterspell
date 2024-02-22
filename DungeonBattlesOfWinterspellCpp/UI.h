@@ -29,7 +29,7 @@ public:
 	void NoEnemy();
 	bool DescribePlayerOptions(std::shared_ptr<PlayerCharacter> player);
 	void DescribeEnemyAttack(std::string name, std::string skillName, std::string skillDescription, int attackDmg);
-	bool DescribePlayerAttackOptions(std::shared_ptr<Enemy> enemy, std::shared_ptr<IWeapon> weapon);
+	bool DescribePlayerAttackOptions(std::shared_ptr<Enemy> enemy, std::shared_ptr<Weapon> weapon);
 	std::shared_ptr<Enemy> GetEnemyTargetForAttack(std::shared_ptr<PlayerCharacter> player, std::vector<std::shared_ptr<ICreature>> turnOrder);
 	void HealthRemaining(int healthRemaining);
 	void KilledEnemy(std::shared_ptr<Enemy> enemy);

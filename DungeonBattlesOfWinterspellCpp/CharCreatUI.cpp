@@ -85,7 +85,7 @@ void CharCreatUI::WeaponSelected(std::string weaponName) {
 std::string CharCreatUI::AttributeAssignment(int pointsRemaining, std::map<std::string, int> attributeJournal) {
     system("cls");
 
-    if (pointsRemaining == 10) { // only declared at starting point of attr allocation
+    if (pointsRemaining == 3) { // only declared at starting point of attr allocation
         gameText.WriteLineInput("Now shall we asses thine qualities ?");
     }
 
@@ -121,19 +121,19 @@ int CharCreatUI::PointsAllocation(std::string chosenAttribute, std::map<std::str
 
     system("cls");
 
-    bool playerDeciding = true;
-    while (playerDeciding) {
+    while (true) {
 
         gameText.WriteLine("How many points would you like to spec to " + selectableAttributes[chosenAttribute] + "?\n");
 
         std::string pointsToAssignStr = input.AttributePoints(pointsRemaining);
-        int pointsToAssign = std::stoi(pointsToAssignStr);
 
         if (pointsToAssignStr != "") {
 
+            int pointsToAssign = std::stoi(pointsToAssignStr);
             // Checking that points do not reduce the naturally occuring 4 pts for users specialized attribute (ex: dwarf has 4 base strength)
-            if (selectableAttributes[chosenAttribute] == specializedAttribute && (attributeJournal[selectableAttributes[chosenAttribute]] += pointsToAssign < 4)) {
+            if (selectableAttributes[chosenAttribute] == specializedAttribute && (attributeJournal[selectableAttributes[chosenAttribute]] + pointsToAssign < 4)) {
 
+                system("cls");
                 gameText.WriteLineInput("Forswear not to underestimate your natural abilities!");
 
                 system("cls");
@@ -145,6 +145,7 @@ int CharCreatUI::PointsAllocation(std::string chosenAttribute, std::map<std::str
             }
         }
         else {
+            system("cls");
             gameText.WriteLineInput("Shan't we try to be reasonable, and stay thee within the bounds of reality?");
 
             system("cls");
