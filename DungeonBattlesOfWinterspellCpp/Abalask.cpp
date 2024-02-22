@@ -22,5 +22,5 @@ void Abalask::AcceptTradeBuy(std::shared_ptr<LootItem> newItem) {
 	wares.emplace_back(std::make_shared<LootItem>(
 		newItem->GetName(), newItem->GetItemType(), newItem->GetDescription(),
 		(newItem->GetWorthInGold() * 1.50), newItem->GetArmourRating(), newItem->GetEvasionRating(), newItem->GetAddedDex(),
-		newItem->GetAddedStr(), newItem->GetAddedInt(), newItem->GetSpellDamage(), newItem->GetPhysDamage()));
+		newItem->GetAddedStr(), newItem->GetAddedInt(), newItem->GetSpellDamage(), newItem->GetPhysDamage(), 30));
 }

@@ -1,6 +1,7 @@
 #pragma once
 #include <vector>
-#include "IWeapon.h"
+#include <string>
+#include "Weapon.h"
 #include "ICreature.h"
 
 class Character : ICreature {
@@ -28,4 +29,6 @@ public:
 	int GetArmourRating() { return armourRating; }
 	int GetEvasionRating() { return evasionRating; }
 	std::vector<std::string> GetWeaponOptions() { return weaponOptions; }
+
+	void SetHasSwiftness(bool isSwift) { hasSwiftness = isSwift; }
 };

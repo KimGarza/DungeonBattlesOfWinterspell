@@ -1,5 +1,5 @@
 #include "Input.h"
-#include "ICharacter.h"
+#include "Input.h"
 #include <iostream>
 #include <memory>
 
@@ -19,6 +19,23 @@ std::string Input::PlayerChoice(std::size_t count) {
 	std::string playerSelection; /**/ std::cin >> playerSelection;
 
 	if (playerSelection == "x") { return "x"; }
+
+	std::vector<int> selectionRange;
+
+	for (int i = 0; i < count; i++) {
+		selectionRange.emplace_back(i + 1);
+	}
+
+	if (inputMgr.ValidatePlayerInput(playerSelection, selectionRange)) {
+		return playerSelection;
+	}
+
+	return "";
+}
+
+std::string Input::PlayerChoiceMap(std::size_t count) {
+
+	std::string playerSelection; /**/ std::cin >> playerSelection;
 
 	std::vector<int> selectionRange;
 

@@ -144,27 +144,24 @@
     <ClCompile Include="AbalaskUI.cpp" />
     <ClCompile Include="AbalaskUI.h" />
     <ClCompile Include="Battle.cpp" />
+    <ClCompile Include="BeginState.cpp" />
     <ClCompile Include="Character.cpp" />
+    <ClCompile Include="CharCreatUI.cpp" />
+    <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="ExploreDungeon.cpp" />
-    <ClCompile Include="Characters.cpp" />
     <ClCompile Include="CharacterCreation.cpp" />
     <ClCompile Include="DungeonRoom.cpp" />
     <ClCompile Include="DungeonBattlesOfWinterspellCpp.cpp">
       <ShowIncludes Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Yes</ShowIncludes>
     </ClCompile>
     <ClCompile Include="DungeonGenerator.cpp" />
-    <ClCompile Include="Enemies.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameState.h" />
     <ClCompile Include="GameText.cpp" />
-    <ClCompile Include="ICharacter.cpp" />
-    <ClCompile Include="ICreature.cpp" />
-    <ClCompile Include="IEnemy.cpp" />
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="InputManager.cpp" />
     <ClCompile Include="Inventory.cpp" />
     <ClCompile Include="InvItem.cpp" />
-    <ClCompile Include="IWeapon.cpp" />
     <ClCompile Include="LootItem.cpp" />
     <ClCompile Include="LootRoom.cpp" />
     <ClCompile Include="Map.cpp" />
@@ -172,30 +169,28 @@
     <ClCompile Include="PlayerCharacter.cpp" />
     <ClCompile Include="Story.cpp" />
     <ClCompile Include="UI.cpp" />
-    <ClCompile Include="Weapons.cpp" />
+    <ClCompile Include="Weapon.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Abalask.h" />
     <ClInclude Include="AbalaskTrader.h" />
     <ClInclude Include="Battle.h" />
+    <ClInclude Include="BeginState.h" />
     <ClInclude Include="Character.h" />
+    <ClInclude Include="CharCreatUI.h" />
+    <ClInclude Include="Enemy.h" />
     <ClInclude Include="ExploreDungeon.h" />
-    <ClInclude Include="Characters.h" />
     <ClInclude Include="CharacterCreation.h" />
     <ClInclude Include="DungeonRoom.h" />
     <ClInclude Include="DungeonGenerator.h" />
-    <ClInclude Include="Enemies.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameText.h" />
-    <ClInclude Include="ICharacter.h" />
     <ClInclude Include="ICreature.h" />
-    <ClInclude Include="IEnemy.h" />
     <ClInclude Include="Input.h" />
     <ClInclude Include="InputManager.h" />
     <ClInclude Include="Inventory.h" />
     <ClInclude Include="InvItem.h" />
     <ClInclude Include="ItemTypes.h" />
-    <ClInclude Include="IWeapon.h" />
     <ClInclude Include="LootItem.h" />
     <ClInclude Include="LootRoom.h" />
     <ClInclude Include="Map.h" />
@@ -203,7 +198,7 @@
     <ClInclude Include="PlayerCharacter.h" />
     <ClInclude Include="Story.h" />
     <ClInclude Include="UI.h" />
-    <ClInclude Include="Weapons.h" />
+    <ClInclude Include="Weapon.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include=".gitignore" />

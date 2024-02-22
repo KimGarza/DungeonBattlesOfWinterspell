@@ -28,8 +28,6 @@ std::shared_ptr<DungeonRoom> Map::RevealMapMenu() {
 		return room->GetName() == playerSelectedRoom;
 	});
 
-	
-
 	if (travelTo != dungeonRooms.end()) {
 		currentRoom = *travelTo;
 		return *travelTo;

@@ -2,8 +2,6 @@
 #include "UI.h"
 #include <memory>
 
-// Initial assigned attributes: 4, total assigned additional by player 10
-// 1. Values passed into construc during playerCharacter creation. The ones xp, level, swift, dead is to be assigned in the assignment section without expecting them to come in
 PlayerCharacter::PlayerCharacter() {}
 
 PlayerCharacter::PlayerCharacter(
@@ -16,10 +14,7 @@ PlayerCharacter::PlayerCharacter(
 	bool hasSwiftness,
 	int armourRating,
 	int evasionRating,
-	std::shared_ptr<IWeapon> inWeapon
-	// 2. Assigning the priv member variables we declared in header as the in[argValue] and assigning manual initial values to level, xp, etc...
-	// In the constructor source, the colon : is used to initiate a member initializer list. It's used to initialize the member variables of a class with values provided to the constructor.
-	// After the : is the assignment secition
+	std::shared_ptr<Weapon> inWeapon
 ) : name(inName), health(inHealth), intelligence(inIntelligence), dexterity(inDexterity), strength(inStrength), maxHealth(maxHealth),
 hasSwiftness(hasSwiftness), armourRating(armourRating), evasionRating(evasionRating), weapon(inWeapon), xp(0), level(1), isDead(false), healthPotions(2), gold(0) {}
 
@@ -29,7 +24,10 @@ dexterity(other.dexterity), strength(other.strength), weapon(other.weapon),
 xp(0), level(1), hasSwiftness(other.hasSwiftness), armourRating(armourRating), evasionRating(evasionRating), isDead(false) {}
 	// Copy or clone other members if needed
 
-bool PlayerCharacter::TakeDamage(int damageTaken) {
+bool PlayerCharacter::TakeDamage(int damageTaken, int enemyAccuracy) {
+
+	bool evades = CheckEvadeChance(enemyAccuracy);
+
 
 	float dmgReduction = CheckDamageReduction(damageTaken);
 	health -= (damageTaken - (damageTaken * dmgReduction));
@@ -116,11 +114,11 @@ void PlayerCharacter::SetHealthPotions(int healthPotion) {
 void PlayerCharacter::SetEquiptItems(std::shared_ptr<LootItem> item) {
 
 	// checking if exact item object is euipt, if yes, unequip it. Or else, equip it. Idk how to spell equipt.
-	auto checkSamePtrItem = std::find_if(equiptItems.begin(), equiptItems.end(), [item](const std::shared_ptr<LootItem>& invItem) {
+	auto checkSamePtrItem = std::find_if(equiptItems.begin(), equiptItems.end(), [item](const std::shared_ptr<LootItem>& invItem) { // specifically if this item in memory is equipt already
 		return invItem == item;
 		});
 
-	auto checkIfSameItem = std::find_if(equiptItems.begin(), equiptItems.end(), [item](const std::shared_ptr<LootItem>& invItem) {
+	auto checkIfSameItem = std::find_if(equiptItems.begin(), equiptItems.end(), [item](const std::shared_ptr<LootItem>& invItem) { // if this item isn't physically equipt but is a duplicate of one that is
 		return invItem->GetName() == item->GetName();
 		});
 
@@ -130,6 +128,7 @@ void PlayerCharacter::SetEquiptItems(std::shared_ptr<LootItem> item) {
 
 		if (item->GetName() == "Boots of Swiftness") {
 			dexterity -= 4;
+			CheckHasSwiftness();
 		}
 
 		item->SetInfo();
@@ -145,11 +144,16 @@ void PlayerCharacter::SetEquiptItems(std::shared_ptr<LootItem> item) {
 		
 		if (item->GetName() == "Boots of Swiftness") {
 			dexterity += 4; // rather than setting has swiftness to true in case player would have it even without boots
+			hasSwiftness = true;
 		}
 
 		item->SetInfo();
-		//armour += item->GetElementalProtection();
-		//armour += item->GetEvasionRating();
+		spellResistance += item->GetSpellResistance();
+		addedSpellDamage += item->GetSpellDamage();
+		addedPhysicalDamage += item->GetPhysicalDamage();
+		intelligence += item->GetAddedInt();
+		strength += item->GetAddedStr();
+		dexterity += item->GetAddedDex(); /**/ CheckHasSwiftness();
 	}
 }
 
@@ -160,6 +164,34 @@ float PlayerCharacter::CheckDamageReduction(int incomingDmg) {
 	return armourRating / ((100 * incomingDmg) + armourRating);
 }
 
+bool PlayerCharacter::CheckEvadeChance(int attackersAccuracy) {
+	return false;
+	//float evasionChance = evasionRating + (attackersAccuracy * 4) / evasionRating;
+
+	//std::random_device rd; // Obtain a random number from hardware
+	//std::mt19937 eng(rd()); // Seed the generator
+	//std::uniform_real_distribution<> distr(0.0, 1.0); // Define the range
+
+	//double randomValue = distr(eng);
+
+	//if (Random.value > evadeChance) { // Assuming Random.value returns a float between 0 and 1
+	//	float dmgReduction = CheckDamageReduction(damageTaken);
+	//	health -= (damageTaken - (damageTaken * dmgReduction));
+	//}
+	//else {
+	//	// Attack was evaded, so no damage is taken
+	//}
+}
+
 void PlayerCharacter::SetGold(int inGold) {
 	gold += inGold;
+}
+
+void PlayerCharacter::CheckHasSwiftness() {
+	if (dexterity >= 4) {
+		hasSwiftness = true;
+	}
+	else {
+		hasSwiftness = false;
+	}
 }

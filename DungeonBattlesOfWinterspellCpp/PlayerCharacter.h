@@ -2,13 +2,12 @@
 #include <vector>
 #include <memory>
 #include <string>
-#include "IWeapon.h"
+#include "Weapon.h"
 #include "InvItem.h"
 #include "ICreature.h"
 #include "LootItem.h"
 
 class PlayerCharacter : public ICreature {
-// 1. Private values make one for every property you want to describe/define your class
 private:
 	std::string name;
 	int health;
@@ -16,7 +15,7 @@ private:
 	int dexterity;
 	int strength;
 	int maxHealth;
-	std::shared_ptr<IWeapon> weapon;
+	std::shared_ptr<Weapon> weapon;
 	int xp;
 	int level;
 	bool hasSwiftness;
@@ -26,9 +25,12 @@ private:
 	std::vector<std::shared_ptr<LootItem>> equiptItems;
 	int armourRating;
 	int evasionRating;
+	int accuracyRating;
+	int addedSpellDamage;
+	int addedPhysicalDamage;
+	int spellResistance;
 	int gold;
 
-// 2. Preparing all values that will come through constructor ( we want xp, level, swift and dead to not be passed in we already know what these will be to start)
 public:
 	PlayerCharacter();
 
@@ -42,9 +44,7 @@ public:
 		bool hasSwiftness,
 		int armourRating,
 		int evasionRating,
-		std::shared_ptr<IWeapon> weapon
-		// 3. The reason these are not set here is bc they will be set with default values in source and managed within functions after
-		/*int xp = 0, int level = 1, bool hasSwiftness = false, bool isDead = false*/
+		std::shared_ptr<Weapon> weapon
 	);
 
 	PlayerCharacter(const PlayerCharacter& other);
@@ -56,7 +56,7 @@ public:
 	int GetIntelligence() { return intelligence; }
 	int GetDexterity() { return dexterity; }
 	int GetStrength() { return strength; }
-	std::shared_ptr<IWeapon> GetWeapon() { return weapon; }
+	std::shared_ptr<Weapon> GetWeapon() { return weapon; }
 	int GetXP() { return xp; }
 	int GetLevel() { return level; }
 	int GetHealthPotions() { return healthPotions; }
@@ -66,11 +66,15 @@ public:
 	std::vector<std::shared_ptr<LootItem>> GetEquiptItems() { return equiptItems; }
 	void AddToInventory(std::shared_ptr<LootItem> newItem);
 	int GetArmourRating() { return armourRating; }
+	int GetAccuracyRating() { return evasionRating; }
 	int GetEvasionRating() { return evasionRating; }
+	int GetElementalResistance() { return evasionRating; }
 	int GetGold() { return gold; }
 
 	float CheckDamageReduction(int incomingDmg);
-	bool TakeDamage(int damageTaken);
+	bool CheckEvadeChance(int attackersAccuracy);
+
+	bool TakeDamage(int damageTaken, int enemyAccuracy);
 	bool CheckIfDead();
 	void DrinkHealthPotion();
 	void SetHealthPotions(int healthPotion);
@@ -78,4 +82,5 @@ public:
 	void SetEquiptItems(std::shared_ptr<LootItem> item);
 	void RemoveFromInventory(std::shared_ptr<LootItem> item);
 	void SetGold(int gold);
+	void CheckHasSwiftness();
 };

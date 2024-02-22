@@ -17,12 +17,14 @@ private:
 	int addedDex;
 	int addedStr;
 	int addedInt;
+	float spellResistance;
 
 
 public:
 	LootItem(std::string name, ItemType itemType, std::string description, int worthInGold);
 	LootItem(std::string name, ItemType itemType, std::string description, int worthInGold, int armourRating, int evasionRating);
-	LootItem(std::string name, ItemType itemType, std::string description, int worthInGold, int armourRating, int evasionRating, int addedDex, int addedStr, int addedInt, int spellDamage, int physDamage);
+	LootItem(std::string name, ItemType itemType, std::string description, int worthInGold, int armourRating, int evasionRating, 
+		int addedDex, int addedStr, int addedInt, int spellDamage, int physDamage, int spellResistance);
 
 	std::string GetName() { return name; }
 	ItemType GetItemType() { return itemType; }
@@ -36,9 +38,10 @@ public:
 	int GetAddedDex() { return addedDex; }
 	int GetAddedStr() { return addedStr; }
 	int GetAddedInt() { return addedInt; }
+	float GetSpellResistance() { return spellResistance;  }
+	int GetPhysicalDamage() { return physDamage;  }
 
 	void SetArmourRating(int armourAdded);
 	void SetInfo();
-
 };
 

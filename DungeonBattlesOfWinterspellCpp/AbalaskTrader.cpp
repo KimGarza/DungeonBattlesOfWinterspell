@@ -1,4 +1,5 @@
 #include "AbalaskTrader.h"
+#include "AbalaskUI.h"
 
 
 std::shared_ptr<Abalask> AbalaskTrader::GenerateAbalask() {
@@ -12,10 +13,10 @@ std::shared_ptr<Abalask> AbalaskTrader::GenerateAbalask() {
 std::vector<std::shared_ptr<LootItem>> AbalaskTrader::GenerateWares() {
 
     std::vector<std::shared_ptr<LootItem>> waresInStock{
-        std::make_shared<LootItem>("Circlet of Mirador", ItemType::Equiptment, "+10 to evasion, +3 to spell damage", (2), 0, 10, 0, 0, 1, 3, 0),
-        std::make_shared<LootItem>("Elegant Robe", ItemType::Equiptment, "+7 to spell damage.", (1), 0, 20, 0, 0, 1, 5, 0), // gold | armour, evasion | addedDex, addedStr, addedInt, spellDamage, physDamage
+        std::make_shared<LootItem>("Circlet of Mirador", ItemType::Equiptment, "+10 to evasion, +3 to spell damage", 2, 0, 10, 0, 0, 1, 3, 0, 0),
+        std::make_shared<LootItem>("Elegant Robe", ItemType::Equiptment, "+7 to spell damage.", 1, 0, 20, 0, 0, 1, 5, 0, 0), // gold | armour, evasion | addedDex, addedStr, addedInt, spellDamage, physDamage
         std::make_shared<LootItem>("Hyde Boots", ItemType::Equiptment, "+4 to evasion.", (14 * 1.15), 0, 4),
-        std::make_shared<LootItem>("Special Leather Guantlets", ItemType::Equiptment, "+2 to evasion.", (14 * 1.15), 0, 2, 1, 0, 0, 0, 0),
+        std::make_shared<LootItem>("Special Leather Guantlets", ItemType::Equiptment, "+2 to evasion.", (14 * 1.15), 0, 2, 1, 0, 0, 0, 0, 0),
 
 
         std::make_shared<LootItem>("Helm of Protection", ItemType::Equiptment, "+10 to armour, +5 to life.", (14 * 1.15), 15, 0),
@@ -32,7 +33,6 @@ std::vector<std::shared_ptr<LootItem>> AbalaskTrader::GenerateWares() {
 void AbalaskTrader::BeginTrading(std::shared_ptr<PlayerCharacter> player) {
 
     if (abalaskUI.AbalaskTradeInquiry()) { // bool of is player trading
-
 
         while (true) {
 
@@ -71,7 +71,7 @@ void AbalaskTrader::BeginTrading(std::shared_ptr<PlayerCharacter> player) {
                                 // find easier way to do this or make sure to delete buying item 
                                 buyingItem->GetName(), buyingItem->GetItemType(), buyingItem->GetDescription(),
                                 (buyingItem->GetWorthInGold() * .75), buyingItem->GetArmourRating(), buyingItem->GetEvasionRating(), buyingItem->GetAddedDex(),
-                                buyingItem->GetAddedStr(), buyingItem->GetAddedInt(), buyingItem->GetSpellDamage(), buyingItem->GetPhysDamage()));
+                                buyingItem->GetAddedStr(), buyingItem->GetAddedInt(), buyingItem->GetSpellDamage(), buyingItem->GetPhysDamage(), buyingItem->GetSpellDamage()));
                             player->AddToInventory(buyingItem);
                             player->SetGold(buyingItem->GetWorthInGold() * -1);
 

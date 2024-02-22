@@ -4,22 +4,22 @@ C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.3221
           [
               _Ty=double
           ]
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\memory(1983): message : see reference to function template instantiation 'void std::_Construct_in_place<_Ty,std::basic_string<char,std::char_traits<char>,std::allocator<char>>,ItemType,std::basic_string<char,std::char_traits<char>,std::allocator<char>>,double,int,int,int,int,int,int,int>(_Ty &,std::basic_string<char,std::char_traits<char>,std::allocator<char>> &&,ItemType &&,std::basic_string<char,std::char_traits<char>,std::allocator<char>> &&,double &&,int &&,int &&,int &&,int &&,int &&,int &&,int &&) noexcept(false)' being compiled
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\memory(1983): message : see reference to function template instantiation 'void std::_Construct_in_place<_Ty,std::basic_string<char,std::char_traits<char>,std::allocator<char>>,ItemType,std::basic_string<char,std::char_traits<char>,std::allocator<char>>,double,int,int,int,int,int,int,int,int>(_Ty &,std::basic_string<char,std::char_traits<char>,std::allocator<char>> &&,ItemType &&,std::basic_string<char,std::char_traits<char>,std::allocator<char>> &&,double &&,int &&,int &&,int &&,int &&,int &&,int &&,int &&,int &&) noexcept(false)' being compiled
           with
           [
               _Ty=LootItem
           ]
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\memory(2663): message : see reference to function template instantiation 'std::_Ref_count_obj2<LootItem>::_Ref_count_obj2<_Ty,ItemType,_Ty,double,int,int,int,int,int,int,int>(_Ty &&,ItemType &&,_Ty &&,double &&,int &&,int &&,int &&,int &&,int &&,int &&,int &&)' being compiled
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\memory(2663): message : see reference to function template instantiation 'std::_Ref_count_obj2<LootItem>::_Ref_count_obj2<_Ty,ItemType,_Ty,double,int,int,int,int,int,int,int,int>(_Ty &&,ItemType &&,_Ty &&,double &&,int &&,int &&,int &&,int &&,int &&,int &&,int &&,int &&)' being compiled
           with
           [
               _Ty=std::string
           ]
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\memory(2664,20): message : see reference to function template instantiation 'std::_Ref_count_obj2<LootItem>::_Ref_count_obj2<_Ty,ItemType,_Ty,double,int,int,int,int,int,int,int>(_Ty &&,ItemType &&,_Ty &&,double &&,int &&,int &&,int &&,int &&,int &&,int &&,int &&)' being compiled
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\memory(2664,20): message : see reference to function template instantiation 'std::_Ref_count_obj2<LootItem>::_Ref_count_obj2<_Ty,ItemType,_Ty,double,int,int,int,int,int,int,int,int>(_Ty &&,ItemType &&,_Ty &&,double &&,int &&,int &&,int &&,int &&,int &&,int &&,int &&,int &&)' being compiled
           with
           [
               _Ty=std::string
           ]
-G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Abalask.cpp(25,102): message : see reference to function template instantiation 'std::shared_ptr<LootItem> std::make_shared<LootItem,std::string,ItemType,std::string,double,int,int,int,int,int,int,int>(std::string &&,ItemType &&,std::string &&,double &&,int &&,int &&,int &&,int &&,int &&,int &&,int &&)' being compiled
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Abalask.cpp(25,106): message : see reference to function template instantiation 'std::shared_ptr<LootItem> std::make_shared<LootItem,std::string,ItemType,std::string,double,int,int,int,int,int,int,int,int>(std::string &&,ItemType &&,std::string &&,double &&,int &&,int &&,int &&,int &&,int &&,int &&,int &&,int &&)' being compiled
   AbalaskTrader.cpp
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\xutility(275,77): warning C4244: 'argument': conversion from '_Ty' to 'int', possible loss of data
           with
@@ -41,79 +41,11 @@ C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.3221
           [
               _Ty=ItemType
           ]
-G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\AbalaskTrader.cpp(17,107): message : see reference to function template instantiation 'std::shared_ptr<LootItem> std::make_shared<LootItem,const char(&)[11],ItemType,const char(&)[15],double,int,int>(const char (&)[11],ItemType &&,const char (&)[15],double &&,int &&,int &&)' being compiled
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\AbalaskTrader.cpp(18,107): message : see reference to function template instantiation 'std::shared_ptr<LootItem> std::make_shared<LootItem,const char(&)[11],ItemType,const char(&)[15],double,int,int>(const char (&)[11],ItemType &&,const char (&)[15],double &&,int &&,int &&)' being compiled
   AbalaskUI.cpp
-  AbalaskUI.h
-  Battle.cpp
-  Character.cpp
-  ExploreDungeon.cpp
-  Characters.cpp
-  CharacterCreation.cpp
-G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterCreation.cpp(23,11): warning C4101: 'gameText': unreferenced local variable
-  DungeonRoom.cpp
-  DungeonGenerator.cpp
-G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\DungeonGenerator.cpp(91,52): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\DungeonGenerator.cpp(140,70): warning C4267: 'argument': conversion from 'size_t' to '_Ty', possible loss of data
-          with
-          [
-              _Ty=int
-          ]
-  Enemies.cpp
-  Game.cpp
-G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Game.h(10,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-  GameState.h
-  GameText.cpp
-  ICharacter.cpp
-  ICreature.cpp
-  IEnemy.cpp
-  Input.cpp
-  InputManager.cpp
-G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\InputManager.cpp(17,39): warning C4101: 'e': unreferenced local variable
-G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\InputManager.cpp(37,38): warning C4101: 'e': unreferenced local variable
-G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\InputManager.cpp(62,38): warning C4101: 'e': unreferenced local variable
-G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\InputManager.cpp(83,38): warning C4101: 'e': unreferenced local variable
-  Generating Code...
-G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\InputManager.cpp(22): warning C4715: 'InputManager::ValidatePlayerInput': not all control paths return a value
-  Compiling...
-  Inventory.cpp
   InvItem.cpp
-  IWeapon.cpp
-  LootItem.cpp
-  LootRoom.cpp
-  Map.cpp
-G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Map.cpp(24,57): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\xutility(268): warning C4267: 'initializing': conversion from 'size_t' to '_Ty', possible loss of data
-          with
-          [
-              _Ty=int
-          ]
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\memory(1983): message : see reference to function template instantiation 'void std::_Construct_in_place<_Ty,unsigned __int64>(_Ty &,unsigned __int64 &&) noexcept' being compiled
-          with
-          [
-              _Ty=int
-          ]
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\memory(2663): message : see reference to function template instantiation 'std::_Ref_count_obj2<int>::_Ref_count_obj2<_Ty>(_Ty &&)' being compiled
-          with
-          [
-              _Ty=unsigned __int64
-          ]
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\memory(2664,20): message : see reference to function template instantiation 'std::_Ref_count_obj2<int>::_Ref_count_obj2<_Ty>(_Ty &&)' being compiled
-          with
-          [
-              _Ty=unsigned __int64
-          ]
-G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Map.cpp(7,153): message : see reference to function template instantiation 'std::shared_ptr<int> std::make_shared<int,unsigned __int64>(unsigned __int64 &&)' being compiled
-  MusicPlayer.cpp
-  PlayerCharacter.cpp
-G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\PlayerCharacter.cpp(35,25): warning C4244: '-=': conversion from 'float' to 'int', possible loss of data
-G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\PlayerCharacter.cpp(160,22): warning C4244: 'return': conversion from 'int' to 'float', possible loss of data
-  Story.cpp
-  UI.cpp
-G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.cpp(242,75): warning C4101: 'roomCount': unreferenced local variable
-  Weapons.cpp
+  Weapon.cpp
   Generating Code...
-G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.cpp(185): warning C4715: 'UI::AttributeAssignment': not all control paths return a value
-G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Map.cpp(37): warning C4715: 'Map::RevealMapMenu': not all control paths return a value
   DungeonBattlesOfWinterspellCpp.cpp
   Note: including file: C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\iostream
   Note: including file:  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\yvals_core.h
@@ -227,9 +159,9 @@ G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Map.cpp(3
   Note: including file:    G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\InputManager.h
   Note: including file:     C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\vector
   Note: including file:  G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\PlayerCharacter.h
-  Note: including file:   G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\IWeapon.h
+  Note: including file:   G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Weapon.h
+  Note: including file:    G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\ICreature.h
   Note: including file:   G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\InvItem.h
-  Note: including file:   G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\ICreature.h
   Note: including file:   G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\LootItem.h
   Note: including file:    G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\ItemTypes.h
   Note: including file:  G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharacterCreation.h
@@ -237,8 +169,9 @@ G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Map.cpp(3
   Note: including file:    C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\tuple
   Note: including file:    C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\xtree
   Note: including file:   G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.h
-  Note: including file:    G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\IEnemy.h
-  Note: including file:    G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\ICharacter.h
+  Note: including file:    G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Enemy.h
+  Note: including file:    G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Character.h
+  Note: including file:   G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CharCreatUI.h
   Note: including file:  G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Abalask.h
   Note: including file:  G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\DungeonGenerator.h
   Note: including file:   C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\sstream

@@ -24,7 +24,7 @@ void ExploreDungeon::EnterDungeonRoom() {
 		ui.RoomLocked();
 	}
 	else if (currentRoom->GetCompleted()) {
-		ui.NoEnemies();
+		ui.NoEnemy();
 	}
 	else {
 		ui.DescribeDungeonRoom(currentRoom->GetDescription());
@@ -46,7 +46,6 @@ bool ExploreDungeon::ChangelingEvent() {
 		return false;
 	}
 }
-
 
 
 void ExploreDungeon::PlayerMenu() {
@@ -96,36 +95,36 @@ bool ExploreDungeon::CheckForKey() {
 // insert player character in the group of swift or non swift enemies depending on whichever player is but randomize it so player can be anywhere in the group of either
 std::vector<std::shared_ptr<ICreature>> ExploreDungeon::GenerateTurnOrder() {
 
-	std::vector<std::shared_ptr<IEnemy>> enemiesInRoom = currentRoom->GetEnemies();
+	std::vector<std::shared_ptr<Enemy>> enemiesInRoom = currentRoom->GetEnemy();
 	std::vector<std::shared_ptr<ICreature>> turnOrder;
 
-	int swiftEnemies = 0;
-	for (std::shared_ptr <IEnemy> enemy : enemiesInRoom) { // put swift enemies at front and non at the back
+	int swiftEnemy = 0;
+	for (std::shared_ptr<Enemy> enemy : enemiesInRoom) { // put swift enemies at front and non at the back
 		if (enemy->GetHasSwiftness()) {
 			turnOrder.emplace(turnOrder.begin(), enemy);
-			swiftEnemies++;
+			swiftEnemy++;
 		}
 		else {
-			turnOrder.push_back(enemy);
+			turnOrder.emplace(turnOrder.end(), enemy);
 		}
 	}
 	int randomIndex = 0;
 
 	if (playerCharacter->GetHasSwiftness()) {
-		if (swiftEnemies == 0) {
+		if (swiftEnemy == 0) {
 			turnOrder.insert(turnOrder.begin(), playerCharacter);
 		}
-		randomIndex = std::rand() % (swiftEnemies + 1);
+		randomIndex = std::rand() % (swiftEnemy + 1);
 		turnOrder.insert(turnOrder.begin() + randomIndex, playerCharacter);
 	}
 	else {
 
-		if (turnOrder.size() == swiftEnemies) {
-			turnOrder.push_back(playerCharacter);
+		if (turnOrder.size() == swiftEnemy) {
+			turnOrder.emplace(turnOrder.end(), playerCharacter);
 		}
 		else {
-			// Safe to calculate randomIndex because turnOrder.size() > swiftEnemies
-			randomIndex = swiftEnemies + (std::rand() % (turnOrder.size() - swiftEnemies));
+			// Safe to calculate randomIndex because turnOrder.size() > swiftEnemy
+			randomIndex = swiftEnemy + (std::rand() % (turnOrder.size() - swiftEnemy));
 			turnOrder.insert(turnOrder.begin() + randomIndex, playerCharacter);
 		}
 	}
