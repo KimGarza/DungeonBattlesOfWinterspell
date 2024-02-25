@@ -57,6 +57,7 @@ void Game::CheckGameState() {
 		break;
 	}
 	case GameState::Battle: {
+		Battling();
 		ChangeGameState(GameState::Loot);
 
 		break;
