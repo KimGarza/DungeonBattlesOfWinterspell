@@ -1,3 +1,2 @@
-﻿  Game.cpp
-G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Game.h(10,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+﻿  GameText.cpp
   DungeonBattlesOfWinterspellCpp.vcxproj -> G:\repos\DungeonBattlesOfWinterspellCpp\x64\Debug\DungeonBattlesOfWinterspellCpp.exe
