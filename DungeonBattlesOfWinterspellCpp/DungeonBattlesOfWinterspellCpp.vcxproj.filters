@@ -162,6 +162,9 @@
     <ClCompile Include="BeginState.cpp">
       <Filter>Source Files\GameStates\Begin</Filter>
     </ClCompile>
+    <ClCompile Include="GameContext.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -244,6 +247,9 @@
     </ClInclude>
     <ClInclude Include="BeginState.h">
       <Filter>Header Files\GameStates\Begin</Filter>
+    </ClInclude>
+    <ClInclude Include="GameContext.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

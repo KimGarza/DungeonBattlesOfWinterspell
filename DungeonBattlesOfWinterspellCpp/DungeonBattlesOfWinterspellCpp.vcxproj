@@ -156,6 +156,7 @@
     </ClCompile>
     <ClCompile Include="DungeonGenerator.cpp" />
     <ClCompile Include="Game.cpp" />
+    <ClCompile Include="GameContext.cpp" />
     <ClCompile Include="GameState.h" />
     <ClCompile Include="GameText.cpp" />
     <ClCompile Include="Input.cpp" />
@@ -184,6 +185,7 @@
     <ClInclude Include="DungeonRoom.h" />
     <ClInclude Include="DungeonGenerator.h" />
     <ClInclude Include="Game.h" />
+    <ClInclude Include="GameContext.h" />
     <ClInclude Include="GameText.h" />
     <ClInclude Include="ICreature.h" />
     <ClInclude Include="Input.h" />

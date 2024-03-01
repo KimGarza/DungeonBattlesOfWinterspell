@@ -18,24 +18,14 @@
 #include "ExploreDungeon.h"
 
 
-/// <summary>
-/// This is the center of the spider's web. Game is the one stop shop everything flows in and out of.
-/// It starts with begin, and each game state passes the current game state to the next required task.
-/// All game state related functions live outside of the Game class but are invoked here so it is easy to identify the
-/// exact string of events and triggers of other events.
-/// Considering other ways to break it out, but due to the large program and local filtering, not sure if readability will be sacrificed for 
-/// the sake of abstraction to deeper and deeper levels.
-/// Additionally breaking it out would cause for the need to constantly be sending back and forth data between all functions, (of which there are many),
-/// and to the Game class so other functions lined up can recieve them. Even if pointers are being passed instead which is exclusively how the project is setup,
-/// it's okay but will get super messay and interconnected. Still considering a better approach and game coding patterns! :)
-/// 
-/// Implement state machine here
-/// 
-/// </summary>
+
 Game::Game() {
 	currentState = GameState::Begin;
 }
 
+/// <summary>
+/// State machine: switches between states to execute relevant state. Each state will set the currentState_ to the next relevant state.
+/// </summary>
 void Game::CheckGameState() {
 	switch (currentState) {
 

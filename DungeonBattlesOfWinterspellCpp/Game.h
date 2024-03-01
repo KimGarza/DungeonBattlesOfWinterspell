@@ -11,6 +11,7 @@
 
 class Game {
 private:
+
 	GameState currentState;
 	std::shared_ptr<PlayerCharacter> playerCharacter;
 	std::shared_ptr<Map> map;
