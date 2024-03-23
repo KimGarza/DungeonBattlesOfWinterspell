@@ -17,3 +17,9 @@ One thing to note is where previously there were interfaces representing enemies
 actors to be factories via C++ Style Guide from Google.
 I have incorperated a State Machine pattern which roots at Game.cpp. I also may need to break down the states more but at this time they are being split apart, soon to be merged into development.
 I took large inspiration in promoting best game design coding patterns from Robert Nystrom. I may continue to convert other aspects of the game to different patterns but at this time, state machine and basic refactoring are in the works!
+
+Best practices references and sources:
+
+https://gameprogrammingpatterns.com/
+https://www.linkedin.com/pulse/boosting-c-coding-efficiency-best-practices-cleaner-jha-he-him-/
+
