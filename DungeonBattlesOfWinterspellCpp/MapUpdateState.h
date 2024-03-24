@@ -7,19 +7,11 @@
 class MapUpdateState
 {
 private:
-	const std::shared_ptr<GameContext> context_;
-	std::vector<std::shared_ptr<DungeonRoom>> rooms_;
-	int roomsRemaining_;
-	std::vector <std::string> roomNames_;
-	std::shared_ptr<DungeonRoom> currentRoom_;
+	const std::shared_ptr<GameContext> ctx_;
 
 public:
-	MapUpdateState(std::shared_ptr<GameContext> inContext) : context_(inContext) {}
+	MapUpdateState(std::shared_ptr<GameContext> inContext) : ctx_(inContext) {}
 	
 	void UpdateMap();
-	void Update();
-	/* Setting all values from context. They cannot be setup in constructor since drilling
-	into certain variables result in null exception due to Game.h declaring game states in constructor at entry point. */
-	void SetValues();
 };
 

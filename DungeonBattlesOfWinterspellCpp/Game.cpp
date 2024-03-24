@@ -60,6 +60,7 @@ void Game::CheckGameState() {
 		return;
 	}
 	case GameState::Battle: {
+
 		Battling();
 		ctx_->SetState(GameState::Loot);
 
@@ -83,9 +84,9 @@ void Game::CheckGameState() {
 		break;
 	}
 	case GameState::UpdateMap: {
-		UpdateMap();
 
-		break;
+		mapUpdateState_.UpdateMap();
+		return;
 	}
 	case GameState::EndGame: {
 		std::cout << "Congrats on finishing the game!";

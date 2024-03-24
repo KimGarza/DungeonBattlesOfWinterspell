@@ -1,24 +1,13 @@
 #include "MapUpdateState.h"
 
 void MapUpdateState::UpdateMap() {
-	SetValues();
-	Update();
-}
 
-// sets current 
-void MapUpdateState::Update() {
+	if (ctx_->GetCurrentRoom()->GetTimesExplored() == 1) {
 
-	if (currentRoom_->GetTimesExplored() == 1) {
-
-		currentRoom_->SetCompleted();
-		roomsRemaining_ -= 1;
+		ctx_->GetCurrentRoom()->SetCompleted();
+		ctx_->GetCurrentRoom()->SetTimesExplored();
+		ctx_->GetMap()->SetRoomsRemaining();
 	}
-}
 
-void MapUpdateState::SetValues() {
-
-	rooms_ = context_->GetDungeonRooms();
-	roomsRemaining_ = context_->GetMap()->GetRoomsRemaining();
-	roomNames_ = context_->GetMap()->GetRoomNames();
-	currentRoom_ = context_->GetCurrentRoom();
+	ctx_->SetState(GameState::RevealMap);
 }

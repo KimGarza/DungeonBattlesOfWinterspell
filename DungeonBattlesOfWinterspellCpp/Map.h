@@ -20,5 +20,6 @@ public:
     std::shared_ptr<DungeonRoom> GetCurrentRoom() { return currentRoom_; }
 
     void SetRoomNames(std::vector<std::string> inRoomNames) { roomNames_ = inRoomNames; }
+    void SetRoomsRemaining() { roomsRemaining_ -= 1; }
 };
 
