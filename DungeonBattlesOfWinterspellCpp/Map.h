@@ -7,23 +7,18 @@
 
 class Map {
 private:
-    std::vector <std::shared_ptr<DungeonRoom>> dungeonRooms;
-    std::vector <std::string> dungeonRoomNames;
-    std::shared_ptr<int> roomsRemaining;
-    std::shared_ptr<DungeonRoom> currentRoom;
-    UI ui;
+    std::vector <std::shared_ptr<DungeonRoom>> rooms_;
+    std::vector <std::string> roomNames_;
+    int roomsRemaining_;
+    std::shared_ptr<DungeonRoom> currentRoom_;
 
 public:
-    Map(std::vector <std::shared_ptr<DungeonRoom>>);
+    Map(std::vector <std::shared_ptr<DungeonRoom>> inDungeonRooms) : rooms_(inDungeonRooms), roomsRemaining_(inDungeonRooms.size()) {}
 
-    void PopulateDungeonMap();
+    std::vector<std::string> GetRoomNames() { return roomNames_; }
+    int GetRoomsRemaining() { return roomsRemaining_; }
+    std::shared_ptr<DungeonRoom> GetCurrentRoom() { return currentRoom_; }
 
-    std::shared_ptr<int> GetRoomsRemaining() const {
-        return roomsRemaining;
-    }
-
-    std::shared_ptr<DungeonRoom> RevealMapMenu();
-    std::shared_ptr<DungeonRoom> GetCurrentRoom();
-    void UpdateMap();
+    void SetRoomNames(std::vector<std::string> inRoomNames) { roomNames_ = inRoomNames; }
 };
 

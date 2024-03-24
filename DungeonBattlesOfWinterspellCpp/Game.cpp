@@ -18,28 +18,36 @@
 #include "ExploreDungeon.h"
 
 
+/// <summary>
+/// Game loop that continuously checks each game state until end of game. This is what keeps the game persisting.
+/// First ran in main.cpp, constructor decides Begin is initial state
+/// </summary>
+void Game::StateCycle() {
 
-Game::Game() {
-	currentState = GameState::Begin;
+	while (ctx_->GetState() != GameState::EndGame) {
+
+		CheckGameState();
+	} 
+
+	CheckGameState(); // requires one more check game state for the end game but will close afterwards
+	return;
 }
 
 /// <summary>
 /// State machine: switches between states to execute relevant state. Each state will set the currentState_ to the next relevant state.
 /// </summary>
 void Game::CheckGameState() {
-	switch (currentState) {
+	switch (ctx_->GetState()) {
 
-	case GameState::Begin: { 
-		Begin();
-		ChangeGameState(GameState::Map);
+	case GameState::Begin: {
 
-		break;
+		beginState_.BeginSequence();
+		return;
 	}
 	case GameState::Map: {
-		currentRoom = map->RevealMapMenu();
-		ChangeGameState(GameState::Explore);
 
-		break;
+		mapRevealState_.RevealMap();
+		return;
 	}
 	case GameState::Explore: {
 		Explore();
@@ -48,7 +56,8 @@ void Game::CheckGameState() {
 	}
 	case GameState::Battle: {
 		Battling();
-		ChangeGameState(GameState::Loot);
+		ctx_->SetState(GameState::Loot);
+
 
 		break;
 	}
@@ -80,105 +89,67 @@ void Game::CheckGameState() {
 		break;
 	}
 	default:
-		currentState = GameState::None;
+		ctx_->SetState(GameState::None);
 		
 		break;
 	}
 }
 
-void Game::ChangeGameState(GameState newState) {
-	currentState = newState;
-	CheckGameState();
-}
-
-// remove all memory after building and returning
-
-void Game::Begin() {
-	//sf::RenderWindow window(sf::VideoMode(1200, 1000), "My Game", sf::Style::Default);
-		//window.setFramerateLimit(60); // Limit the framerate to 60 FPS
-
-		//sf::Texture texture;
-		//if (!texture.loadFromFile("../images/brickwall.png")) {
-		//	// Handle error here
-		//	// For example, you can print an error message or throw an exception
-		//}
-
-		//sf::Sprite sprite;
-		//sprite.setTexture(texture);
-
-		//// Inside the game loop
-		//window.clear();
-		//window.draw(sprite);
-		//window.display();
-
-	music.PlayMusic(L"slow-2021-08-17_-_8_Bit_Nostalgia_-_www.FesliyanStudios.com.wav");
-
-	story.OpeningStory();
-
-	playerCharacter = characterCreation.CreateCharacter();
-	dungeonRooms = dungeonGenerator.GenerateDungeons();
-	map = std::make_shared<Map>(dungeonRooms);
-	map->PopulateDungeonMap();
-
-	story.MapIntro();
-
-}
-
 void Game::Explore() {
-	ExploreDungeon exploreDungeon(currentRoom, playerCharacter);
+	ExploreDungeon exploreDungeon(ctx_->GetCurrentRoom(), ctx_->GetPlayer());
 
 	story.EnterDungeonRoom();
 
 	exploreDungeon.PlayerMenu();
 
-	if (currentRoom->GetName() == "Forgotten Catacombs" && currentRoom->GetTimesExplored() == 0) {
+	if (ctx_->GetCurrentRoom()->GetName() == "Forgotten Catacombs" && ctx_->GetCurrentRoom()->GetTimesExplored() == 0) {
 
 		music.PlayMusic(L"8bit-chikadou.wav");
 		if (exploreDungeon.ChangelingEvent()) {
-			ChangeGameState(GameState::BattleChangeling);
+			ctx_->SetState(GameState::BattleChangeling);
 		}
 	}
 
-	else if (currentRoom->GetName() == "Room of Moonlight" && currentRoom->GetTimesExplored() > 0) {
-		ChangeGameState(GameState::AbalaskTrader);
+	else if (ctx_->GetCurrentRoom()->GetName() == "Room of Moonlight" && ctx_->GetCurrentRoom()->GetTimesExplored() > 0) {
+		ctx_->SetState(GameState::AbalaskTrader);
 	}
 	// consider else or will it store on the stack to assume return to this method
 	exploreDungeon.EnterDungeonRoom();
 
-	if (!currentRoom->GetCompleted() && !currentRoom->GetIsLocked()) {
+	if (!ctx_->GetCurrentRoom()->GetCompleted() && !ctx_->GetCurrentRoom()->GetIsLocked()) {
 		std::vector<std::shared_ptr<ICreature>> turnOrder = exploreDungeon.GenerateTurnOrder();
 
-		ChangeGameState(GameState::Battle);
+		ctx_->SetState(GameState::Battle);
 	}
-	else if (currentRoom->GetIsLocked()) {
+	else if (ctx_->GetCurrentRoom()->GetIsLocked()) {
 
 		if (exploreDungeon.CheckForKey()) {
 
 			std::vector<std::shared_ptr<ICreature>> turnOrder = exploreDungeon.GenerateTurnOrder();
-			ChangeGameState(GameState::Battle);
+			ctx_->SetState(GameState::Battle);
 		}
 		else {
-			ChangeGameState(GameState::Map);
+			ctx_->SetState(GameState::Map);
 		}
 	}
 	else {
 
-		ChangeGameState(GameState::Loot);
+		ctx_->SetState(GameState::Loot);
 	}
 }
 
 void Game::Battling() {
 	music.PlayMusic(L"108 - Mouryou Senki Madara (VRC6) - Ma-Da-Ra.wav");
 
-	Battle battle(currentRoom->GetTurnOrder());
+	Battle battle(ctx_->GetCurrentRoom()->GetTurnOrder());
 
-	battle.RevealTurnOrder(currentRoom->GetTurnOrder(), currentRoom->GetName());
+	battle.RevealTurnOrder(ctx_->GetCurrentRoom()->GetTurnOrder(), ctx_->GetCurrentRoom()->GetName());
 
-	battle.CommenceBattle(playerCharacter);
+	battle.CommenceBattle(ctx_->GetPlayer());
 }
 
 void Game::Trading() {
-	if (currentRoom->GetTimesExplored() == 1) {
+	if (ctx_->GetCurrentRoom()->GetTimesExplored() == 1) {
 
 		story.AbalaskTraderIntroduction();
 	}
@@ -186,7 +157,7 @@ void Game::Trading() {
 	AbalaskTrader abalaskTrader;
 	abalask = abalaskTrader.GenerateAbalask();
 
-	abalaskTrader.BeginTrading(playerCharacter);
+	abalaskTrader.BeginTrading(ctx_->GetPlayer());
 }
 
 void Game::Loot() {
@@ -195,17 +166,15 @@ void Game::Loot() {
 
 	LootRoom lootRoom;
 
-	lootRoom.Loot(playerCharacter, currentRoom);
+	lootRoom.Loot(ctx_->GetPlayer(), ctx_->GetCurrentRoom());
 
-	ChangeGameState(GameState::UpdateMap);
+	ctx_->SetState(GameState::UpdateMap);
 }
 
 void Game::UpdateMap() {
-	map->UpdateMap();
-
-	if (*map->GetRoomsRemaining() == 0) {
-		ChangeGameState(GameState::EndGame);
+	mapUpdateState_.UpdateMap();
+	if (ctx_->GetMap()->GetRoomsRemaining() == 0) {
+		ctx_->SetState(GameState::EndGame);
 	}
-
-	ChangeGameState(GameState::Map);
+	ctx_->SetState(GameState::Map);
 }

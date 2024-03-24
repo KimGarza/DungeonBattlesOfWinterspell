@@ -10,6 +10,10 @@ void BeginState::BeginSequence() {
 	CreateCharacter();
 	GenerateDungeons();
 	CreateMap();
+
+	story.MapIntro();
+
+	context_->SetState(GameState::Map);
 }
 
 void BeginState::RenderSFMLGraphics() {
@@ -53,11 +57,17 @@ void BeginState::GenerateDungeons() {
 
 void BeginState::CreateMap() {
 
-	context_->SetMap(std::make_shared<Map>(context_->GetDungeonRooms())); // get rid of passing this in after test
-
-	context_->GetMap()->PopulateDungeonMap();
-
-	story.MapIntro();
+	context_->SetMap(std::make_shared<Map>(context_->GetDungeonRooms()));
+	PopulateDungeonMap();
 }
 
+void BeginState::PopulateDungeonMap() {
 
+	std::vector<std::string> roomNames;
+
+	for (const auto& dungeon : context_->GetDungeonRooms()) {
+
+		roomNames.push_back(dungeon->GetName());
+	}
+	context_->GetMap()->SetRoomNames(roomNames);
+}

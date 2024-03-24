@@ -11,8 +11,9 @@
 
 int main()
 {
-    Game game;
-    game.CheckGameState();
+    std::shared_ptr<GameContext> ctx = std::make_shared<GameContext>();
+    Game game(ctx);
+    game.StateCycle();
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

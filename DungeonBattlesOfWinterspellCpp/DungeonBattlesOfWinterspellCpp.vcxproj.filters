@@ -163,7 +163,13 @@
       <Filter>Source Files\GameStates\Begin</Filter>
     </ClCompile>
     <ClCompile Include="GameContext.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="MapUpdateState.cpp">
+      <Filter>Source Files\GameStates\Map</Filter>
+    </ClCompile>
+    <ClCompile Include="MapRevealState.cpp">
+      <Filter>Source Files\GameStates\Map</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -249,7 +255,13 @@
       <Filter>Header Files\GameStates\Begin</Filter>
     </ClInclude>
     <ClInclude Include="GameContext.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="MapUpdateState.h">
+      <Filter>Header Files\GameStates\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="MapRevealState.h">
+      <Filter>Header Files\GameStates\Map</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

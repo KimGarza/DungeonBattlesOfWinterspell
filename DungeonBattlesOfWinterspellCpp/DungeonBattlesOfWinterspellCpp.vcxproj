@@ -166,6 +166,8 @@
     <ClCompile Include="LootItem.cpp" />
     <ClCompile Include="LootRoom.cpp" />
     <ClCompile Include="Map.cpp" />
+    <ClCompile Include="MapRevealState.cpp" />
+    <ClCompile Include="MapUpdateState.cpp" />
     <ClCompile Include="MusicPlayer.cpp" />
     <ClCompile Include="PlayerCharacter.cpp" />
     <ClCompile Include="Story.cpp" />
@@ -196,6 +198,8 @@
     <ClInclude Include="LootItem.h" />
     <ClInclude Include="LootRoom.h" />
     <ClInclude Include="Map.h" />
+    <ClInclude Include="MapRevealState.h" />
+    <ClInclude Include="MapUpdateState.h" />
     <ClInclude Include="MusicPlayer.h" />
     <ClInclude Include="PlayerCharacter.h" />
     <ClInclude Include="Story.h" />

@@ -23,6 +23,6 @@ public:
 	void CreateCharacter();
 	void GenerateDungeons();
 	void CreateMap();
-
+	void PopulateDungeonMap();
 };
 

@@ -479,6 +479,7 @@ void UI::AlreadyEquiptItem() {
 
 void UI::OpenCharacterMenu(std::shared_ptr<PlayerCharacter> playerCharacter) {
     system("cls");
+
     gameText.WriteWithoutTyping(playerCharacter->GetName() + " | Level: " + std::to_string(playerCharacter->GetLevel()));
 
     gameText.WriteWithoutTyping("Max health: " + std::to_string(playerCharacter->GetMaxHealth()) + " | Current health: " + std::to_string(playerCharacter->GetHealth()));
