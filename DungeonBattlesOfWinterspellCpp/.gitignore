@@ -74,3 +74,6 @@ Thumbs.db
 # *.qrc_*       (Qt resource files)
 # *.qmlc        (Compiled Qt QML files)
 # *.jsc         (Qt JSC files)
+[Dd]ebug/
+[Rr]elease/
+*.tlog

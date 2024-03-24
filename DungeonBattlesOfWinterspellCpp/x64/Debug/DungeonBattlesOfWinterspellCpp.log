@@ -1,5 +1,6 @@
-﻿  Game.cpp
+﻿  BeginState.cpp
 G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Map.h(16): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+<<<<<<< HEAD
 G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Game.h(17,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
   GameState.h
   Generating Code...
@@ -438,6 +439,16 @@ G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Game.h(17
   Note: including file:  G:\repos\DungeonBattlesOfWinterspellCpp\include\SFML/Graphics/Sprite.hpp
   Note: including file:  G:\repos\DungeonBattlesOfWinterspellCpp\include\SFML/Graphics/Text.hpp
   Note: including file:  G:\repos\DungeonBattlesOfWinterspellCpp\include\SFML/Graphics/VertexBuffer.hpp
+=======
+  GameContext.cpp
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Map.h(16): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  MapRevealState.cpp
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Map.h(16): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\MapRevealState.cpp(19,72): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  MapUpdateState.cpp
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Map.h(16): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  Generating Code...
+>>>>>>> development
   LINK : G:\repos\DungeonBattlesOfWinterspellCpp\x64\Debug\DungeonBattlesOfWinterspellCpp.exe not found or not built by the last incremental link; performing full link
 x64\Debug\AbalaskUI.obj : warning LNK4042: object specified more than once; extras ignored
   DungeonBattlesOfWinterspellCpp.vcxproj -> G:\repos\DungeonBattlesOfWinterspellCpp\x64\Debug\DungeonBattlesOfWinterspellCpp.exe
