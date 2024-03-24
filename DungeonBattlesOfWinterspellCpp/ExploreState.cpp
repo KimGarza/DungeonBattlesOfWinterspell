@@ -34,6 +34,9 @@ void ExploreState::Explore() {
 	else if (room_->GetName() == "Room of Moonlight" && room_->GetTimesExplored() > 0) {
 		ctx_->SetState(GameState::AbalaskTrader);
 	}
+	else if (room_->GetTimesExplored() > 0) {
+		ctx_->SetState(GameState::RevealMap);
+	}
 
 	EnterRoom();
 }
@@ -41,8 +44,6 @@ void ExploreState::Explore() {
 // lower level checking will result in specific text outputs based on the previously 
 // checked conditions since the checks have been done
 void ExploreState::EnterRoom() {
-
-	SetValues(); // avoid this
 
 	if (room_->GetIsLocked()) {
 		ui.RoomLocked();
