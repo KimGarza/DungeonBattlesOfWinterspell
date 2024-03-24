@@ -28,7 +28,7 @@ public:
 	void DisplayTurnOrder(std::vector<std::string> creatureNames, std::string dungeonRoomName);
 	void NoEnemy();
 	bool DescribePlayerOptions(std::shared_ptr<PlayerCharacter> player);
-	void DescribeEnemyAttack(std::string name, std::string skillName, std::string skillDescription, int attackDmg);
+	void DescribeEnemyAttack(std::shared_ptr<Enemy> enemy, int attackDmg);
 	bool DescribePlayerAttackOptions(std::shared_ptr<Enemy> enemy, std::shared_ptr<Weapon> weapon);
 	std::shared_ptr<Enemy> GetEnemyTargetForAttack(std::shared_ptr<PlayerCharacter> player, std::vector<std::shared_ptr<ICreature>> turnOrder);
 	void HealthRemaining(int healthRemaining);

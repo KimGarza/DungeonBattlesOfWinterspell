@@ -41,7 +41,7 @@ public:
 	void SetCompleted();
 	void SetTimesExplored();
 	void SetIsLocked(bool isLocked);
-	void SetCurrentTurnOrder(std::vector<std::shared_ptr<ICreature>> turnOrder) {
+	void SetTurnOrder(std::vector<std::shared_ptr<ICreature>> turnOrder) {
 		currentTurnOrder = turnOrder;
 	}
 	void SetLoot();

@@ -10,14 +10,9 @@ void ExploreState::Explore() {
 	// player menu here
 	
 	// deals with locked doors and authorizing user by skeleton key
-	if (!room_->GetCompleted() && !room_->GetIsLocked()) {
+	if (room_->GetIsLocked()) {
 
-		GenerateTurnOrder();
-		ctx_->SetState(GameState::Battle);
-	}
-	else if (room_->GetIsLocked()) {
-
-		if (!CheckHasKey()) {
+		if (CheckHasKey()) {
 
 			GenerateTurnOrder();
 			ctx_->SetState(GameState::Battle);
@@ -25,6 +20,11 @@ void ExploreState::Explore() {
 		else {
 			ctx_->SetState(GameState::RevealMap);
 		}
+	}
+	else if (!room_->GetCompleted()) {
+
+		GenerateTurnOrder();
+		ctx_->SetState(GameState::Battle);
 	}
 
 	// deals with events upon entering specific dungeons at specific intervals of repeated visits
@@ -35,7 +35,7 @@ void ExploreState::Explore() {
 		ctx_->SetState(GameState::AbalaskTrader);
 	}
 	else if (room_->GetTimesExplored() > 0) {
-		ctx_->SetState(GameState::RevealMap);
+		ctx_->SetState(GameState::Loot);
 	}
 
 	EnterRoom();
@@ -123,7 +123,7 @@ void ExploreState::GenerateTurnOrder() {
 		}
 	}
 
-	ctx_->GetCurrentRoom()->SetCurrentTurnOrder(turnOrder);
+	ctx_->GetCurrentRoom()->SetTurnOrder(turnOrder);
 }
 
 void ExploreState::SetValues() {

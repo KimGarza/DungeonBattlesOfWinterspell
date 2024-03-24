@@ -129,6 +129,6 @@ std::vector<std::shared_ptr<ICreature>> ExploreDungeon::GenerateTurnOrder() {
 		}
 	}
 
-	currentRoom->SetCurrentTurnOrder(turnOrder);
+	currentRoom->SetTurnOrder(turnOrder);
 	return turnOrder;
 }

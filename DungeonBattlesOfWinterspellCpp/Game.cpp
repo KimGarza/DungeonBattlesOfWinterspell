@@ -61,8 +61,7 @@ void Game::CheckGameState() {
 	}
 	case GameState::Battle: {
 
-		Battling();
-		ctx_->SetState(GameState::Loot);
+		battleState_.Battle();
 
 
 		break;
@@ -108,6 +107,7 @@ void Game::Explore() {
 
 	exploreDungeon.PlayerMenu();
 
+	// considering switch statements of enums for dungeon room types which match names
 	if (ctx_->GetCurrentRoom()->GetName() == "Forgotten Catacombs" && ctx_->GetCurrentRoom()->GetTimesExplored() == 0) {
 
 		music.PlayMusic(L"8bit-chikadou.wav");
@@ -115,7 +115,6 @@ void Game::Explore() {
 			ctx_->SetState(GameState::BattleChangeling);
 		}
 	}
-
 	else if (ctx_->GetCurrentRoom()->GetName() == "Room of Moonlight" && ctx_->GetCurrentRoom()->GetTimesExplored() > 0) {
 		ctx_->SetState(GameState::AbalaskTrader);
 	}

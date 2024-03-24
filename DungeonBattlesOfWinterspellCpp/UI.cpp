@@ -240,11 +240,11 @@ std::shared_ptr<Enemy> UI::GetEnemyTargetForAttack(std::shared_ptr<PlayerCharact
     }
 }
 
-void UI::DescribeEnemyAttack(std::string name, std::string skillName, std::string skillDescription, int attackDmg) {
+void UI::DescribeEnemyAttack(std::shared_ptr<Enemy> enemy, int attackDmg) {
 
     // maybe have enemies on side panel
     system("cls");
-    gameText.WriteLineInput(name + " attacked you with " + skillName + ", " + skillDescription + " which hits for " + std::to_string(attackDmg) + " hit points!\n");
+    gameText.WriteLineInput(enemy->GetName() + " attacked you with " + enemy->GetSkillName() + ", " + enemy->GetSkillDescription() + " which hits for " + std::to_string(attackDmg) + " hit points!\n");
 }
 
 bool UI::DescribePlayerAttackOptions(std::shared_ptr<Enemy> enemy, std::shared_ptr<Weapon> weapon) {
