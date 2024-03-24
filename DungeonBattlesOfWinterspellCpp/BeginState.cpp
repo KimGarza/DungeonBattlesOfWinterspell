@@ -13,7 +13,7 @@ void BeginState::BeginSequence() {
 
 	story.MapIntro();
 
-	context_->SetState(GameState::Map);
+	context_->SetState(GameState::RevealMap);
 }
 
 void BeginState::RenderSFMLGraphics() {

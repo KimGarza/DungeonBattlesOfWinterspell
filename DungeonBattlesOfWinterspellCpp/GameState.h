@@ -3,8 +3,9 @@
 enum class GameState {
 	None,
 	Begin,
-	Map,
+	RevealMap,
 	Room,
+	ForgottenCatacombs,
 	Battle,
 	Loot,
 	Explore,

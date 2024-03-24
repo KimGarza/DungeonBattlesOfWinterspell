@@ -3,6 +3,8 @@
 #include "BeginState.h"
 #include "MapUpdateState.h"
 #include "MapRevealState.h"
+#include "ExploreState.h"
+#include "ExploreCatacombsState.h"
 
 #include "GameState.h"
 #include "Story.h"
@@ -21,6 +23,8 @@ private:
 	BeginState beginState_;
 	MapUpdateState mapUpdateState_;
 	MapRevealState mapRevealState_;
+	ExploreState exploreState_;
+	ExploreCatacombsState exploreCatacombsState_;
 
 	std::shared_ptr<PlayerCharacter> playerCharacter;
 	std::shared_ptr<Map> map;
@@ -34,7 +38,9 @@ private:
 
 public:
 	// Starts game off with begin state
-	Game(std::shared_ptr<GameContext> inCtx) : ctx_(inCtx), beginState_(BeginState(inCtx)), mapUpdateState_(MapUpdateState(inCtx)), mapRevealState_(MapRevealState(inCtx)) {}
+	Game(std::shared_ptr<GameContext> inCtx) : ctx_(inCtx), beginState_(BeginState(inCtx)),
+		mapUpdateState_(MapUpdateState(inCtx)), mapRevealState_(MapRevealState(inCtx)),
+		exploreState_(ExploreState(inCtx)), exploreCatacombsState_(ExploreCatacombsState(inCtx)) {}
 
 	void StateCycle();
 	void CheckGameState();

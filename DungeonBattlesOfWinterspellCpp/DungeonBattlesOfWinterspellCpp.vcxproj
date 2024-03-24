@@ -155,6 +155,8 @@
       <ShowIncludes Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Yes</ShowIncludes>
     </ClCompile>
     <ClCompile Include="DungeonGenerator.cpp" />
+    <ClCompile Include="ExploreState.cpp" />
+    <ClCompile Include="ExploreCatacombsState.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameContext.cpp" />
     <ClCompile Include="GameState.h" />
@@ -186,6 +188,8 @@
     <ClInclude Include="CharacterCreation.h" />
     <ClInclude Include="DungeonRoom.h" />
     <ClInclude Include="DungeonGenerator.h" />
+    <ClInclude Include="ExploreState.h" />
+    <ClInclude Include="ExploreCatacombsState.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameContext.h" />
     <ClInclude Include="GameText.h" />

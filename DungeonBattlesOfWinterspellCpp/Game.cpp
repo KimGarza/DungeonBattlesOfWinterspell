@@ -44,15 +44,20 @@ void Game::CheckGameState() {
 		beginState_.BeginSequence();
 		return;
 	}
-	case GameState::Map: {
+	case GameState::RevealMap: {
 
 		mapRevealState_.RevealMap();
 		return;
 	}
 	case GameState::Explore: {
-		Explore();
 
-		break;
+		exploreState_.Explore();
+		return;
+	}
+	case GameState::ForgottenCatacombs: {
+
+		exploreCatacombsState_.Explore();
+		return;
 	}
 	case GameState::Battle: {
 		Battling();
@@ -129,7 +134,7 @@ void Game::Explore() {
 			ctx_->SetState(GameState::Battle);
 		}
 		else {
-			ctx_->SetState(GameState::Map);
+			ctx_->SetState(GameState::RevealMap);
 		}
 	}
 	else {
@@ -176,5 +181,5 @@ void Game::UpdateMap() {
 	if (ctx_->GetMap()->GetRoomsRemaining() == 0) {
 		ctx_->SetState(GameState::EndGame);
 	}
-	ctx_->SetState(GameState::Map);
+	ctx_->SetState(GameState::RevealMap);
 }
