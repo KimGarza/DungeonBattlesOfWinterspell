@@ -6,6 +6,7 @@
 #include "ExploreState.h"
 #include "BattleState.h"
 #include "ChangelingState.h"
+#include "LootState.h"
 
 #include "GameState.h"
 #include "Story.h"
@@ -27,6 +28,7 @@ private:
 	ExploreState exploreState_;
 	BattleState battleState_;
 	ChangelingState changelingState_;
+	LootState lootState_;
 
 	std::shared_ptr<PlayerCharacter> playerCharacter;
 	std::shared_ptr<Map> map;
@@ -42,7 +44,8 @@ public:
 	// Starts game off with begin state
 	Game(std::shared_ptr<GameContext> inCtx) : ctx_(inCtx), beginState_(BeginState(inCtx)),
 		mapUpdateState_(MapUpdateState(inCtx)), mapRevealState_(MapRevealState(inCtx)),
-		exploreState_(ExploreState(inCtx)), battleState_(BattleState(inCtx)), changelingState_(ChangelingState(inCtx)) {}
+		exploreState_(ExploreState(inCtx)), battleState_(BattleState(inCtx)), 
+		changelingState_(ChangelingState(inCtx)), lootState_(LootState(inCtx)) {}
 
 	void StateCycle();
 	void CheckGameState();

@@ -70,9 +70,9 @@ void Game::CheckGameState() {
 		break;
 	}
 	case GameState::Loot: {
-		Loot();
 
-		break;
+		lootState_.Loot();
+		return;
 	}
 	case GameState::UpdateMap: {
 
@@ -86,9 +86,9 @@ void Game::CheckGameState() {
 		break;
 	}
 	default:
+
 		ctx_->SetState(GameState::None);
-		
-		break;
+		return;
 	}
 }
 
