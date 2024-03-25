@@ -7,11 +7,11 @@ enum class GameState {
 	Room,
 	ForgottenCatacombs,
 	Battle,
+	Changeling,
 	Loot,
 	Explore,
 	UpdateMap,
 	EndGame,
 
-	BattleChangeling,
 	AbalaskTrader
 };

@@ -3,7 +3,8 @@
 void BeginState::BeginSequence() {
 
 	RenderSFMLGraphics();
-	PlayMusic();
+
+	music_.PlayMusic(L"slow-2021-08-17_-_8_Bit_Nostalgia_-_www.FesliyanStudios.com.wav");
 
 	story.OpeningStory();
 
@@ -35,12 +36,6 @@ void BeginState::RenderSFMLGraphics() {
 //window.draw(sprite);
 //window.display();
 
-}
-
-void BeginState::PlayMusic() {
-
-	MusicPlayer music;
-	music.PlayMusic(L"slow-2021-08-17_-_8_Bit_Nostalgia_-_www.FesliyanStudios.com.wav");
 }
 
 void BeginState::CreateCharacter() {

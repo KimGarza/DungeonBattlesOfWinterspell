@@ -144,6 +144,7 @@
     <ClCompile Include="AbalaskUI.cpp" />
     <ClCompile Include="AbalaskUI.h" />
     <ClCompile Include="Battle.cpp" />
+    <ClCompile Include="ChangelingState.cpp" />
     <ClCompile Include="BattleState.cpp" />
     <ClCompile Include="BeginState.cpp" />
     <ClCompile Include="Character.cpp" />
@@ -157,7 +158,6 @@
     </ClCompile>
     <ClCompile Include="DungeonGenerator.cpp" />
     <ClCompile Include="ExploreState.cpp" />
-    <ClCompile Include="ExploreCatacombsState.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameContext.cpp" />
     <ClCompile Include="GameState.h" />
@@ -181,6 +181,7 @@
     <ClInclude Include="Abalask.h" />
     <ClInclude Include="AbalaskTrader.h" />
     <ClInclude Include="Battle.h" />
+    <ClInclude Include="ChangelingState.h" />
     <ClInclude Include="BattleState.h" />
     <ClInclude Include="BeginState.h" />
     <ClInclude Include="Character.h" />
@@ -191,7 +192,6 @@
     <ClInclude Include="DungeonRoom.h" />
     <ClInclude Include="DungeonGenerator.h" />
     <ClInclude Include="ExploreState.h" />
-    <ClInclude Include="ExploreCatacombsState.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameContext.h" />
     <ClInclude Include="GameText.h" />

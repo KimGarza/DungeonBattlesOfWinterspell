@@ -2,6 +2,8 @@
 
 void BattleState::Battle() {
 
+    music_.PlayMusic(L"108 - Mouryou Senki Madara (VRC6) - Ma-Da-Ra.wav");
+
     turnOrder_ = ctx_->GetCurrentRoom()->GetTurnOrder();
 
     RevealTurnOrder();

@@ -2,6 +2,7 @@
 #include <memory>
 #include "GameContext.h"
 #include "UI.h"
+#include "MusicPlayer.h"
 
 class BattleState
 {
@@ -13,6 +14,7 @@ private:
 	// enemy to remove from the list to generate new updated list with alive enemies only during player's turn
 	std::shared_ptr<ICreature> slaughteredEnemy_; 
 	UI ui;
+	MusicPlayer music_;
 
 public:
 	BattleState(std::shared_ptr<GameContext> inCtx) : ctx_(inCtx) {}

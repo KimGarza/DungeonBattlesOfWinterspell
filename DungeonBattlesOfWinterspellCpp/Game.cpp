@@ -54,23 +54,15 @@ void Game::CheckGameState() {
 		exploreState_.Explore();
 		return;
 	}
-	case GameState::ForgottenCatacombs: {
-
-		exploreCatacombsState_.Explore();
-		return;
-	}
 	case GameState::Battle: {
 
 		battleState_.Battle();
-
-
-		break;
+		return;
 	}
-	case GameState::BattleChangeling: {
-		Battle battle;
-		battle.ChangelingFight(playerCharacter);
+	case GameState::Changeling: {
 
-		break;
+		changelingState_.ChangelingEncounter();
+		return;
 	}
 	case GameState::AbalaskTrader: {
 		Trading();
@@ -110,9 +102,8 @@ void Game::Explore() {
 	// considering switch statements of enums for dungeon room types which match names
 	if (ctx_->GetCurrentRoom()->GetName() == "Forgotten Catacombs" && ctx_->GetCurrentRoom()->GetTimesExplored() == 0) {
 
-		music.PlayMusic(L"8bit-chikadou.wav");
 		if (exploreDungeon.ChangelingEvent()) {
-			ctx_->SetState(GameState::BattleChangeling);
+			ctx_->SetState(GameState::Changeling);
 		}
 	}
 	else if (ctx_->GetCurrentRoom()->GetName() == "Room of Moonlight" && ctx_->GetCurrentRoom()->GetTimesExplored() > 0) {

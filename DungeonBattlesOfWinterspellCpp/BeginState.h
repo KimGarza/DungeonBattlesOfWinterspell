@@ -13,13 +13,13 @@ class BeginState
 private:
 	std::shared_ptr<GameContext> context_;
 	Story story;
+	MusicPlayer music_;
 
 public:
 	BeginState(std::shared_ptr<GameContext> inContext) : context_(inContext) {}
 
 	void BeginSequence();
 	void RenderSFMLGraphics();
-	void PlayMusic();
 	void CreateCharacter();
 	void GenerateDungeons();
 	void CreateMap();

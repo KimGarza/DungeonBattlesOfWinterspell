@@ -1,7 +1,13 @@
-﻿  Battle.cpp
-  ExploreDungeon.cpp
-  UI.cpp
-G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.cpp(23,79): warning C4101: 'roomCount': unreferenced local variable
+﻿  BattleState.cpp
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Map.h(16): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  BeginState.cpp
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Map.h(16): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  ChangelingState.cpp
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Map.h(16): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  Game.cpp
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Map.h(16): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Game.h(18,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  GameState.h
   Generating Code...
   DungeonBattlesOfWinterspellCpp.cpp
   Note: including file: C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\iostream
@@ -354,8 +360,8 @@ G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Map.h(16)
   Note: including file:  G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\MapUpdateState.h
   Note: including file:  G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\MapRevealState.h
   Note: including file:  G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\ExploreState.h
-  Note: including file:  G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\ExploreCatacombsState.h
   Note: including file:  G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\BattleState.h
+  Note: including file:  G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\ChangelingState.h
   Note: including file:  G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\ExploreDungeon.h
   Note: including file:   G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\AbalaskUI.h
 G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Game.h(18,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
@@ -439,4 +445,5 @@ G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Game.h(18
   Note: including file:  G:\repos\DungeonBattlesOfWinterspellCpp\include\SFML/Graphics/Sprite.hpp
   Note: including file:  G:\repos\DungeonBattlesOfWinterspellCpp\include\SFML/Graphics/Text.hpp
   Note: including file:  G:\repos\DungeonBattlesOfWinterspellCpp\include\SFML/Graphics/VertexBuffer.hpp
+x64\Debug\AbalaskUI.obj : warning LNK4042: object specified more than once; extras ignored
   DungeonBattlesOfWinterspellCpp.vcxproj -> G:\repos\DungeonBattlesOfWinterspellCpp\x64\Debug\DungeonBattlesOfWinterspellCpp.exe
