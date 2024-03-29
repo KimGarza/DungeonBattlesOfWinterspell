@@ -1,4 +1,26 @@
-﻿  AbalaskCreateState.cpp
+﻿  Abalask.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\xutility(275,77): warning C4244: 'argument': conversion from '_Ty' to 'int', possible loss of data
+          with
+          [
+              _Ty=double
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\memory(1983): message : see reference to function template instantiation 'void std::_Construct_in_place<_Ty,std::basic_string<char,std::char_traits<char>,std::allocator<char>>,ItemType,std::basic_string<char,std::char_traits<char>,std::allocator<char>>,double,int,int,int,int,int,int,int,int>(_Ty &,std::basic_string<char,std::char_traits<char>,std::allocator<char>> &&,ItemType &&,std::basic_string<char,std::char_traits<char>,std::allocator<char>> &&,double &&,int &&,int &&,int &&,int &&,int &&,int &&,int &&,int &&) noexcept(false)' being compiled
+          with
+          [
+              _Ty=LootItem
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\memory(2663): message : see reference to function template instantiation 'std::_Ref_count_obj2<LootItem>::_Ref_count_obj2<_Ty,ItemType,_Ty,double,int,int,int,int,int,int,int,int>(_Ty &&,ItemType &&,_Ty &&,double &&,int &&,int &&,int &&,int &&,int &&,int &&,int &&,int &&)' being compiled
+          with
+          [
+              _Ty=std::string
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\memory(2664,20): message : see reference to function template instantiation 'std::_Ref_count_obj2<LootItem>::_Ref_count_obj2<_Ty,ItemType,_Ty,double,int,int,int,int,int,int,int,int>(_Ty &&,ItemType &&,_Ty &&,double &&,int &&,int &&,int &&,int &&,int &&,int &&,int &&,int &&)' being compiled
+          with
+          [
+              _Ty=std::string
+          ]
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Abalask.cpp(25,106): message : see reference to function template instantiation 'std::shared_ptr<LootItem> std::make_shared<LootItem,std::string,ItemType,std::string,double,int,int,int,int,int,int,int,int>(std::string &&,ItemType &&,std::string &&,double &&,int &&,int &&,int &&,int &&,int &&,int &&,int &&,int &&)' being compiled
+  AbalaskCreateState.cpp
 G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Map.h(16): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\xutility(275,77): warning C4244: 'argument': conversion from '_Ty' to 'int', possible loss of data
           with
@@ -46,14 +68,64 @@ C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.3221
 G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\AbalaskTradeState.cpp(58,174): message : see reference to function template instantiation 'std::shared_ptr<LootItem> std::make_shared<LootItem,std::string,ItemType,std::string,double,int,int,int,int,int,int,int,int>(std::string &&,ItemType &&,std::string &&,double &&,int &&,int &&,int &&,int &&,int &&,int &&,int &&,int &&)' being compiled
   AbalaskUI.cpp
   AbalaskUI.h
+  ChangelingState.cpp
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Map.h(16): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  BattleState.cpp
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Map.h(16): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  BeginState.cpp
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Map.h(16): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  Character.cpp
+  CharCreatUI.cpp
+  Enemy.cpp
+  CharacterCreation.cpp
+  DungeonRoom.cpp
+  DungeonGenerator.cpp
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\DungeonGenerator.cpp(143,52): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\DungeonGenerator.cpp(192,70): warning C4267: 'argument': conversion from 'size_t' to '_Ty', possible loss of data
+          with
+          [
+              _Ty=int
+          ]
   ExploreState.cpp
 G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Map.h(16): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
   Game.cpp
 G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Map.h(16): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  GameContext.cpp
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Map.h(16): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
   GameState.h
+  GameText.cpp
+  Input.cpp
+  Generating Code...
+  Compiling...
+  InputManager.cpp
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\InputManager.cpp(17,39): warning C4101: 'e': unreferenced local variable
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\InputManager.cpp(37,38): warning C4101: 'e': unreferenced local variable
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\InputManager.cpp(61,38): warning C4101: 'e': unreferenced local variable
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\InputManager.cpp(82,38): warning C4101: 'e': unreferenced local variable
+  Inventory.cpp
+  InvItem.cpp
+  LootItem.cpp
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\LootItem.cpp(27,127): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
   LootState.cpp
 G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Map.h(16): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  Map.cpp
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Map.h(16): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  MapRevealState.cpp
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Map.h(16): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\MapRevealState.cpp(19,72): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  MapUpdateState.cpp
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Map.h(16): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  MusicPlayer.cpp
+  PlayerCharacter.cpp
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\PlayerCharacter.cpp(33,25): warning C4244: '-=': conversion from 'float' to 'int', possible loss of data
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\PlayerCharacter.cpp(151,46): warning C4244: '+=': conversion from 'float' to 'int', possible loss of data
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\PlayerCharacter.cpp(164,22): warning C4244: 'return': conversion from 'int' to 'float', possible loss of data
+  Story.cpp
+  UI.cpp
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.cpp(23,79): warning C4101: 'roomCount': unreferenced local variable
+  Weapon.cpp
   Generating Code...
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\InputManager.cpp(22): warning C4715: 'InputManager::ValidatePlayerInput': not all control paths return a value
   DungeonBattlesOfWinterspellCpp.cpp
   Note: including file: C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\iostream
   Note: including file:  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\yvals_core.h
@@ -491,4 +563,5 @@ G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Map.h(16)
   Note: including file:  G:\repos\DungeonBattlesOfWinterspellCpp\include\SFML/Graphics/Sprite.hpp
   Note: including file:  G:\repos\DungeonBattlesOfWinterspellCpp\include\SFML/Graphics/Text.hpp
   Note: including file:  G:\repos\DungeonBattlesOfWinterspellCpp\include\SFML/Graphics/VertexBuffer.hpp
+x64\Debug\AbalaskUI.obj : warning LNK4042: object specified more than once; extras ignored
   DungeonBattlesOfWinterspellCpp.vcxproj -> G:\repos\DungeonBattlesOfWinterspellCpp\x64\Debug\DungeonBattlesOfWinterspellCpp.exe

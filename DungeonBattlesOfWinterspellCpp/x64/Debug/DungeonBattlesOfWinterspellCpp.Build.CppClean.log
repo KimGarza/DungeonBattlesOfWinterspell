@@ -1,5 +1,6 @@
 g:\repos\dungeonbattlesofwinterspellcpp\dungeonbattlesofwinterspellcpp\x64\debug\vc143.pdb
 g:\repos\dungeonbattlesofwinterspellcpp\dungeonbattlesofwinterspellcpp\x64\debug\vc143.idb
+g:\repos\dungeonbattlesofwinterspellcpp\dungeonbattlesofwinterspellcpp\x64\debug\input.obj
 g:\repos\dungeonbattlesofwinterspellcpp\dungeonbattlesofwinterspellcpp\x64\debug\gametext.obj
 g:\repos\dungeonbattlesofwinterspellcpp\dungeonbattlesofwinterspellcpp\x64\debug\gamestate.obj
 g:\repos\dungeonbattlesofwinterspellcpp\dungeonbattlesofwinterspellcpp\x64\debug\gamecontext.obj
@@ -17,7 +18,6 @@ g:\repos\dungeonbattlesofwinterspellcpp\dungeonbattlesofwinterspellcpp\x64\debug
 g:\repos\dungeonbattlesofwinterspellcpp\dungeonbattlesofwinterspellcpp\x64\debug\abalaskui.obj
 g:\repos\dungeonbattlesofwinterspellcpp\dungeonbattlesofwinterspellcpp\x64\debug\abalasktradestate.obj
 g:\repos\dungeonbattlesofwinterspellcpp\dungeonbattlesofwinterspellcpp\x64\debug\abalaskcreatestate.obj
-g:\repos\dungeonbattlesofwinterspellcpp\dungeonbattlesofwinterspellcpp\x64\debug\abalasktrader.obj
 g:\repos\dungeonbattlesofwinterspellcpp\dungeonbattlesofwinterspellcpp\x64\debug\abalask.obj
 g:\repos\dungeonbattlesofwinterspellcpp\dungeonbattlesofwinterspellcpp\x64\debug\weapon.obj
 g:\repos\dungeonbattlesofwinterspellcpp\dungeonbattlesofwinterspellcpp\x64\debug\ui.obj
@@ -28,37 +28,17 @@ g:\repos\dungeonbattlesofwinterspellcpp\dungeonbattlesofwinterspellcpp\x64\debug
 g:\repos\dungeonbattlesofwinterspellcpp\dungeonbattlesofwinterspellcpp\x64\debug\maprevealstate.obj
 g:\repos\dungeonbattlesofwinterspellcpp\dungeonbattlesofwinterspellcpp\x64\debug\map.obj
 g:\repos\dungeonbattlesofwinterspellcpp\dungeonbattlesofwinterspellcpp\x64\debug\lootstate.obj
-<<<<<<< HEAD
-g:\repos\dungeonbattlesofwinterspellcpp\dungeonbattlesofwinterspellcpp\x64\debug\lootroom.obj
-=======
->>>>>>> feature/refactorStates
 g:\repos\dungeonbattlesofwinterspellcpp\dungeonbattlesofwinterspellcpp\x64\debug\lootitem.obj
 g:\repos\dungeonbattlesofwinterspellcpp\dungeonbattlesofwinterspellcpp\x64\debug\invitem.obj
 g:\repos\dungeonbattlesofwinterspellcpp\dungeonbattlesofwinterspellcpp\x64\debug\inventory.obj
 g:\repos\dungeonbattlesofwinterspellcpp\dungeonbattlesofwinterspellcpp\x64\debug\inputmanager.obj
-g:\repos\dungeonbattlesofwinterspellcpp\dungeonbattlesofwinterspellcpp\x64\debug\input.obj
 g:\repos\dungeonbattlesofwinterspellcpp\dungeonbattlesofwinterspellcpp\x64\debug\dungeonbattlesofwinterspellcpp.obj
-<<<<<<< HEAD
-g:\repos\dungeonbattlesofwinterspellcpp\dungeonbattlesofwinterspellcpp\x64\debug\dungeonbattlesofwinterspellcpp.ilk
 g:\repos\dungeonbattlesofwinterspellcpp\x64\debug\dungeonbattlesofwinterspellcpp.exe
-=======
->>>>>>> feature/refactorStates
+g:\repos\dungeonbattlesofwinterspellcpp\dungeonbattlesofwinterspellcpp\x64\debug\dungeonbattlesofwinterspellcpp.ilk
 g:\repos\dungeonbattlesofwinterspellcpp\x64\debug\dungeonbattlesofwinterspellcpp.pdb
 g:\repos\dungeonbattlesofwinterspellcpp\dungeonbattlesofwinterspellcpp\x64\debug\dungeonb.a1be362c.tlog\cl.command.1.tlog
 g:\repos\dungeonbattlesofwinterspellcpp\dungeonbattlesofwinterspellcpp\x64\debug\dungeonb.a1be362c.tlog\cl.read.1.tlog
 g:\repos\dungeonbattlesofwinterspellcpp\dungeonbattlesofwinterspellcpp\x64\debug\dungeonb.a1be362c.tlog\cl.write.1.tlog
-g:\repos\dungeonbattlesofwinterspellcpp\dungeonbattlesofwinterspellcpp\x64\debug\dungeonb.a1be362c.tlog\link-cvtres.read.1.tlog
-g:\repos\dungeonbattlesofwinterspellcpp\dungeonbattlesofwinterspellcpp\x64\debug\dungeonb.a1be362c.tlog\link-cvtres.write.1.tlog
-g:\repos\dungeonbattlesofwinterspellcpp\dungeonbattlesofwinterspellcpp\x64\debug\dungeonb.a1be362c.tlog\link-rc.read.1.tlog
-g:\repos\dungeonbattlesofwinterspellcpp\dungeonbattlesofwinterspellcpp\x64\debug\dungeonb.a1be362c.tlog\link-rc.write.1.tlog
-g:\repos\dungeonbattlesofwinterspellcpp\dungeonbattlesofwinterspellcpp\x64\debug\dungeonb.a1be362c.tlog\link.9620-cvtres.read.1.tlog
-g:\repos\dungeonbattlesofwinterspellcpp\dungeonbattlesofwinterspellcpp\x64\debug\dungeonb.a1be362c.tlog\link.9620-cvtres.write.1.tlog
-g:\repos\dungeonbattlesofwinterspellcpp\dungeonbattlesofwinterspellcpp\x64\debug\dungeonb.a1be362c.tlog\link.9620-rc.read.1.tlog
-g:\repos\dungeonbattlesofwinterspellcpp\dungeonbattlesofwinterspellcpp\x64\debug\dungeonb.a1be362c.tlog\link.9620-rc.write.1.tlog
-g:\repos\dungeonbattlesofwinterspellcpp\dungeonbattlesofwinterspellcpp\x64\debug\dungeonb.a1be362c.tlog\link.9620.read.1.tlog
-g:\repos\dungeonbattlesofwinterspellcpp\dungeonbattlesofwinterspellcpp\x64\debug\dungeonb.a1be362c.tlog\link.9620.read.2.tlog
-g:\repos\dungeonbattlesofwinterspellcpp\dungeonbattlesofwinterspellcpp\x64\debug\dungeonb.a1be362c.tlog\link.9620.write.1.tlog
 g:\repos\dungeonbattlesofwinterspellcpp\dungeonbattlesofwinterspellcpp\x64\debug\dungeonb.a1be362c.tlog\link.command.1.tlog
 g:\repos\dungeonbattlesofwinterspellcpp\dungeonbattlesofwinterspellcpp\x64\debug\dungeonb.a1be362c.tlog\link.read.1.tlog
-g:\repos\dungeonbattlesofwinterspellcpp\dungeonbattlesofwinterspellcpp\x64\debug\dungeonb.a1be362c.tlog\link.read.2.tlog
 g:\repos\dungeonbattlesofwinterspellcpp\dungeonbattlesofwinterspellcpp\x64\debug\dungeonb.a1be362c.tlog\link.write.1.tlog
