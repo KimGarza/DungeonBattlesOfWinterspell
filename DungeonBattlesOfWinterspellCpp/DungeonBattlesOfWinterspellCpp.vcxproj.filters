@@ -129,9 +129,6 @@
     <ClCompile Include="Abalask.cpp">
       <Filter>Source Files\Actors</Filter>
     </ClCompile>
-    <ClCompile Include="AbalaskTrader.cpp">
-      <Filter>Source Files\GameStates\Abalask</Filter>
-    </ClCompile>
     <ClCompile Include="AbalaskUI.h">
       <Filter>Header Files\GameStates\Abalask</Filter>
     </ClCompile>
@@ -235,9 +232,6 @@
     </ClInclude>
     <ClInclude Include="Abalask.h">
       <Filter>Header Files\Actors</Filter>
-    </ClInclude>
-    <ClInclude Include="AbalaskTrader.h">
-      <Filter>Header Files\GameStates\Abalask</Filter>
     </ClInclude>
     <ClInclude Include="Character.h">
       <Filter>Header Files\Actors</Filter>

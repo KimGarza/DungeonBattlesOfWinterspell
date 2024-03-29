@@ -140,7 +140,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Abalask.cpp" />
-    <ClCompile Include="AbalaskTrader.cpp" />
     <ClCompile Include="AbalaskCreateState.cpp" />
     <ClCompile Include="AbalaskTradeState.cpp" />
     <ClCompile Include="AbalaskUI.cpp" />
@@ -179,7 +178,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Abalask.h" />
-    <ClInclude Include="AbalaskTrader.h" />
     <ClInclude Include="AbalaskCreateState.h" />
     <ClInclude Include="AbalaskTradeState.h" />
     <ClInclude Include="ChangelingState.h" />
