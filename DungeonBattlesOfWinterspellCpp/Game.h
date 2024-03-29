@@ -24,16 +24,6 @@ private:
 	AbalaskCreateState abalaskCreateState_;
 	AbalaskTradeState abalaskTradeState_;
 
-	std::shared_ptr<PlayerCharacter> playerCharacter;
-	std::shared_ptr<Map> map;
-	Story story;
-	std::shared_ptr<DungeonRoom> currentRoom;
-	std::vector<std::shared_ptr<DungeonRoom>> dungeonRooms;
-	CharacterCreation characterCreation;
-	DungeonGenerator dungeonGenerator;
-	MusicPlayer music;
-	std::shared_ptr<Abalask> abalask;
-
 public:
 	// Starts game off with begin state
 	Game(std::shared_ptr<GameContext> inCtx) : ctx_(inCtx), beginState_(BeginState(inCtx)),
