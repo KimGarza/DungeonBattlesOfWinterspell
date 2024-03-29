@@ -140,17 +140,16 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Abalask.cpp" />
-    <ClCompile Include="AbalaskTrader.cpp" />
+    <ClCompile Include="AbalaskCreateState.cpp" />
+    <ClCompile Include="AbalaskTradeState.cpp" />
     <ClCompile Include="AbalaskUI.cpp" />
     <ClCompile Include="AbalaskUI.h" />
-    <ClCompile Include="Battle.cpp" />
     <ClCompile Include="ChangelingState.cpp" />
     <ClCompile Include="BattleState.cpp" />
     <ClCompile Include="BeginState.cpp" />
     <ClCompile Include="Character.cpp" />
     <ClCompile Include="CharCreatUI.cpp" />
     <ClCompile Include="Enemy.cpp" />
-    <ClCompile Include="ExploreDungeon.cpp" />
     <ClCompile Include="CharacterCreation.cpp" />
     <ClCompile Include="DungeonRoom.cpp" />
     <ClCompile Include="DungeonBattlesOfWinterspellCpp.cpp">
@@ -167,7 +166,6 @@
     <ClCompile Include="Inventory.cpp" />
     <ClCompile Include="InvItem.cpp" />
     <ClCompile Include="LootItem.cpp" />
-    <ClCompile Include="LootRoom.cpp" />
     <ClCompile Include="LootState.cpp" />
     <ClCompile Include="Map.cpp" />
     <ClCompile Include="MapRevealState.cpp" />
@@ -180,15 +178,14 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Abalask.h" />
-    <ClInclude Include="AbalaskTrader.h" />
-    <ClInclude Include="Battle.h" />
+    <ClInclude Include="AbalaskCreateState.h" />
+    <ClInclude Include="AbalaskTradeState.h" />
     <ClInclude Include="ChangelingState.h" />
     <ClInclude Include="BattleState.h" />
     <ClInclude Include="BeginState.h" />
     <ClInclude Include="Character.h" />
     <ClInclude Include="CharCreatUI.h" />
     <ClInclude Include="Enemy.h" />
-    <ClInclude Include="ExploreDungeon.h" />
     <ClInclude Include="CharacterCreation.h" />
     <ClInclude Include="DungeonRoom.h" />
     <ClInclude Include="DungeonGenerator.h" />
@@ -203,7 +200,6 @@
     <ClInclude Include="InvItem.h" />
     <ClInclude Include="ItemTypes.h" />
     <ClInclude Include="LootItem.h" />
-    <ClInclude Include="LootRoom.h" />
     <ClInclude Include="LootState.h" />
     <ClInclude Include="Map.h" />
     <ClInclude Include="MapRevealState.h" />

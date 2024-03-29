@@ -6,6 +6,8 @@
 /// </summary>
 void LootState::Loot() {
 
+	music_.PlayMusic(L"slow-2021-08-17_-_8_Bit_Nostalgia_-_www.FesliyanStudios.com.wav");
+
 	room_ = ctx_->GetCurrentRoom();
 
 	if (room_->GetName() == "Tenebrific Depths" && room_->GetTimesExplored() == 1) {
@@ -32,5 +34,7 @@ void LootState::Loot() {
 				ctx_->GetPlayer()->AddToInventory(item);
 			}
 		}
+
+		ctx_->SetState(GameState::UpdateMap);
 	}
 }

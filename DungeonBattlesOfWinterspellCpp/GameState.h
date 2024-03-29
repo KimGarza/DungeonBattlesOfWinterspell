@@ -13,5 +13,6 @@ enum class GameState {
 	UpdateMap,
 	EndGame,
 
-	AbalaskTrader
+	MeetAbalask,
+	AbalaskTrading
 };
