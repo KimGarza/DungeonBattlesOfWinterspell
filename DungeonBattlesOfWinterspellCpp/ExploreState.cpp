@@ -33,7 +33,12 @@ void ExploreState::Explore() {
 		return;
 	}
 	else if (room_->GetName() == "Room of Moonlight" && room_->GetTimesExplored() > 0) {
-		ctx_->SetState(GameState::AbalaskTrader);
+		if (room_->GetTimesExplored() == 1) {
+			ctx_->SetState(GameState::MeetAbalask);
+		}
+		else {
+			ctx_->SetState(GameState::AbalaskTrading);
+		}
 	}
 	else if (room_->GetTimesExplored() > 0) {
 		ctx_->SetState(GameState::Loot);

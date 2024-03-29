@@ -12,6 +12,7 @@ std::shared_ptr<Abalask> AbalaskTrader::GenerateAbalask() {
 
 std::vector<std::shared_ptr<LootItem>> AbalaskTrader::GenerateWares() {
 
+
     std::vector<std::shared_ptr<LootItem>> waresInStock{
         std::make_shared<LootItem>("Circlet of Mirador", ItemType::Equiptment, "+10 to evasion, +3 to spell damage", 2, 0, 10, 0, 0, 1, 3, 0, 0),
         std::make_shared<LootItem>("Elegant Robe", ItemType::Equiptment, "+7 to spell damage.", 1, 0, 20, 0, 0, 1, 5, 0, 0), // gold | armour, evasion | addedDex, addedStr, addedInt, spellDamage, physDamage

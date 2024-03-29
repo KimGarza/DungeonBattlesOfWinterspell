@@ -105,14 +105,8 @@
     <ClCompile Include="DungeonGenerator.cpp">
       <Filter>Source Files\GameStates\Begin</Filter>
     </ClCompile>
-    <ClCompile Include="Battle.cpp">
-      <Filter>Source Files\GameStates\Battle</Filter>
-    </ClCompile>
     <ClCompile Include="Map.cpp">
       <Filter>Source Files\GameStates\Map</Filter>
-    </ClCompile>
-    <ClCompile Include="ExploreDungeon.cpp">
-      <Filter>Source Files\GameStates\Explore</Filter>
     </ClCompile>
     <ClCompile Include="DungeonRoom.cpp">
       <Filter>Source Files\Actors</Filter>
@@ -122,9 +116,6 @@
     </ClCompile>
     <ClCompile Include="Input.cpp">
       <Filter>Source Files\Helper</Filter>
-    </ClCompile>
-    <ClCompile Include="LootRoom.cpp">
-      <Filter>Source Files\GameStates\Loot</Filter>
     </ClCompile>
     <ClCompile Include="LootItem.cpp">
       <Filter>Source Files\Actors</Filter>
@@ -171,6 +162,24 @@
     <ClCompile Include="MapRevealState.cpp">
       <Filter>Source Files\GameStates\Map</Filter>
     </ClCompile>
+    <ClCompile Include="BattleState.cpp">
+      <Filter>Source Files\GameStates\Battle</Filter>
+    </ClCompile>
+    <ClCompile Include="ChangelingState.cpp">
+      <Filter>Source Files\GameStates\Explore</Filter>
+    </ClCompile>
+    <ClCompile Include="ExploreState.cpp">
+      <Filter>Source Files\GameStates\Explore</Filter>
+    </ClCompile>
+    <ClCompile Include="LootState.cpp">
+      <Filter>Source Files\GameStates\Loot</Filter>
+    </ClCompile>
+    <ClCompile Include="AbalaskCreateState.cpp">
+      <Filter>Source Files\GameStates\Abalask</Filter>
+    </ClCompile>
+    <ClCompile Include="AbalaskTradeState.cpp">
+      <Filter>Source Files\GameStates\Abalask</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -203,12 +212,6 @@
     <ClInclude Include="Map.h">
       <Filter>Header Files\GameStates\Map</Filter>
     </ClInclude>
-    <ClInclude Include="ExploreDungeon.h">
-      <Filter>Header Files\GameStates\Explore</Filter>
-    </ClInclude>
-    <ClInclude Include="Battle.h">
-      <Filter>Header Files\GameStates\Battle</Filter>
-    </ClInclude>
     <ClInclude Include="DungeonRoom.h">
       <Filter>Header Files\Actors</Filter>
     </ClInclude>
@@ -217,9 +220,6 @@
     </ClInclude>
     <ClInclude Include="Input.h">
       <Filter>Header Files\Helper</Filter>
-    </ClInclude>
-    <ClInclude Include="LootRoom.h">
-      <Filter>Header Files\GameStates\Loot</Filter>
     </ClInclude>
     <ClInclude Include="LootItem.h">
       <Filter>Header Files\Actors</Filter>
@@ -262,6 +262,24 @@
     </ClInclude>
     <ClInclude Include="MapRevealState.h">
       <Filter>Header Files\GameStates\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="LootState.h">
+      <Filter>Header Files\GameStates\Loot</Filter>
+    </ClInclude>
+    <ClInclude Include="ExploreState.h">
+      <Filter>Header Files\GameStates\Explore</Filter>
+    </ClInclude>
+    <ClInclude Include="BattleState.h">
+      <Filter>Header Files\GameStates\Battle</Filter>
+    </ClInclude>
+    <ClInclude Include="ChangelingState.h">
+      <Filter>Header Files\GameStates\Explore</Filter>
+    </ClInclude>
+    <ClInclude Include="AbalaskCreateState.h">
+      <Filter>Header Files\GameStates\Abalask</Filter>
+    </ClInclude>
+    <ClInclude Include="AbalaskTradeState.h">
+      <Filter>Header Files\GameStates\Abalask</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

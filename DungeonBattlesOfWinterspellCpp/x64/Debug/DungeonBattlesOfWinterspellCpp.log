@@ -41,10 +41,55 @@ C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.3221
           [
               _Ty=ItemType
           ]
-G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\AbalaskTrader.cpp(18,107): message : see reference to function template instantiation 'std::shared_ptr<LootItem> std::make_shared<LootItem,const char(&)[11],ItemType,const char(&)[15],double,int,int>(const char (&)[11],ItemType &&,const char (&)[15],double &&,int &&,int &&)' being compiled
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\AbalaskTrader.cpp(19,107): message : see reference to function template instantiation 'std::shared_ptr<LootItem> std::make_shared<LootItem,const char(&)[11],ItemType,const char(&)[15],double,int,int>(const char (&)[11],ItemType &&,const char (&)[15],double &&,int &&,int &&)' being compiled
+  AbalaskCreateState.cpp
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Map.h(16): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\xutility(275,77): warning C4244: 'argument': conversion from '_Ty' to 'int', possible loss of data
+          with
+          [
+              _Ty=double
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\memory(1983): message : see reference to function template instantiation 'void std::_Construct_in_place<_Ty,const char(&)[11],ItemType,const char(&)[15],double,int,int>(_Ty &,const char (&)[11],ItemType &&,const char (&)[15],double &&,int &&,int &&) noexcept(false)' being compiled
+          with
+          [
+              _Ty=LootItem
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\memory(2663): message : see reference to function template instantiation 'std::_Ref_count_obj2<LootItem>::_Ref_count_obj2<const char(&)[11],_Ty,const char(&)[15],double,int,int>(const char (&)[11],_Ty &&,const char (&)[15],double &&,int &&,int &&)' being compiled
+          with
+          [
+              _Ty=ItemType
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\memory(2664,20): message : see reference to function template instantiation 'std::_Ref_count_obj2<LootItem>::_Ref_count_obj2<const char(&)[11],_Ty,const char(&)[15],double,int,int>(const char (&)[11],_Ty &&,const char (&)[15],double &&,int &&,int &&)' being compiled
+          with
+          [
+              _Ty=ItemType
+          ]
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\AbalaskCreateState.cpp(27,107): message : see reference to function template instantiation 'std::shared_ptr<LootItem> std::make_shared<LootItem,const char(&)[11],ItemType,const char(&)[15],double,int,int>(const char (&)[11],ItemType &&,const char (&)[15],double &&,int &&,int &&)' being compiled
+  AbalaskTradeState.cpp
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Map.h(16): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\xutility(275,77): warning C4244: 'argument': conversion from '_Ty' to 'int', possible loss of data
+          with
+          [
+              _Ty=double
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\memory(1983): message : see reference to function template instantiation 'void std::_Construct_in_place<_Ty,std::basic_string<char,std::char_traits<char>,std::allocator<char>>,ItemType,std::basic_string<char,std::char_traits<char>,std::allocator<char>>,double,int,int,int,int,int,int,int,int>(_Ty &,std::basic_string<char,std::char_traits<char>,std::allocator<char>> &&,ItemType &&,std::basic_string<char,std::char_traits<char>,std::allocator<char>> &&,double &&,int &&,int &&,int &&,int &&,int &&,int &&,int &&,int &&) noexcept(false)' being compiled
+          with
+          [
+              _Ty=LootItem
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\memory(2663): message : see reference to function template instantiation 'std::_Ref_count_obj2<LootItem>::_Ref_count_obj2<_Ty,ItemType,_Ty,double,int,int,int,int,int,int,int,int>(_Ty &&,ItemType &&,_Ty &&,double &&,int &&,int &&,int &&,int &&,int &&,int &&,int &&,int &&)' being compiled
+          with
+          [
+              _Ty=std::string
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\memory(2664,20): message : see reference to function template instantiation 'std::_Ref_count_obj2<LootItem>::_Ref_count_obj2<_Ty,ItemType,_Ty,double,int,int,int,int,int,int,int,int>(_Ty &&,ItemType &&,_Ty &&,double &&,int &&,int &&,int &&,int &&,int &&,int &&,int &&,int &&)' being compiled
+          with
+          [
+              _Ty=std::string
+          ]
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\AbalaskTradeState.cpp(58,174): message : see reference to function template instantiation 'std::shared_ptr<LootItem> std::make_shared<LootItem,std::string,ItemType,std::string,double,int,int,int,int,int,int,int,int>(std::string &&,ItemType &&,std::string &&,double &&,int &&,int &&,int &&,int &&,int &&,int &&,int &&,int &&)' being compiled
   AbalaskUI.cpp
   AbalaskUI.h
-  Battle.cpp
   ChangelingState.cpp
 G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Map.h(16): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
   BattleState.cpp
@@ -54,7 +99,6 @@ G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Map.h(16)
   Character.cpp
   CharCreatUI.cpp
   Enemy.cpp
-  ExploreDungeon.cpp
   CharacterCreation.cpp
   DungeonRoom.cpp
   DungeonGenerator.cpp
@@ -68,7 +112,6 @@ G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\DungeonGe
 G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Map.h(16): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
   Game.cpp
 G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Map.h(16): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Game.h(19,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
   GameContext.cpp
 G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Map.h(16): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
   GameState.h
@@ -85,7 +128,6 @@ G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\InputMana
   InvItem.cpp
   LootItem.cpp
 G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\LootItem.cpp(27,127): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-  LootRoom.cpp
   LootState.cpp
 G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Map.h(16): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
   Map.cpp
@@ -460,9 +502,9 @@ G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Map.h(16)
   Note: including file:  G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\BattleState.h
   Note: including file:  G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\ChangelingState.h
   Note: including file:  G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\LootState.h
-  Note: including file:  G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\ExploreDungeon.h
+  Note: including file:  G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\AbalaskCreateState.h
   Note: including file:   G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\AbalaskUI.h
-G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Game.h(19,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  Note: including file:  G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\AbalaskTradeState.h
   Note: including file: G:\repos\DungeonBattlesOfWinterspellCpp\include\SFML/Graphics.hpp
   Note: including file:  G:\repos\DungeonBattlesOfWinterspellCpp\include\SFML/Window.hpp
   Note: including file:   G:\repos\DungeonBattlesOfWinterspellCpp\include\SFML/System.hpp
