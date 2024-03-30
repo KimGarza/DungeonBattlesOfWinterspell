@@ -165,6 +165,10 @@
     <ClCompile Include="InputManager.cpp" />
     <ClCompile Include="Inventory.cpp" />
     <ClCompile Include="InvItem.cpp" />
+    <ClCompile Include="LoadActOneState.cpp" />
+    <ClCompile Include="LoadActState.cpp" />
+    <ClCompile Include="LoadActThreeState.cpp" />
+    <ClCompile Include="LoadActTwoState.cpp" />
     <ClCompile Include="LootItem.cpp" />
     <ClCompile Include="LootState.cpp" />
     <ClCompile Include="Map.cpp" />
@@ -180,6 +184,7 @@
     <ClInclude Include="Abalask.h" />
     <ClInclude Include="AbalaskCreateState.h" />
     <ClInclude Include="AbalaskTradeState.h" />
+    <ClInclude Include="Acts.h" />
     <ClInclude Include="ChangelingState.h" />
     <ClInclude Include="BattleState.h" />
     <ClInclude Include="BeginState.h" />
@@ -199,6 +204,10 @@
     <ClInclude Include="Inventory.h" />
     <ClInclude Include="InvItem.h" />
     <ClInclude Include="ItemTypes.h" />
+    <ClInclude Include="LoadActOneState.h" />
+    <ClInclude Include="LoadActState.h" />
+    <ClInclude Include="LoadActThreeState.h" />
+    <ClInclude Include="LoadActTwoState.h" />
     <ClInclude Include="LootItem.h" />
     <ClInclude Include="LootState.h" />
     <ClInclude Include="Map.h" />

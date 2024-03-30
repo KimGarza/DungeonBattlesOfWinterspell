@@ -16,9 +16,9 @@ void Game::StateCycle() {
 }
 
 /// <summary>
-/// State machine: switches between states to execute relevant state. Each state will set the currentState_ to the next relevant state.
+/// State machine: switches between states to execute relevant state. Each state will set the current state to the next relevant state.
 /// </summary>
-void Game::CheckGameState() {
+void Game::CheckGameState() { // just to create char, start sfml window, set to act one enum
 	switch (ctx_->GetState()) {
 
 	case GameState::Begin: {
@@ -26,56 +26,62 @@ void Game::CheckGameState() {
 		beginState_.BeginSequence();
 		return;
 	}
-	case GameState::RevealMap: {
+						 /*case GameState::LoadAct: {
+
+							 loadActState_.Load();
+							 return;
+						 }*/
+						 // load act to setup each act with new map, story intro, generate dungeons
+	case GameState::RevealMap: { // yes
 
 		mapRevealState_.RevealMap();
 		return;
 	}
-	case GameState::Explore: {
+	case GameState::Explore: { // yes
 
 		exploreState_.Explore();
 		return;
 	}
-	case GameState::Battle: {
+	case GameState::Battle: { // yes
 
 		battleState_.Battle();
 		return;
 	}
-	case GameState::Changeling: {
+	case GameState::Changeling: { // maybe seperate out events specific to acts by sending them to a sepcial 
+		// class called ActGameState which is this exact class but with act specific events. In order to determine which, it sends 
+		// it to the EventGameState and it either has them all together or by act. I like the all together idea since they are all special events.
+		// Otherwise there would first have to be a act deciding game state where upon entering even t state here switch between acts
+		// depending on which act send it to that act gamestate cycler
 
 		changelingState_.ChangelingEncounter();
 		return;
 	}
-	case GameState::MeetAbalask: {
+	case GameState::MeetAbalask: { // Convert to trader and switch between which act within trader for different trader meets
 
 		abalaskCreateState_.MeetAbalask();
 		return;
 	}
-	case GameState::AbalaskTrading: {
+	case GameState::AbalaskTrading: { // same as above
 
 		abalaskTradeState_.Trade();
 		return;
 	}
-	case GameState::Loot: {
+	case GameState::Loot: { // match
 
 		lootState_.Loot();
 		return;
 	}
-	case GameState::UpdateMap: {
+	case GameState::UpdateMap: { // mathc
 
 		mapUpdateState_.UpdateMap();
 		return;
 	}
-	case GameState::EndGame: {
+	case GameState::EndGame: { // End act instead of end state and only act 3 state specific has end game
 
 		std::cout << "Congrats on finishing the game!";
 		exit(0);
 
 		break;
 	}
-	default:
-
-		ctx_->SetState(GameState::None);
-		return;
 	}
 }
