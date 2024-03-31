@@ -1,6 +1,6 @@
 #pragma once
 
-enum class Acts {
+enum class ActState {
 	One,
 	Two,
 	Three

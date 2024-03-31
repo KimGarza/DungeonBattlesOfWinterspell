@@ -18,20 +18,32 @@ void Game::StateCycle() {
 /// <summary>
 /// State machine: switches between states to execute relevant state. Each state will set the current state to the next relevant state.
 /// </summary>
-void Game::CheckGameState() { // just to create char, start sfml window, set to act one enum
+void Game::CheckGameState() {
 	switch (ctx_->GetState()) {
 
 	case GameState::Begin: {
 
-		beginState_.BeginSequence();
+		beginState_.Begin();
 		return;
 	}
-						 /*case GameState::LoadAct: {
+	case GameState::LoadAct: {
 
-							 loadActState_.Load();
-							 return;
-						 }*/
-						 // load act to setup each act with new map, story intro, generate dungeons
+		switch (ctx_->GetAct()) {
+		case ActState::One: {
+			loadActOneState_.Load();
+			return;
+		}
+		case ActState::Two: {
+			loadActTwoState_.Load();
+			return;
+		}
+		case ActState::Three: {
+			loadActThreeState_.Load();
+			return;
+		}
+		}
+		return;
+	}
 	case GameState::RevealMap: { // yes
 
 		mapRevealState_.RevealMap();

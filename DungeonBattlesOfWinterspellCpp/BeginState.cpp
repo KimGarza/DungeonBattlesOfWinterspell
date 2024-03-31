@@ -1,10 +1,10 @@
 #include "BeginState.h"
 
-void BeginState::BeginSequence() {
+void BeginState::Begin() {
 
 	RenderSFMLGraphics();
 
-	music_.PlayMusic(L"slow-2021-08-17_-_8_Bit_Nostalgia_-_www.FesliyanStudios.com.wav");
+	/*music_.PlayMusic(L"slow-2021-08-17_-_8_Bit_Nostalgia_-_www.FesliyanStudios.com.wav");
 
 	story.OpeningStory();
 
@@ -12,9 +12,10 @@ void BeginState::BeginSequence() {
 	GenerateDungeons();
 	CreateMap();
 
-	story.MapIntro();
+	story.MapIntro();*/
 
-	context_->SetState(GameState::RevealMap);
+	ctx_->SetAct(ActState::One);
+	ctx_->SetState(GameState::LoadAct);
 }
 
 void BeginState::RenderSFMLGraphics() {
@@ -38,31 +39,31 @@ void BeginState::RenderSFMLGraphics() {
 
 }
 
-void BeginState::CreateCharacter() {
-
-	CharacterCreation characterCreation;
-	context_->SetPlayer(characterCreation.CreateCharacter());
-}
-
-void BeginState::GenerateDungeons() {
-
-	DungeonGenerator dungeonGenerator;
-	context_->SetDungeonRooms(dungeonGenerator.GenerateDungeons());
-}
-
-void BeginState::CreateMap() {
-
-	context_->SetMap(std::make_shared<Map>(context_->GetDungeonRooms()));
-	PopulateDungeonMap();
-}
-
-void BeginState::PopulateDungeonMap() {
-
-	std::vector<std::string> roomNames;
-
-	for (const auto& dungeon : context_->GetDungeonRooms()) {
-
-		roomNames.push_back(dungeon->GetName());
-	}
-	context_->GetMap()->SetRoomNames(roomNames);
-}
+//void BeginState::CreateCharacter() {
+//
+//	CharacterCreation characterCreation;
+//	context_->SetPlayer(characterCreation.CreateCharacter());
+//}
+//
+//void BeginState::GenerateDungeons() {
+//
+//	DungeonGenerator dungeonGenerator;
+//	context_->SetDungeonRooms(dungeonGenerator.GenerateDungeons());
+//}
+//
+//void BeginState::CreateMap() {
+//
+//	context_->SetMap(std::make_shared<Map>(context_->GetDungeonRooms()));
+//	PopulateDungeonMap();
+//}
+//
+//void BeginState::PopulateDungeonMap() {
+//
+//	std::vector<std::string> roomNames;
+//
+//	for (const auto& dungeon : context_->GetDungeonRooms()) {
+//
+//		roomNames.push_back(dungeon->GetName());
+//	}
+//	context_->GetMap()->SetRoomNames(roomNames);
+//}

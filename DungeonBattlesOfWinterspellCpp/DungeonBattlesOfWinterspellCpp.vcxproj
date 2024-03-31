@@ -184,7 +184,7 @@
     <ClInclude Include="Abalask.h" />
     <ClInclude Include="AbalaskCreateState.h" />
     <ClInclude Include="AbalaskTradeState.h" />
-    <ClInclude Include="Acts.h" />
+    <ClInclude Include="ActState.h" />
     <ClInclude Include="ChangelingState.h" />
     <ClInclude Include="BattleState.h" />
     <ClInclude Include="BeginState.h" />

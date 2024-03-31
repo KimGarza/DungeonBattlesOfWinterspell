@@ -20,10 +20,11 @@ public:
 	LoadActOneState(std::shared_ptr<GameContext> inContext) : ctx_(inContext) {}
 
 	void Load() override;
-	void CreateCharacter() override;
 	void CreateMap() override;
 	void PopulateMap() override;
 	void GeneratePlaces() override;
+
+	void CreateCharacter();
 };
 
 

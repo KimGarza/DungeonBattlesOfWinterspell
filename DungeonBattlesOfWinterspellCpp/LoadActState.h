@@ -10,6 +10,5 @@ public:
 	virtual void CreateMap() = 0;
 	virtual void PopulateMap() = 0;
 	virtual void GeneratePlaces() = 0;
-	virtual void CreateCharacter() = 0;
 };
 

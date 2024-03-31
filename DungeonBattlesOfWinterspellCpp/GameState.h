@@ -3,6 +3,7 @@
 enum class GameState {
 	None,
 	Begin,
+	LoadAct,
 	RevealMap,
 	Room,
 	ForgottenCatacombs,
