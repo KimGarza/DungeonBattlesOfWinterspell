@@ -1,6 +1,6 @@
-#include "LoadActTwoState.h"
+#include "LoadActTownState.h"
 
-void LoadActTwoState::Load() {
+void LoadActTownState::Load() {
 
 	music_.PlayMusic(L"slow-2021-08-17_-_8_Bit_Nostalgia_-_www.FesliyanStudios.com.wav"); // new song
 
@@ -14,19 +14,19 @@ void LoadActTwoState::Load() {
 	ctx_->SetState(GameState::RevealMap);
 }
 
-void LoadActTwoState::GeneratePlaces() {
+void LoadActTownState::GeneratePlaces() {
 
 	DungeonGenerator dungeonGenerator;
 	ctx_->SetDungeonRooms(dungeonGenerator.GenerateDungeons());
 }
 
-void LoadActTwoState::CreateMap() {
+void LoadActTownState::CreateMap() {
 
 	ctx_->SetMap(std::make_shared<Map>(ctx_->GetDungeonRooms()));
 	PopulateMap();
 }
 
-void LoadActTwoState::PopulateMap() {
+void LoadActTownState::PopulateMap() {
 
 	std::vector<std::string> roomNames;
 
@@ -35,4 +35,10 @@ void LoadActTwoState::PopulateMap() {
 		roomNames.push_back(dungeon->GetName());
 	}
 	ctx_->GetMap()->SetRoomNames(roomNames);
+}
+
+void LoadActTownState::GenerateTrader() {
+
+	CreateTrader createTrader;
+	ctx_->SetTrader(createTrader.GenerateTrader());
 }

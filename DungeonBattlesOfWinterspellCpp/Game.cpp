@@ -12,6 +12,7 @@ void Game::StateCycle() {
 	} 
 
 	CheckGameState(); // requires one more check game state for the end game but will close afterwards
+	exit(0);
 	return;
 }
 
@@ -33,8 +34,8 @@ void Game::CheckGameState() {
 			loadActOneState_.Load();
 			return;
 		}
-		case ActState::Two: {
-			loadActTwoState_.Load();
+		case ActState::Town: {
+			loadActTownState_.Load();
 			return;
 		}
 		case ActState::Three: {
@@ -42,53 +43,38 @@ void Game::CheckGameState() {
 			return;
 		}
 		}
+	}
+	case GameState::Event: {
+
+		gameEvent_.CheckEventState();
 		return;
 	}
-	case GameState::RevealMap: { // yes
+	case GameState::RevealMap: {
 
 		mapRevealState_.RevealMap();
 		return;
 	}
-	case GameState::Explore: { // yes
+	case GameState::Explore: {
 
 		exploreState_.Explore();
 		return;
 	}
-	case GameState::Battle: { // yes
+	case GameState::Battle: {
 
 		battleState_.Battle();
 		return;
 	}
-	case GameState::Changeling: { // maybe seperate out events specific to acts by sending them to a sepcial 
-		// class called ActGameState which is this exact class but with act specific events. In order to determine which, it sends 
-		// it to the EventGameState and it either has them all together or by act. I like the all together idea since they are all special events.
-		// Otherwise there would first have to be a act deciding game state where upon entering even t state here switch between acts
-		// depending on which act send it to that act gamestate cycler
-
-		changelingState_.ChangelingEncounter();
-		return;
-	}
-	case GameState::MeetAbalask: { // Convert to trader and switch between which act within trader for different trader meets
-
-		abalaskCreateState_.MeetAbalask();
-		return;
-	}
-	case GameState::AbalaskTrading: { // same as above
-
-		abalaskTradeState_.Trade();
-		return;
-	}
-	case GameState::Loot: { // match
+	case GameState::Loot: {
 
 		lootState_.Loot();
 		return;
 	}
-	case GameState::UpdateMap: { // mathc
+	case GameState::UpdateMap: {
 
 		mapUpdateState_.UpdateMap();
 		return;
 	}
-	case GameState::EndGame: { // End act instead of end state and only act 3 state specific has end game
+	case GameState::EndGame: {
 
 		std::cout << "Congrats on finishing the game!";
 		exit(0);

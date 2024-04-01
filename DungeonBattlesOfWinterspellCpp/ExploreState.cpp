@@ -29,15 +29,16 @@ void ExploreState::Explore() {
 
 	// deals with events upon entering specific dungeons at specific intervals of repeated visits
 	if (room_->GetName() == "Forgotten Catacombs" && room_->GetTimesExplored() == 0) {
-		ctx_->SetState(GameState::Changeling);
+		ctx_->SetState(GameState::Event);
+		ctx_->SetEventState(EventState::Changeling);
 		return;
 	}
 	else if (room_->GetName() == "Room of Moonlight" && room_->GetTimesExplored() > 0) {
+
 		if (room_->GetTimesExplored() == 1) {
-			ctx_->SetState(GameState::MeetAbalask);
-		}
-		else {
-			ctx_->SetState(GameState::AbalaskTrading);
+
+			ctx_->SetEventState(EventState::Trader);
+			ctx_->SetState(GameState::Event);
 		}
 	}
 	else if (room_->GetTimesExplored() > 0) {

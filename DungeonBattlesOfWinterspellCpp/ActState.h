@@ -2,6 +2,6 @@
 
 enum class ActState {
 	One,
-	Two,
+	Town,
 	Three
 };

@@ -6,9 +6,9 @@
 #include "GameText.h"
 #include "Story.h"
 #include "Input.h"
-#include "Abalask.h"
+#include "Trader.h"
 
-class AbalaskUI {
+class TraderUI {
 private:
 
 	GameText gameText;
@@ -16,10 +16,10 @@ private:
 	Input input;
 
 public:
-	bool AbalaskTradeInquiry();
-	std::string AbalaskTradeSelectMenu(std::shared_ptr<PlayerCharacter> player);
+	bool TradeInquiry();
+	std::string TradeSelectMenu(std::shared_ptr<PlayerCharacter> player);
 	std::shared_ptr<LootItem> DisplaySellMenu(std::shared_ptr<PlayerCharacter> player);
-	std::shared_ptr<LootItem> DisplayBuyMenu(std::shared_ptr<PlayerCharacter> player, std::shared_ptr<Abalask> abalask);
+	std::shared_ptr<LootItem> DisplayBuyMenu(std::shared_ptr<PlayerCharacter> player, std::shared_ptr<Trader> trader_);
 
 	void CannotAfford();
 };

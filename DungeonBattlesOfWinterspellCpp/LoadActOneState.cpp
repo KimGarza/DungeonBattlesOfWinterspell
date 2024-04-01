@@ -21,6 +21,12 @@ void LoadActOneState::CreateCharacter() {
 	ctx_->SetPlayer(characterCreation.CreateCharacter());
 }
 
+void LoadActOneState::GenerateTrader() {
+
+	CreateTrader createTrader;
+	ctx_->SetTrader(createTrader.GenerateTrader());
+}
+
 void LoadActOneState::GeneratePlaces() {
 
 	DungeonGenerator dungeonGenerator;

@@ -4,16 +4,12 @@ enum class GameState {
 	None,
 	Begin,
 	LoadAct,
+	Event,
 	RevealMap,
 	Room,
-	ForgottenCatacombs,
 	Battle,
-	Changeling,
 	Loot,
 	Explore,
 	UpdateMap,
 	EndGame,
-
-	MeetAbalask,
-	AbalaskTrading
 };

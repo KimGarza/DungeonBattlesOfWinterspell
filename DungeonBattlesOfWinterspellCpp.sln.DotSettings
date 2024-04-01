@@ -1,0 +1,23 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/Housekeeping/DiskCleanup/PathsToClean/=_0025temp_0025_005CJetLogs_005C_002A_002A_005C_002A_002Elog/@EntryIndexedValue"></s:String>
+	<s:Boolean x:Key="/Default/Housekeeping/DiskCleanup/PathsToClean/=_0025temp_0025_005CJetLogs_005C_002A_002A_005C_002A_002Elog/@EntryIndexRemoved">True</s:Boolean>
+	<s:String x:Key="/Default/Housekeeping/DiskCleanup/PathsToClean/=_0025LocalAppData_0025_005CJetBrains_005CShared_005CvAny_005CInstaller_005C_002A_002Etxt/@EntryIndexedValue"></s:String>
+	<s:Boolean x:Key="/Default/Housekeeping/DiskCleanup/PathsToClean/=_0025LocalAppData_0025_005CJetBrains_005CShared_005CvAny_005CInstaller_005C_002A_002Etxt/@EntryIndexRemoved">True</s:Boolean>
+	<s:String x:Key="/Default/Housekeeping/DiskCleanup/PathsToClean/=_0025temp_0025_005CJetBrains_005C_002A_002E_002A_005C_002A_002E_002A_005CTempCaches_005C_002A_002E_002A/@EntryIndexedValue"></s:String>
+	<s:Boolean x:Key="/Default/Housekeeping/DiskCleanup/PathsToClean/=_0025temp_0025_005CJetBrains_005C_002A_002E_002A_005C_002A_002E_002A_005CTempCaches_005C_002A_002E_002A/@EntryIndexRemoved">True</s:Boolean>
+	<s:String x:Key="/Default/Housekeeping/DiskCleanup/PathsToClean/=_0025temp_0025_005CJetBrains_005C_002A_002E_002A_005C_002A_002E_002A_005CSolutionCaches_005C_002A_002E_002A/@EntryIndexedValue"></s:String>
+	<s:Boolean x:Key="/Default/Housekeeping/DiskCleanup/PathsToClean/=_0025temp_0025_005CJetBrains_005C_002A_002E_002A_005C_002A_002E_002A_005CSolutionCaches_005C_002A_002E_002A/@EntryIndexRemoved">True</s:Boolean>
+	<s:String x:Key="/Default/Housekeeping/DiskCleanup/PathsToClean/=_0025LocalAppData_0025_005CJetBrains_005CTransient_005C_002A_002A_005CSolutionCaches_005C_002A_002E_002A/@EntryIndexedValue"></s:String>
+	<s:Boolean x:Key="/Default/Housekeeping/DiskCleanup/PathsToClean/=_0025LocalAppData_0025_005CJetBrains_005CTransient_005C_002A_002A_005CSolutionCaches_005C_002A_002E_002A/@EntryIndexRemoved">True</s:Boolean>
+	<s:String x:Key="/Default/Housekeeping/DiskCleanup/PathsToClean/=_0025LocalAppData_0025_005CJetBrains_005CTransient_005C_002A_002A_005CShellCaches_005C_002A_002E_002A/@EntryIndexedValue"></s:String>
+	<s:Boolean x:Key="/Default/Housekeeping/DiskCleanup/PathsToClean/=_0025LocalAppData_0025_005CJetBrains_005CTransient_005C_002A_002A_005CShellCaches_005C_002A_002E_002A/@EntryIndexRemoved">True</s:Boolean>
+	<s:String x:Key="/Default/Housekeeping/DiskCleanup/PathsToClean/=_0025temp_0025_005CJetBrains_005C_002A_002E_002A_005C_002A_002E_002A_005CProductContentCache_005C_002A_002E_002A/@EntryIndexedValue"></s:String>
+	<s:Boolean x:Key="/Default/Housekeeping/DiskCleanup/PathsToClean/=_0025temp_0025_005CJetBrains_005C_002A_002E_002A_005C_002A_002E_002A_005CProductContentCache_005C_002A_002E_002A/@EntryIndexRemoved">True</s:Boolean>
+	<s:String x:Key="/Default/Housekeeping/DiskCleanup/PathsToClean/=_0025temp_0025_005CJetBrains_005CSettingsStorageCache_005C_002A_002E_002A/@EntryIndexedValue"></s:String>
+	<s:Boolean x:Key="/Default/Housekeeping/DiskCleanup/PathsToClean/=_0025temp_0025_005CJetBrains_005CSettingsStorageCache_005C_002A_002E_002A/@EntryIndexRemoved">True</s:Boolean>
+	<s:String x:Key="/Default/Housekeeping/DiskCleanup/PathsToClean/=_0025temp_0025_005CJetBrains_005CShared_005C_002A_002A_005CDeployedPackages_005C_002A_002E_002A/@EntryIndexedValue"></s:String>
+	<s:Boolean x:Key="/Default/Housekeeping/DiskCleanup/PathsToClean/=_0025temp_0025_005CJetBrains_005CShared_005C_002A_002A_005CDeployedPackages_005C_002A_002E_002A/@EntryIndexRemoved">True</s:Boolean>
+	<s:String x:Key="/Default/Housekeeping/DiskCleanup/PathsToClean/=_0025temp_0025_005CTemporary_0020ASP_002ENET_0020Files_005C_005Bbpsm_0020_002D_0020_002A_002E_002A/@EntryIndexedValue"></s:String>
+	<s:Boolean x:Key="/Default/Housekeeping/DiskCleanup/PathsToClean/=_0025temp_0025_005CTemporary_0020ASP_002ENET_0020Files_005C_005Bbpsm_0020_002D_0020_002A_002E_002A/@EntryIndexRemoved">True</s:Boolean>
+	<s:String x:Key="/Default/Housekeeping/DiskCleanup/PathsToClean/=_0025temp_0025_005CTemporary_0020ASP_002ENET_0020Files_005C_005BWRSM_0020_002D_0020_002A_002E_002A/@EntryIndexedValue"></s:String>
+	<s:Boolean x:Key="/Default/Housekeeping/DiskCleanup/PathsToClean/=_0025temp_0025_005CTemporary_0020ASP_002ENET_0020Files_005C_005BWRSM_0020_002D_0020_002A_002E_002A/@EntryIndexRemoved">True</s:Boolean></wpf:ResourceDictionary>

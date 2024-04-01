@@ -16,6 +16,7 @@ void BeginState::Begin() {
 
 	ctx_->SetAct(ActState::One);
 	ctx_->SetState(GameState::LoadAct);
+	ctx_->SetEventState(EventState::None);
 }
 
 void BeginState::RenderSFMLGraphics() {

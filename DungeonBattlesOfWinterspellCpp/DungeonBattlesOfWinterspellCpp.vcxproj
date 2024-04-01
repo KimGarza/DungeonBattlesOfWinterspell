@@ -139,11 +139,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Abalask.cpp" />
-    <ClCompile Include="AbalaskCreateState.cpp" />
-    <ClCompile Include="AbalaskTradeState.cpp" />
-    <ClCompile Include="AbalaskUI.cpp" />
-    <ClCompile Include="AbalaskUI.h" />
+    <ClCompile Include="Trader.cpp" />
+    <ClCompile Include="TradeState.cpp" />
+    <ClCompile Include="TraderUI.cpp" />
+    <ClCompile Include="TraderUI.h" />
     <ClCompile Include="ChangelingState.cpp" />
     <ClCompile Include="BattleState.cpp" />
     <ClCompile Include="BeginState.cpp" />
@@ -159,6 +158,7 @@
     <ClCompile Include="ExploreState.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameContext.cpp" />
+    <ClCompile Include="GameEvent.cpp" />
     <ClCompile Include="GameState.h" />
     <ClCompile Include="GameText.cpp" />
     <ClCompile Include="Input.cpp" />
@@ -168,22 +168,23 @@
     <ClCompile Include="LoadActOneState.cpp" />
     <ClCompile Include="LoadActState.cpp" />
     <ClCompile Include="LoadActThreeState.cpp" />
-    <ClCompile Include="LoadActTwoState.cpp" />
+    <ClCompile Include="LoadActTownState.cpp" />
     <ClCompile Include="LootItem.cpp" />
     <ClCompile Include="LootState.cpp" />
     <ClCompile Include="Map.cpp" />
     <ClCompile Include="MapRevealState.cpp" />
     <ClCompile Include="MapUpdateState.cpp" />
     <ClCompile Include="MusicPlayer.cpp" />
+    <ClCompile Include="CreateTrader.cpp" />
     <ClCompile Include="PlayerCharacter.cpp" />
     <ClCompile Include="Story.cpp" />
+    <ClCompile Include="TraderState.cpp" />
     <ClCompile Include="UI.cpp" />
     <ClCompile Include="Weapon.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Abalask.h" />
-    <ClInclude Include="AbalaskCreateState.h" />
-    <ClInclude Include="AbalaskTradeState.h" />
+    <ClInclude Include="Trader.h" />
+    <ClInclude Include="TradeState.h" />
     <ClInclude Include="ActState.h" />
     <ClInclude Include="ChangelingState.h" />
     <ClInclude Include="BattleState.h" />
@@ -194,9 +195,11 @@
     <ClInclude Include="CharacterCreation.h" />
     <ClInclude Include="DungeonRoom.h" />
     <ClInclude Include="DungeonGenerator.h" />
+    <ClInclude Include="EventState.h" />
     <ClInclude Include="ExploreState.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameContext.h" />
+    <ClInclude Include="GameEvent.h" />
     <ClInclude Include="GameText.h" />
     <ClInclude Include="ICreature.h" />
     <ClInclude Include="Input.h" />
@@ -207,15 +210,17 @@
     <ClInclude Include="LoadActOneState.h" />
     <ClInclude Include="LoadActState.h" />
     <ClInclude Include="LoadActThreeState.h" />
-    <ClInclude Include="LoadActTwoState.h" />
+    <ClInclude Include="LoadActTownState.h" />
     <ClInclude Include="LootItem.h" />
     <ClInclude Include="LootState.h" />
     <ClInclude Include="Map.h" />
     <ClInclude Include="MapRevealState.h" />
     <ClInclude Include="MapUpdateState.h" />
     <ClInclude Include="MusicPlayer.h" />
+    <ClInclude Include="CreateTrader.h" />
     <ClInclude Include="PlayerCharacter.h" />
     <ClInclude Include="Story.h" />
+    <ClInclude Include="TraderState.h" />
     <ClInclude Include="UI.h" />
     <ClInclude Include="Weapon.h" />
   </ItemGroup>

@@ -2,9 +2,11 @@
 #include "LoadActState.h"
 #include "GameContext.h"
 #include "CharacterCreation.h"
+#include "CreateTrader.h"
 #include "DungeonGenerator.h"
 #include "MusicPlayer.h"
 #include "Story.h"
+#include "Trader.h"
 #include "Map.h"
 #include "DungeonRoom.h"
 #include <memory>
@@ -23,7 +25,7 @@ public:
 	void CreateMap() override;
 	void PopulateMap() override;
 	void GeneratePlaces() override;
-
+	void GenerateTrader() override;
 	void CreateCharacter();
 };
 

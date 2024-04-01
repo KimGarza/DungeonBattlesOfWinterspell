@@ -2,6 +2,7 @@
 #include "LoadActState.h"
 #include "GameContext.h"
 #include "CharacterCreation.h"
+#include "CreateTrader.h"
 #include "DungeonGenerator.h"
 #include "MusicPlayer.h"
 #include "Story.h"
@@ -9,7 +10,7 @@
 #include "DungeonRoom.h"
 #include <memory>
 
-class LoadActTwoState : public LoadActState
+class LoadActTownState : public LoadActState
 {
 private:
 	std::shared_ptr<GameContext> ctx_;
@@ -17,12 +18,13 @@ private:
 	MusicPlayer music_;
 
 public:
-	LoadActTwoState(std::shared_ptr<GameContext> inContext) : ctx_(inContext) {}
+	LoadActTownState(std::shared_ptr<GameContext> inContext) : ctx_(inContext) {}
 
 	void Load() override;
 	void CreateMap() override;
 	void PopulateMap() override;
 	void GeneratePlaces() override;
+	void GenerateTrader() override;
 };
 
 

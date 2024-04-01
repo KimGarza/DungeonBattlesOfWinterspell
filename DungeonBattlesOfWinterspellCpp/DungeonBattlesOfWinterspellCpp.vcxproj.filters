@@ -67,11 +67,17 @@
     <Filter Include="Source Files\GameStates\Loot">
       <UniqueIdentifier>{b990ec16-4fbe-45b5-b182-90ca605d5b01}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\GameStates\Abalask">
+    <Filter Include="Header Files\GameStates\Trade">
       <UniqueIdentifier>{87013d70-91a9-4142-a63e-36ba5d9424d2}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\GameStates\Abalask">
+    <Filter Include="Source Files\GameStates\Trade">
       <UniqueIdentifier>{f6d1eb4d-a302-4752-823a-081dcf55c561}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GameStates\Act">
+      <UniqueIdentifier>{bdad9a11-0eb7-477a-81c5-9915c1a6f8a6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\GameStates\Act">
+      <UniqueIdentifier>{d7429f1a-ee06-4677-8303-5b8f9676ced1}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -126,14 +132,14 @@
     <ClCompile Include="MusicPlayer.cpp">
       <Filter>Source Files\Game</Filter>
     </ClCompile>
-    <ClCompile Include="Abalask.cpp">
+    <ClCompile Include="Trader.cpp">
       <Filter>Source Files\Actors</Filter>
     </ClCompile>
-    <ClCompile Include="AbalaskUI.h">
-      <Filter>Header Files\GameStates\Abalask</Filter>
+    <ClCompile Include="TraderUI.h">
+      <Filter>Header Files\GameStates\Trade</Filter>
     </ClCompile>
-    <ClCompile Include="AbalaskUI.cpp">
-      <Filter>Source Files\GameStates\Abalask</Filter>
+    <ClCompile Include="TraderUI.cpp">
+      <Filter>Source Files\GameStates\Trade</Filter>
     </ClCompile>
     <ClCompile Include="Character.cpp">
       <Filter>Source Files\Actors</Filter>
@@ -171,11 +177,29 @@
     <ClCompile Include="LootState.cpp">
       <Filter>Source Files\GameStates\Loot</Filter>
     </ClCompile>
-    <ClCompile Include="AbalaskCreateState.cpp">
-      <Filter>Source Files\GameStates\Abalask</Filter>
+    <ClCompile Include="TradeState.cpp">
+      <Filter>Source Files\GameStates\Trade</Filter>
     </ClCompile>
-    <ClCompile Include="AbalaskTradeState.cpp">
-      <Filter>Source Files\GameStates\Abalask</Filter>
+    <ClCompile Include="GameEvent.cpp">
+      <Filter>Source Files\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="LoadActTownState.cpp">
+      <Filter>Source Files\GameStates\Act</Filter>
+    </ClCompile>
+    <ClCompile Include="LoadActState.cpp">
+      <Filter>Source Files\GameStates\Act</Filter>
+    </ClCompile>
+    <ClCompile Include="LoadActThreeState.cpp">
+      <Filter>Source Files\GameStates\Act</Filter>
+    </ClCompile>
+    <ClCompile Include="LoadActOneState.cpp">
+      <Filter>Source Files\GameStates\Act</Filter>
+    </ClCompile>
+    <ClCompile Include="CreateTrader.cpp">
+      <Filter>Source Files\GameStates\Trade</Filter>
+    </ClCompile>
+    <ClCompile Include="TraderState.cpp">
+      <Filter>Source Files\GameStates\Trade</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -230,7 +254,7 @@
     <ClInclude Include="MusicPlayer.h">
       <Filter>Header Files\Game</Filter>
     </ClInclude>
-    <ClInclude Include="Abalask.h">
+    <ClInclude Include="Trader.h">
       <Filter>Header Files\Actors</Filter>
     </ClInclude>
     <ClInclude Include="Character.h">
@@ -269,11 +293,35 @@
     <ClInclude Include="ChangelingState.h">
       <Filter>Header Files\GameStates\Explore</Filter>
     </ClInclude>
-    <ClInclude Include="AbalaskCreateState.h">
-      <Filter>Header Files\GameStates\Abalask</Filter>
+    <ClInclude Include="TradeState.h">
+      <Filter>Header Files\GameStates\Trade</Filter>
     </ClInclude>
-    <ClInclude Include="AbalaskTradeState.h">
-      <Filter>Header Files\GameStates\Abalask</Filter>
+    <ClInclude Include="GameEvent.h">
+      <Filter>Header Files\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="EventState.h">
+      <Filter>Header Files\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="ActState.h">
+      <Filter>Header Files\GameStates\Act</Filter>
+    </ClInclude>
+    <ClInclude Include="LoadActOneState.h">
+      <Filter>Header Files\GameStates\Act</Filter>
+    </ClInclude>
+    <ClInclude Include="LoadActState.h">
+      <Filter>Header Files\GameStates\Act</Filter>
+    </ClInclude>
+    <ClInclude Include="LoadActThreeState.h">
+      <Filter>Header Files\GameStates\Act</Filter>
+    </ClInclude>
+    <ClInclude Include="LoadActTownState.h">
+      <Filter>Header Files\GameStates\Act</Filter>
+    </ClInclude>
+    <ClInclude Include="CreateTrader.h">
+      <Filter>Header Files\GameStates\Trade</Filter>
+    </ClInclude>
+    <ClInclude Include="TraderState.h">
+      <Filter>Header Files\GameStates\Trade</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

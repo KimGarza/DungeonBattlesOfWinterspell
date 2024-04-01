@@ -1,7 +1,7 @@
-#include "AbalaskUI.h"
+#include "TraderUI.h"
 #include <conio.h>
 
-bool AbalaskUI::AbalaskTradeInquiry() {
+bool TraderUI::TradeInquiry() {
     system("cls");
 
     while (true) {
@@ -22,7 +22,7 @@ bool AbalaskUI::AbalaskTradeInquiry() {
     return false;
 }
 
-std::string AbalaskUI::AbalaskTradeSelectMenu(std::shared_ptr<PlayerCharacter> player) {
+std::string TraderUI::TradeSelectMenu(std::shared_ptr<PlayerCharacter> player) {
     system("cls");
 
     while (true) {
@@ -42,7 +42,7 @@ std::string AbalaskUI::AbalaskTradeSelectMenu(std::shared_ptr<PlayerCharacter> p
     return "";
 }
 
-std::shared_ptr<LootItem> AbalaskUI::DisplaySellMenu(std::shared_ptr<PlayerCharacter> player) {
+std::shared_ptr<LootItem> TraderUI::DisplaySellMenu(std::shared_ptr<PlayerCharacter> player) {
 
     while (true) {
         system("cls");
@@ -105,7 +105,7 @@ std::shared_ptr<LootItem> AbalaskUI::DisplaySellMenu(std::shared_ptr<PlayerChara
 
 }
 
-std::shared_ptr<LootItem> AbalaskUI::DisplayBuyMenu(std::shared_ptr<PlayerCharacter> player, std::shared_ptr<Abalask> abalask) {
+std::shared_ptr<LootItem> TraderUI::DisplayBuyMenu(std::shared_ptr<PlayerCharacter> player, std::shared_ptr<Trader> trader) {
 
     while (true) {
         system("cls");
@@ -127,17 +127,17 @@ std::shared_ptr<LootItem> AbalaskUI::DisplayBuyMenu(std::shared_ptr<PlayerCharac
 
         std::vector < std::pair<int, std::shared_ptr<LootItem>>> selectableLoot;
 
-        for (int i = 0; i < abalask->GetWares().size(); i++) {
+        for (int i = 0; i < trader->GetWares().size(); i++) {
 
-            std::shared_ptr<LootItem> item = abalask->GetWares()[i];
+            std::shared_ptr<LootItem> item = trader->GetWares()[i];
             gameText.WriteLine(std::to_string(i + 1) + ")  " + item->GetName() + item->GetInfo() + " (" + std::to_string(item->GetWorthInGold()) + " gp)");
 
-            selectableLoot.emplace_back((i + 1), abalask->GetWares()[i]);
+            selectableLoot.emplace_back((i + 1), trader->GetWares()[i]);
         }
 
         gameText.WriteLine("x)  exit menu");
 
-        std::string playerChoice = input.PlayerChoice(abalask->GetWares().size());
+        std::string playerChoice = input.PlayerChoice(trader->GetWares().size());
         if (playerChoice == "x") { // player wishes to exit menu
             system("cls");
 
@@ -166,6 +166,6 @@ std::shared_ptr<LootItem> AbalaskUI::DisplayBuyMenu(std::shared_ptr<PlayerCharac
 
 }
 
-void AbalaskUI::CannotAfford() {
+void TraderUI::CannotAfford() {
     gameText.WriteLineInput("You cannot afford that.");
 }

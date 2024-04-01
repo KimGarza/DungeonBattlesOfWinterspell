@@ -36,3 +36,9 @@ void LoadActThreeState::PopulateMap() {
 	}
 	ctx_->GetMap()->SetRoomNames(roomNames);
 }
+
+void LoadActThreeState::GenerateTrader() {
+
+	CreateTrader createTrader;
+	ctx_->SetTrader(createTrader.GenerateTrader());
+}
