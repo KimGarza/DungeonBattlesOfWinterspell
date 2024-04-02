@@ -201,6 +201,9 @@
     <ClCompile Include="TraderState.cpp">
       <Filter>Source Files\GameStates\Trade</Filter>
     </ClCompile>
+    <ClCompile Include="GenerateTown.cpp">
+      <Filter>Source Files\GameStates\Act</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -322,6 +325,9 @@
     </ClInclude>
     <ClInclude Include="TraderState.h">
       <Filter>Header Files\GameStates\Trade</Filter>
+    </ClInclude>
+    <ClInclude Include="GenerateTown.h">
+      <Filter>Header Files\GameStates\Act</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

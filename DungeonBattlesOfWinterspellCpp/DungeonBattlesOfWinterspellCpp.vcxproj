@@ -139,6 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="GenerateTown.cpp" />
     <ClCompile Include="Trader.cpp" />
     <ClCompile Include="TradeState.cpp" />
     <ClCompile Include="TraderUI.cpp" />
@@ -183,6 +184,7 @@
     <ClCompile Include="Weapon.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="GenerateTown.h" />
     <ClInclude Include="Trader.h" />
     <ClInclude Include="TradeState.h" />
     <ClInclude Include="ActState.h" />

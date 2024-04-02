@@ -13,8 +13,7 @@ private:
 	Story story_;
 
 public:
-	//virtual void TraderCreate();
-	//void TraderIntroduction();
+	CreateTrader(std::shared_ptr<GameContext> inCtx) : ctx_(inCtx) {}
 	std::shared_ptr<Trader> GenerateTrader();
 	std::vector<std::shared_ptr<LootItem>> AbalaskWares();
 	std::vector<std::shared_ptr<LootItem>> MergleWares();

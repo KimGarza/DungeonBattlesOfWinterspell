@@ -4,12 +4,13 @@ void LoadActTownState::Load() {
 
 	music_.PlayMusic(L"slow-2021-08-17_-_8_Bit_Nostalgia_-_www.FesliyanStudios.com.wav"); // new song
 
-	story_.OpeningStory();
+	//story_.IntroToTown();
 
 	GeneratePlaces();
+	GenerateTrader();
 	CreateMap();
 
-	story_.MapIntro();
+	//story_.TownMapIntro();
 
 	ctx_->SetState(GameState::RevealMap);
 }
@@ -39,6 +40,6 @@ void LoadActTownState::PopulateMap() {
 
 void LoadActTownState::GenerateTrader() {
 
-	CreateTrader createTrader;
+	CreateTrader createTrader(ctx_);
 	ctx_->SetTrader(createTrader.GenerateTrader());
 }
