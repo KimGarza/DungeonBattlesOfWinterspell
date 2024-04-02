@@ -2,7 +2,7 @@
 #include <vector>
 #include <sstream>
 #include <map>
-#include "DungeonRoom.h"
+#include "GenerateTown.h"
 #include "LootItem.h"
 
 class GenerateTown
@@ -15,9 +15,10 @@ private:
          { "Jeweler", "Description"},
          { "Black Bear Tavern", "Description"},
          { "Crystal Moon Tavern", "Description"},
+         { "Apothecary", "Description"},
     };
 
 public:
-    std::vector < std::shared_ptr<DungeonRoom>> GeneratePlaces();
-    std::vector<std::shared_ptr<Enemy>> GenerateNpcs(int roomLevel);
+    //std::vector < std::shared_ptr<Place>> GeneratePlaces();
+    //std::vector<std::shared_ptr<Enemy>> GenerateNpcs(int roomLevel);
 };

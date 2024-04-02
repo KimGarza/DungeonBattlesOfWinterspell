@@ -24,7 +24,7 @@ private:
 	BattleState battleState_;
 	LootState lootState_;
 	LoadActOneState loadActOneState_;
-	LoadActTownState loadActTownState_;
+	//LoadActTownState loadActTownState_;
 	LoadActThreeState loadActThreeState_;
 
 
@@ -34,7 +34,7 @@ public:
 		mapUpdateState_(MapUpdateState(inCtx)), mapRevealState_(MapRevealState(inCtx)),
 		exploreState_(ExploreState(inCtx)), battleState_(BattleState(inCtx)), 
 		lootState_(LootState(inCtx)),
-		loadActOneState_(LoadActOneState(inCtx)), loadActTownState_(LoadActTownState(inCtx)), loadActThreeState_(LoadActThreeState(inCtx)) {}
+		loadActOneState_(LoadActOneState(inCtx)), /*loadActTownState_(LoadActTownState(inCtx)),*/ loadActThreeState_(LoadActThreeState(inCtx)) {}
 
 	void StateCycle();
 	void CheckGameState();
