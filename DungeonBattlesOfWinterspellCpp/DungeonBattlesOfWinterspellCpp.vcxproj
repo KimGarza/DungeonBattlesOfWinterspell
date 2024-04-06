@@ -190,7 +190,7 @@
     <ClInclude Include="ActState.h" />
     <ClInclude Include="ChangelingState.h" />
     <ClInclude Include="BattleState.h" />
-    <ClInclude Include="BeginState.h" />
+    <ClInclude Include="Headers\BeginState.h" />
     <ClInclude Include="Character.h" />
     <ClInclude Include="CharCreatUI.h" />
     <ClInclude Include="Enemy.h" />
@@ -228,6 +228,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include=".gitignore" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="DungeonBattlesOfWinterspellCpp.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

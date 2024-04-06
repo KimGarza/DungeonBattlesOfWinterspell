@@ -272,7 +272,7 @@
     <ClInclude Include="Weapon.h">
       <Filter>Header Files\Actors</Filter>
     </ClInclude>
-    <ClInclude Include="BeginState.h">
+    <ClInclude Include="Headers\BeginState.h">
       <Filter>Header Files\GameStates\Begin</Filter>
     </ClInclude>
     <ClInclude Include="GameContext.h">
@@ -332,5 +332,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include=".gitignore" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="DungeonBattlesOfWinterspellCpp.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
   </ItemGroup>
 </Project>

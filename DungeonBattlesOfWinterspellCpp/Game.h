@@ -2,7 +2,7 @@
 #include "GameContext.h"
 #include "ActState.h"
 #include "GameEvent.h"
-#include "BeginState.h"
+#include "Headers\BeginState.h"
 #include "MapUpdateState.h"
 #include "MapRevealState.h"
 #include "ExploreState.h"

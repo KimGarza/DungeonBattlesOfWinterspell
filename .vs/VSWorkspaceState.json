@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\DungeonBattlesOfWinterspellCpp",
+    "\\DungeonBattlesOfWinterspellCpp\\Test"
   ],
-  "SelectedNode": "\\DungeonBattlesOfWinterspellCpp.sln",
+  "SelectedNode": "\\DungeonBattlesOfWinterspellCpp\\Test",
   "PreviewInSolutionExplorer": false
 }
