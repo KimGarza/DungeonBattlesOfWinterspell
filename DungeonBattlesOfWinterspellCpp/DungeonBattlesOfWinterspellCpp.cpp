@@ -1,7 +1,7 @@
 // DungeonBattlesOfWinterspellCpp.cpp : This file contains the 'main' function. Program execution begins and ends there.
 
 #include <iostream>
-#include "Game.h"
+#include "Headers\Game\Game.h"
 #undef min
 #undef max
 #define NOMINMAX
