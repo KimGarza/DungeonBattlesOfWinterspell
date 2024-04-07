@@ -7,7 +7,7 @@ void LoadActTownState::Load() {
 	//story_.IntroToTown();
 
 	GeneratePlaces();
-	GenerateTrader();
+	GenerateNPCs();
 	CreateMap();
 
 	//story_.TownMapIntro();
@@ -38,8 +38,11 @@ void LoadActTownState::PopulateMap() {
 	ctx_->GetMap()->SetRoomNames(roomNames);
 }
 
-void LoadActTownState::GenerateTrader() {
+void LoadActTownState::GenerateNPCs() {
 
-	CreateTrader createTrader(ctx_);
-	ctx_->SetTrader(createTrader.GenerateTrader());
+	CreateNpcs createNpcs(ctx_);
+	ctx_->SetActTownNpcs(createNpcs.Generate());
+}
+
+void LoadActTownState::GeneratePlaces() {
 }

@@ -2,8 +2,7 @@
 #include "LoadActState.h"
 #include "GameContext.h"
 #include "CharacterCreation.h"
-#include "CreateTrader.h"
-#include "GenerateTown.h"
+#include "CreateNpcs.h"
 #include "MusicPlayer.h"
 #include "Story.h"
 #include "Map.h"
@@ -23,8 +22,8 @@ public:
 	void Load() override;
 	void CreateMap() override;
 	void PopulateMap() override;
-	//void GeneratePlaces() override;
-	void GenerateTrader() override;
+	void GeneratePlaces() override;
+	void GenerateNPCs() override;
 };
 
 

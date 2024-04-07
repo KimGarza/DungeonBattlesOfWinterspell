@@ -1,9 +1,18 @@
-#include "TraderState.h"
+#include "TraderInteractState.h"
 
 /// <summary>
 /// The initial interaction with the trader when ran into. Meet the trader with story intro first or if met, ask player if they want to trade; change state.
 /// </summary>
-void TraderState::TraderInteract() {
+void TraderInteractState::TraderInteract() {
+
+    if (ctx_->GetAct() == ActState::One) {
+        
+        std::vector<std::shared_ptr<INpc>> npcs = ctx_->GetActOneNpcs();
+        for (auto& npc : npcs) {
+            if (npc->GetLocation() == ctx_->GetCurrentPlace() && ) {
+                // this npc should be the one interacted with
+            }
+        }
 
     if (!ctx_->GetTrader()->GetHasPlayerMet()) {
 
@@ -26,7 +35,7 @@ void TraderState::TraderInteract() {
 
 /* Determining Act State by case isntead of inheritance method of unique TraderState for each trader bc in this case, few requirements for difference
  in functionality that are better streamlined and less complex by simply switching between. */
-void TraderState::MeetTrader() {
+void TraderInteractState::MeetTrader() {
 
     switch (ctx_->GetAct()) {
     case ActState::One: {

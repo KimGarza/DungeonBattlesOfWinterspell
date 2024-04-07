@@ -10,7 +10,7 @@ void GameEvent::CheckEventState() {
 	}
 	case EventState::Trader: {
 
-		traderState_.TraderInteract();
+		traderInteractState_.TraderInteract();
 		return;
 	}
 	case EventState::Trade: {

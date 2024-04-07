@@ -79,6 +79,24 @@
     <Filter Include="Header Files\GameStates\Act">
       <UniqueIdentifier>{d7429f1a-ee06-4677-8303-5b8f9676ced1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\GameStates\Act\ActOne">
+      <UniqueIdentifier>{5512ae78-3d83-4fe5-a026-9867c6e8b98b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\GameStates\Act\ActThree">
+      <UniqueIdentifier>{af92f84c-47b8-47ad-9935-33933a47911a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\GameStates\Act\ActTown">
+      <UniqueIdentifier>{27e0503b-7c42-4ce5-a920-1f6e9753025e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GameStates\Act\ActOne">
+      <UniqueIdentifier>{c0b7310b-045e-4389-83c4-7149dba333f2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GameStates\Act\ActTown">
+      <UniqueIdentifier>{04d3c291-620d-4f49-adce-27e541b6d70c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GameStates\Act\ActThree">
+      <UniqueIdentifier>{06a26a65-0b2f-496c-9174-d479fb5f0fa9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DungeonBattlesOfWinterspellCpp.cpp">
@@ -104,9 +122,6 @@
     </ClCompile>
     <ClCompile Include="GameState.h">
       <Filter>Header Files\Game</Filter>
-    </ClCompile>
-    <ClCompile Include="CharacterCreation.cpp">
-      <Filter>Source Files\GameStates\Begin</Filter>
     </ClCompile>
     <ClCompile Include="DungeonGenerator.cpp">
       <Filter>Source Files\GameStates\Begin</Filter>
@@ -183,26 +198,35 @@
     <ClCompile Include="GameEvent.cpp">
       <Filter>Source Files\Game</Filter>
     </ClCompile>
-    <ClCompile Include="LoadActTownState.cpp">
-      <Filter>Source Files\GameStates\Act</Filter>
-    </ClCompile>
     <ClCompile Include="LoadActState.cpp">
       <Filter>Source Files\GameStates\Act</Filter>
     </ClCompile>
-    <ClCompile Include="LoadActThreeState.cpp">
-      <Filter>Source Files\GameStates\Act</Filter>
+    <ClCompile Include="TraderInteractState.cpp">
+      <Filter>Source Files\GameStates\Trade</Filter>
     </ClCompile>
     <ClCompile Include="LoadActOneState.cpp">
+      <Filter>Source Files\GameStates\Act\ActOne</Filter>
+    </ClCompile>
+    <ClCompile Include="CharacterCreation.cpp">
+      <Filter>Source Files\GameStates\Act\ActOne</Filter>
+    </ClCompile>
+    <ClCompile Include="LoadActThreeState.cpp">
+      <Filter>Source Files\GameStates\Act\ActThree</Filter>
+    </ClCompile>
+    <ClCompile Include="LoadActTownState.cpp">
+      <Filter>Source Files\GameStates\Act\ActTown</Filter>
+    </ClCompile>
+    <ClCompile Include="NpcTrader.cpp">
+      <Filter>Source Files\Actors</Filter>
+    </ClCompile>
+    <ClCompile Include="Npc.cpp">
+      <Filter>Source Files\Actors</Filter>
+    </ClCompile>
+    <ClCompile Include="CreateNpcs.cpp">
       <Filter>Source Files\GameStates\Act</Filter>
     </ClCompile>
-    <ClCompile Include="CreateTrader.cpp">
-      <Filter>Source Files\GameStates\Trade</Filter>
-    </ClCompile>
-    <ClCompile Include="TraderState.cpp">
-      <Filter>Source Files\GameStates\Trade</Filter>
-    </ClCompile>
-    <ClCompile Include="GenerateTown.cpp">
-      <Filter>Source Files\GameStates\Act</Filter>
+    <ClCompile Include="Place.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -226,9 +250,6 @@
     </ClInclude>
     <ClInclude Include="ICreature.h">
       <Filter>Header Files\Actors</Filter>
-    </ClInclude>
-    <ClInclude Include="CharacterCreation.h">
-      <Filter>Header Files\GameStates\Begin</Filter>
     </ClInclude>
     <ClInclude Include="DungeonGenerator.h">
       <Filter>Header Files\GameStates\Begin</Filter>
@@ -256,9 +277,6 @@
     </ClInclude>
     <ClInclude Include="MusicPlayer.h">
       <Filter>Header Files\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="Trader.h">
-      <Filter>Header Files\Actors</Filter>
     </ClInclude>
     <ClInclude Include="Character.h">
       <Filter>Header Files\Actors</Filter>
@@ -308,26 +326,44 @@
     <ClInclude Include="ActState.h">
       <Filter>Header Files\GameStates\Act</Filter>
     </ClInclude>
-    <ClInclude Include="LoadActOneState.h">
-      <Filter>Header Files\GameStates\Act</Filter>
-    </ClInclude>
     <ClInclude Include="LoadActState.h">
       <Filter>Header Files\GameStates\Act</Filter>
     </ClInclude>
+    <ClInclude Include="TraderInteractState.h">
+      <Filter>Header Files\GameStates\Trade</Filter>
+    </ClInclude>
+    <ClInclude Include="CharacterCreation.h">
+      <Filter>Header Files\GameStates\Act\ActOne</Filter>
+    </ClInclude>
+    <ClInclude Include="LoadActOneState.h">
+      <Filter>Header Files\GameStates\Act\ActOne</Filter>
+    </ClInclude>
     <ClInclude Include="LoadActThreeState.h">
-      <Filter>Header Files\GameStates\Act</Filter>
+      <Filter>Header Files\GameStates\Act\ActThree</Filter>
     </ClInclude>
     <ClInclude Include="LoadActTownState.h">
+      <Filter>Header Files\GameStates\Act\ActTown</Filter>
+    </ClInclude>
+    <ClInclude Include="NpcTrader.h">
+      <Filter>Header Files\Actors</Filter>
+    </ClInclude>
+    <ClInclude Include="Npc.h">
+      <Filter>Header Files\Actors</Filter>
+    </ClInclude>
+    <ClInclude Include="CreateNpcs.h">
       <Filter>Header Files\GameStates\Act</Filter>
     </ClInclude>
-    <ClInclude Include="CreateTrader.h">
-      <Filter>Header Files\GameStates\Trade</Filter>
+    <ClInclude Include="INpc.h">
+      <Filter>Header Files\Actors</Filter>
     </ClInclude>
-    <ClInclude Include="TraderState.h">
-      <Filter>Header Files\GameStates\Trade</Filter>
+    <ClInclude Include="MerchType.h">
+      <Filter>Header Files\Actors</Filter>
     </ClInclude>
-    <ClInclude Include="GenerateTown.h">
-      <Filter>Header Files\GameStates\Act</Filter>
+    <ClInclude Include="IPlace.h">
+      <Filter>Header Files\Actors</Filter>
+    </ClInclude>
+    <ClInclude Include="Place.h">
+      <Filter>Header Files\Actors</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

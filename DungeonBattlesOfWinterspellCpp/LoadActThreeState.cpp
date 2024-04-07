@@ -7,7 +7,7 @@ void LoadActThreeState::Load() {
 	//story_.ActTwoOpening();
 
 	GeneratePlaces();
-	GenerateTrader();
+	GenerateNPCs();
 	CreateMap();
 
 	//story_.MapActTwoIntro();
@@ -38,8 +38,8 @@ void LoadActThreeState::PopulateMap() {
 	ctx_->GetMap()->SetRoomNames(roomNames);
 }
 
-void LoadActThreeState::GenerateTrader() {
+void LoadActThreeState::GenerateNPCs() {
 
-	CreateTrader createTrader(ctx_);
-	ctx_->SetTrader(createTrader.GenerateTrader());
+	CreateNpcs createNpcs(ctx_);
+	ctx_->SetActThreeNpcs(createNpcs.Generate());
 }

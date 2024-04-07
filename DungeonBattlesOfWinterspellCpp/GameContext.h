@@ -1,7 +1,10 @@
 #pragma once
 #include "PlayerCharacter.h"
+#include "INpc.h"
+#include "NpcTrader.h"
+#include "Npc.h"
 #include "GameState.h"
-#include "Trader.h"
+#include "INpc.h"
 #include "EventState.h"
 #include "ActState.h"
 #include "Map.h"
@@ -17,7 +20,7 @@ private:
 	std::shared_ptr<Map> map_;
 	std::shared_ptr<DungeonRoom> room_;
 	std::vector<std::shared_ptr<DungeonRoom>> dungeonRooms_;
-	std::shared_ptr<Trader> trader_;
+	std::vector<std::shared_ptr<INpc>> npcs_;
 
 public:
 	GameContext() : gameState_(GameState::Begin) {}
@@ -29,7 +32,9 @@ public:
 	std::shared_ptr<Map> GetMap() { return map_; }
 	std::shared_ptr<DungeonRoom> GetCurrentRoom() { return room_; }
 	std::vector<std::shared_ptr<DungeonRoom>> GetDungeonRooms() { return dungeonRooms_; }
-	std::shared_ptr<Trader> GetTrader() { return trader_; }
+	std::vector<std::shared_ptr<INpc>> GetActOneNpcs() { return npcs_; }
+	std::vector<std::shared_ptr<INpc>> GetActTownNpcs() { return npcs_; }
+	std::vector<std::shared_ptr<INpc>> GetActThreeNpcs() { return npcs_; }
 
 	void SetState(GameState inGameState) { gameState_ = inGameState; }
 	void SetEventState(EventState inEventState) { eventState_ = inEventState; }
@@ -38,6 +43,8 @@ public:
 	void SetMap(std::shared_ptr<Map> inMap) { map_ = inMap; }
 	void SetCurrentRoom(std::shared_ptr<DungeonRoom> inRoom) { room_ = inRoom; }
 	void SetDungeonRooms(std::vector<std::shared_ptr<DungeonRoom>> inDungeonRooms) { dungeonRooms_ = inDungeonRooms; }
-	void SetTrader(std::shared_ptr<Trader> inTrader) { trader_ = inTrader; }
+	void SetActOneNpcs(std::vector<std::shared_ptr<INpc>> inNpcs) { npcs_ = inNpcs; }
+	void SetActTownNpcs(std::vector<std::shared_ptr<INpc>> inNpcs) { npcs_ = inNpcs; }
+	void SetActThreeNpcs(std::vector<std::shared_ptr<INpc>> inNpcs) { npcs_ = inNpcs; }
 };
 

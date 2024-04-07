@@ -139,7 +139,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="GenerateTown.cpp" />
+    <ClCompile Include="CreateNpcs.cpp" />
+    <ClCompile Include="Npc.cpp" />
+    <ClCompile Include="NpcTrader.cpp" />
+    <ClCompile Include="Place.cpp" />
     <ClCompile Include="Trader.cpp" />
     <ClCompile Include="TradeState.cpp" />
     <ClCompile Include="TraderUI.cpp" />
@@ -176,16 +179,20 @@
     <ClCompile Include="MapRevealState.cpp" />
     <ClCompile Include="MapUpdateState.cpp" />
     <ClCompile Include="MusicPlayer.cpp" />
-    <ClCompile Include="CreateTrader.cpp" />
     <ClCompile Include="PlayerCharacter.cpp" />
     <ClCompile Include="Story.cpp" />
-    <ClCompile Include="TraderState.cpp" />
+    <ClCompile Include="TraderInteractState.cpp" />
     <ClCompile Include="UI.cpp" />
     <ClCompile Include="Weapon.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="GenerateTown.h" />
-    <ClInclude Include="Trader.h" />
+    <ClInclude Include="CreateNpcs.h" />
+    <ClInclude Include="INpc.h" />
+    <ClInclude Include="MerchType.h" />
+    <ClInclude Include="Npc.h" />
+    <ClInclude Include="NpcTrader.h" />
+    <ClInclude Include="IPlace.h" />
+    <ClInclude Include="Place.h" />
     <ClInclude Include="TradeState.h" />
     <ClInclude Include="ActState.h" />
     <ClInclude Include="ChangelingState.h" />
@@ -219,10 +226,9 @@
     <ClInclude Include="MapRevealState.h" />
     <ClInclude Include="MapUpdateState.h" />
     <ClInclude Include="MusicPlayer.h" />
-    <ClInclude Include="CreateTrader.h" />
     <ClInclude Include="PlayerCharacter.h" />
     <ClInclude Include="Story.h" />
-    <ClInclude Include="TraderState.h" />
+    <ClInclude Include="TraderInteractState.h" />
     <ClInclude Include="UI.h" />
     <ClInclude Include="Weapon.h" />
   </ItemGroup>

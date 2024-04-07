@@ -8,7 +8,7 @@ void LoadActOneState::Load() {
 
 	CreateCharacter();
 	GeneratePlaces();
-	GenerateTrader();
+	GenerateNPCs();
 	CreateMap();
 
 	story_.MapIntro();
@@ -22,10 +22,10 @@ void LoadActOneState::CreateCharacter() {
 	ctx_->SetPlayer(characterCreation.CreateCharacter());
 }
 
-void LoadActOneState::GenerateTrader() {
+void LoadActOneState::GenerateNPCs() {
 
-	CreateTrader createTrader(ctx_);
-	ctx_->SetTrader(createTrader.GenerateTrader());
+	CreateNpcs createNpcs(ctx_);
+	ctx_->SetActOneNpcs(createNpcs.Generate());
 }
 
 void LoadActOneState::GeneratePlaces() {
