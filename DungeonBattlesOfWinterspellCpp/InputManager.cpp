@@ -43,16 +43,15 @@ bool InputManager::ValidatePlayerInput(std::string playerInput, std::vector<int>
 bool InputManager::ValidatePoints(std::string pointsToAssign, int pointsRemaining) {
 
 	try {
-		int num;
-		num = std::stoi(pointsToAssign); // catches
+		int pointsDesired = std::stoi(pointsToAssign); // catches
 
-		int pointsSpentSoFar = 10 - pointsRemaining;
+		int pointsSpentSoFar = 3 - pointsRemaining;
 
-		if (num < 0 && (num < pointsSpentSoFar)) { // preventing subtraction of more points than has been allocated so far
-			std::cout << "You dirty little cheating rat, sqorble off you!";
+		if (pointsDesired < 0 && (pointsDesired * -1 > pointsSpentSoFar)) { // preventing subtraction of more points than has been allocated so far
+			std::cout << "You dirty little cheating rat, sqorble off you!\n";
 			return false;
 		}
-		else if (num <= pointsRemaining) {
+		else if (pointsDesired <= pointsRemaining) {
 			return true;
 		}
 		else {

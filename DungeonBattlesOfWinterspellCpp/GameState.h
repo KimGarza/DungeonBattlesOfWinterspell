@@ -3,10 +3,13 @@
 enum class GameState {
 	None,
 	Begin,
-	Map,
+	LoadAct,
+	Event,
+	RevealMap,
 	Room,
 	Battle,
+	Loot,
 	Explore,
 	UpdateMap,
-	EndGame
+	EndGame,
 };

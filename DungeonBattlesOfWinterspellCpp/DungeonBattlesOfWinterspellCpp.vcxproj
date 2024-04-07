@@ -76,10 +76,13 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>"$(SolutionDir)\include";%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>;$(SolutionDir)\include</AdditionalLibraryDirectories>
+      <AdditionalDependencies>sfml-system.lib;sfml-window.lib;sfml-graphics.lib;Winnm.lib</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -90,12 +93,15 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>;$(SolutionDir)\include;G:\SFML\SFML-2.5.1-windows-vc15-64-bit\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>;$(SolutionDir)\include</AdditionalLibraryDirectories>
+      <AdditionalDependencies>sfml-system.lib;sfml-window.lib;sfml-graphics.lib;Winnm.lib</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -104,10 +110,13 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);$(SolutionDir)\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>Winmm.lib;sfml-system-d.lib;sfml-window-d.lib;sfml-graphics-d.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories);$(SolutionDir)\include;$(SolutionDir)\lib</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -118,63 +127,104 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>;$(SolutionDir)\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>Winmm.lib;sfml-system.lib;sfml-window.lib;sfml-graphics.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)\include;%(AdditionalLibraryDirectories);$(SolutionDir)\include;$(SolutionDir)\include;$(SolutionDir)\lib</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Battle.cpp" />
-    <ClCompile Include="ExploreDungeon.cpp" />
-    <ClCompile Include="Characters.cpp" />
+    <ClCompile Include="GenerateTown.cpp" />
+    <ClCompile Include="Trader.cpp" />
+    <ClCompile Include="TradeState.cpp" />
+    <ClCompile Include="TraderUI.cpp" />
+    <ClCompile Include="TraderUI.h" />
+    <ClCompile Include="ChangelingState.cpp" />
+    <ClCompile Include="BattleState.cpp" />
+    <ClCompile Include="BeginState.cpp" />
+    <ClCompile Include="Character.cpp" />
+    <ClCompile Include="CharCreatUI.cpp" />
+    <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="CharacterCreation.cpp" />
     <ClCompile Include="DungeonRoom.cpp" />
     <ClCompile Include="DungeonBattlesOfWinterspellCpp.cpp">
       <ShowIncludes Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Yes</ShowIncludes>
     </ClCompile>
     <ClCompile Include="DungeonGenerator.cpp" />
-    <ClCompile Include="Enemies.cpp" />
+    <ClCompile Include="ExploreState.cpp" />
     <ClCompile Include="Game.cpp" />
+    <ClCompile Include="GameContext.cpp" />
+    <ClCompile Include="GameEvent.cpp" />
     <ClCompile Include="GameState.h" />
     <ClCompile Include="GameText.cpp" />
-    <ClCompile Include="ICharacter.cpp" />
-    <ClCompile Include="ICreature.cpp" />
-    <ClCompile Include="IEnemy.cpp" />
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="InputManager.cpp" />
+    <ClCompile Include="Inventory.cpp" />
     <ClCompile Include="InvItem.cpp" />
-    <ClCompile Include="IWeapon.cpp" />
+    <ClCompile Include="LoadActOneState.cpp" />
+    <ClCompile Include="LoadActState.cpp" />
+    <ClCompile Include="LoadActThreeState.cpp" />
+    <ClCompile Include="LoadActTownState.cpp" />
+    <ClCompile Include="LootItem.cpp" />
+    <ClCompile Include="LootState.cpp" />
     <ClCompile Include="Map.cpp" />
+    <ClCompile Include="MapRevealState.cpp" />
+    <ClCompile Include="MapUpdateState.cpp" />
+    <ClCompile Include="MusicPlayer.cpp" />
+    <ClCompile Include="CreateTrader.cpp" />
     <ClCompile Include="PlayerCharacter.cpp" />
     <ClCompile Include="Story.cpp" />
+    <ClCompile Include="TraderState.cpp" />
     <ClCompile Include="UI.cpp" />
-    <ClCompile Include="Weapons.cpp" />
+    <ClCompile Include="Weapon.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Battle.h" />
-    <ClInclude Include="ExploreDungeon.h" />
-    <ClInclude Include="Characters.h" />
+    <ClInclude Include="GenerateTown.h" />
+    <ClInclude Include="Trader.h" />
+    <ClInclude Include="TradeState.h" />
+    <ClInclude Include="ActState.h" />
+    <ClInclude Include="ChangelingState.h" />
+    <ClInclude Include="BattleState.h" />
+    <ClInclude Include="BeginState.h" />
+    <ClInclude Include="Character.h" />
+    <ClInclude Include="CharCreatUI.h" />
+    <ClInclude Include="Enemy.h" />
     <ClInclude Include="CharacterCreation.h" />
     <ClInclude Include="DungeonRoom.h" />
     <ClInclude Include="DungeonGenerator.h" />
-    <ClInclude Include="Enemies.h" />
+    <ClInclude Include="EventState.h" />
+    <ClInclude Include="ExploreState.h" />
     <ClInclude Include="Game.h" />
+    <ClInclude Include="GameContext.h" />
+    <ClInclude Include="GameEvent.h" />
     <ClInclude Include="GameText.h" />
-    <ClInclude Include="ICharacter.h" />
     <ClInclude Include="ICreature.h" />
-    <ClInclude Include="IEnemy.h" />
     <ClInclude Include="Input.h" />
     <ClInclude Include="InputManager.h" />
+    <ClInclude Include="Inventory.h" />
     <ClInclude Include="InvItem.h" />
-    <ClInclude Include="IWeapon.h" />
+    <ClInclude Include="ItemTypes.h" />
+    <ClInclude Include="LoadActOneState.h" />
+    <ClInclude Include="LoadActState.h" />
+    <ClInclude Include="LoadActThreeState.h" />
+    <ClInclude Include="LoadActTownState.h" />
+    <ClInclude Include="LootItem.h" />
+    <ClInclude Include="LootState.h" />
     <ClInclude Include="Map.h" />
+    <ClInclude Include="MapRevealState.h" />
+    <ClInclude Include="MapUpdateState.h" />
+    <ClInclude Include="MusicPlayer.h" />
+    <ClInclude Include="CreateTrader.h" />
     <ClInclude Include="PlayerCharacter.h" />
     <ClInclude Include="Story.h" />
+    <ClInclude Include="TraderState.h" />
     <ClInclude Include="UI.h" />
-    <ClInclude Include="Weapons.h" />
+    <ClInclude Include="Weapon.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include=".gitignore" />

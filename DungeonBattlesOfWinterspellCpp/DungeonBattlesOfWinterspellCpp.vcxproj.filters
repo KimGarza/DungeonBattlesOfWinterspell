@@ -61,25 +61,34 @@
     <Filter Include="Source Files\Actors">
       <UniqueIdentifier>{b00191eb-d987-4cd1-934b-8a7efb4a4d28}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\GameStates\Loot">
+      <UniqueIdentifier>{2d9a1631-1ce7-4530-b627-e601aa4a3cf7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GameStates\Loot">
+      <UniqueIdentifier>{b990ec16-4fbe-45b5-b182-90ca605d5b01}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\GameStates\Trade">
+      <UniqueIdentifier>{87013d70-91a9-4142-a63e-36ba5d9424d2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GameStates\Trade">
+      <UniqueIdentifier>{f6d1eb4d-a302-4752-823a-081dcf55c561}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GameStates\Act">
+      <UniqueIdentifier>{bdad9a11-0eb7-477a-81c5-9915c1a6f8a6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\GameStates\Act">
+      <UniqueIdentifier>{d7429f1a-ee06-4677-8303-5b8f9676ced1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DungeonBattlesOfWinterspellCpp.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ICharacter.cpp">
-      <Filter>Source Files\Actors</Filter>
-    </ClCompile>
     <ClCompile Include="PlayerCharacter.cpp">
-      <Filter>Source Files\Actors</Filter>
-    </ClCompile>
-    <ClCompile Include="IEnemy.cpp">
       <Filter>Source Files\Actors</Filter>
     </ClCompile>
     <ClCompile Include="Game.cpp">
       <Filter>Source Files\Game</Filter>
-    </ClCompile>
-    <ClCompile Include="IWeapon.cpp">
-      <Filter>Source Files\Actors</Filter>
     </ClCompile>
     <ClCompile Include="InvItem.cpp">
       <Filter>Source Files\Actors</Filter>
@@ -96,32 +105,14 @@
     <ClCompile Include="GameState.h">
       <Filter>Header Files\Game</Filter>
     </ClCompile>
-    <ClCompile Include="Characters.cpp">
-      <Filter>Source Files\Actors</Filter>
-    </ClCompile>
-    <ClCompile Include="Enemies.cpp">
-      <Filter>Source Files\Actors</Filter>
-    </ClCompile>
-    <ClCompile Include="Weapons.cpp">
-      <Filter>Source Files\Actors</Filter>
-    </ClCompile>
-    <ClCompile Include="ICreature.cpp">
-      <Filter>Source Files\Actors</Filter>
-    </ClCompile>
     <ClCompile Include="CharacterCreation.cpp">
       <Filter>Source Files\GameStates\Begin</Filter>
     </ClCompile>
     <ClCompile Include="DungeonGenerator.cpp">
       <Filter>Source Files\GameStates\Begin</Filter>
     </ClCompile>
-    <ClCompile Include="Battle.cpp">
-      <Filter>Source Files\GameStates\Battle</Filter>
-    </ClCompile>
     <ClCompile Include="Map.cpp">
       <Filter>Source Files\GameStates\Map</Filter>
-    </ClCompile>
-    <ClCompile Include="ExploreDungeon.cpp">
-      <Filter>Source Files\GameStates\Explore</Filter>
     </ClCompile>
     <ClCompile Include="DungeonRoom.cpp">
       <Filter>Source Files\Actors</Filter>
@@ -131,6 +122,87 @@
     </ClCompile>
     <ClCompile Include="Input.cpp">
       <Filter>Source Files\Helper</Filter>
+    </ClCompile>
+    <ClCompile Include="LootItem.cpp">
+      <Filter>Source Files\Actors</Filter>
+    </ClCompile>
+    <ClCompile Include="Inventory.cpp">
+      <Filter>Source Files\Helper</Filter>
+    </ClCompile>
+    <ClCompile Include="MusicPlayer.cpp">
+      <Filter>Source Files\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Trader.cpp">
+      <Filter>Source Files\Actors</Filter>
+    </ClCompile>
+    <ClCompile Include="TraderUI.h">
+      <Filter>Header Files\GameStates\Trade</Filter>
+    </ClCompile>
+    <ClCompile Include="TraderUI.cpp">
+      <Filter>Source Files\GameStates\Trade</Filter>
+    </ClCompile>
+    <ClCompile Include="Character.cpp">
+      <Filter>Source Files\Actors</Filter>
+    </ClCompile>
+    <ClCompile Include="CharCreatUI.cpp">
+      <Filter>Source Files\GameStates\Begin</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemy.cpp">
+      <Filter>Source Files\Actors</Filter>
+    </ClCompile>
+    <ClCompile Include="Weapon.cpp">
+      <Filter>Source Files\Actors</Filter>
+    </ClCompile>
+    <ClCompile Include="BeginState.cpp">
+      <Filter>Source Files\GameStates\Begin</Filter>
+    </ClCompile>
+    <ClCompile Include="GameContext.cpp">
+      <Filter>Source Files\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="MapUpdateState.cpp">
+      <Filter>Source Files\GameStates\Map</Filter>
+    </ClCompile>
+    <ClCompile Include="MapRevealState.cpp">
+      <Filter>Source Files\GameStates\Map</Filter>
+    </ClCompile>
+    <ClCompile Include="BattleState.cpp">
+      <Filter>Source Files\GameStates\Battle</Filter>
+    </ClCompile>
+    <ClCompile Include="ChangelingState.cpp">
+      <Filter>Source Files\GameStates\Explore</Filter>
+    </ClCompile>
+    <ClCompile Include="ExploreState.cpp">
+      <Filter>Source Files\GameStates\Explore</Filter>
+    </ClCompile>
+    <ClCompile Include="LootState.cpp">
+      <Filter>Source Files\GameStates\Loot</Filter>
+    </ClCompile>
+    <ClCompile Include="TradeState.cpp">
+      <Filter>Source Files\GameStates\Trade</Filter>
+    </ClCompile>
+    <ClCompile Include="GameEvent.cpp">
+      <Filter>Source Files\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="LoadActTownState.cpp">
+      <Filter>Source Files\GameStates\Act</Filter>
+    </ClCompile>
+    <ClCompile Include="LoadActState.cpp">
+      <Filter>Source Files\GameStates\Act</Filter>
+    </ClCompile>
+    <ClCompile Include="LoadActThreeState.cpp">
+      <Filter>Source Files\GameStates\Act</Filter>
+    </ClCompile>
+    <ClCompile Include="LoadActOneState.cpp">
+      <Filter>Source Files\GameStates\Act</Filter>
+    </ClCompile>
+    <ClCompile Include="CreateTrader.cpp">
+      <Filter>Source Files\GameStates\Trade</Filter>
+    </ClCompile>
+    <ClCompile Include="TraderState.cpp">
+      <Filter>Source Files\GameStates\Trade</Filter>
+    </ClCompile>
+    <ClCompile Include="GenerateTown.cpp">
+      <Filter>Source Files\GameStates\Act</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -146,29 +218,11 @@
     <ClInclude Include="PlayerCharacter.h">
       <Filter>Header Files\Actors</Filter>
     </ClInclude>
-    <ClInclude Include="ICharacter.h">
-      <Filter>Header Files\Actors</Filter>
-    </ClInclude>
-    <ClInclude Include="IEnemy.h">
-      <Filter>Header Files\Actors</Filter>
-    </ClInclude>
-    <ClInclude Include="IWeapon.h">
-      <Filter>Header Files\Actors</Filter>
-    </ClInclude>
     <ClInclude Include="InvItem.h">
       <Filter>Header Files\Actors</Filter>
     </ClInclude>
     <ClInclude Include="GameText.h">
       <Filter>Header Files\Helper</Filter>
-    </ClInclude>
-    <ClInclude Include="Characters.h">
-      <Filter>Header Files\Actors</Filter>
-    </ClInclude>
-    <ClInclude Include="Enemies.h">
-      <Filter>Header Files\Actors</Filter>
-    </ClInclude>
-    <ClInclude Include="Weapons.h">
-      <Filter>Header Files\Actors</Filter>
     </ClInclude>
     <ClInclude Include="ICreature.h">
       <Filter>Header Files\Actors</Filter>
@@ -182,12 +236,6 @@
     <ClInclude Include="Map.h">
       <Filter>Header Files\GameStates\Map</Filter>
     </ClInclude>
-    <ClInclude Include="ExploreDungeon.h">
-      <Filter>Header Files\GameStates\Explore</Filter>
-    </ClInclude>
-    <ClInclude Include="Battle.h">
-      <Filter>Header Files\GameStates\Battle</Filter>
-    </ClInclude>
     <ClInclude Include="DungeonRoom.h">
       <Filter>Header Files\Actors</Filter>
     </ClInclude>
@@ -196,6 +244,90 @@
     </ClInclude>
     <ClInclude Include="Input.h">
       <Filter>Header Files\Helper</Filter>
+    </ClInclude>
+    <ClInclude Include="LootItem.h">
+      <Filter>Header Files\Actors</Filter>
+    </ClInclude>
+    <ClInclude Include="ItemTypes.h">
+      <Filter>Header Files\Actors</Filter>
+    </ClInclude>
+    <ClInclude Include="Inventory.h">
+      <Filter>Header Files\Helper</Filter>
+    </ClInclude>
+    <ClInclude Include="MusicPlayer.h">
+      <Filter>Header Files\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Trader.h">
+      <Filter>Header Files\Actors</Filter>
+    </ClInclude>
+    <ClInclude Include="Character.h">
+      <Filter>Header Files\Actors</Filter>
+    </ClInclude>
+    <ClInclude Include="CharCreatUI.h">
+      <Filter>Header Files\GameStates\Begin</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy.h">
+      <Filter>Header Files\Actors</Filter>
+    </ClInclude>
+    <ClInclude Include="Weapon.h">
+      <Filter>Header Files\Actors</Filter>
+    </ClInclude>
+    <ClInclude Include="BeginState.h">
+      <Filter>Header Files\GameStates\Begin</Filter>
+    </ClInclude>
+    <ClInclude Include="GameContext.h">
+      <Filter>Header Files\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="MapUpdateState.h">
+      <Filter>Header Files\GameStates\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="MapRevealState.h">
+      <Filter>Header Files\GameStates\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="LootState.h">
+      <Filter>Header Files\GameStates\Loot</Filter>
+    </ClInclude>
+    <ClInclude Include="ExploreState.h">
+      <Filter>Header Files\GameStates\Explore</Filter>
+    </ClInclude>
+    <ClInclude Include="BattleState.h">
+      <Filter>Header Files\GameStates\Battle</Filter>
+    </ClInclude>
+    <ClInclude Include="ChangelingState.h">
+      <Filter>Header Files\GameStates\Explore</Filter>
+    </ClInclude>
+    <ClInclude Include="TradeState.h">
+      <Filter>Header Files\GameStates\Trade</Filter>
+    </ClInclude>
+    <ClInclude Include="GameEvent.h">
+      <Filter>Header Files\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="EventState.h">
+      <Filter>Header Files\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="ActState.h">
+      <Filter>Header Files\GameStates\Act</Filter>
+    </ClInclude>
+    <ClInclude Include="LoadActOneState.h">
+      <Filter>Header Files\GameStates\Act</Filter>
+    </ClInclude>
+    <ClInclude Include="LoadActState.h">
+      <Filter>Header Files\GameStates\Act</Filter>
+    </ClInclude>
+    <ClInclude Include="LoadActThreeState.h">
+      <Filter>Header Files\GameStates\Act</Filter>
+    </ClInclude>
+    <ClInclude Include="LoadActTownState.h">
+      <Filter>Header Files\GameStates\Act</Filter>
+    </ClInclude>
+    <ClInclude Include="CreateTrader.h">
+      <Filter>Header Files\GameStates\Trade</Filter>
+    </ClInclude>
+    <ClInclude Include="TraderState.h">
+      <Filter>Header Files\GameStates\Trade</Filter>
+    </ClInclude>
+    <ClInclude Include="GenerateTown.h">
+      <Filter>Header Files\GameStates\Act</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

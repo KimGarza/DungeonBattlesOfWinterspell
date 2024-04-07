@@ -1,100 +1,85 @@
-#include <iostream>
 #include "Game.h"
-#include "GameState.h"
-#include "Battle.h"
-#include "CharacterCreation.h"
-#include "DungeonGenerator.h"
-#include "PlayerCharacter.h"
-#include "GameText.h"
-#include "DungeonRoom.h"
-#include "DungeonGenerator.h"
-#include "Map.h"
-#include "ExploreDungeon.h"
 
-Game::Game() {
-	currentState = GameState::Begin;
+/// <summary>
+/// Game loop that continuously checks each game state until end of game. This is what keeps the game persisting.
+/// First ran in main.cpp, constructor decides Begin is initial state
+/// </summary>
+void Game::StateCycle() {
+
+	while (ctx_->GetState() != GameState::EndGame) {
+
+		CheckGameState();
+	} 
+
+	CheckGameState(); // requires one more check game state for the end game but will close afterwards
+	exit(0);
+	return;
 }
 
+/// <summary>
+/// State machine: switches between states to execute relevant state. Each state will set the current state to the next relevant state.
+/// </summary>
 void Game::CheckGameState() {
+	switch (ctx_->GetState()) {
 
-	switch (currentState) {
+	case GameState::Begin: {
 
-	case GameState::Begin: { 
-
-		story.OpeningStory();
-
-		playerCharacter = characterCreation.CreateCharacter();
-		dungeonRooms = dungeonGenerator.GenerateDungeons();
-
-		map = std::make_shared<Map>(dungeonRooms);
-		map->PopulateDungeonMap();
-
-		story.MapIntro();
-
-		ChangeGameState(GameState::Map);
-
-		break;
+		beginState_.Begin();
+		return;
 	}
-	case GameState::Map: {
+	case GameState::LoadAct: {
 
-		map->RevealMap();
+		switch (ctx_->GetAct()) {
+		case ActState::One: {
+			loadActOneState_.Load();
+			return;
+		}
+		case ActState::Town: {
+			//loadActTownState_.Load();
+			return;
+		}
+		case ActState::Three: {
+			loadActThreeState_.Load();
+			return;
+		}
+		}
+	}
+	case GameState::Event: {
 
-		ChangeGameState(GameState::Explore);
+		gameEvent_.CheckEventState();
+		return;
+	}
+	case GameState::RevealMap: {
 
-		break;
+		mapRevealState_.RevealMap();
+		return;
 	}
 	case GameState::Explore: {
 
-		currentRoom = map->GetSetCurrentRoom(); // awkward acts as getter and setter
-
-		ExploreDungeon exploreDungeon(currentRoom, playerCharacter);
-
-		story.EnterDungeonRoom();
-
-		exploreDungeon.EnterDungeonRoom();
-
-		std::vector<std::shared_ptr<ICreature>> turnOrder = exploreDungeon.GenerateTurnOrder();
-
-		currentRoom->SetCurrentTurnOrder(turnOrder);
-
-		ChangeGameState(GameState::Battle);
-		break;
+		exploreState_.Explore();
+		return;
 	}
 	case GameState::Battle: {
-		Battle battle(map->GetSetCurrentRoom()->GetTurnOrder()); // odd mix here of using game or map to get the current room
 
-		battle.RevealTurnOrder(map->GetSetCurrentRoom()->GetTurnOrder(), currentRoom->GetName());
-		
+		battleState_.Battle();
+		return;
+	}
+	case GameState::Loot: {
 
-		battle.CommenceBattle(playerCharacter);
-
-		ChangeGameState(GameState::UpdateMap);
-		break;
+		lootState_.Loot();
+		return;
 	}
 	case GameState::UpdateMap: {
 
-		map->UpdateMap();
+		mapUpdateState_.UpdateMap();
+		return;
+	}
+	case GameState::EndGame: {
 
-		if (*map->GetRoomsRemaining() == 0) {
-			ChangeGameState(GameState::EndGame);
-		}
-
-		ChangeGameState(GameState::Map);
+		std::cout << "Congrats on finishing the game!";
+		exit(0);
 
 		break;
 	}
-	case GameState::EndGame: {
-		std::cout << "Congrats on finishing the game!";
-		exit(0);
-	}
-	default:
-		currentState = GameState::None;
 	}
 }
-
-void Game::ChangeGameState(GameState newState) {
-	currentState = newState;
-	CheckGameState();
-}
-
-// remove all memory after building and returning
