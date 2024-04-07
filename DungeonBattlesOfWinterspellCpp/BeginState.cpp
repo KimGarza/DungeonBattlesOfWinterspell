@@ -4,16 +4,6 @@ void BeginState::Begin() {
 
 	RenderSFMLGraphics();
 
-	/*music_.PlayMusic(L"slow-2021-08-17_-_8_Bit_Nostalgia_-_www.FesliyanStudios.com.wav");
-
-	story.OpeningStory();
-
-	CreateCharacter();
-	GenerateDungeons();
-	CreateMap();
-
-	story.MapIntro();*/
-
 	ctx_->SetAct(ActState::One);
 	ctx_->SetState(GameState::LoadAct);
 	ctx_->SetEventState(EventState::None);
@@ -39,32 +29,3 @@ void BeginState::RenderSFMLGraphics() {
 //window.display();
 
 }
-
-//void BeginState::CreateCharacter() {
-//
-//	CharacterCreation characterCreation;
-//	context_->SetPlayer(characterCreation.CreateCharacter());
-//}
-//
-//void BeginState::GenerateDungeons() {
-//
-//	DungeonGenerator dungeonGenerator;
-//	context_->SetDungeonRooms(dungeonGenerator.GenerateDungeons());
-//}
-//
-//void BeginState::CreateMap() {
-//
-//	context_->SetMap(std::make_shared<Map>(context_->GetDungeonRooms()));
-//	PopulateDungeonMap();
-//}
-//
-//void BeginState::PopulateDungeonMap() {
-//
-//	std::vector<std::string> roomNames;
-//
-//	for (const auto& dungeon : context_->GetDungeonRooms()) {
-//
-//		roomNames.push_back(dungeon->GetName());
-//	}
-//	context_->GetMap()->SetRoomNames(roomNames);
-//}

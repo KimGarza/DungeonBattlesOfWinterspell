@@ -18,7 +18,7 @@ void LoadActThreeState::Load() {
 void LoadActThreeState::GeneratePlaces() {
 
 	DungeonGenerator dungeonGenerator;
-	ctx_->SetDungeonRooms(dungeonGenerator.GenerateDungeons());
+	ctx_->SetDungeonRooms(dungeonGenerator.GenerateActThreeDungeons());
 }
 
 void LoadActThreeState::CreateMap() {

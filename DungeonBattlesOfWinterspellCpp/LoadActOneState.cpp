@@ -31,7 +31,7 @@ void LoadActOneState::GenerateNPCs() {
 void LoadActOneState::GeneratePlaces() {
 
 	DungeonGenerator dungeonGenerator;
-	ctx_->SetDungeonRooms(dungeonGenerator.GenerateDungeons());
+	ctx_->SetDungeonRooms(dungeonGenerator.GenerateActOneDungeons());
 }
 
 void LoadActOneState::CreateMap() {

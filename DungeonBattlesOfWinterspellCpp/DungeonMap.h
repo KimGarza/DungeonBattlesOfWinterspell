@@ -5,7 +5,7 @@
 #include "DungeonRoom.h"
 #include "UI.h"
 
-class Map {
+class DungeonMap {
 private:
     std::vector <std::shared_ptr<DungeonRoom>> rooms_;
     std::vector <std::string> roomNames_;
@@ -13,7 +13,7 @@ private:
     std::shared_ptr<DungeonRoom> currentRoom_;
 
 public:
-    Map(std::vector <std::shared_ptr<DungeonRoom>> inDungeonRooms) : rooms_(inDungeonRooms), roomsRemaining_(inDungeonRooms.size()) {}
+    DungeonMap(std::vector <std::shared_ptr<DungeonRoom>> inDungeonRooms) : rooms_(inDungeonRooms), roomsRemaining_(inDungeonRooms.size()) {}
 
     std::vector<std::string> GetRoomNames() { return roomNames_; }
     int GetRoomsRemaining() { return roomsRemaining_; }

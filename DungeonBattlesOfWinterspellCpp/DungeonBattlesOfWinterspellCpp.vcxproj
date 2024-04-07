@@ -140,6 +140,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="CreateNpcs.cpp" />
+    <ClCompile Include="EnemyGenerator.cpp" />
+    <ClCompile Include="LootGenerator.cpp" />
     <ClCompile Include="Npc.cpp" />
     <ClCompile Include="NpcTrader.cpp" />
     <ClCompile Include="Place.cpp" />
@@ -175,7 +177,7 @@
     <ClCompile Include="LoadActTownState.cpp" />
     <ClCompile Include="LootItem.cpp" />
     <ClCompile Include="LootState.cpp" />
-    <ClCompile Include="Map.cpp" />
+    <ClCompile Include="DungeonMap.cpp" />
     <ClCompile Include="MapRevealState.cpp" />
     <ClCompile Include="MapUpdateState.cpp" />
     <ClCompile Include="MusicPlayer.cpp" />
@@ -187,7 +189,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CreateNpcs.h" />
+    <ClInclude Include="EnemyGenerator.h" />
     <ClInclude Include="INpc.h" />
+    <ClInclude Include="LootGenerator.h" />
     <ClInclude Include="MerchType.h" />
     <ClInclude Include="Npc.h" />
     <ClInclude Include="NpcTrader.h" />
@@ -222,7 +226,7 @@
     <ClInclude Include="LoadActTownState.h" />
     <ClInclude Include="LootItem.h" />
     <ClInclude Include="LootState.h" />
-    <ClInclude Include="Map.h" />
+    <ClInclude Include="DungeonMap.h" />
     <ClInclude Include="MapRevealState.h" />
     <ClInclude Include="MapUpdateState.h" />
     <ClInclude Include="MusicPlayer.h" />

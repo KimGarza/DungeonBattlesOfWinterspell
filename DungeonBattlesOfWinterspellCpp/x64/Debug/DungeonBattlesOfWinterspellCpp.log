@@ -1,11 +1,27 @@
 ﻿  CreateNpcs.cpp
 G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CreateNpcs.h(3,10): fatal  error C1083: Cannot open include file: 'Trader.h': No such file or directory
+  EnemyGenerator.cpp
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\NpcTrader.h(30,24): error C2512: 'Place': no appropriate default constructor available
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Place.h(9,7): message : see declaration of 'Place'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\DungeonRoom.h(61,7): error C2535: 'void DungeonRoom::SetCompleted(void)': member function already defined or declared
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\DungeonRoom.h(51,7): message : see declaration of 'DungeonRoom::SetCompleted'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\DungeonRoom.h(62,7): error C2535: 'void DungeonRoom::SetIsLocked(bool)': member function already defined or declared
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\DungeonRoom.h(52,7): message : see declaration of 'DungeonRoom::SetIsLocked'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Map.h(16): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\EnemyGenerator.cpp(54,48): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\EnemyGenerator.cpp(126,48): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  LootGenerator.cpp
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\LootGenerator.cpp(32,70): warning C4267: 'argument': conversion from 'size_t' to '_Ty', possible loss of data
+          with
+          [
+              _Ty=int
+          ]
   Npc.cpp
   NpcTrader.cpp
 G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\NpcTrader.h(30,24): error C2512: 'Place': no appropriate default constructor available
 G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Place.h(9,7): message : see declaration of 'Place'
-  Place.cpp
-  TradeState.cpp
+  TraderUI.cpp
+  TraderUI.h
   ChangelingState.cpp
 G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\NpcTrader.h(30,24): error C2512: 'Place': no appropriate default constructor available
 G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Place.h(9,7): message : see declaration of 'Place'
@@ -40,12 +56,9 @@ G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\DungeonRo
 G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\DungeonRoom.h(51,7): message : see declaration of 'DungeonRoom::SetCompleted'
 G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\DungeonRoom.h(62,7): error C2535: 'void DungeonRoom::SetIsLocked(bool)': member function already defined or declared
 G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\DungeonRoom.h(52,7): message : see declaration of 'DungeonRoom::SetIsLocked'
-G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\DungeonGenerator.cpp(143,52): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\DungeonGenerator.cpp(192,70): warning C4267: 'argument': conversion from 'size_t' to '_Ty', possible loss of data
-          with
-          [
-              _Ty=int
-          ]
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\NpcTrader.h(30,24): error C2512: 'Place': no appropriate default constructor available
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Place.h(9,7): message : see declaration of 'Place'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Map.h(16): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
   ExploreState.cpp
 G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\NpcTrader.h(30,24): error C2512: 'Place': no appropriate default constructor available
 G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Place.h(9,7): message : see declaration of 'Place'
@@ -62,7 +75,13 @@ G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\DungeonRo
 G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\DungeonRoom.h(62,7): error C2535: 'void DungeonRoom::SetIsLocked(bool)': member function already defined or declared
 G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\DungeonRoom.h(52,7): message : see declaration of 'DungeonRoom::SetIsLocked'
 G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Map.h(16): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\GameEvent.h(4,10): fatal  error C1083: Cannot open include file: 'TraderState.h': No such file or directory
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\TraderInteractState.h(18,72): error C2512: 'NpcTrader': no appropriate default constructor available
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\NpcTrader.h(9,7): message : see declaration of 'NpcTrader'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\GameEvent.h(15,13): error C3646: 'tradeState_': unknown override specifier
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\GameEvent.h(15,24): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\GameEvent.h(19,107): error C3861: 'TradeState': identifier not found
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\GameEvent.h(19,95): error C2614: 'GameEvent': illegal member initialization: 'tradeState_' is not a base or member
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CreateNpcs.h(3,10): fatal  error C1083: Cannot open include file: 'Trader.h': No such file or directory
   GameContext.cpp
 G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\NpcTrader.h(30,24): error C2512: 'Place': no appropriate default constructor available
 G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Place.h(9,7): message : see declaration of 'Place'
@@ -79,7 +98,13 @@ G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\DungeonRo
 G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\DungeonRoom.h(62,7): error C2535: 'void DungeonRoom::SetIsLocked(bool)': member function already defined or declared
 G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\DungeonRoom.h(52,7): message : see declaration of 'DungeonRoom::SetIsLocked'
 G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Map.h(16): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\GameEvent.h(4,10): fatal  error C1083: Cannot open include file: 'TraderState.h': No such file or directory
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\TraderInteractState.h(18,72): error C2512: 'NpcTrader': no appropriate default constructor available
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\NpcTrader.h(9,7): message : see declaration of 'NpcTrader'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\GameEvent.h(15,13): error C3646: 'tradeState_': unknown override specifier
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\GameEvent.h(15,24): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\GameEvent.h(19,107): error C3861: 'TradeState': identifier not found
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\GameEvent.h(19,95): error C2614: 'GameEvent': illegal member initialization: 'tradeState_' is not a base or member
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\GameEvent.cpp(18,3): error C2065: 'tradeState_': undeclared identifier
   GameState.h
   LoadActOneState.cpp
 G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\NpcTrader.h(30,24): error C2512: 'Place': no appropriate default constructor available
@@ -107,6 +132,8 @@ G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\DungeonRo
 G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\DungeonRoom.h(52,7): message : see declaration of 'DungeonRoom::SetIsLocked'
 G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Map.h(16): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
 G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CreateNpcs.h(3,10): fatal  error C1083: Cannot open include file: 'Trader.h': No such file or directory
+  Generating Code...
+  Compiling...
   LoadActTownState.cpp
 G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\NpcTrader.h(30,24): error C2512: 'Place': no appropriate default constructor available
 G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Place.h(9,7): message : see declaration of 'Place'
@@ -124,8 +151,6 @@ G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\DungeonRo
 G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\DungeonRoom.h(62,7): error C2535: 'void DungeonRoom::SetIsLocked(bool)': member function already defined or declared
 G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\DungeonRoom.h(52,7): message : see declaration of 'DungeonRoom::SetIsLocked'
 G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Map.h(16): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-  Generating Code...
-  Compiling...
   Map.cpp
 G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\DungeonRoom.h(61,7): error C2535: 'void DungeonRoom::SetCompleted(void)': member function already defined or declared
 G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\DungeonRoom.h(51,7): message : see declaration of 'DungeonRoom::SetCompleted'
@@ -159,12 +184,19 @@ G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\DungeonRo
 G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Map.h(16): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
 G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\TraderInteractState.h(18,72): error C2512: 'NpcTrader': no appropriate default constructor available
 G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\NpcTrader.h(9,7): message : see declaration of 'NpcTrader'
-G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\TraderInteractState.cpp(9,16): error C2039: 'GetTrader': is not a member of 'GameContext'
-G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\GameContext.h(13,7): message : see declaration of 'GameContext'
-G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\TraderInteractState.cpp(12,15): error C2039: 'GetTrader': is not a member of 'GameContext'
-G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\GameContext.h(13,7): message : see declaration of 'GameContext'
-G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\TraderInteractState.cpp(16,38): error C2039: 'TradeInquiry': is not a member of 'NpcTrader'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\TraderInteractState.cpp(12,45): error C2039: 'GetCurrentPlace': is not a member of 'GameContext'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\GameContext.h(14,7): message : see declaration of 'GameContext'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\TraderInteractState.cpp(12,66): error C2059: syntax error: ')'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\TraderInteractState.cpp(12,68): error C2143: syntax error: missing ';' before '{'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\TraderInteractState.cpp(17,16): error C2039: 'GetTrader': is not a member of 'GameContext'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\GameContext.h(14,7): message : see declaration of 'GameContext'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\TraderInteractState.cpp(20,15): error C2039: 'GetTrader': is not a member of 'GameContext'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\GameContext.h(14,7): message : see declaration of 'GameContext'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\TraderInteractState.cpp(24,38): error C2039: 'TradeInquiry': is not a member of 'NpcTrader'
 G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\NpcTrader.h(9,7): message : see declaration of 'NpcTrader'
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\TraderInteractState.cpp(38,27): error C2601: 'TraderInteractState::MeetTrader': local function definitions are illegal
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\TraderInteractState.cpp(6): message : this line contains a '{' which has not yet been matched
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\TraderInteractState.cpp(6): fatal  error C1075: '{': no matching token found
   UI.cpp
 G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\DungeonRoom.h(61,7): error C2535: 'void DungeonRoom::SetCompleted(void)': member function already defined or declared
 G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\DungeonRoom.h(51,7): message : see declaration of 'DungeonRoom::SetCompleted'

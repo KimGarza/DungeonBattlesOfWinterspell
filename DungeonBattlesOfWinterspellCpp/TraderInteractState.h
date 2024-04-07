@@ -9,7 +9,7 @@ class TraderInteractState
 {
 private:
 	std::shared_ptr<GameContext> ctx_;
-	NpcTrader traderUI_;
+	TraderUI traderUI_;
 	std::shared_ptr<PlayerCharacter> player_;
 	std::shared_ptr<NpcTrader> trader_;
 	Story story_;

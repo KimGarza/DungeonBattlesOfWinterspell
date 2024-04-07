@@ -1,35 +1,39 @@
 #include "TraderInteractState.h"
 
 /// <summary>
-/// The initial interaction with the trader when ran into. Meet the trader with story intro first or if met, ask player if they want to trade; change state.
+/// Upon entering a room with a trader, here it will evaluate which trader is met, meet diologue if never met, and afterwards or if met, will ask if player wishes to trade.
+/// Switches state to either trade or back to map.
 /// </summary>
 void TraderInteractState::TraderInteract() {
 
     if (ctx_->GetAct() == ActState::One) {
-        
+
         std::vector<std::shared_ptr<INpc>> npcs = ctx_->GetActOneNpcs();
+
         for (auto& npc : npcs) {
-            if (npc->GetLocation() == ctx_->GetCurrentPlace() && ) {
-                // this npc should be the one interacted with
+
+            // if current location name == the name of iterated npc's origin
+            if (npc->GetLocation() == ctx_->GetCurrentLocation()->GetName() && npc->GetIsTrader()) { 
+
+                std::shared_ptr<NpcTrader> activeTrader = std::dynamic_pointer_cast<NpcTrader>(npc); // downcasting
+
+                if (!activeTrader->GetHasPlayerMet()) {
+                    MeetTrader();
+                    activeTrader->SetHasPlayerMet();
+                }
+
+                bool isPlayerTrading = traderUI_.TradeInquiry();
+                if (isPlayerTrading) {
+
+                    ctx_->SetEventState(EventState::Trade);
+                    ctx_->SetState(GameState::Event);
+                    return;
+                }
+
+                ctx_->SetState(GameState::RevealMap);
             }
         }
-
-    if (!ctx_->GetTrader()->GetHasPlayerMet()) {
-
-        MeetTrader();
-        ctx_->GetTrader()->SetHasPlayerMet();
     }
-
-
-    bool isPlayerTrading = traderUI_.TradeInquiry();
-    if (isPlayerTrading) {
-        
-        ctx_->SetEventState(EventState::Trade);
-        ctx_->SetState(GameState::Event);
-        return;
-    }
-
-    ctx_->SetState(GameState::RevealMap);
 }
 
 
@@ -45,13 +49,16 @@ void TraderInteractState::MeetTrader() {
     }
     case ActState::Town: {
 
-        story_.AbalaskTraderIntroduction();
+      /*  story_.MergleTraderIntro();
+        story_.BueruthTraderIntro();
+        story_.ArmsmanTraderIntro();
+        story_.IlayaTraderIntro();*/
 
         break;
     }
     case ActState::Three: {
 
-        story_.AbalaskTraderIntroduction();
+        //story_.BalaskTraderIntro();
         break;
     }
     }
