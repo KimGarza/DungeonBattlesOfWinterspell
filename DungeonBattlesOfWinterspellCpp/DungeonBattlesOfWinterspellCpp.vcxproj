@@ -139,7 +139,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="DungeonMap.cpp" />
     <ClCompile Include="GenerateTown.cpp" />
+    <ClCompile Include="IMap.cpp" />
+    <ClCompile Include="INpc.cpp" />
+    <ClCompile Include="IPlace.cpp" />
+    <ClCompile Include="Npc.cpp" />
+    <ClCompile Include="NpcTrader.cpp" />
+    <ClCompile Include="Place.cpp" />
     <ClCompile Include="Trader.cpp" />
     <ClCompile Include="TradeState.cpp" />
     <ClCompile Include="TraderUI.cpp" />
@@ -184,7 +191,14 @@
     <ClCompile Include="Weapon.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="DungeonMap.h" />
     <ClInclude Include="GenerateTown.h" />
+    <ClInclude Include="IMap.h" />
+    <ClInclude Include="INpc.h" />
+    <ClInclude Include="IPlace.h" />
+    <ClInclude Include="Npc.h" />
+    <ClInclude Include="NpcTrader.h" />
+    <ClInclude Include="Place.h" />
     <ClInclude Include="Trader.h" />
     <ClInclude Include="TradeState.h" />
     <ClInclude Include="ActState.h" />

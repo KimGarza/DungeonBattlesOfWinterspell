@@ -19,6 +19,9 @@ private:
 	std::vector<std::shared_ptr<DungeonRoom>> dungeonRooms_;
 	std::shared_ptr<Trader> trader_;
 
+	std::shared_ptr<Map> townMap_;
+
+
 public:
 	GameContext() : gameState_(GameState::Begin) {}
 
@@ -31,6 +34,9 @@ public:
 	std::vector<std::shared_ptr<DungeonRoom>> GetDungeonRooms() { return dungeonRooms_; }
 	std::shared_ptr<Trader> GetTrader() { return trader_; }
 
+	std::shared_ptr<Map> GetTownMap() { return townMap_; }
+
+
 	void SetState(GameState inGameState) { gameState_ = inGameState; }
 	void SetEventState(EventState inEventState) { eventState_ = inEventState; }
 	void SetAct(ActState inActState) { act_ = inActState; }
@@ -39,5 +45,9 @@ public:
 	void SetCurrentRoom(std::shared_ptr<DungeonRoom> inRoom) { room_ = inRoom; }
 	void SetDungeonRooms(std::vector<std::shared_ptr<DungeonRoom>> inDungeonRooms) { dungeonRooms_ = inDungeonRooms; }
 	void SetTrader(std::shared_ptr<Trader> inTrader) { trader_ = inTrader; }
+
+	void SetTownMap(std::shared_ptr<Map> inTownMap) { townMap_ = inTownMap; }
+
+
 };
 

@@ -23,7 +23,7 @@ public:
 	void Load() override;
 	void CreateMap() override;
 	void PopulateMap() override;
-	//void GeneratePlaces() override;
+	void GeneratePlaces() override;
 	void GenerateTrader() override;
 };
 

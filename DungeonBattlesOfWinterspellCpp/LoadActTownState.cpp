@@ -15,11 +15,11 @@ void LoadActTownState::Load() {
 	ctx_->SetState(GameState::RevealMap);
 }
 
-//void LoadActTownState::GeneratePlaces() {
-//
-//	GenerateTown generateTown;
-//	ctx_->SetTownPlaces(generateTown.GenerateDungeons());
-//}
+void LoadActTownState::GeneratePlaces() {
+
+	GenerateTown generateTown;
+	/*ctx_->SetTownPlaces(generateTown.GenerateDungeons());*/
+}
 
 void LoadActTownState::CreateMap() {
 

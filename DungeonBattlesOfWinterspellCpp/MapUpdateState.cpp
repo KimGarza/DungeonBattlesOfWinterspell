@@ -7,9 +7,8 @@ void MapUpdateState::UpdateMap() {
 	if (ctx_->GetCurrentRoom()->GetTimesExplored() == 1) {
 
 		ctx_->GetCurrentRoom()->SetCompleted();
+		ctx_->GetMap()->SetRoomsRemaining();
 	}
-
-	ctx_->GetMap()->SetRoomsRemaining();
 
 	if (ctx_->GetMap()->GetRoomsRemaining() == 0) {
 
@@ -28,6 +27,9 @@ void MapUpdateState::UpdateMap() {
 			break;
 		}
 		}
+
+		ctx_->SetState(GameState::LoadAct);
+		return;
 	}
 
 	ctx_->SetState(GameState::RevealMap);

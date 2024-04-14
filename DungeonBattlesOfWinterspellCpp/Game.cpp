@@ -35,7 +35,7 @@ void Game::CheckGameState() {
 			return;
 		}
 		case ActState::Town: {
-			//loadActTownState_.Load();
+			loadActTownState_.Load();
 			return;
 		}
 		case ActState::Three: {

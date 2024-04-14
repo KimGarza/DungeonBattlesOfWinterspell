@@ -1,6 +1,7 @@
 #pragma once
 #include <memory>
 #include "GameContext.h"
+#include "IPlace.h"
 #include "DungeonRoom.h"
 #include "PlayerCharacter.h"
 #include "UI.h"

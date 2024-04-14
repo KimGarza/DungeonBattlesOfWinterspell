@@ -34,7 +34,7 @@ void LootState::Loot() {
 				ctx_->GetPlayer()->AddToInventory(item);
 			}
 		}
-
-		ctx_->SetState(GameState::UpdateMap);
 	}
+
+	ctx_->SetState(GameState::UpdateMap);
 }

@@ -320,7 +320,7 @@ void UI::FoundKey(std::string dungeonName) {
         gameText.WriteLineInput("Wait...");
         gameText.WriteLineInput("A key! Tis metal and skeletal, an iron thing, sitting right upon a jagged stone, \n which is surrounded a stagnate black water puddle. \nYee should pockets it for keepsakes, 'case you'll find need of it by and by!");
     }
-    else if (dungeonName == "Cursed Abyssal Sanctum") {
+    else if (dungeonName == "Abyssal Crypts") {
         gameText.WriteLineInput("What's this??");
         gameText.WriteLineInput("How intriguing... You notice upon stepping upon a particular brick in the floor, that is one quite loose! As you remove it from it's place of settlement you see...");
         gameText.WriteLineInput("Another key!! But this one is rather unique...");

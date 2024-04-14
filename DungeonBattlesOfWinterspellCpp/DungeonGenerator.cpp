@@ -34,7 +34,13 @@ std::vector < std::shared_ptr<DungeonRoom>> DungeonGenerator::GenerateDungeons()
             dungeonRooms.push_back(newDungeonRoom);
         }
         else {
-            std::shared_ptr<DungeonRoom> newDungeonRoom = std::make_shared<DungeonRoom>(dungeon.first, dungeon.second, roomLevel, false, enemyList, loot);
+            std::shared_ptr<DungeonRoom> newDungeonRoom = std::make_shared<DungeonRoom>(
+                dungeon.first,
+                dungeon.second,
+                roomLevel,
+                false,
+                enemyList,
+                loot);
             dungeonRooms.push_back(newDungeonRoom);
         }
 

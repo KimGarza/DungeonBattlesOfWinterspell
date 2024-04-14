@@ -1,95 +1,21 @@
-﻿  BattleState.cpp
-G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Map.h(16): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-  BeginState.cpp
-G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Map.h(16): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-  ChangelingState.cpp
-G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Map.h(16): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-  CreateTrader.cpp
-G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Map.h(16): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\xutility(275,77): warning C4244: 'argument': conversion from '_Ty' to 'int', possible loss of data
-          with
-          [
-              _Ty=double
-          ]
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\memory(1983): message : see reference to function template instantiation 'void std::_Construct_in_place<_Ty,const char(&)[11],ItemType,const char(&)[15],double,int,int>(_Ty &,const char (&)[11],ItemType &&,const char (&)[15],double &&,int &&,int &&) noexcept(false)' being compiled
-          with
-          [
-              _Ty=LootItem
-          ]
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\memory(2663): message : see reference to function template instantiation 'std::_Ref_count_obj2<LootItem>::_Ref_count_obj2<const char(&)[11],_Ty,const char(&)[15],double,int,int>(const char (&)[11],_Ty &&,const char (&)[15],double &&,int &&,int &&)' being compiled
-          with
-          [
-              _Ty=ItemType
-          ]
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\memory(2664,20): message : see reference to function template instantiation 'std::_Ref_count_obj2<LootItem>::_Ref_count_obj2<const char(&)[11],_Ty,const char(&)[15],double,int,int>(const char (&)[11],_Ty &&,const char (&)[15],double &&,int &&,int &&)' being compiled
-          with
-          [
-              _Ty=ItemType
-          ]
-G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CreateTrader.cpp(67,107): message : see reference to function template instantiation 'std::shared_ptr<LootItem> std::make_shared<LootItem,const char(&)[11],ItemType,const char(&)[15],double,int,int>(const char (&)[11],ItemType &&,const char (&)[15],double &&,int &&,int &&)' being compiled
-  DungeonGenerator.cpp
-G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\DungeonGenerator.cpp(143,52): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\DungeonGenerator.cpp(192,70): warning C4267: 'argument': conversion from 'size_t' to '_Ty', possible loss of data
+﻿  DungeonGenerator.cpp
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\DungeonGenerator.cpp(149,52): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\DungeonGenerator.cpp(198,70): warning C4267: 'argument': conversion from 'size_t' to '_Ty', possible loss of data
           with
           [
               _Ty=int
           ]
-  ExploreState.cpp
-G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Map.h(16): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-  Game.cpp
-G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Map.h(16): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-  GameContext.cpp
-G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Map.h(16): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-  GameEvent.cpp
-G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Map.h(16): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  DungeonMap.cpp
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\DungeonMap.h(18): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  DungeonRoom.cpp
   GameState.h
-  GenerateTown.cpp
-  LoadActOneState.cpp
-G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Map.h(16): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-  LoadActState.cpp
-G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Map.h(16): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-  LoadActThreeState.cpp
-G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Map.h(16): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-  LoadActTownState.cpp
-G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Map.h(16): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-  LootState.cpp
+  Map.cpp
 G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Map.h(16): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
   MapRevealState.cpp
 G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Map.h(16): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
 G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\MapRevealState.cpp(19,72): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-  MapUpdateState.cpp
-G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Map.h(16): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-  TradeState.cpp
-G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Map.h(16): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\xutility(275,77): warning C4244: 'argument': conversion from '_Ty' to 'int', possible loss of data
-          with
-          [
-              _Ty=double
-          ]
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\memory(1983): message : see reference to function template instantiation 'void std::_Construct_in_place<_Ty,std::basic_string<char,std::char_traits<char>,std::allocator<char>>,ItemType,std::basic_string<char,std::char_traits<char>,std::allocator<char>>,double,int,int,int,int,int,int,int,int>(_Ty &,std::basic_string<char,std::char_traits<char>,std::allocator<char>> &&,ItemType &&,std::basic_string<char,std::char_traits<char>,std::allocator<char>> &&,double &&,int &&,int &&,int &&,int &&,int &&,int &&,int &&,int &&) noexcept(false)' being compiled
-          with
-          [
-              _Ty=LootItem
-          ]
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\memory(2663): message : see reference to function template instantiation 'std::_Ref_count_obj2<LootItem>::_Ref_count_obj2<_Ty,ItemType,_Ty,double,int,int,int,int,int,int,int,int>(_Ty &&,ItemType &&,_Ty &&,double &&,int &&,int &&,int &&,int &&,int &&,int &&,int &&,int &&)' being compiled
-          with
-          [
-              _Ty=std::string
-          ]
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\memory(2664,20): message : see reference to function template instantiation 'std::_Ref_count_obj2<LootItem>::_Ref_count_obj2<_Ty,ItemType,_Ty,double,int,int,int,int,int,int,int,int>(_Ty &&,ItemType &&,_Ty &&,double &&,int &&,int &&,int &&,int &&,int &&,int &&,int &&,int &&)' being compiled
-          with
-          [
-              _Ty=std::string
-          ]
-G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\TradeState.cpp(55,170): message : see reference to function template instantiation 'std::shared_ptr<LootItem> std::make_shared<LootItem,std::string,ItemType,std::string,double,int,int,int,int,int,int,int,int>(std::string &&,ItemType &&,std::string &&,double &&,int &&,int &&,int &&,int &&,int &&,int &&,int &&,int &&)' being compiled
-  Trader.cpp
-  Generating Code...
-G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\CreateTrader.cpp(60): warning C4715: 'CreateTrader::GenerateTrader': not all control paths return a value
-  Compiling...
-  TraderState.cpp
-G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Map.h(16): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-  TraderUI.cpp
-  TraderUI.h
+  UI.cpp
+G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.cpp(23,79): warning C4101: 'roomCount': unreferenced local variable
   Generating Code...
   DungeonBattlesOfWinterspellCpp.cpp
   Note: including file: C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\iostream
@@ -213,6 +139,8 @@ G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Map.h(16)
   Note: including file:    G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\GameText.h
   Note: including file:    G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\DungeonRoom.h
   Note: including file:     G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Enemy.h
+  Note: including file:     G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\IPlace.h
+  Note: including file:      G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\INpc.h
   Note: including file:     G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\UI.h
   Note: including file:      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\map
   Note: including file:       C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\tuple
@@ -537,4 +465,5 @@ G:\repos\DungeonBattlesOfWinterspellCpp\DungeonBattlesOfWinterspellCpp\Map.h(16)
   Note: including file:  G:\repos\DungeonBattlesOfWinterspellCpp\include\SFML/Graphics/Sprite.hpp
   Note: including file:  G:\repos\DungeonBattlesOfWinterspellCpp\include\SFML/Graphics/Text.hpp
   Note: including file:  G:\repos\DungeonBattlesOfWinterspellCpp\include\SFML/Graphics/VertexBuffer.hpp
+x64\Debug\TraderUI.obj : warning LNK4042: object specified more than once; extras ignored
   DungeonBattlesOfWinterspellCpp.vcxproj -> G:\repos\DungeonBattlesOfWinterspellCpp\x64\Debug\DungeonBattlesOfWinterspellCpp.exe
