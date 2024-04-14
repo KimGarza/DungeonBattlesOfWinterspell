@@ -39,32 +39,3 @@ void BeginState::RenderSFMLGraphics() {
 //window.display();
 
 }
-
-//void BeginState::CreateCharacter() {
-//
-//	CharacterCreation characterCreation;
-//	context_->SetPlayer(characterCreation.CreateCharacter());
-//}
-//
-//void BeginState::GenerateDungeons() {
-//
-//	DungeonGenerator dungeonGenerator;
-//	context_->SetDungeonRooms(dungeonGenerator.GenerateDungeons());
-//}
-//
-//void BeginState::CreateMap() {
-//
-//	context_->SetMap(std::make_shared<Map>(context_->GetDungeonRooms()));
-//	PopulateDungeonMap();
-//}
-//
-//void BeginState::PopulateDungeonMap() {
-//
-//	std::vector<std::string> roomNames;
-//
-//	for (const auto& dungeon : context_->GetDungeonRooms()) {
-//
-//		roomNames.push_back(dungeon->GetName());
-//	}
-//	context_->GetMap()->SetRoomNames(roomNames);
-//}
