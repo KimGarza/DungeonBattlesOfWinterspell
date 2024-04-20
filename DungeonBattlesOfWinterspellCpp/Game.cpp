@@ -56,7 +56,12 @@ void Game::CheckGameState() {
 	}
 	case GameState::Explore: {
 
-		exploreState_.Explore();
+		if (ctx_->GetRegion() == RegionState::Winterspell) {
+			exploreTownState_.Explore();
+		}
+		else {
+			exploreDungeonState_.Explore();
+		}
 		return;
 	}
 	case GameState::Battle: {

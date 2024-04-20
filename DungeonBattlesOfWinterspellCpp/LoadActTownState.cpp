@@ -7,7 +7,6 @@ void LoadActTownState::Load() {
 	//story_.IntroToTown();
 
 	GeneratePlaces();
-	GenerateTrader();
 	CreateMap();
 
 	//story_.TownMapIntro();
@@ -15,31 +14,13 @@ void LoadActTownState::Load() {
 	ctx_->SetState(GameState::RevealMap);
 }
 
-void LoadActTownState::GeneratePlaces() {
+std::vector<std::shared_ptr<IPlace>> LoadActTownState::GeneratePlaces() {
 
-	GenerateTown generateTown;
-	/*ctx_->SetTownPlaces(generateTown.GenerateDungeons());*/
+	TownGenerator townGenerator;
+	return townGenerator.GenerateTown();
 }
 
 void LoadActTownState::CreateMap() {
 
-	ctx_->SetMap(std::make_shared<Map>(ctx_->GetDungeonRooms()));
-	PopulateMap();
-}
-
-void LoadActTownState::PopulateMap() {
-
-	std::vector<std::string> roomNames;
-
-	for (const auto& dungeon : ctx_->GetDungeonRooms()) {
-
-		roomNames.push_back(dungeon->GetName());
-	}
-	ctx_->GetMap()->SetRoomNames(roomNames);
-}
-
-void LoadActTownState::GenerateTrader() {
-
-	CreateTrader createTrader(ctx_);
-	ctx_->SetTrader(createTrader.GenerateTrader());
+	ctx_->SetTownMap(std::make_shared<TownMap>(GeneratePlaces()));
 }

@@ -5,11 +5,11 @@
 /// </summary>
 void TraderState::TraderInteract() {
 
-    if (!ctx_->GetTrader()->GetHasPlayerMet()) {
+  /*  if (!ctx_->GetTrader()->GetHasPlayerMet()) {
 
         MeetTrader();
         ctx_->GetTrader()->SetHasPlayerMet();
-    }
+    }*/
 
 
     bool isPlayerTrading = traderUI_.TradeInquiry();

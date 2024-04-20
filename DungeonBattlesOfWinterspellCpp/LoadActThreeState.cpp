@@ -7,39 +7,19 @@ void LoadActThreeState::Load() {
 	//story_.ActTwoOpening();
 
 	GeneratePlaces();
-	GenerateTrader();
 	CreateMap();
 
 	//story_.MapActTwoIntro();
 
 	ctx_->SetState(GameState::RevealMap);
 }
-
-void LoadActThreeState::GeneratePlaces() {
+std::vector<std::shared_ptr<IPlace>> LoadActThreeState::GeneratePlaces() {
 
 	DungeonGenerator dungeonGenerator;
-	ctx_->SetDungeonRooms(dungeonGenerator.GenerateDungeons());
+	return dungeonGenerator.GenerateDungeon(ctx_->GetAct());
 }
 
 void LoadActThreeState::CreateMap() {
 
-	ctx_->SetMap(std::make_shared<Map>(ctx_->GetDungeonRooms()));
-	PopulateMap();
-}
-
-void LoadActThreeState::PopulateMap() {
-
-	std::vector<std::string> roomNames;
-
-	for (const auto& dungeon : ctx_->GetDungeonRooms()) {
-
-		roomNames.push_back(dungeon->GetName());
-	}
-	ctx_->GetMap()->SetRoomNames(roomNames);
-}
-
-void LoadActThreeState::GenerateTrader() {
-
-	CreateTrader createTrader(ctx_);
-	ctx_->SetTrader(createTrader.GenerateTrader());
+	ctx_->SetDungeonMap(std::make_shared<DungeonMap>(GeneratePlaces()));
 }

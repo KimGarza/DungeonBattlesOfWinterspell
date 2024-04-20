@@ -18,15 +18,6 @@ private:
 
 public:
 
-	
-
-	
-
-	std::string DisplayMapMenu(std::vector<std::string> dungeonRooms, int indexStop);
-	std::string DisplayRoomSelect(std::vector<std::pair<int, std::string>> availableRooms);
-	void DescribeDungeonRoom(std::string description);
-	void DisplayTurnOrder(std::vector<std::string> creatureNames, std::string dungeonRoomName);
-	void NoEnemy();
 	bool DescribePlayerOptions(std::shared_ptr<PlayerCharacter> player);
 	void DescribeEnemyAttack(std::shared_ptr<Enemy> enemy, int attackDmg);
 	bool DescribePlayerAttackOptions(std::shared_ptr<Enemy> enemy, std::shared_ptr<Weapon> weapon);

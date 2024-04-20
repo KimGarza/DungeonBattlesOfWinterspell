@@ -15,7 +15,7 @@ void ChangelingState::ChangelingEncounter() {
 
 bool ChangelingState::PlayerEngages() {
 
-    ui.DescribeDungeonRoom(ctx_->GetCurrentRoom()->GetDescription());
+    ui_.DescribeDungeonRoom(ctx_->GetCurrentPlace()->GetDescription());
 
     std::string playerChoice = story.Changeling();
     if (playerChoice == "y") {
@@ -63,14 +63,14 @@ void ChangelingState::BattleChangeling() {
 
 void ChangelingState::PlayerTurn() {
 
-    bool isPlayerAttacking = ui.DescribePlayerOptions(ctx_->GetPlayer());
+    bool isPlayerAttacking = battleUI_.DescribePlayerOptions(ctx_->GetPlayer());
     if (isPlayerAttacking) {
 
-        bool isEnemyDead = ui.DescribePlayerAttackOptions(changeling_, ctx_->GetPlayer()->GetWeapon());
+        bool isEnemyDead = battleUI_.DescribePlayerAttackOptions(changeling_, ctx_->GetPlayer()->GetWeapon());
 
         if (isEnemyDead) {
 
-            ui.KilledEnemy(changeling_);
+            battleUI_.KilledEnemy(changeling_);
             return;
         }
     }
@@ -87,6 +87,6 @@ void ChangelingState::EnemyTurn() {
         exit(0);
     }
     else {
-        ui.HealthRemaining(ctx_->GetPlayer()->GetHealth());
+        battleUI_.HealthRemaining(ctx_->GetPlayer()->GetHealth());
     }
 }

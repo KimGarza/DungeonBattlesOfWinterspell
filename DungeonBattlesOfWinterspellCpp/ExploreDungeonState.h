@@ -4,27 +4,29 @@
 #include "IPlace.h"
 #include "DungeonRoom.h"
 #include "PlayerCharacter.h"
-#include "UI.h"
+#include "ExploreUI.h"
 #include "Story.h"
 #include "MusicPlayer.h"
 
-class ExploreState
+class ExploreDungeonState
 {
 private:
 	std::shared_ptr<GameContext> ctx_;
-	std::shared_ptr<DungeonRoom> room_;
+	std::shared_ptr<IPlace> place_;
+	std::shared_ptr<DungeonRoom> dungeonRoom_; // this will be null if in town
 	std::shared_ptr<PlayerCharacter> player_;
-	UI ui;
+	ExploreUI ui_;
 	Story story;
 	MusicPlayer music;
 
 public:
-	ExploreState(std::shared_ptr<GameContext> inContext) : ctx_(inContext) {}
+	ExploreDungeonState(std::shared_ptr<GameContext> inContext) : ctx_(inContext) {}
 
 	void Explore();
+	void EvaluateAccess();
+	void EvaluateSpecial();
 	void EnterRoom();
 	bool CheckHasKey();
-	void GenerateTurnOrder();
 	void SetValues();
 };
 

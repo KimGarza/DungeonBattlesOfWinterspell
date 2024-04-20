@@ -3,6 +3,7 @@
 #include <iostream>
 #include "DungeonGenerator.h"
 #include "DungeonRoom.h"
+#include "IPlace.h"
 #include <random>
 #include <vector>
 #include <memory>
@@ -18,9 +19,9 @@
 /// Currently all happening at once at the start of the game rather than one by one throughout to reduce complexity in the flow.
 /// </summary>
 /// <returns></returns>
-std::vector < std::shared_ptr<DungeonRoom>> DungeonGenerator::GenerateDungeons() {
+std::vector < std::shared_ptr<IPlace>> DungeonGenerator::GenerateDungeon(ActState act) {
 
-    std::vector<std::shared_ptr<DungeonRoom>> dungeonRooms;
+    std::vector<std::shared_ptr<IPlace>> dungeonRooms;
 
     int roomLevel = 1;
 
@@ -28,6 +29,7 @@ std::vector < std::shared_ptr<DungeonRoom>> DungeonGenerator::GenerateDungeons()
 
         std::vector<std::shared_ptr<Enemy>> enemyList = GenerateEnemy(roomLevel);
         std::vector<std::shared_ptr<LootItem>> loot = GenerateLoot();
+        std::vector<std::shared_ptr<INpc>> npcs;/* = GenerateNpcs();*/
 
         if (dungeon.first == "Hozwardian Keep" || dungeon.first == "Room of Offerings") { // lock these two rooms
             std::shared_ptr<DungeonRoom> newDungeonRoom = std::make_shared<DungeonRoom>(dungeon.first, dungeon.second, roomLevel, true, enemyList, loot);
@@ -37,8 +39,10 @@ std::vector < std::shared_ptr<DungeonRoom>> DungeonGenerator::GenerateDungeons()
             std::shared_ptr<DungeonRoom> newDungeonRoom = std::make_shared<DungeonRoom>(
                 dungeon.first,
                 dungeon.second,
+                act,
                 roomLevel,
                 false,
+                npcs,
                 enemyList,
                 loot);
             dungeonRooms.push_back(newDungeonRoom);

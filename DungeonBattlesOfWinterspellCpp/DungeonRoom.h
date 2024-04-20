@@ -28,9 +28,9 @@ public:
 		std::string inName,
 		std::string inDescription,
 		int inRoomLevel,
-		//ActState inIsInAct,
+		ActState inIsInAct,
 		bool inIsLocked,
-		//std::vector<std::shared_ptr<INpc>> inNpcs,
+		std::vector<std::shared_ptr<INpc>> inNpcs,
 		std::vector<std::shared_ptr<Enemy>> inEnemyList,
 		std::vector<std::shared_ptr<LootItem>> inLoot) :
 		name_(inName),
@@ -38,9 +38,9 @@ public:
 		roomLvl_(inRoomLevel),
 		isLocked_(inIsLocked),
 		completed_(false),
-		//isInAct_(inIsInAct),
+		isInAct_(inIsInAct),
 		timesExplored_(0),
-		//npcs_(inNpcs),
+		npcs_(inNpcs),
 		enemies_(inEnemyList),
 		loot_(inLoot) {}
 

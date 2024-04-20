@@ -139,8 +139,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="DungeonMap.cpp" />
-    <ClCompile Include="GenerateTown.cpp" />
+    <ClCompile Include="BattleUI.cpp" />
+    <ClCompile Include="ExploreTownState.cpp" />
+    <ClCompile Include="ExploreUI.cpp" />
+    <ClCompile Include="GenerateNpcs.cpp" />
+    <ClCompile Include="GenerateTurnOrder.cpp" />
+    <ClCompile Include="MapUI.cpp" />
+    <ClCompile Include="TownGenerator.cpp" />
     <ClCompile Include="IMap.cpp" />
     <ClCompile Include="INpc.cpp" />
     <ClCompile Include="IPlace.cpp" />
@@ -163,7 +168,7 @@
       <ShowIncludes Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Yes</ShowIncludes>
     </ClCompile>
     <ClCompile Include="DungeonGenerator.cpp" />
-    <ClCompile Include="ExploreState.cpp" />
+    <ClCompile Include="ExploreDungeonState.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameContext.cpp" />
     <ClCompile Include="GameEvent.cpp" />
@@ -174,12 +179,10 @@
     <ClCompile Include="Inventory.cpp" />
     <ClCompile Include="InvItem.cpp" />
     <ClCompile Include="LoadActOneState.cpp" />
-    <ClCompile Include="LoadActState.cpp" />
     <ClCompile Include="LoadActThreeState.cpp" />
     <ClCompile Include="LoadActTownState.cpp" />
     <ClCompile Include="LootItem.cpp" />
     <ClCompile Include="LootState.cpp" />
-    <ClCompile Include="Map.cpp" />
     <ClCompile Include="MapRevealState.cpp" />
     <ClCompile Include="MapUpdateState.cpp" />
     <ClCompile Include="MusicPlayer.cpp" />
@@ -191,14 +194,22 @@
     <ClCompile Include="Weapon.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BattleUI.h" />
     <ClInclude Include="DungeonMap.h" />
-    <ClInclude Include="GenerateTown.h" />
+    <ClInclude Include="ExploreTownState.h" />
+    <ClInclude Include="ExploreUI.h" />
+    <ClInclude Include="GenerateNpcs.h" />
+    <ClInclude Include="GenerateTurnOrder.h" />
+    <ClInclude Include="MapUI.h" />
+    <ClInclude Include="RegionState.h" />
+    <ClInclude Include="TownGenerator.h" />
     <ClInclude Include="IMap.h" />
     <ClInclude Include="INpc.h" />
     <ClInclude Include="IPlace.h" />
     <ClInclude Include="Npc.h" />
     <ClInclude Include="NpcTrader.h" />
     <ClInclude Include="Place.h" />
+    <ClInclude Include="TownMap.h" />
     <ClInclude Include="Trader.h" />
     <ClInclude Include="TradeState.h" />
     <ClInclude Include="ActState.h" />
@@ -212,7 +223,7 @@
     <ClInclude Include="DungeonRoom.h" />
     <ClInclude Include="DungeonGenerator.h" />
     <ClInclude Include="EventState.h" />
-    <ClInclude Include="ExploreState.h" />
+    <ClInclude Include="ExploreDungeonState.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameContext.h" />
     <ClInclude Include="GameEvent.h" />

@@ -2,34 +2,42 @@
 
 void MapUpdateState::UpdateMap() {
 
-	ctx_->GetCurrentRoom()->SetTimesExplored();
+	ctx_->GetCurrentPlace()->SetTimesExplored();
 
-	if (ctx_->GetCurrentRoom()->GetTimesExplored() == 1) {
-
-		ctx_->GetCurrentRoom()->SetCompleted();
-		ctx_->GetMap()->SetRoomsRemaining();
+	switch (ctx_->GetRegion()) {
+	case RegionState::Winterspell: {
+		// nothing needed
 	}
+	default: { // if a dungeon map is active location, update works differently than town
 
-	if (ctx_->GetMap()->GetRoomsRemaining() == 0) {
+		if (ctx_->GetCurrentPlace()->GetTimesExplored() == 1) {
 
-		switch (ctx_->GetAct()) {
+			std::shared_ptr<DungeonRoom> room = std::dynamic_pointer_cast<DungeonRoom>(ctx_->GetDungeonMap()->GetCurrentPlace());
 
-		case ActState::One: {
-			ctx_->SetAct(ActState::Town); // instead set to cleanup act state and there set the next state
-			break;
+			room->SetCompleted();
+			ctx_->GetDungeonMap()->SetRoomsRemaining();
 		}
-		case ActState::Town: {
-			ctx_->SetAct(ActState::Three);
-			break;
-		}
-		case ActState::Three: {
-			ctx_->SetState(GameState::EndGame);
-			break;
-		}
-		}
+		if (ctx_->GetDungeonMap()->GetRoomsRemaining() == 0) {
+			switch (ctx_->GetAct()) {
 
-		ctx_->SetState(GameState::LoadAct);
-		return;
+			case ActState::One: {
+				ctx_->SetAct(ActState::Town); // instead set to cleanup act state and there set the next state
+				break;
+			}
+			case ActState::Town: {
+				ctx_->SetAct(ActState::Three);
+				break;
+			}
+			case ActState::Three: {
+				ctx_->SetState(GameState::EndGame);
+				break;
+			}
+			}
+
+			ctx_->SetState(GameState::LoadAct);
+			return;
+		}
+	}
 	}
 
 	ctx_->SetState(GameState::RevealMap);

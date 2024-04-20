@@ -4,6 +4,7 @@
 #include "CharacterCreation.h"
 #include "CreateTrader.h"
 #include "DungeonGenerator.h"
+#include "DungeonMap.h"
 #include "MusicPlayer.h"
 #include "Story.h"
 #include "Trader.h"
@@ -23,9 +24,7 @@ public:
 
 	void Load() override;
 	void CreateMap() override;
-	void PopulateMap() override;
-	void GeneratePlaces() override;
-	void GenerateTrader() override;
+	std::vector<std::shared_ptr<IPlace>> GeneratePlaces() override;
 	void CreateCharacter();
 };
 

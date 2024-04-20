@@ -2,13 +2,14 @@
 #include <vector>
 #include <sstream>
 #include <map>
-#include "GenerateTown.h"
+#include "TownGenerator.h"
+#include "Place.h"
 #include "LootItem.h"
 
-class GenerateTown
+class TownGenerator
 {
 private:
-    std::vector<std::pair<std::string, std::string>> townPlaces = {
+    std::vector<std::pair<std::string, std::string>> placeList_ = {
          { "Mages Guild", "Description"},
          { "King's Throne Room", "Description"},
          { "Armoury", "Description"},
@@ -19,6 +20,6 @@ private:
     };
 
 public:
-    //std::vector < std::shared_ptr<Place>> GeneratePlaces();
+    std::vector<std::shared_ptr<IPlace>> GenerateTown();
     //std::vector<std::shared_ptr<Enemy>> GenerateNpcs(int roomLevel);
 };

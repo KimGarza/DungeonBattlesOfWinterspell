@@ -4,17 +4,8 @@ void BeginState::Begin() {
 
 	RenderSFMLGraphics();
 
-	/*music_.PlayMusic(L"slow-2021-08-17_-_8_Bit_Nostalgia_-_www.FesliyanStudios.com.wav");
-
-	story.OpeningStory();
-
-	CreateCharacter();
-	GenerateDungeons();
-	CreateMap();
-
-	story.MapIntro();*/
-
 	ctx_->SetAct(ActState::One);
+	ctx_->SetRegion(RegionState::DungeonOne);
 	ctx_->SetState(GameState::LoadAct);
 	ctx_->SetEventState(EventState::None);
 }
@@ -37,5 +28,4 @@ void BeginState::RenderSFMLGraphics() {
 //window.clear();
 //window.draw(sprite);
 //window.display();
-
 }

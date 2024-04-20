@@ -2,13 +2,11 @@
 
 void LoadActOneState::Load() {
 
-	//music_.PlayMusic(L"slow-2021-08-17_-_8_Bit_Nostalgia_-_www.FesliyanStudios.com.wav");
-
+	music_.PlayMusic(L"slow-2021-08-17_-_8_Bit_Nostalgia_-_www.FesliyanStudios.com.wav");
 	story_.OpeningStory();
-
 	CreateCharacter();
+
 	GeneratePlaces();
-	GenerateTrader();
 	CreateMap();
 
 	story_.MapIntro();
@@ -22,31 +20,14 @@ void LoadActOneState::CreateCharacter() {
 	ctx_->SetPlayer(characterCreation.CreateCharacter());
 }
 
-void LoadActOneState::GenerateTrader() {
-
-	CreateTrader createTrader(ctx_);
-	ctx_->SetTrader(createTrader.GenerateTrader());
-}
-
-void LoadActOneState::GeneratePlaces() {
+// Generates list of dungeons to populate into the active DungeonMap
+std::vector<std::shared_ptr<IPlace>> LoadActOneState::GeneratePlaces() {
 
 	DungeonGenerator dungeonGenerator;
-	ctx_->SetDungeonRooms(dungeonGenerator.GenerateDungeons());
+	return dungeonGenerator.GenerateDungeon(ctx_->GetAct());
 }
 
 void LoadActOneState::CreateMap() {
 
-	ctx_->SetMap(std::make_shared<Map>(ctx_->GetDungeonRooms()));
-	PopulateMap();
-}
-
-void LoadActOneState::PopulateMap() {
-
-	std::vector<std::string> roomNames;
-
-	for (const auto& dungeon : ctx_->GetDungeonRooms()) {
-
-		roomNames.push_back(dungeon->GetName());
-	}
-	ctx_->GetMap()->SetRoomNames(roomNames);
+	ctx_->SetDungeonMap(std::make_shared<DungeonMap>(GeneratePlaces()));
 }

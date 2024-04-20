@@ -9,8 +9,8 @@ void TradeState::Trade() {
 void TradeState::SetValues() {
 
     player_ = ctx_->GetPlayer();
-    trader_ = ctx_->GetTrader();
-    wares_ = ctx_->GetTrader()->GetWares();
+    /*trader_ = ctx_->GetTrader();
+    wares_ = ctx_->GetTrader()->GetWares();*/
 }
 
 void TradeState::Trading() {

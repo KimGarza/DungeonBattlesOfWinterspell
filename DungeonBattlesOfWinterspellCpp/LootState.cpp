@@ -7,8 +7,8 @@
 void LootState::Loot() {
 
 	music_.PlayMusic(L"slow-2021-08-17_-_8_Bit_Nostalgia_-_www.FesliyanStudios.com.wav");
-
-	room_ = ctx_->GetCurrentRoom();
+	// need dysnamic cast
+	room_ = ctx_->GetCurrentPlace();
 
 	if (room_->GetName() == "Tenebrific Depths" && room_->GetTimesExplored() == 1) {
 

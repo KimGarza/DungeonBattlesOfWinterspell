@@ -79,6 +79,12 @@
     <Filter Include="Header Files\GameStates\Act">
       <UniqueIdentifier>{d7429f1a-ee06-4677-8303-5b8f9676ced1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\GameStates\Act\States">
+      <UniqueIdentifier>{b0155480-7ea1-48e3-9909-4a9685c29e25}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GameStates\Act\States">
+      <UniqueIdentifier>{16bab6f4-3e19-4c2e-aa40-43698fcf710e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DungeonBattlesOfWinterspellCpp.cpp">
@@ -110,9 +116,6 @@
     </ClCompile>
     <ClCompile Include="DungeonGenerator.cpp">
       <Filter>Source Files\GameStates\Begin</Filter>
-    </ClCompile>
-    <ClCompile Include="Map.cpp">
-      <Filter>Source Files\GameStates\Map</Filter>
     </ClCompile>
     <ClCompile Include="DungeonRoom.cpp">
       <Filter>Source Files\Actors</Filter>
@@ -171,7 +174,7 @@
     <ClCompile Include="ChangelingState.cpp">
       <Filter>Source Files\GameStates\Explore</Filter>
     </ClCompile>
-    <ClCompile Include="ExploreState.cpp">
+    <ClCompile Include="ExploreDungeonState.cpp">
       <Filter>Source Files\GameStates\Explore</Filter>
     </ClCompile>
     <ClCompile Include="LootState.cpp">
@@ -183,31 +186,16 @@
     <ClCompile Include="GameEvent.cpp">
       <Filter>Source Files\Game</Filter>
     </ClCompile>
-    <ClCompile Include="LoadActTownState.cpp">
-      <Filter>Source Files\GameStates\Act</Filter>
-    </ClCompile>
-    <ClCompile Include="LoadActState.cpp">
-      <Filter>Source Files\GameStates\Act</Filter>
-    </ClCompile>
-    <ClCompile Include="LoadActThreeState.cpp">
-      <Filter>Source Files\GameStates\Act</Filter>
-    </ClCompile>
-    <ClCompile Include="LoadActOneState.cpp">
-      <Filter>Source Files\GameStates\Act</Filter>
-    </ClCompile>
     <ClCompile Include="CreateTrader.cpp">
       <Filter>Source Files\GameStates\Trade</Filter>
     </ClCompile>
     <ClCompile Include="TraderState.cpp">
       <Filter>Source Files\GameStates\Trade</Filter>
     </ClCompile>
-    <ClCompile Include="GenerateTown.cpp">
+    <ClCompile Include="TownGenerator.cpp">
       <Filter>Source Files\GameStates\Act</Filter>
     </ClCompile>
     <ClCompile Include="Place.cpp">
-      <Filter>Source Files\Actors</Filter>
-    </ClCompile>
-    <ClCompile Include="DungeonMap.cpp">
       <Filter>Source Files\Actors</Filter>
     </ClCompile>
     <ClCompile Include="IMap.cpp">
@@ -224,6 +212,33 @@
     </ClCompile>
     <ClCompile Include="NpcTrader.cpp">
       <Filter>Source Files\Actors</Filter>
+    </ClCompile>
+    <ClCompile Include="GenerateNpcs.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="LoadActTownState.cpp">
+      <Filter>Source Files\GameStates\Act\States</Filter>
+    </ClCompile>
+    <ClCompile Include="LoadActOneState.cpp">
+      <Filter>Source Files\GameStates\Act\States</Filter>
+    </ClCompile>
+    <ClCompile Include="LoadActThreeState.cpp">
+      <Filter>Source Files\GameStates\Act\States</Filter>
+    </ClCompile>
+    <ClCompile Include="MapUI.cpp">
+      <Filter>Source Files\GameStates\Map</Filter>
+    </ClCompile>
+    <ClCompile Include="ExploreUI.cpp">
+      <Filter>Source Files\GameStates\Explore</Filter>
+    </ClCompile>
+    <ClCompile Include="ExploreTownState.cpp">
+      <Filter>Source Files\GameStates\Explore</Filter>
+    </ClCompile>
+    <ClCompile Include="GenerateTurnOrder.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BattleUI.cpp">
+      <Filter>Source Files\GameStates\Battle</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -305,7 +320,7 @@
     <ClInclude Include="LootState.h">
       <Filter>Header Files\GameStates\Loot</Filter>
     </ClInclude>
-    <ClInclude Include="ExploreState.h">
+    <ClInclude Include="ExploreDungeonState.h">
       <Filter>Header Files\GameStates\Explore</Filter>
     </ClInclude>
     <ClInclude Include="BattleState.h">
@@ -323,28 +338,13 @@
     <ClInclude Include="EventState.h">
       <Filter>Header Files\Game</Filter>
     </ClInclude>
-    <ClInclude Include="ActState.h">
-      <Filter>Header Files\GameStates\Act</Filter>
-    </ClInclude>
-    <ClInclude Include="LoadActOneState.h">
-      <Filter>Header Files\GameStates\Act</Filter>
-    </ClInclude>
-    <ClInclude Include="LoadActState.h">
-      <Filter>Header Files\GameStates\Act</Filter>
-    </ClInclude>
-    <ClInclude Include="LoadActThreeState.h">
-      <Filter>Header Files\GameStates\Act</Filter>
-    </ClInclude>
-    <ClInclude Include="LoadActTownState.h">
-      <Filter>Header Files\GameStates\Act</Filter>
-    </ClInclude>
     <ClInclude Include="CreateTrader.h">
       <Filter>Header Files\GameStates\Trade</Filter>
     </ClInclude>
     <ClInclude Include="TraderState.h">
       <Filter>Header Files\GameStates\Trade</Filter>
     </ClInclude>
-    <ClInclude Include="GenerateTown.h">
+    <ClInclude Include="TownGenerator.h">
       <Filter>Header Files\GameStates\Act</Filter>
     </ClInclude>
     <ClInclude Include="Map.h">
@@ -370,6 +370,45 @@
     </ClInclude>
     <ClInclude Include="NpcTrader.h">
       <Filter>Header Files\Actors</Filter>
+    </ClInclude>
+    <ClInclude Include="TownMap.h">
+      <Filter>Header Files\Actors</Filter>
+    </ClInclude>
+    <ClInclude Include="GenerateNpcs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ActState.h">
+      <Filter>Header Files\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="LoadActTownState.h">
+      <Filter>Header Files\GameStates\Act\States</Filter>
+    </ClInclude>
+    <ClInclude Include="LoadActThreeState.h">
+      <Filter>Header Files\GameStates\Act\States</Filter>
+    </ClInclude>
+    <ClInclude Include="LoadActState.h">
+      <Filter>Header Files\GameStates\Act\States</Filter>
+    </ClInclude>
+    <ClInclude Include="LoadActOneState.h">
+      <Filter>Header Files\GameStates\Act\States</Filter>
+    </ClInclude>
+    <ClInclude Include="RegionState.h">
+      <Filter>Header Files\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="MapUI.h">
+      <Filter>Header Files\GameStates\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="ExploreUI.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ExploreTownState.h">
+      <Filter>Header Files\GameStates\Explore</Filter>
+    </ClInclude>
+    <ClInclude Include="GenerateTurnOrder.h">
+      <Filter>Header Files\GameStates\Battle</Filter>
+    </ClInclude>
+    <ClInclude Include="BattleUI.h">
+      <Filter>Header Files\GameStates\Battle</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

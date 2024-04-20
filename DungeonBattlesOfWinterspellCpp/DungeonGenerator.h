@@ -25,7 +25,7 @@ private:
     // seperate dungeon list into two dungeons and generate using switch based on act
 
 public:
-    std::vector < std::shared_ptr<DungeonRoom>> GenerateDungeons();
+    std::vector < std::shared_ptr<IPlace>> GenerateDungeon(ActState act);
     std::vector<std::shared_ptr<Enemy>> GenerateEnemy(int roomLevel);
     std::vector<std::shared_ptr<LootItem>> GenerateLoot();
 };

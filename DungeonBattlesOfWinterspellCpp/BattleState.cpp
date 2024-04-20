@@ -4,37 +4,19 @@ void BattleState::Battle() {
 
     music_.PlayMusic(L"108 - Mouryou Senki Madara (VRC6) - Ma-Da-Ra.wav");
 
-    turnOrder_ = ctx_->GetCurrentRoom()->GetTurnOrder();
+    SetValues();
 
-    RevealTurnOrder();
+    GenerateTurnOrder turnOrder(ctx_);
+    turnOrder.Generate();
+
+    ui_.RevealTurnOrder();
+
     CommenceBattle();
 
     ctx_->SetState(GameState::Loot);
 }
 
-void BattleState::RevealTurnOrder() {
-
-    std::vector<std::string> orderedTurns;
-
-    for (std::shared_ptr<ICreature> creature : ctx_->GetCurrentRoom()->GetTurnOrder()) {
-
-        std::shared_ptr<PlayerCharacter> player_ = std::dynamic_pointer_cast<PlayerCharacter>(creature);
-        if (player_) {
-            orderedTurns.push_back("*You*");
-        }
-
-        std::shared_ptr<Enemy> enemy = std::dynamic_pointer_cast<Enemy>(creature);
-        if (enemy) {
-            orderedTurns.push_back(enemy->GetName());
-        }
-    }
-
-    ui.DisplayTurnOrder(orderedTurns, ctx_->GetCurrentRoom()->GetName());
-}
-
 void BattleState::CommenceBattle() {
-
-    std::vector<std::shared_ptr<ICreature>> turnOrder_ = ctx_->GetCurrentRoom()->GetTurnOrder();
 
     while (true) {
 
@@ -48,7 +30,7 @@ void BattleState::CommenceBattle() {
         }
 
         if (turnOrder_.size() == 1) {
-            ui.SlainAllEnemy();
+            ui_.SlainAllEnemy();
             return;
         }
 
@@ -72,17 +54,17 @@ void BattleState::CommenceBattle() {
 void BattleState::PlayerTurn() {
 
     // 'creature' is of type PlayerCharacter, and 'player_' is now a shared_ptr to it
-    bool isPlayerAttacking = ui.DescribePlayerOptions(player_);
+    bool isPlayerAttacking = ui_.DescribePlayerOptions(player_);
 
     if (isPlayerAttacking) {
 
-        std::shared_ptr<Enemy> targetedEnemy = ui.GetEnemyTargetForAttack(player_, turnOrder_);
-        bool isEnemyDead = ui.DescribePlayerAttackOptions(targetedEnemy, player_->GetWeapon());
+        std::shared_ptr<Enemy> targetedEnemy = ui_.GetEnemyTargetForAttack(player_, turnOrder_);
+        bool isEnemyDead = ui_.DescribePlayerAttackOptions(targetedEnemy, player_->GetWeapon());
 
         if (isEnemyDead) {
 
             slaughteredEnemy_ = std::static_pointer_cast<ICreature>(targetedEnemy);
-            ui.KilledEnemy(targetedEnemy);
+            ui_.KilledEnemy(targetedEnemy);
 
             return;
         }
@@ -92,7 +74,7 @@ void BattleState::PlayerTurn() {
 void BattleState::EnemyTurn() {
 
     int attackDmg = enemy_->AttackPlayer();
-    ui.DescribeEnemyAttack(enemy_, attackDmg);
+    ui_.DescribeEnemyAttack(enemy_, attackDmg);
 
     // returns the hit points player takes as dmg as int, it can be influenced by player's gear and attributes
     bool checkIfDead = ctx_->GetPlayer()->TakeDamage(attackDmg, 3); // made up enemy accuracy for now
@@ -101,5 +83,12 @@ void BattleState::EnemyTurn() {
         exit(0);
     }
     
-    ui.HealthRemaining(ctx_->GetPlayer()->GetHealth());
+    ui_.HealthRemaining(ctx_->GetPlayer()->GetHealth());
+}
+
+// must dynamic/down cast IPlace to DungeonRoom since each IMap (DungeonMap) has places/current place represented as IPlace for other polymorphic purposes.
+void BattleState::SetValues() {
+
+    currentRoom_ = std::dynamic_pointer_cast<DungeonRoom>(ctx_->GetCurrentPlace());
+    turnOrder_ = currentRoom_->GetTurnOrder();
 }
