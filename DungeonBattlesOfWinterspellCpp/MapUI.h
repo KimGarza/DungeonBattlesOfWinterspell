@@ -14,7 +14,10 @@ private:
 	Input input_;
 
 public:
-	std::string LocationSelectMenu(std::shared_ptr<GameContext> ctx, std::vector<std::shared_ptr<IPlace>> places, int indexStop);
-	std::string DisplayPlaceSelect(std::vector<std::pair<int, std::string>> availablePlaces);
+	std::string DisplayLocationsMenu(std::shared_ptr<GameContext> ctx, std::vector<std::shared_ptr<IPlace>> places, int indexStop);
+	std::string PlaceSelect(std::vector<std::pair<int, std::string>> availablePlaces);
+
+	std::string DisplayRegionsMenu(std::shared_ptr<GameContext> ctx, int indexStop);
+	std::string RegionSelect();
 };
 

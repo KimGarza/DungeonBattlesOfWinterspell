@@ -190,6 +190,7 @@
     <ClCompile Include="PlayerCharacter.cpp" />
     <ClCompile Include="Story.cpp" />
     <ClCompile Include="TraderState.cpp" />
+    <ClCompile Include="TurnOrder.cpp" />
     <ClCompile Include="UI.cpp" />
     <ClCompile Include="Weapon.cpp" />
   </ItemGroup>
@@ -202,6 +203,7 @@
     <ClInclude Include="GenerateTurnOrder.h" />
     <ClInclude Include="MapUI.h" />
     <ClInclude Include="RegionState.h" />
+    <ClInclude Include="TownEvent.h" />
     <ClInclude Include="TownGenerator.h" />
     <ClInclude Include="IMap.h" />
     <ClInclude Include="INpc.h" />
@@ -248,6 +250,7 @@
     <ClInclude Include="PlayerCharacter.h" />
     <ClInclude Include="Story.h" />
     <ClInclude Include="TraderState.h" />
+    <ClInclude Include="TurnOrder.h" />
     <ClInclude Include="UI.h" />
     <ClInclude Include="Weapon.h" />
   </ItemGroup>

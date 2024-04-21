@@ -168,3 +168,15 @@ void Story::AbalaskTraderIntroduction() {
 		}
 	}
 }
+
+void Story::IntroToTown() {
+	system("cls");
+	gameText.WriteLineInput("You scurry through the last depths of the dungeon... \nScuffling upon the ramping stone, having to crouch last upon finally exiting toward the pinhold of light that you saw before.");
+	gameText.WriteLineInput("For a fortnite you were in that musky old place it feels like mi lord!");
+
+}
+
+void Story::TownMapIntro() {
+	system("cls");
+	gameText.WriteLineInput("Map of Winterspell");
+}

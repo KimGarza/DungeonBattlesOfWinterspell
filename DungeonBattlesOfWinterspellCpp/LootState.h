@@ -16,5 +16,6 @@ public:
 	LootState(std::shared_ptr<GameContext> inCtx) : ctx_(inCtx) {}
 
 	void Loot();
+	void SetValues();
 };
 

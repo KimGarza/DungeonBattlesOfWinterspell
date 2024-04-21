@@ -4,17 +4,16 @@
 /// Presents menu where displays all IPlaces in current region in order. 
 /// For Dungeons, rooms that are discovered are named, others are labeled "Undiscovered".
 /// </summary>
-std::string MapUI::LocationSelectMenu(std::shared_ptr<GameContext> ctx, std::vector<std::shared_ptr<IPlace>> places, int indexStop) {
+std::string MapUI::DisplayLocationsMenu(std::shared_ptr<GameContext> ctx, std::vector<std::shared_ptr<IPlace>> places, int indexStop) {
 
     while (true) {
 
-        switch (ctx->GetRegion()) {
-        case RegionState::Winterspell: {
+        if (ctx->GetRegion() == RegionState::Winterspell) {
             gameTxt_.WriteLine("Map of Winterspell");
-        }
-        default: {
-            gameTxt_.WriteLine("Map of Dungeon");
-        }
+        } else if (ctx->GetRegion() == RegionState::DungeonOne) {
+            gameTxt_.WriteLine("Dungon Caverns");
+        } else {
+            gameTxt_.WriteLine("Dungon Outskirts");
         }
 
         std::cout << " ____________________________________\n\n";
@@ -23,6 +22,9 @@ std::string MapUI::LocationSelectMenu(std::shared_ptr<GameContext> ctx, std::vec
 
         for (int i = 0; i < places.size(); i++) {
 
+            if (i % 4 == 0) {
+                gameTxt_.WriteText("\n");
+            }
             if (i > indexStop) { // for dungeons, this will be for undiscovered places
 
                 // formatting purposes
@@ -47,10 +49,16 @@ std::string MapUI::LocationSelectMenu(std::shared_ptr<GameContext> ctx, std::vec
                 }
             }
         }
+        if (indexStop == places.size()) {
+
+            gameTxt_.WriteLine(std::to_string(indexStop + 1) + ") Town of Winterspell");
+
+            selectablePlaces.emplace_back((places.size() + 1), "Town");
+        }
 
         std::cout << "\n\n";
 
-        std::string selectedPlace = DisplayPlaceSelect(selectablePlaces);
+        std::string selectedPlace = PlaceSelect(selectablePlaces);
         if (selectedPlace != "") {
             return selectedPlace;
         }
@@ -68,7 +76,7 @@ std::string MapUI::LocationSelectMenu(std::shared_ptr<GameContext> ctx, std::vec
 /// Presents optional places to travel. Player selects the number which is the location identifier from availablePlaces vector pair (index, name).
 /// Checks player's selection is available and returns the selected place by name.
 /// </summary>
-std::string MapUI::DisplayPlaceSelect(std::vector<std::pair<int, std::string>> availablePlaces) {
+std::string MapUI::PlaceSelect(std::vector<std::pair<int, std::string>> availablePlaces) {
 
     while (true) {
 

@@ -6,9 +6,9 @@
 /// </summary>
 void LootState::Loot() {
 
-	music_.PlayMusic(L"slow-2021-08-17_-_8_Bit_Nostalgia_-_www.FesliyanStudios.com.wav");
-	// need dysnamic cast
-	room_ = ctx_->GetCurrentPlace();
+	//music_.PlayMusic(L"slow-2021-08-17_-_8_Bit_Nostalgia_-_www.FesliyanStudios.com.wav");
+
+	SetValues();
 
 	if (room_->GetName() == "Tenebrific Depths" && room_->GetTimesExplored() == 1) {
 
@@ -37,4 +37,9 @@ void LootState::Loot() {
 	}
 
 	ctx_->SetState(GameState::UpdateMap);
+}
+
+void LootState::SetValues() {
+	
+	room_ = std::dynamic_pointer_cast<DungeonRoom>(ctx_->GetCurrentPlace());
 }

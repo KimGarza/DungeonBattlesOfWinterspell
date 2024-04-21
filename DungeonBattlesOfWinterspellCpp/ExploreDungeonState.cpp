@@ -4,7 +4,7 @@ void ExploreDungeonState::Explore() {
 
 	SetValues();
 
-	story.EnterDungeonRoom();
+	//story.EnterDungeonRoom();
 
 	EvaluateAccess(); // check's if door is accessable
 	EvaluateSpecial(); // check's for special events
@@ -96,7 +96,6 @@ bool ExploreDungeonState::CheckHasKey() {
 
 void ExploreDungeonState::SetValues() {
 
-	place_ = ctx_->GetCurrentPlace();
-	dungeonRoom_ = std::dynamic_pointer_cast<DungeonRoom>(place_);
+	dungeonRoom_ = std::dynamic_pointer_cast<DungeonRoom>(ctx_->GetCurrentPlace());
 	player_ = ctx_->GetPlayer();
 }

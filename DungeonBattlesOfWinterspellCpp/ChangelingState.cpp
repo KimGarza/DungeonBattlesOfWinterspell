@@ -2,7 +2,7 @@
 
 void ChangelingState::ChangelingEncounter() {
 
-    music_.PlayMusic(L"8bit-chikadou.wav");
+    //music_.PlayMusic(L"8bit-chikadou.wav");
 
     if (PlayerEngages()) {
 

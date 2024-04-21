@@ -20,7 +20,7 @@ void MapRevealState::LocationSelect() {
 
 	if (region_ == RegionState::Winterspell) {
 
-		indexStop = places_.size();
+		indexStop = places_.size() - 1;
 	}
 	else {
 		// subtracting remaining rooms from all rooms, gets to the current room by index to know where the last dungeon to output is
@@ -28,7 +28,13 @@ void MapRevealState::LocationSelect() {
 	}
 
 	// returns place player selection by name, identifies existing shared *IPlace and sets current place in context to there.
-	std::string selectedPlace = mapUI_.LocationSelectMenu(ctx_, places_, indexStop); 
+	std::string selectedPlace = mapUI_.DisplayLocationsMenu(ctx_, places_, indexStop);
+
+	if (selectedPlace == "Town") {
+
+		ctx_->SetRegion(RegionState::Winterspell);
+		return;
+	}
 
 	auto travelTo = std::find_if(places_.begin(), places_.end(), [selectedPlace](const std::shared_ptr<IPlace>& place) { // identifies which room player selected
 		return place->GetName() == selectedPlace;
@@ -47,15 +53,11 @@ void MapRevealState::SetCurrentLocation(std::string selectedPlace) {
 	// set's current place from context and the current map to the selected locaiton
 	if (travelTo != places_.end()) {
 
-		region_ = ctx_->GetRegion();
-
-		switch (region_) {
-		case RegionState::Winterspell: {
+		if (region_ == RegionState::Winterspell) {
 			ctx_->GetTownMap()->SetCurrentPlace(*travelTo);
 		}
-		default: {
+		else {
 			ctx_->GetDungeonMap()->SetCurrentPlace(*travelTo);
-		}
 		}
 
 		ctx_->SetCurrentPlace(*travelTo);
@@ -67,14 +69,12 @@ void MapRevealState::SetValues() {
 
 	region_ = ctx_->GetRegion();
 
-	switch (region_) {
-	case RegionState::Winterspell: {
+	if (region_ == RegionState::Winterspell) {
 
 		places_ = ctx_->GetTownMap()->GetPlaces();
 	}
-	defualt: {
+	else {
 		places_ = ctx_->GetDungeonMap()->GetPlaces();
-	}
 	}
 
 	place_ = ctx_->GetCurrentPlace();

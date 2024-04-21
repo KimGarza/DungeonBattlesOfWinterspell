@@ -17,6 +17,7 @@ void MapUpdateState::UpdateMap() {
 			room->SetCompleted();
 			ctx_->GetDungeonMap()->SetRoomsRemaining();
 		}
+		// if act completed, load new act
 		if (ctx_->GetDungeonMap()->GetRoomsRemaining() == 0) {
 			switch (ctx_->GetAct()) {
 

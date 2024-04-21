@@ -1,13 +1,14 @@
 #include "BattleState.h"
+#include "TurnOrder.h"
 
 void BattleState::Battle() {
 
-    music_.PlayMusic(L"108 - Mouryou Senki Madara (VRC6) - Ma-Da-Ra.wav");
+    //music_.PlayMusic(L"108 - Mouryou Senki Madara (VRC6) - Ma-Da-Ra.wav");
+
+    TurnOrder turnOrder(ctx_);
+    turnOrder.Generate();
 
     SetValues();
-
-    GenerateTurnOrder turnOrder(ctx_);
-    turnOrder.Generate();
 
     ui_.RevealTurnOrder();
 
@@ -86,9 +87,9 @@ void BattleState::EnemyTurn() {
     ui_.HealthRemaining(ctx_->GetPlayer()->GetHealth());
 }
 
-// must dynamic/down cast IPlace to DungeonRoom since each IMap (DungeonMap) has places/current place represented as IPlace for other polymorphic purposes.
 void BattleState::SetValues() {
 
-    currentRoom_ = std::dynamic_pointer_cast<DungeonRoom>(ctx_->GetCurrentPlace());
-    turnOrder_ = currentRoom_->GetTurnOrder();
+    room_ = std::dynamic_pointer_cast<DungeonRoom>(ctx_->GetCurrentPlace());
+    turnOrder_ = room_->GetTurnOrder();
+    player_ = ctx_->GetPlayer();
 }

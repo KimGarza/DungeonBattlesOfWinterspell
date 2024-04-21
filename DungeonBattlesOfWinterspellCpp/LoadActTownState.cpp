@@ -2,15 +2,17 @@
 
 void LoadActTownState::Load() {
 
-	music_.PlayMusic(L"slow-2021-08-17_-_8_Bit_Nostalgia_-_www.FesliyanStudios.com.wav"); // new song
+	//music_.PlayMusic(L"slow-2021-08-17_-_8_Bit_Nostalgia_-_www.FesliyanStudios.com.wav"); // new song
 
-	//story_.IntroToTown();
+	story_.IntroToTown();
 
 	GeneratePlaces();
 	CreateMap();
 
-	//story_.TownMapIntro();
+	story_.TownMapIntro();
 
+	ctx_->GetDungeonMap().reset();
+	ctx_->SetRegion(RegionState::Winterspell);
 	ctx_->SetState(GameState::RevealMap);
 }
 

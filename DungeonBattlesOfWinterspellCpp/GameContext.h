@@ -3,6 +3,7 @@
 #include "GameState.h"
 #include "Trader.h"
 #include "EventState.h"
+#include "TownEvent.h"
 #include "DungeonMap.h"
 #include "RegionState.h"
 #include "TownMap.h"
@@ -15,6 +16,7 @@ class GameContext
 private:
 	GameState gameState_;
 	EventState eventState_;
+	TownEvent townEvent_;
 	ActState act_;
 	RegionState region_;
 	std::shared_ptr<PlayerCharacter> player_;
@@ -27,6 +29,7 @@ public:
 
 	GameState GetState() { return gameState_; }
 	EventState GetEventState() { return eventState_; }
+	TownEvent GetTownEvent() { return townEvent_; }
 	ActState GetAct() { return act_; }
 	RegionState GetRegion() { return region_; }
 	std::shared_ptr<PlayerCharacter> GetPlayer() { return player_; }
@@ -37,6 +40,7 @@ public:
 
 	void SetState(GameState inGameState) { gameState_ = inGameState; }
 	void SetEventState(EventState inEventState) { eventState_ = inEventState; }
+	void SetTownEvent(TownEvent inTownEvent) { townEvent_ = inTownEvent; }
 	void SetAct(ActState inActState) { act_ = inActState; }
 	void SetRegion(RegionState inRegionState) { region_ = inRegionState; }
 	void SetPlayer(std::shared_ptr<PlayerCharacter> inPlayer_) { player_ = inPlayer_; }

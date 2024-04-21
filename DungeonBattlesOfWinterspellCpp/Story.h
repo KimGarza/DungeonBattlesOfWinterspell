@@ -12,8 +12,9 @@ public:
 
     void OpeningStory();
     void MapIntro();
+    void TownMapIntro();
     void EnterDungeonRoom();
     std::string Changeling();
     void AbalaskTraderIntroduction();
-
+    void IntroToTown();
 };

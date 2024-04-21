@@ -10,7 +10,7 @@ class BattleState
 {
 private:
 	std::shared_ptr<GameContext> ctx_;
-	std::shared_ptr<DungeonRoom> currentRoom_;
+	std::shared_ptr<DungeonRoom> room_;
 	std::vector<std::shared_ptr<ICreature>> turnOrder_;
 	std::shared_ptr<PlayerCharacter> player_;
 	std::shared_ptr<Enemy> enemy_;
@@ -24,7 +24,6 @@ public:
 
 	void Battle();
 	void SetValues();
-	void RevealTurnOrder();
 	void CommenceBattle();
 	void PlayerTurn();
 	void EnemyTurn();

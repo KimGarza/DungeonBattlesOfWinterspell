@@ -2,7 +2,7 @@
 
 void LoadActOneState::Load() {
 
-	music_.PlayMusic(L"slow-2021-08-17_-_8_Bit_Nostalgia_-_www.FesliyanStudios.com.wav");
+	//music_.PlayMusic(L"slow-2021-08-17_-_8_Bit_Nostalgia_-_www.FesliyanStudios.com.wav");
 	story_.OpeningStory();
 	CreateCharacter();
 

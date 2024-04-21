@@ -11,6 +11,8 @@ class ExploreTownState
 {
 private:
 	std::shared_ptr<GameContext> ctx_;
+	std::shared_ptr<Place> townPlace_;
+	std::shared_ptr<PlayerCharacter> player_;
 	ExploreUI ui_;
 	Story story_;
 	MusicPlayer music_;

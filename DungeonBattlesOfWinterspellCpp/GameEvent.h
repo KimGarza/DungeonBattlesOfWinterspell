@@ -15,7 +15,7 @@ private:
 	TradeState tradeState_;
 
 public:
-	GameEvent(std::shared_ptr<GameContext> inCtx) : ctx_(inCtx), 
+	GameEvent(std::shared_ptr<GameContext> inCtx) : ctx_(inCtx),
 		changelingState_(ChangelingState(inCtx)), traderState_(TraderState(inCtx)), tradeState_(TradeState(inCtx)) {}
 
 	void CheckEventState();

@@ -32,15 +32,23 @@ std::vector < std::shared_ptr<IPlace>> DungeonGenerator::GenerateDungeon(ActStat
         std::vector<std::shared_ptr<INpc>> npcs;/* = GenerateNpcs();*/
 
         if (dungeon.first == "Hozwardian Keep" || dungeon.first == "Room of Offerings") { // lock these two rooms
-            std::shared_ptr<DungeonRoom> newDungeonRoom = std::make_shared<DungeonRoom>(dungeon.first, dungeon.second, roomLevel, true, enemyList, loot);
+            std::shared_ptr<DungeonRoom> newDungeonRoom = std::make_shared<DungeonRoom>(
+                dungeon.first, 
+                dungeon.second, 
+                roomLevel,
+                act,
+                true, 
+                npcs,
+                enemyList, 
+                loot);
             dungeonRooms.push_back(newDungeonRoom);
         }
         else {
             std::shared_ptr<DungeonRoom> newDungeonRoom = std::make_shared<DungeonRoom>(
                 dungeon.first,
                 dungeon.second,
-                act,
                 roomLevel,
+                act,
                 false,
                 npcs,
                 enemyList,

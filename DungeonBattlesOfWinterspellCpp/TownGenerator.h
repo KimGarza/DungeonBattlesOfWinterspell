@@ -10,7 +10,7 @@ class TownGenerator
 {
 private:
     std::vector<std::pair<std::string, std::string>> placeList_ = {
-         { "Mages Guild", "Description"},
+         { "Sorcerers Guild", "Description"},
          { "King's Throne Room", "Description"},
          { "Armoury", "Description"},
          { "Jeweler", "Description"},
