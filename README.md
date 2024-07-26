@@ -1,6 +1,7 @@
 Dungeon Battles of Winterspell
 
 FYI It appears as though there is no organization to the files due to the fact that C++ uses filters for organization locally. These are not the same thing as folders and I didn't realize this was as much of a limitation as it is since they don't reveal in Github. I will go in and organize them in directories for the sake of easier viewing in Github.
+In addition, seperation of concerns can be massively improved and include files I have organized in the headers rather than the source which was due to my ignroance at how they can effect efficiency. I will be correcting that but it will take a decent chunk of time.
 
 Dungeon Battles of Winterspell is a text-based old school fantasy adventure game; turn-based dungeon crawler.
 The biggest inspiration for this game is Elder Scrolls Arena, (the very first Elder Scrolls game!).
